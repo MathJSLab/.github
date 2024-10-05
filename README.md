@@ -1,0 +1,2 @@
+# .github
+MathJSLab organization profile.
