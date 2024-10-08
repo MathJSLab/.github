@@ -9,6 +9,6 @@
 
 > An [interpreter](https://en.wikipedia.org/wiki/Interpreter_(computing)) with language syntax like [MATLAB&reg;](https://www.mathworks.com/)/[Octave](https://www.gnu.org/software/octave/) written in [TypeScript](https://www.typescriptlang.org/).
 
-This is the [MathJSLab npm package](https://www.npmjs.com/package/mathjslab) [organization profile](https://github.com/MathJSLab). The project page is at [mathjslab.com](https://mathjslab.com/).
+The [**MathJSLab Organization**](https://github.com/MathJSLab) was created to bring together the [MathJSLab Project](https://mathjslab.com/) [repositories](https://github.com/orgs/MathJSLab/repositories).
 
 Copyright &copy; 2016-2024 [Sergio Lindau](mailto:sergiolindau@gmail.com), [ORCID: 0009-0006-9115-0291](https://orcid.org/0009-0006-9115-0291), [mathjslab.com](https://mathjslab.com/), [mathjslab@gmail.com](mailto:mathjslab@gmail.com), **[ISBN 978-65-00-82338-7, 978-65-00-84828-1](https://grp.isbn-international.org/search/piid_solr?keys=978-65-00-82338-7)**.
