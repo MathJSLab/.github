@@ -12,7 +12,7 @@ This organization owns:
 - The [demo web application](https://app.mathjslab.com) [repository](https://github.com/MathJSLab/mathjslab-demo).
 - The [project page](https://mathjslab.com) [repository](https://github.com/MathJSLab/mathjslab-www).
 
-Copyright &copy; 2016-2024 [Sergio Lindau](mailto:sergiolindau@gmail.com), [ORCID: 0009-0006-9115-0291](https://orcid.org/0009-0006-9115-0291).
+Copyright &copy; 2016-2024 [Sergio Lindau](mailto:sergiolindau@gmail.com), [![ORCID](https://img.shields.io/badge/ORCID-0009--0006--9115--0291-green)](https://orcid.org/0009-0006-9115-0291)
 
 [mathjslab.com](https://mathjslab.com/), [mathjslab@gmail.com](mailto:mathjslab@gmail.com).
 
