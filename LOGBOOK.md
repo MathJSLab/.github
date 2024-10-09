@@ -1,0 +1,32 @@
+# MathJSLab Logbook
+
+This file contains general information about the actions of the [MathJSLab Project](https://mathjslab.com/) that go beyond the scope of the individual projects. In other words, what cannot be recorded in the `CHANGES.md` file of each software project, or the general actions of the organization, are recorded here, indexed by date.
+
+## 2024-10-08
+- `mathjslab-demo` repository renamed to `mathjslab-app`.
+
+## 2024-10-07
+- The subdomains npm.mathjslab.com and github.mathjslab.com has been crated with redirection to npm repository and GitHub organization.
+
+## 2024-10-06
+- The 'mathjslab@gmail.com' Google account has been created.
+- The 'mathjslab-owner' GitHub account (associated to 'mathjslab@gmail.com')  has been created. User 'mathjslab-owner' has been added to organization 'MathJSLab' as an owner. The GitHub user 'mathjslab-owner' has been added to the 'MathJSLab' organization as an owner. The MathJSLab organization's email has been set to 'mathjslab@gmail.com'.
+- All DNS configuration in 2024-10-05 reverted.
+
+## 2024-10-05
+- The app.mathjslab.com subdomain was created by adding a CNAME record in the DNS configuration, pointing to 'mathjslab.netlify.app.' . The subdomain was configured in Netlify's domain management. Access via the root domain was maintained. No other changes to the projects to point to app.mathjslab.com were made.
+- The wiki repository for the `mathjslab` and `mathjslab-demo` repositories has been created in the MathJSLab GitHub organization.
+- The `.github` repository has been created on MathJSLab organization.
+- `mathjslab-calculator` repository renamed to `mathjslab-demo`. All references in `mathjslab` package and `mathjslab-demo` updated.
+- Start to create android application. Two new projects (with repository not saved on GitHub) to test: `mathjslab-demo-apk-capacitor` and `mathjslab-demo-apk-twa`.
+
+## 2024-09-30
+- The `mathjslab` and `mathjslab-calculator` repositories has been moved to [MathJSLab](https://github.com/MathJSLab/) organization.
+
+## 2024-09-25
+- The project directory has been created. The following are moved to project directory:
+  * `mathjslab` npm package directory.
+  * `mathjslab-calculator` Web application directory.
+  * `mathjslab-calculator-dev.bat` Windows batch script.
+  * `mathjslab-calculator-prod.bat` Windows batch script.
+- The [MathJSLab](https://github.com/MathJSLab/) organization has been created on [GitHub](https://github.com/) and the MathJSLab logo was set in organization profile.

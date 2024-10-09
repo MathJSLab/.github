@@ -1,0 +1,19 @@
+{
+  "name": "mathjslab-github",
+  "version": "0.0.1",
+  "description": "MathJSLab GitHub Organization profile.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MathJSLab/.github.git"
+  },
+  "author": "MathJSLab <mathjslab@gmail.com>",
+  "homepage": "https://mathjslab.com/",
+  "scripts": {
+    "clean": "echo \"Warning: no clean script specified\"",
+    "update": "echo \"Warning: no update script specified\"",
+    "git:add": "git add .",
+    "git:commit": "git commit -m \"Initial Commit\"",
+    "git:push": "git push",
+    "git:add:commit:push": "npm run git:add && npm run git:commit && npm run git:push"
+  }
+}
