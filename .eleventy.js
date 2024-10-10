@@ -6,6 +6,9 @@ module.exports = function (eleventyConfig) {
             permalink: (_contents, inputPath) => inputPath.replace(/^\.\/input\//, '').replace(/\.njk$/, ''),
         },
     });
+    eleventyConfig.setNunjucksEnvironmentOptions({
+        autoescape: false,
+    });
     const partsDir = path.join(__dirname, 'data/parts');
     fs.readdirSync(partsDir).forEach(file => {
         eleventyConfig.addGlobalData(`${path.basename(file, path.extname(file)).replace(/\-/g, '_')}_${path.extname(file).slice(1)}`, fs.readFileSync(path.join(partsDir, file), 'utf-8'));
