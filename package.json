@@ -9,11 +9,14 @@
   "author": "MathJSLab <mathjslab@gmail.com>",
   "homepage": "https://mathjslab.com/",
   "scripts": {
-    "clean": "echo \"Warning: no clean script specified\"",
+    "clean": "npx rimraf profile README.md",
+    "clean:all": "npm run clean",
     "update": "echo \"Warning: no update script specified\"",
     "git:add": "git add .",
     "git:commit": "git commit -m \"Initial Commit\"",
     "git:push": "git push",
-    "git:add:commit:push": "npm run git:add && npm run git:commit && npm run git:push"
+    "git:add:commit:push": "npm run git:add && npm run git:commit && npm run git:push",
+    "build": "npx @11ty/eleventy",
+    "do:all": "npm run clean:all && npm run update && npm run build && npm run git:add:commit:push"
   }
 }

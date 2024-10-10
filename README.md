@@ -1,11 +1,12 @@
 <p align="center">
-    <a href="https://mathjslab.com/" target="_blank" rel="noopener"><img src="https://github.com/MathJSLab/mathjslab-www/raw/main/site/img/mathjslab-logo.svg" alt="logo" width="200" height="200" /></a>
+    <a href="https://mathjslab.com/" target="_blank" rel="noopener"><img src="profile/mathjslab-logo.svg" alt="logo" width="200" height="200" /></a>
 </p>
 
 # [MathJSLab](https://mathjslab.com/) - [mathjslab.com](https://mathjslab.com/)
 
 [![Website](https://img.shields.io/website?url=https%3A%2F%2Fmathjslab.com%2F)](https://mathjslab.com/)
 [![GitHub Created At](https://img.shields.io/github/created-at/MathJSLab/mathjslab-www)](https://github.com/MathJSLab/.github)
+[![MIT License](https://img.shields.io/npm/l/mathjslab)](https://github.com/MathJSLab/mathjslab/blob/main/LICENSE)
 
 > An [interpreter](https://en.wikipedia.org/wiki/Interpreter_(computing)) with language syntax like [MATLAB&reg;](https://www.mathworks.com/)/[Octave](https://www.gnu.org/software/octave/) written in [TypeScript](https://www.typescriptlang.org/).
 
