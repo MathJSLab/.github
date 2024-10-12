@@ -8,16 +8,13 @@
 [![Português](https://img.shields.io/badge/Portugu%C3%AAs-8484FF)](LEIAME.md)
 [![Español](https://img.shields.io/badge/Espa%C3%B1ol-blue)](LEAME.md)
 
-
 [![Website](https://img.shields.io/website?url=https%3A%2F%2Fmathjslab.com%2F)](https://mathjslab.com/)
 [![GitHub Created At](https://img.shields.io/github/created-at/MathJSLab/mathjslab-www)](https://github.com/MathJSLab/.github)
 [![MIT License](https://img.shields.io/npm/l/mathjslab)](https://github.com/MathJSLab/mathjslab/blob/main/LICENSE)
 
 > Um [interpretador](https://pt.wikipedia.org/wiki/Interpretador) com sintaxe de linguagem tipo [MATLAB&reg;](https://www.mathworks.com/)/[Octave](https://www.gnu.org/software/octave/) escrito em [TypeScript](https://www.typescriptlang.org/).
 
-
 A [**Organização MathJSLab**](https://github.com/MathJSLab) foi criada para reunir os [repositórios](https://github.com/orgs/MathJSLab/repositories) do [Projeto MathJSLab](https://mathjslab.com/).
-
 
 Copyright &copy; 2016-2024 [Sergio Lindau](mailto:sergiolindau@gmail.com), [![ORCID](https://img.shields.io/badge/ORCID-0009--0006--9115--0291-blue)](https://orcid.org/0009-0006-9115-0291)
 

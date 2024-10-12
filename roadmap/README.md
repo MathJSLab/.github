@@ -1,6 +1,5 @@
 # MathJSLab Project Roadmap
 
-* [MathJSLab Workspace](workspace.md)
 * [Project badges](project-badges.md)
 * [Outros softwares com sintaxe de linguagem como o MATLAB](alternatives.md)
 * [Sobre perfil de organização no GitHub](github-organization-profile.md)
