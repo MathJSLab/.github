@@ -10,8 +10,16 @@ module.exports = function (eleventyConfig) {
         autoescape: false,
     });
     const partsDir = path.join(__dirname, 'data/parts');
-    fs.readdirSync(partsDir).forEach(file => {
-        eleventyConfig.addGlobalData(`${path.basename(file, path.extname(file)).replace(/\-/g, '_')}_${path.extname(file).slice(1)}`, fs.readFileSync(path.join(partsDir, file), 'utf-8'));
+    fs.readdirSync(partsDir).forEach(entry => {
+        const partsDirEntry = path.join(partsDir, entry);
+        const stats = fs.statSync(partsDirEntry);
+        if (stats.isDirectory()) {
+            fs.readdirSync(partsDirEntry).forEach(file => {
+                eleventyConfig.addGlobalData(`${path.basename(file, path.extname(file)).replace(/\-/g, '_')}_${entry}_${path.extname(file).slice(1)}`, fs.readFileSync(path.join(partsDirEntry, file), 'utf-8'));
+            });
+        } else if (stats.isFile()) {
+            eleventyConfig.addGlobalData(`${path.basename(entry, path.extname(entry)).replace(/\-/g, '_')}_${path.extname(entry).slice(1)}`, fs.readFileSync(partsDirEntry, 'utf-8'));
+        }
     });
     eleventyConfig.addPassthroughCopy('input/profile/mathjslab-logo.svg');
     return {
@@ -23,6 +31,6 @@ module.exports = function (eleventyConfig) {
         htmlTemplateEngine: 'njk',
         markdownTemplateEngine: 'njk',
         dataTemplateEngine: 'njk',
-        templateFormats: ['html', 'md', 'njk'],
+        templateFormats: ['njk'],
     };
 }

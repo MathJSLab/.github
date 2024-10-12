@@ -2,6 +2,13 @@
 
 This file contains general information about the actions of the [MathJSLab Project](https://mathjslab.com/) that go beyond the scope of the individual projects. In other words, what cannot be recorded in the `CHANGES.md` file of each software project, or the general actions of the organization, are recorded here, indexed by date.
 
+## 2024-10-12
+- The MathJSLab organization profile (`.github`) repository has been updated to include files in three languages: English, Portuguese, and Spanish.
+
+## 2024-10-10
+- The `mathjslab-www` has been updated and all DNS configuration has been made. The project page on mathjslab.com (and www.mathjslab.com) temporarily redirects to app.mathjslab.com.
+- The MathJSLab organization repository (`.github`) has been updated. It is structured around data and `nunjucks` templates that generate markdown files using `@11ty/eleventy` directly via the `npx` command. The `.github` repository directory does not install dependencies during the build process (it does not create the `node_modules` directory and the `package-lock.json` file).
+
 ## 2024-10-08
 - `mathjslab-demo` repository renamed to `mathjslab-app`.
 
