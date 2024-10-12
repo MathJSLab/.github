@@ -3,7 +3,7 @@
 This file contains general information about the actions of the [MathJSLab Project](https://mathjslab.com/) that go beyond the scope of the individual projects. In other words, what cannot be recorded in the `CHANGES.md` file of each software project, or the general actions of the organization, are recorded here, indexed by date.
 
 ## 2024-10-12
-- The MathJSLab organization profile (`.github`) repository has been updated to include files in three languages: English, Portuguese, and Spanish.
+- The MathJSLab organization profile (`.github`) repository has been updated to include files in three languages: English, Portuguese, and Spanish. The `roadmap` directory has been created to gather general information relevant to the project.
 
 ## 2024-10-10
 - The `mathjslab-www` has been updated and all DNS configuration has been made. The project page on mathjslab.com (and www.mathjslab.com) temporarily redirects to app.mathjslab.com.

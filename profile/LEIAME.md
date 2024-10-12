@@ -21,6 +21,10 @@ Esta organização é proprietária dos seguintes repositórios:
 
 Todas as ações relevantes desta organização são registradas em nosso [diário de bordo](../LOGBOOK.md).
 
+As diretrizes gerais de design do projeto, o roteiro das próximas etapas, pesquisas e informações relevantes estão registrados no diretório [`research`](https://github.com/MathJSLab/.github/tree/main/research).
+
+Para clonar todos os [repositórios da organização](https://github.com/orgs/MathJSLab/repositories) localmente, crie um diretório chamado `mathjslab-repositories` e salve nele o arquivo [`mathjslab.package.json`](https://github.com/MathJSLab/.github/blob/main/data/mathjslab.package.json) com o nome `package.json`. Os scripts deste arquivo clonam todos os [repositórios da **Organização MathJSLab**](https://github.com/orgs/MathJSLab/repositories), criando um espaço de trabalho completo localmente. Neste arquivo também há outros scripts de build para os projetos individuais.
+
 
 Copyright &copy; 2016-2024 [Sergio Lindau](mailto:sergiolindau@gmail.com), [![ORCID](https://img.shields.io/badge/ORCID-0009--0006--9115--0291-blue)](https://orcid.org/0009-0006-9115-0291)
 
