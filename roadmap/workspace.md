@@ -5,5 +5,6 @@ To clone all of the [organization's repositories](https://github.com/orgs/MathJS
 ```bash
 mkdir mathjslab-repositories
 cd mathjslab-repositories
-curl -o ./package.json https://raw.githubusercontent.com/MathJSLab/.github/refs/heads/main/data/mathjslab.package.json
+curl -k -o ./package.json https://raw.githubusercontent.com/MathJSLab/.github/refs/heads/main/data/mathjslab.package.json
+npm run all:clone:all
 ```
