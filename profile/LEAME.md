@@ -4,7 +4,8 @@
 [![Português](https://img.shields.io/badge/Portugu%C3%AAs-blue)](LEIAME.md)
 [![Español](https://img.shields.io/badge/Espa%C3%B1ol-8484FF)](LEAME.md)
 
-[![Website](https://img.shields.io/website?url=https%3A%2F%2Fmathjslab.com%2F)](https://mathjslab.com/)
+[![mathjslab.com](https://img.shields.io/badge/mathjslab.com-D0F0D0)](https://mathjslab.com/)
+[![Website status](https://img.shields.io/website?url=https%3A%2F%2Fmathjslab.com%2F)](https://mathjslab.com/)
 [![GitHub Created At](https://img.shields.io/github/created-at/MathJSLab/mathjslab-www)](https://github.com/MathJSLab/.github)
 [![MIT License](https://img.shields.io/npm/l/mathjslab)](https://github.com/MathJSLab/mathjslab/blob/main/LICENSE)
 

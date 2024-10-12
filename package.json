@@ -9,7 +9,7 @@
   "author": "MathJSLab <mathjslab@gmail.com>",
   "homepage": "https://mathjslab.com/",
   "scripts": {
-    "clean": "npx rimraf profile README.md",
+    "clean": "npx rimraf profile test README.md LEIAME.md LEAME.md",
     "clean:all": "npm run clean",
     "update": "echo \"Warning: no update script specified\"",
     "git:add": "git add .",
