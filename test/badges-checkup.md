@@ -1,5 +1,25 @@
 # Badges checkup
 
+## Language Switcher
+
+### English
+
+[![English](https://img.shields.io/badge/English-8484FF)](README.md)
+[![Português](https://img.shields.io/badge/Portugu%C3%AAs-blue)](LEIAME.md)
+[![Español](https://img.shields.io/badge/Espa%C3%B1ol-blue)](LEAME.md)
+
+### Português
+
+[![English](https://img.shields.io/badge/English-blue)](README.md)
+[![Português](https://img.shields.io/badge/Portugu%C3%AAs-8484FF)](LEIAME.md)
+[![Español](https://img.shields.io/badge/Espa%C3%B1ol-blue)](LEAME.md)
+
+### Español
+
+[![English](https://img.shields.io/badge/English-blue)](README.md)
+[![Português](https://img.shields.io/badge/Portugu%C3%AAs-blue)](LEIAME.md)
+[![Español](https://img.shields.io/badge/Espa%C3%B1ol-8484FF)](LEAME.md)
+
 ## Website
 
 [![mathjslab.com](https://img.shields.io/badge/mathjslab.com-D0F0D0)](https://mathjslab.com/)
