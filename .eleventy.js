@@ -10,6 +10,21 @@ module.exports = function (eleventyConfig) {
         autoescape: false,
     });
     const partsDir = path.join(__dirname, 'data/parts');
+    const testDir = path.join(__dirname, 'input/test');
+    let testList = '';
+    fs.readdirSync(testDir).forEach(entry => {
+        const testDirEntry = path.join(testDir, entry);
+        const stats = fs.statSync(testDirEntry);
+        if (stats.isFile()) {
+            const file = path.basename(entry, path.extname(entry));
+            let caption = path.basename(file, path.extname(file)).replace(/\-/g, ' ');
+            caption = caption.charAt(0).toUpperCase() + caption.slice(1);
+            if (!['README.md', 'LEIAME.md', 'LEAME.md'].includes(file)) {
+                testList += `* [${caption}](${file})\n`;
+            }
+        }
+    });
+    fs.writeFileSync(path.join(partsDir, 'test-data-list.md'), testList);
     fs.readdirSync(partsDir).forEach(entry => {
         const partsDirEntry = path.join(partsDir, entry);
         const stats = fs.statSync(partsDirEntry);

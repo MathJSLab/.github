@@ -30,7 +30,7 @@
 
 [![Website status](https://img.shields.io/website?url=https%3A%2F%2Fmathjslab.com%2F)](https://mathjslab.com/)
 
-## [Netlify](https://app.netlify.com/) Deploys
+## [Netlify](https://app.netlify.com/) Deploy
 
 ### [mathjslab-app](https://app.netlify.com/sites/mathjslab-app/overview)
 
@@ -40,9 +40,32 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b1fdf03e-a06b-426d-9993-86ae227ca86f/deploy-status)](https://app.netlify.com/sites/mathjslab-www/deploys)
 
-## [CircleCI](https://app.circleci.com/) [mathjslab-app](https://github.com/MathJSLab/mathjslab-app)
+## [CircleCI](https://app.circleci.com/)
+
+### [mathjslab-app](https://github.com/MathJSLab/mathjslab-app)
 
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/MathJSLab/mathjslab-app/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/MathJSLab/mathjslab-app/tree/main)
+
+## License
+
+### [mathjslab](https://github.com/MathJSLab/mathjslab)
+
+github: [![GitHub License](https://img.shields.io/github/license/MathJSLab/mathjslab)](https://github.com/MathJSLab/mathjslab/blob/main/LICENSE)
+
+npm: [![NPM License](https://img.shields.io/npm/l/mathjslab)](https://github.com/MathJSLab/mathjslab/blob/main/LICENSE)
+
+
+### [mathjslab-app](https://github.com/MathJSLab/mathjslab-app)
+
+[![GitHub License](https://img.shields.io/github/license/MathJSLab/mathjslab-app)](https://github.com/MathJSLab/mathjslab-app/blob/main/LICENSE)
+
+### The MIT License
+
+[![MIT License](https://img.shields.io/badge/license-MIT-green)](https://opensource.org/license/mit)
+
+### UNLICENSED
+
+![UNLICENSED](https://img.shields.io/badge/UNLICENSED-red)
 
 ## GitHub Created At
 

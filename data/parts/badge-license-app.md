@@ -1,0 +1,1 @@
+[![GitHub License](https://img.shields.io/github/license/MathJSLab/mathjslab-app)](https://github.com/MathJSLab/mathjslab-app/blob/main/LICENSE)

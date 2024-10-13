@@ -12,6 +12,9 @@ pids
 *.seed
 *.pid.lock
 
+# Test results
+test/
+
 # Dependency directories and lock file
 node_modules/
 package-lock.json
