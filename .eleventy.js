@@ -20,7 +20,7 @@ module.exports = function (eleventyConfig) {
             let caption = path.basename(file, path.extname(file)).replace(/\-/g, ' ');
             caption = caption.charAt(0).toUpperCase() + caption.slice(1);
             if (!['README.md', 'LEIAME.md', 'LEAME.md'].includes(file)) {
-                testList += `* [${caption}](${file})\n`;
+                testList += `* [${caption}](${file})\r\n`;
             }
         }
     });
