@@ -1,0 +1,27 @@
+---
+---
+{% macro scriptsRepository(short, repo, rename = null, wiki = null) %}{% if rename is null %}{% scriptClone short, repo %},
+    {% if wiki is null %}{% scriptClone short | postfix(":wiki"), "", repo | noWikiRepoMessage %}{% else %}{% scriptClone short | postfix(":wiki"), wiki %}{% endif %},
+    {% scriptClean short, repo %},
+    {% scriptCleanAll short, repo %},
+    {% scriptUpdate short, repo %},
+    {% scriptGitAddCommitPush short, repo %}{% else %}{% scriptClone short, repo, rename %},
+    {% if wiki is null %}{% scriptClone short | postfix(":wiki"), "", rename | noWikiRepoMessage %}{% else %}{% scriptClone short | postfix(":wiki"), repo | postfix(".wiki"), rename | postfix(".wiki") %}{% endif %},
+    {% scriptClean short, rename %},
+    {% scriptCleanAll short, rename %},
+    {% scriptUpdate short, rename %},
+    {% scriptGitAddCommitPush short, rename %}{% endif %}{% endmacro %}
+{
+  {% packageJsonHeader "mathjslab-repositories", "0.0.0", "MathJSLab organization GitHub repositories.", "MathJSLab <mathjslab@gmail.com>" %},
+  "license": "UNLICENSED",
+  "scripts": {
+    {% set itemList = mathjslab.organization.repositories %}{% for item in itemList %}{{ scriptsRepository(item.shortName, item.name, item.rename, item.wiki) }}{% if not loop.last %},
+    {% endif %}{% endfor %},{% set repoShortNames = mathjslab.organization.repositories | getField('shortName') %}
+    {% scriptAllAction repoShortNames, "clone" %},
+    {% scriptAllAction repoShortNames, "wiki:clone" %},
+    {% scriptAllAction ["all", "all:wiki"], "clone", "all" %},
+    {% scriptAllAction repoShortNames, "clean" %},
+    {% scriptAllAction repoShortNames, "clean:all" %},
+    {% scriptAllAction repoShortNames, "update" %}
+  }
+}

@@ -12,15 +12,6 @@ charset = utf-8
 indent_style = space
 indent_size = 4
 
-[data/parts/**]
-end_of_line = crlf
-insert_final_newline = false
-trim_trailing_whitespace = true
-charset = utf-8
-indent_style = space
-indent_size = 0
-
-# Matches the exact files either *.json or *.yml
 [*.{json,yml}]
 end_of_line = crlf
 insert_final_newline = true
@@ -28,3 +19,19 @@ trim_trailing_whitespace = true
 charset = utf-8
 indent_style = space
 indent_size = 2
+
+[**/*.njk]
+end_of_line = crlf
+insert_final_newline = false
+trim_trailing_whitespace = true
+charset = utf-8
+indent_style = space
+indent_size = 0
+
+[data/files/**]
+end_of_line = crlf
+insert_final_newline = false
+trim_trailing_whitespace = true
+charset = utf-8
+indent_style = space
+indent_size = 0

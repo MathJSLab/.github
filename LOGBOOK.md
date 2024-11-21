@@ -2,6 +2,13 @@
 
 This file contains general information about the actions of the [MathJSLab Project](https://mathjslab.com/) that go beyond the scope of the individual projects. In other words, what cannot be recorded in the `CHANGES.md` file of each software project, or the general actions of the organization, are recorded here, indexed by date.
 
+## 2024-11-20
+- Several tools for configuring Eleventy and rendering templates at build time have been grouped into the `EleventyUtil.mjs` file in the `script` directory. Other useful files have been added to the `script/helper` directory. The functions and templates for generating the MathJSLab logo in SVG format have been improved.
+
+## 2024-10-25
+- Development dependencies supporting TypeScript, Prettier, and ESLint have been installed in the MathJSLab organization profile (`.github`) repository, in addition to Eleventy. The `script` directory has been created to collect common scripts and helpers for individual project scripts. A helper to execute Eleventy programatically has been created.
+- The MathJSLab logo has been modified, with fewer elements. The default file is in SVG format, generated through a Nunjucks template. The colors are defined in the `mathjslab.json` file.
+
 ## 2024-10-12
 - The MathJSLab organization profile (`.github`) repository has been updated to include files in three languages: English, Portuguese, and Spanish. The `roadmap` directory has been created to gather general information relevant to the project.
 

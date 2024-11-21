@@ -1,22 +1,130 @@
-{
+{ /* Aqui pode um comentário? Carregamos json5-override? */
   "languages": {
     "en": {
       "language": "English",
       "home": "Home",
       "about": "About",
-      "welcomeMessage": "Welcome to MathJSLab"
+      "welcomeMessage": "Welcome to MathJSLab",
+      "markdownIndex": "README.md"
     },
     "pt": {
       "language": "Português",
       "home": "Início",
       "about": "Sobre",
-      "welcomeMessage": "Bem-vindo ao MathJSLab"
+      "welcomeMessage": "Bem-vindo ao MathJSLab",
+      "markdownIndex": "LEIAME.md"
     },
     "es": {
       "language": "Español",
       "home": "Inicio",
       "about": "Acerca de",
-      "welcomeMessage": "Bienvenido a MathJSLab"
+      "welcomeMessage": "Bienvenido a MathJSLab",
+      "markdownIndex": "LEAME.md"
+    }
+  },
+  "colors": {
+    "light": {
+      "fillSymbol": "hsl(120, 52%, 16%)",
+      "strokePanel": "green",
+      "fillPanel": "hsl(120, 52%, 88%)",
+      "strokeTrace": "hsl(0, 0%, 24%)",
+      "fillTrace": "hsl(0, 0%, 24%)"
+    },
+    "dark": {
+      "fillSymbol": "hsl(120, 52%, 88%)",
+      "strokePanel": "green",
+      "fillPanel": "hsl(120, 52%, 16%)",
+      "strokeTrace": "hsl(0, 0%, 92%)",
+      "fillTrace": "hsl(0, 0%, 92%)"
+    }
+  },
+  "logo_width": 1024,
+  "organization": {
+    "name": "MathJSLab",
+    "url": "https://github.com/MathJSLab",
+    "repositories": [
+      {
+        "shortName": "pkg",
+        "name": "mathjslab",
+        "rename": null,
+        "wiki": "mathjslab.wiki"
+      },
+      {
+        "shortName": "app",
+        "name": "mathjslab-app",
+        "rename": null,
+        "wiki": "mathjslab-app.wiki"
+      },
+      {
+        "shortName": "org",
+        "name": ".github",
+        "rename": "mathjslab-github",
+        "wiki": "mathjslab-github.wiki"
+      },
+      {
+        "shortName": "www",
+        "name": "mathjslab-www",
+        "rename": null,
+        "wiki": null
+      }
+    ]
+  },
+  "build": {
+    "eleventy": {
+      "commonOptions": {
+        "htmlTemplateEngine": "njk",
+        "markdownTemplateEngine": "njk",
+        "dataTemplateEngine": "njk",
+        "templateFormats": [
+          "njk"
+        ]
+      },
+      "steps": [
+        {
+          "options": {
+            "dir": {
+              "input": "./input",
+              "data": "../data",
+              "includes": "../includes",
+              "layouts": "./layouts",
+              "output": "./"
+            }
+          }
+        },
+        {
+          "options": {
+            "dir": {
+              "input": "./images",
+              "data": "../data",
+              "includes": "../includes",
+              "layouts": "./",
+              "output": "./images"
+            }
+          },
+          "images": {
+            "transform": [
+              {
+                "filename": "mathjslab-logo.svg",
+                "widths": [300, 600, 1200],
+                "formats": ["jpeg", "webp", "svg", "png"],
+                "outputDir": "./images/img"
+              },
+              {
+                "filename": "mathjslab-logo-light.svg",
+                "widths": [300, 600, 1200],
+                "formats": ["jpeg", "webp", "svg", "png"],
+                "outputDir": "./images/img"
+              },
+              {
+                "filename": "mathjslab-logo-dark.svg",
+                "widths": [300, 600, 1200],
+                "formats": ["jpeg", "webp", "svg", "png"],
+                "outputDir": "./images/img"
+              }
+            ]
+          }
+        }
+      ]
     }
   }
 }

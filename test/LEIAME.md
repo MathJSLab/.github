@@ -6,6 +6,5 @@
 
 Os arquivos neste diretório são templates de teste para a informação no diretório [data](https://github.com/MathJSLab/.github/tree/main/data).
 
-* [Badges checkup](badges-checkup.md)
-* [Config data test](config-data-test.md)
-
+* [Config data test](data/config-data-test.md)
+* [Badges checkup](data/badges-checkup.md)

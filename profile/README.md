@@ -1,8 +1,6 @@
 # [MathJSLab](https://mathjslab.com/) - [mathjslab.com](https://mathjslab.com/)
 
-[![English](https://img.shields.io/badge/English-8484FF)](README.md)
-[![Português](https://img.shields.io/badge/Portugu%C3%AAs-blue)](LEIAME.md)
-[![Español](https://img.shields.io/badge/Espa%C3%B1ol-blue)](LEAME.md)
+
 
 [![mathjslab.com](https://img.shields.io/badge/mathjslab.com-D0F0D0)](https://mathjslab.com/)
 [![Website status](https://img.shields.io/website?url=https%3A%2F%2Fmathjslab.com%2F)](https://mathjslab.com/)

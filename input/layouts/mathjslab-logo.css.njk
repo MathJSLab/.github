@@ -1,0 +1,9 @@
+---json
+{
+  colors: {{ logo_colors | stringify }}
+}
+---
+{% renderTemplateFile "layouts/mathjslab-logo-color-scheme.css.njk", { logo_colors_scheme: colors.light, logo_strokeTrace_fill_none: "  fill: none;\\n" } %}
+@media (prefers-color-scheme: dark) {
+{% renderTemplateFile "layouts/mathjslab-logo-color-scheme.css.njk", { logo_colors_scheme: colors.dark } %}
+}
