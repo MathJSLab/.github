@@ -1,1 +1,1 @@
-export default function readFileBom(filePath: string, options: Record<string, unknown>, callback: any): void;
+export default function (filePath: string, options: Record<string, unknown>, callback: any): void;

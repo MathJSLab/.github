@@ -1084,11 +1084,11 @@ async function transformImage(transform, options) {
     return Promise.all(
         transform.map(async function (image) {
             const imageOptions = Object.assign({}, image);
-            delete imageOptions.filename;
+            delete imageOptions.src;
             if (typeof imageOptions.outputDir === 'undefined') {
                 imageOptions.outputDir = options.dir.output;
             }
-            const src = options.dir.input + '/' + image.filename;
+            const src = options.dir.input + '/' + image.src;
             let metadata;
             try {
                 console.log(`Building image from source: ${src} ...`);

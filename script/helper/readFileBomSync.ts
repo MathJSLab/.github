@@ -1,5 +1,5 @@
 import fs from 'node:fs';
-export default function readFileBomSync(filePath: string, options: Record<string, unknown>): string {
+export default function (filePath: string, options: Record<string, unknown>): string {
     if (options) {
         if (typeof options === 'string') {
             options = { encoding: options };

@@ -104,19 +104,19 @@
           "images": {
             "transform": [
               {
-                "filename": "mathjslab-logo.svg",
+                "src": "mathjslab-logo.svg",
                 "widths": [300, 600, 1200],
                 "formats": ["jpeg", "webp", "svg", "png"],
                 "outputDir": "./images/img"
               },
               {
-                "filename": "mathjslab-logo-light.svg",
+                "src": "mathjslab-logo-light.svg",
                 "widths": [300, 600, 1200],
                 "formats": ["jpeg", "webp", "svg", "png"],
                 "outputDir": "./images/img"
               },
               {
-                "filename": "mathjslab-logo-dark.svg",
+                "src": "mathjslab-logo-dark.svg",
                 "widths": [300, 600, 1200],
                 "formats": ["jpeg", "webp", "svg", "png"],
                 "outputDir": "./images/img"

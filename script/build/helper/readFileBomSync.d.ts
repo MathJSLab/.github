@@ -1,1 +1,1 @@
-export default function readFileBomSync(filePath: string, options: Record<string, unknown>): string;
+export default function (filePath: string, options: Record<string, unknown>): string;

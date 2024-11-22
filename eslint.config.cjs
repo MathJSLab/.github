@@ -1,9 +1,12 @@
+const path = require('node:path');
 const globals = require('globals');
 const tsPlugin = require('@typescript-eslint/eslint-plugin');
 const tsParser = require('@typescript-eslint/parser');
 const prettierPlugin = require('eslint-plugin-prettier');
 const eslintConfigPrettier = require('eslint-config-prettier');
 const imprt = require('eslint-plugin-import');
+
+console.log(`Running project lint (configuration: ${path.basename(__filename)}) ...`);
 
 /* The following rule is being removed from the object because it is producing
    an error in the latest versions of the plugin (8.14.0). */
@@ -12,6 +15,7 @@ delete tsPlugin.configs['recommended'].rules['@typescript-eslint/no-unused-expre
 module.exports = [
     {
         files: ['**/*.ts'],
+        ignores: ['script/build/*', 'script/helper/EleventyUtil.ts'],
         languageOptions: {
             parser: tsParser,
             parserOptions: {
@@ -44,6 +48,7 @@ module.exports = [
     },
     {
         files: ['**/*.js', '**/*.jsx', '**/*.cjs', '**/*.mjs'],
+        ignores: ['script/build/*'],
         languageOptions: {
             parserOptions: {
                 ecmaVersion: 2021,

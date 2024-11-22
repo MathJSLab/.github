@@ -1,7 +1,7 @@
 [
   {
     "image": {
-      "filename": "mathjslab-logo.svg",
+      "src": "mathjslab-logo.svg",
       "widths": [
         300,
         600,
@@ -138,7 +138,7 @@
   },
   {
     "image": {
-      "filename": "mathjslab-logo-light.svg",
+      "src": "mathjslab-logo-light.svg",
       "widths": [
         300,
         600,
@@ -275,7 +275,7 @@
   },
   {
     "image": {
-      "filename": "mathjslab-logo-dark.svg",
+      "src": "mathjslab-logo-dark.svg",
       "widths": [
         300,
         600,

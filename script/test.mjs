@@ -300,4 +300,8 @@ process.emitWarning = (warning) => {
 // const obj = { name: 'Alice', age: 25, hobbies: ['reading', 'gaming'] };
 // global.console.log(util.inspect(obj, { compact: false, colors: true }));
 
+import createIcon from './build/helper/createIcon.js';
+
+global.console.log(createIcon);
+
 global.console.log(chalk.yellow(`##########################################################`));

@@ -8,6 +8,7 @@
   },
   "author": "MathJSLab <mathjslab@gmail.com>",
   "homepage": "https://mathjslab.com/",
+  "type": "module",
   "scripts": {
     "clean:package-lock": "node script/clean-package-lock.cjs",
     "clean": "rimraf profile test images css README.md LEIAME.md LEAME.md",
@@ -50,6 +51,7 @@
     "json5": "^2.2.3",
     "lint-staged": "^15.2.10",
     "node-html-parser": "^6.1.13",
+    "png-to-ico": "^2.1.8",
     "prettier": "^3.3.3",
     "rimraf": "^6.0.1",
     "sass": "^1.81.0",

@@ -1,5 +1,5 @@
 import fs from 'node:fs';
-export default function readFileBom(filePath, options, callback) {
+export default function (filePath, options, callback) {
     if (options) {
         if (typeof options === 'string') {
             options = { encoding: options };
