@@ -53,6 +53,8 @@ import * as SASS from 'sass';
 import readFileBom from '../build/helper/readFileBom.js';
 import readFileBomSync from '../build/helper/readFileBomSync.js';
 
+// import createIcon from '../build/helper/createIcon.js';
+
 /**
  * Backup, extend and overriding JSON object functions with `json5` package.
  * The `JSON.stringify` function is not overridden because its equivalent from
@@ -1089,22 +1091,27 @@ async function transformImage(transform, options) {
                 imageOptions.outputDir = options.dir.output;
             }
             const src = options.dir.input + '/' + image.src;
-            let metadata;
-            try {
-                console.log(`Building image from source: ${src} ...`);
-                metadata = await Image(src, {
-                    filenameFormat: function (_id, src, width, format, _options) {
-                        const result = `${src.split('/').pop().split('.')[0]}-${width}.${format}`;
-                        console.log(`Building image format: ${format}, width: ${width}, output: ${result}`);
-                        return result;
-                    },
-                    ...imageOptions,
-                });
-            } catch (err) {
-                console.error(`Error building image from source: ${src}: ${err.message}`);
-                throw err;
+            console.log(`Building image from source: ${src} ...`);
+            const icons = imageOptions.formats.filter((format) => format !== 'ico');
+            imageOptions.formats = imageOptions.formats.filter((format) => format !== 'ico');
+            let metadata = [];
+            if (imageOptions.formats.length > 0) {
+                try {
+                    metadata = await Image(src, {
+                        filenameFormat: function (_id, src, width, format, _options) {
+                            const result = `${src.split('/').pop().split('.')[0]}-${width}.${format}`;
+                            console.log(`Building image format: ${format}, width: ${width}, output: ${result}`);
+                            return result;
+                        },
+                        ...imageOptions,
+                    });
+                } catch (err) {
+                    console.error(`Error building image from source: ${src}: ${err.message}`);
+                    throw err;
+                }
             }
             console.log(`Building image from source: ${src} done.`);
+            metadata['ico'] = icons;
             return { image, metadata };
         }),
     );
