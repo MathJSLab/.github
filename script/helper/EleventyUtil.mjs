@@ -61,7 +61,7 @@ import readFileBomSync from '../build/helper/readFileBomSync.js';
  * pushing to the GitHub repository and throws warnings.
  */
 Object.defineProperty(os, 'EOL', {
-    value: '\r\r\r\n',
+    value: '\r\r\r\r\n',
     writable: false,
 });
 
