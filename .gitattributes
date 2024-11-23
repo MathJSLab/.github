@@ -1,5 +1,5 @@
 # Windows EOL.
-* text eol=crlf
+*.{txt,md,html,htm,css,json,js,cjs,mjs,jsx,cjsx,mjsx,ts,tsx,njk,svg} text eol=crlf
 # Binary files.
 *.{jpg,jpeg,webp,png,avif,ico} binary
 # POSIX EOL for shell scripts and execution permission.
