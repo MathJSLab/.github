@@ -47,7 +47,7 @@ slug: home
 <content>Template content [${frontMatterExampleCount++}]</content>`,
         ['---', '---'],
     ],
-    [`---\r\r\r\ntitle: Front Matter\n---\n<content>Template content [${frontMatterExampleCount++}]</content>`, ['---', '---']],
+    [`---\r\r\r\r\ntitle: Front Matter\n---\n<content>Template content [${frontMatterExampleCount++}]</content>`, ['---', '---']],
     [`---\ntitle: Home\n---\n<content>Template content [${frontMatterExampleCount++}]</content>`, ['---', '---']],
     [`---\nfoo: bar\n---\nThis is an excerpt.\n---\n<content>Template content [${frontMatterExampleCount++}]</content>`, ['---', '---']],
     [
