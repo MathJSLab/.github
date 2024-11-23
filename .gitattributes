@@ -1,0 +1,6 @@
+# Windows EOL.
+* text eol=crlf
+# Binary files.
+*.{jpg,jpeg,webp,png,avif,ico} binary
+# POSIX EOL for shell scripts and execution permission.
+*.sh eol=lf chmod=+x

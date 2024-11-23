@@ -56,6 +56,16 @@ import readFileBomSync from '../build/helper/readFileBomSync.js';
 // import createIcon from '../build/helper/createIcon.js';
 
 /**
+ * Overrides the platform's default line break format with the Microsoft
+ * Windows format (CRLF). This is done because otherwise it would be done when
+ * pushing to the GitHub repository and throws warnings.
+ */
+Object.defineProperty(os, 'EOL', {
+    value: '\r\n',
+    writable: false,
+});
+
+/**
  * Backup, extend and overriding JSON object functions with `json5` package.
  * The `JSON.stringify` function is not overridden because its equivalent from
  * the `json5` package does not produce double-quoted keys.
@@ -69,20 +79,23 @@ global.JSON.parseJSON5 = JSON5.parse.bind(JSON5);
 global.JSON.parseJSON = global.JSON.parse.bind(global.JSON);
 global.JSON.stringifyJSON5 = JSON5.stringify.bind(JSON5);
 global.JSON.stringifyJSON = global.JSON.stringify.bind(global.JSON);
+global.JSON.stringify = function (value, replacer, space) {
+    return global.JSON.backup.stringify(value, replacer, space).replace(/\n/g, '\r\n');
+}.bind(global.JSON);
 /* Override JSON.parse function. */
 global.JSON.parse = JSON5.parse.bind(JSON5);
 /* Extending global JSON object to parse and save files. */
 global.JSON.parseFileSync = function (filePath, reviver = null) {
     return JSON5.parse(readFileBomSync(filePath, 'utf-8'), reviver);
 };
-global.JSON.parseFile = async function (filePath, reviver = null) {
-    return JSON5.parse(await readFileBom(filePath, 'utf-8'), reviver);
+global.JSON.parseFile = async function (filePath, reviver = null, callback) {
+    return JSON5.parse(readFileBom(filePath, 'utf-8'), reviver, callback);
 };
 global.JSON.saveFileSync = function (value, filePath, replacer, space, options) {
-    fs.writeFileSync(filePath, global.JSON.backup.stringify(value, replacer, space), options);
+    fs.writeFileSync(filePath, global.JSON.backup.stringify(value, replacer, space).replace(/\n/g, '\r\n'), options);
 };
 global.JSON.saveFile = async function (value, filePath, replacer, space, options) {
-    fs.writeFile(filePath, global.JSON.backup.stringify(value, replacer, space), options);
+    fs.writeFile(filePath, global.JSON.backup.stringify(value, replacer, space).replace(/\n/g, '\r\n'), options);
 };
 
 /**
