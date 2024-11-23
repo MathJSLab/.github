@@ -25,7 +25,7 @@
     "lint": "eslint --fix",
     "format:lint": "npm run format && npm run lint",
     "script:test": "node --disable-warning=DEP0040 script/test.mjs",
-    "build:script": "npm run clean:script && tsc -p tsconfig.build.json && npm run fix:linebreak script/build/**/*.*",
+    "build:script": "npm run clean:script && tsc -p tsconfig.build.json && npm run fix:linebreak script/**/*.*",
     "prebuild": "npm run build:script",
     "build": "npm run clean:build && node --disable-warning=DEP0040 eleventy.build.mjs && npm run fix:linebreak images/**/*.*",
     "do:all": "npm run clean:all && npm run update && npm run format:lint && npm run build && npm run git:all"

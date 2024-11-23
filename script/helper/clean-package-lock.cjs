@@ -25,4 +25,4 @@ try {
     console.error('ignoring...');
 }
 console.warn('Removing package-lock.json file and node_modules directory done.');
-console.log(`Running ${__filename} done.\n\n`);
+console.log(`Running ${__filename} done.\r\n\n`);
