@@ -133,12 +133,6 @@
           "outputPath": "images\\img\\mathjslab-logo-1200.png",
           "size": 88428
         }
-      ],
-      "ico": [
-        "jpeg",
-        "webp",
-        "svg",
-        "png"
       ]
     }
   },
@@ -276,12 +270,6 @@
           "outputPath": "images\\img\\mathjslab-logo-light-1200.png",
           "size": 88428
         }
-      ],
-      "ico": [
-        "jpeg",
-        "webp",
-        "svg",
-        "png"
       ]
     }
   },
@@ -299,12 +287,18 @@
         256,
         512
       ],
-      "formats": [
-        "ico"
-      ],
+      "formats": [],
       "outputDir": "./images/img/icon"
     },
-    "metadata": []
+    "metadata": {
+      "ico": [
+        {
+          "format": "ico",
+          "filename": "mathjslab-logo-light.svg",
+          "outputPath": "H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-github\\images\\img\\icon\\mathjslab-logo-light-16-32-48-64-96-128-192-256-512.ico"
+        }
+      ]
+    }
   },
   {
     "image": {
@@ -440,12 +434,6 @@
           "outputPath": "images\\img\\mathjslab-logo-dark-1200.png",
           "size": 86194
         }
-      ],
-      "ico": [
-        "jpeg",
-        "webp",
-        "svg",
-        "png"
       ]
     }
   },
@@ -463,11 +451,17 @@
         256,
         512
       ],
-      "formats": [
-        "ico"
-      ],
+      "formats": [],
       "outputDir": "./images/img/icon"
     },
-    "metadata": []
+    "metadata": {
+      "ico": [
+        {
+          "format": "ico",
+          "filename": "mathjslab-logo-dark.svg",
+          "outputPath": "H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-github\\images\\img\\icon\\mathjslab-logo-dark-16-32-48-64-96-128-192-256-512.ico"
+        }
+      ]
+    }
   }
 ]

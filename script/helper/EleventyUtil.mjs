@@ -52,8 +52,10 @@ import * as SASS from 'sass';
  */
 import readFileBom from '../build/helper/readFileBom.js';
 import readFileBomSync from '../build/helper/readFileBomSync.js';
+import mkDirIfNotExist from '../build/helper/mkDirIfNotExist.js';
 
 // import createIcon from '../build/helper/createIcon.js';
+import toIco from '../build/helper/toIco.js';
 
 /**
  * Overrides the platform's default line break format with the Microsoft
@@ -61,7 +63,7 @@ import readFileBomSync from '../build/helper/readFileBomSync.js';
  * pushing to the GitHub repository and throws warnings.
  */
 Object.defineProperty(os, 'EOL', {
-    value: '\r\r\r\r\r\n',
+    value: '\r\n',
     writable: false,
 });
 
@@ -1103,11 +1105,18 @@ async function transformImage(transform, options) {
             if (typeof imageOptions.outputDir === 'undefined') {
                 imageOptions.outputDir = options.dir.output;
             }
+            mkDirIfNotExist(imageOptions.outputDir);
             const src = options.dir.input + '/' + image.src;
             console.log(`Building image from source: ${src} ...`);
-            const icons = imageOptions.formats.filter((format) => format !== 'ico');
-            imageOptions.formats = imageOptions.formats.filter((format) => format !== 'ico');
-            let metadata = [];
+            const icoIndex = imageOptions.formats.indexOf('ico');
+            let outputIcoPath;
+            if (icoIndex > -1) {
+                imageOptions.formats.splice(icoIndex, 1);
+                const ico = await toIco(src, imageOptions.widths);
+                outputIcoPath = path.resolve(imageOptions.outputDir, `${src.split('/').pop().split('.')[0]}-${imageOptions.widths.join('-')}.ico`);
+                fs.writeFileSync(outputIcoPath, ico);
+            }
+            let metadata = {};
             if (imageOptions.formats.length > 0) {
                 try {
                     metadata = await Image(src, {
@@ -1123,8 +1132,16 @@ async function transformImage(transform, options) {
                     throw err;
                 }
             }
+            if (icoIndex > -1) {
+                metadata.ico = [
+                    {
+                        format: 'ico',
+                        filename: path.basename(src),
+                        outputPath: outputIcoPath,
+                    },
+                ];
+            }
             console.log(`Building image from source: ${src} done.`);
-            metadata['ico'] = icons;
             return { image, metadata };
         }),
     );

@@ -7,7 +7,7 @@ export default async function (pngFiles: string | string[], output: string | str
     if (typeof pngFiles === 'string') {
         pngFiles = [pngFiles];
     } else if (!Array.isArray(pngFiles) || pngFiles.some((pathName) => typeof pathName !== 'string')) {
-        throw new Error('invalid arguments:\r\r\r\r\npngFiles = ' + util.inspect(pngFiles, { compact: false, colors: true }));
+        throw new Error('invalid arguments:\r\npngFiles = ' + util.inspect(pngFiles, { compact: false, colors: true }));
     }
     if (output) {
         if (typeof output === 'string') {
