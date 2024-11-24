@@ -1113,15 +1113,22 @@ async function transformImage(transform, options) {
             if (icoIndex > -1) {
                 imageOptions.formats.splice(icoIndex, 1);
                 const ico = await toIco(src, imageOptions.widths);
-                outputIcoPath = path.resolve(imageOptions.outputDir, `${src.split('/').pop().split('.')[0]}-${imageOptions.widths.join('-')}.ico`);
+                const filename = `${imageOptions.outputBasename || src.split('/').pop().split('.')[0]}.ico`;
+                outputIcoPath = path.resolve(imageOptions.outputDir, filename);
                 fs.writeFileSync(outputIcoPath, ico);
+                console.log(`Building image format: ico, widths: ${imageOptions.widths.join(',')}, output: ${filename}`);
             }
             let metadata = {};
             if (imageOptions.formats.length > 0) {
                 try {
+                    let basename;
+                    if (imageOptions.outputBasename) {
+                        basename = imageOptions.outputBasename;
+                        delete imageOptions.outputBasename;
+                    }
                     metadata = await Image(src, {
                         filenameFormat: function (_id, src, width, format, _options) {
-                            const result = `${src.split('/').pop().split('.')[0]}-${width}.${format}`;
+                            const result = `${basename || src.split('/').pop().split('.')[0]}-${width}.${format}`;
                             console.log(`Building image format: ${format}, width: ${width}, output: ${result}`);
                             return result;
                         },
@@ -1133,6 +1140,7 @@ async function transformImage(transform, options) {
                 }
             }
             if (icoIndex > -1) {
+                image.formats.push('ico');
                 metadata.ico = [
                     {
                         format: 'ico',

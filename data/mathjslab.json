@@ -119,7 +119,8 @@
                 "src": "mathjslab-logo-light.svg",
                 "widths": [16, 32, 48, 64, 96, 128, 192, 256, 512],
                 "formats": ["ico"],
-                "outputDir": "./images/img/icon"
+                "outputDir": "./images/img/icon",
+                "outputBasename": "favicon"
               },
               {
                 "src": "mathjslab-logo-dark.svg",
@@ -131,7 +132,8 @@
                 "src": "mathjslab-logo-dark.svg",
                 "widths": [16, 32, 48, 64, 96, 128, 192, 256, 512],
                 "formats": ["ico"],
-                "outputDir": "./images/img/icon"
+                "outputDir": "./images/img/icon",
+                "outputBasename": "favicon-dark"
               }
             ]
           }

@@ -287,15 +287,18 @@
         256,
         512
       ],
-      "formats": [],
-      "outputDir": "./images/img/icon"
+      "formats": [
+        "ico"
+      ],
+      "outputDir": "./images/img/icon",
+      "outputBasename": "favicon"
     },
     "metadata": {
       "ico": [
         {
           "format": "ico",
           "filename": "mathjslab-logo-light.svg",
-          "outputPath": "H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-github\\images\\img\\icon\\mathjslab-logo-light-16-32-48-64-96-128-192-256-512.ico"
+          "outputPath": "H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-github\\images\\img\\icon\\favicon.ico"
         }
       ]
     }
@@ -451,15 +454,18 @@
         256,
         512
       ],
-      "formats": [],
-      "outputDir": "./images/img/icon"
+      "formats": [
+        "ico"
+      ],
+      "outputDir": "./images/img/icon",
+      "outputBasename": "favicon-dark"
     },
     "metadata": {
       "ico": [
         {
           "format": "ico",
           "filename": "mathjslab-logo-dark.svg",
-          "outputPath": "H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-github\\images\\img\\icon\\mathjslab-logo-dark-16-32-48-64-96-128-192-256-512.ico"
+          "outputPath": "H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-github\\images\\img\\icon\\favicon-dark.ico"
         }
       ]
     }
