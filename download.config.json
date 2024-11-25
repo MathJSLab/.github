@@ -1,0 +1,12 @@
+{
+  "files": [
+    {
+      "src": "https://raw.githubusercontent.com/MathJSLab/.github/refs/heads/main/images/img/ico/favicon.ico",
+      "dest": "test/img/test/favicon.ico"
+    },
+    {
+      "src": "https://raw.githubusercontent.com/MathJSLab/.github/refs/heads/main/images/img/ico/favicon-dark.ico",
+      "dest": "test/img/test/favicon-dark.ico"
+    }
+  ]
+}

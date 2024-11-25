@@ -105,35 +105,41 @@
             "transform": [
               {
                 "src": "mathjslab-logo.svg",
-                "widths": [300, 600, 1200],
-                "formats": ["jpeg", "webp", "svg", "png"],
-                "outputDir": "./images/img"
-              },
-              {
-                "src": "mathjslab-logo-light.svg",
-                "widths": [300, 600, 1200],
-                "formats": ["jpeg", "webp", "svg", "png"],
-                "outputDir": "./images/img"
+                "widths": [16, 32, 48, 64, 72, 96, 128, 144, 152, 192, 256, 384, 512],
+                "formats": ["png"],
+                "outputDir": "./images/img/ico"
               },
               {
                 "src": "mathjslab-logo-light.svg",
                 "widths": [16, 32, 48, 64, 96, 128, 192, 256, 512],
                 "formats": ["ico"],
-                "outputDir": "./images/img/icon",
+                "outputDir": "./images/img/ico",
                 "outputBasename": "favicon"
               },
               {
                 "src": "mathjslab-logo-dark.svg",
-                "widths": [300, 600, 1200],
-                "formats": ["jpeg", "webp", "svg", "png"],
+                "widths": [16, 32, 48, 64, 96, 128, 192, 256, 512],
+                "formats": ["ico"],
+                "outputDir": "./images/img/ico",
+                "outputBasename": "favicon-dark"
+              },
+              {
+                "src": "mathjslab-logo.svg",
+                "widths": [1024],
+                "formats": ["svg"],
+                "outputDir": "./images/img"
+              },
+              {
+                "src": "mathjslab-logo-light.svg",
+                "widths": [1024],
+                "formats": ["svg"],
                 "outputDir": "./images/img"
               },
               {
                 "src": "mathjslab-logo-dark.svg",
-                "widths": [16, 32, 48, 64, 96, 128, 192, 256, 512],
-                "formats": ["ico"],
-                "outputDir": "./images/img/icon",
-                "outputBasename": "favicon-dark"
+                "widths": [1024],
+                "formats": ["svg"],
+                "outputDir": "./images/img"
               }
             ]
           }

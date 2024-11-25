@@ -3,15 +3,241 @@
     "image": {
       "src": "mathjslab-logo.svg",
       "widths": [
-        300,
-        600,
-        1200
+        16,
+        32,
+        48,
+        64,
+        72,
+        96,
+        128,
+        144,
+        152,
+        192,
+        256,
+        384,
+        512
       ],
       "formats": [
-        "jpeg",
-        "webp",
-        "svg",
         "png"
+      ],
+      "outputDir": "./images/img/ico"
+    },
+    "metadata": {
+      "png": [
+        {
+          "format": "png",
+          "width": 16,
+          "height": 16,
+          "url": "/img/mathjslab-logo-16.png",
+          "sourceType": "image/png",
+          "srcset": "/img/mathjslab-logo-16.png 16w",
+          "filename": "mathjslab-logo-16.png",
+          "outputPath": "images\\img\\ico\\mathjslab-logo-16.png",
+          "size": 668
+        },
+        {
+          "format": "png",
+          "width": 32,
+          "height": 32,
+          "url": "/img/mathjslab-logo-32.png",
+          "sourceType": "image/png",
+          "srcset": "/img/mathjslab-logo-32.png 32w",
+          "filename": "mathjslab-logo-32.png",
+          "outputPath": "images\\img\\ico\\mathjslab-logo-32.png",
+          "size": 1412
+        },
+        {
+          "format": "png",
+          "width": 48,
+          "height": 48,
+          "url": "/img/mathjslab-logo-48.png",
+          "sourceType": "image/png",
+          "srcset": "/img/mathjslab-logo-48.png 48w",
+          "filename": "mathjslab-logo-48.png",
+          "outputPath": "images\\img\\ico\\mathjslab-logo-48.png",
+          "size": 2297
+        },
+        {
+          "format": "png",
+          "width": 64,
+          "height": 64,
+          "url": "/img/mathjslab-logo-64.png",
+          "sourceType": "image/png",
+          "srcset": "/img/mathjslab-logo-64.png 64w",
+          "filename": "mathjslab-logo-64.png",
+          "outputPath": "images\\img\\ico\\mathjslab-logo-64.png",
+          "size": 3192
+        },
+        {
+          "format": "png",
+          "width": 72,
+          "height": 72,
+          "url": "/img/mathjslab-logo-72.png",
+          "sourceType": "image/png",
+          "srcset": "/img/mathjslab-logo-72.png 72w",
+          "filename": "mathjslab-logo-72.png",
+          "outputPath": "images\\img\\ico\\mathjslab-logo-72.png",
+          "size": 3496
+        },
+        {
+          "format": "png",
+          "width": 96,
+          "height": 96,
+          "url": "/img/mathjslab-logo-96.png",
+          "sourceType": "image/png",
+          "srcset": "/img/mathjslab-logo-96.png 96w",
+          "filename": "mathjslab-logo-96.png",
+          "outputPath": "images\\img\\ico\\mathjslab-logo-96.png",
+          "size": 4830
+        },
+        {
+          "format": "png",
+          "width": 128,
+          "height": 128,
+          "url": "/img/mathjslab-logo-128.png",
+          "sourceType": "image/png",
+          "srcset": "/img/mathjslab-logo-128.png 128w",
+          "filename": "mathjslab-logo-128.png",
+          "outputPath": "images\\img\\ico\\mathjslab-logo-128.png",
+          "size": 6571
+        },
+        {
+          "format": "png",
+          "width": 144,
+          "height": 144,
+          "url": "/img/mathjslab-logo-144.png",
+          "sourceType": "image/png",
+          "srcset": "/img/mathjslab-logo-144.png 144w",
+          "filename": "mathjslab-logo-144.png",
+          "outputPath": "images\\img\\ico\\mathjslab-logo-144.png",
+          "size": 7447
+        },
+        {
+          "format": "png",
+          "width": 152,
+          "height": 152,
+          "url": "/img/mathjslab-logo-152.png",
+          "sourceType": "image/png",
+          "srcset": "/img/mathjslab-logo-152.png 152w",
+          "filename": "mathjslab-logo-152.png",
+          "outputPath": "images\\img\\ico\\mathjslab-logo-152.png",
+          "size": 7968
+        },
+        {
+          "format": "png",
+          "width": 192,
+          "height": 192,
+          "url": "/img/mathjslab-logo-192.png",
+          "sourceType": "image/png",
+          "srcset": "/img/mathjslab-logo-192.png 192w",
+          "filename": "mathjslab-logo-192.png",
+          "outputPath": "images\\img\\ico\\mathjslab-logo-192.png",
+          "size": 10490
+        },
+        {
+          "format": "png",
+          "width": 256,
+          "height": 256,
+          "url": "/img/mathjslab-logo-256.png",
+          "sourceType": "image/png",
+          "srcset": "/img/mathjslab-logo-256.png 256w",
+          "filename": "mathjslab-logo-256.png",
+          "outputPath": "images\\img\\ico\\mathjslab-logo-256.png",
+          "size": 14339
+        },
+        {
+          "format": "png",
+          "width": 384,
+          "height": 384,
+          "url": "/img/mathjslab-logo-384.png",
+          "sourceType": "image/png",
+          "srcset": "/img/mathjslab-logo-384.png 384w",
+          "filename": "mathjslab-logo-384.png",
+          "outputPath": "images\\img\\ico\\mathjslab-logo-384.png",
+          "size": 23040
+        },
+        {
+          "format": "png",
+          "width": 512,
+          "height": 512,
+          "url": "/img/mathjslab-logo-512.png",
+          "sourceType": "image/png",
+          "srcset": "/img/mathjslab-logo-512.png 512w",
+          "filename": "mathjslab-logo-512.png",
+          "outputPath": "images\\img\\ico\\mathjslab-logo-512.png",
+          "size": 32171
+        }
+      ]
+    }
+  },
+  {
+    "image": {
+      "src": "mathjslab-logo-light.svg",
+      "widths": [
+        16,
+        32,
+        48,
+        64,
+        96,
+        128,
+        192,
+        256,
+        512
+      ],
+      "formats": [
+        "ico"
+      ],
+      "outputDir": "./images/img/ico",
+      "outputBasename": "favicon"
+    },
+    "metadata": {
+      "ico": [
+        {
+          "format": "ico",
+          "filename": "mathjslab-logo-light.svg",
+          "outputPath": "H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-github\\images\\img\\ico\\favicon.ico"
+        }
+      ]
+    }
+  },
+  {
+    "image": {
+      "src": "mathjslab-logo-dark.svg",
+      "widths": [
+        16,
+        32,
+        48,
+        64,
+        96,
+        128,
+        192,
+        256,
+        512
+      ],
+      "formats": [
+        "ico"
+      ],
+      "outputDir": "./images/img/ico",
+      "outputBasename": "favicon-dark"
+    },
+    "metadata": {
+      "ico": [
+        {
+          "format": "ico",
+          "filename": "mathjslab-logo-dark.svg",
+          "outputPath": "H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-github\\images\\img\\ico\\favicon-dark.ico"
+        }
+      ]
+    }
+  },
+  {
+    "image": {
+      "src": "mathjslab-logo.svg",
+      "widths": [
+        1024
+      ],
+      "formats": [
+        "svg"
       ],
       "outputDir": "./images/img"
     },
@@ -28,111 +254,6 @@
           "outputPath": "images\\img\\mathjslab-logo-1024.svg",
           "size": 1621
         }
-      ],
-      "jpeg": [
-        {
-          "format": "jpeg",
-          "width": 300,
-          "height": 300,
-          "url": "/img/mathjslab-logo-300.jpeg",
-          "sourceType": "image/jpeg",
-          "srcset": "/img/mathjslab-logo-300.jpeg 300w",
-          "filename": "mathjslab-logo-300.jpeg",
-          "outputPath": "images\\img\\mathjslab-logo-300.jpeg",
-          "size": 12919
-        },
-        {
-          "format": "jpeg",
-          "width": 600,
-          "height": 600,
-          "url": "/img/mathjslab-logo-600.jpeg",
-          "sourceType": "image/jpeg",
-          "srcset": "/img/mathjslab-logo-600.jpeg 600w",
-          "filename": "mathjslab-logo-600.jpeg",
-          "outputPath": "images\\img\\mathjslab-logo-600.jpeg",
-          "size": 30488
-        },
-        {
-          "format": "jpeg",
-          "width": 1200,
-          "height": 1200,
-          "url": "/img/mathjslab-logo-1200.jpeg",
-          "sourceType": "image/jpeg",
-          "srcset": "/img/mathjslab-logo-1200.jpeg 1200w",
-          "filename": "mathjslab-logo-1200.jpeg",
-          "outputPath": "images\\img\\mathjslab-logo-1200.jpeg",
-          "size": 68257
-        }
-      ],
-      "webp": [
-        {
-          "format": "webp",
-          "width": 300,
-          "height": 300,
-          "url": "/img/mathjslab-logo-300.webp",
-          "sourceType": "image/webp",
-          "srcset": "/img/mathjslab-logo-300.webp 300w",
-          "filename": "mathjslab-logo-300.webp",
-          "outputPath": "images\\img\\mathjslab-logo-300.webp",
-          "size": 9258
-        },
-        {
-          "format": "webp",
-          "width": 600,
-          "height": 600,
-          "url": "/img/mathjslab-logo-600.webp",
-          "sourceType": "image/webp",
-          "srcset": "/img/mathjslab-logo-600.webp 600w",
-          "filename": "mathjslab-logo-600.webp",
-          "outputPath": "images\\img\\mathjslab-logo-600.webp",
-          "size": 18740
-        },
-        {
-          "format": "webp",
-          "width": 1200,
-          "height": 1200,
-          "url": "/img/mathjslab-logo-1200.webp",
-          "sourceType": "image/webp",
-          "srcset": "/img/mathjslab-logo-1200.webp 1200w",
-          "filename": "mathjslab-logo-1200.webp",
-          "outputPath": "images\\img\\mathjslab-logo-1200.webp",
-          "size": 38670
-        }
-      ],
-      "png": [
-        {
-          "format": "png",
-          "width": 300,
-          "height": 300,
-          "url": "/img/mathjslab-logo-300.png",
-          "sourceType": "image/png",
-          "srcset": "/img/mathjslab-logo-300.png 300w",
-          "filename": "mathjslab-logo-300.png",
-          "outputPath": "images\\img\\mathjslab-logo-300.png",
-          "size": 17352
-        },
-        {
-          "format": "png",
-          "width": 600,
-          "height": 600,
-          "url": "/img/mathjslab-logo-600.png",
-          "sourceType": "image/png",
-          "srcset": "/img/mathjslab-logo-600.png 600w",
-          "filename": "mathjslab-logo-600.png",
-          "outputPath": "images\\img\\mathjslab-logo-600.png",
-          "size": 38897
-        },
-        {
-          "format": "png",
-          "width": 1200,
-          "height": 1200,
-          "url": "/img/mathjslab-logo-1200.png",
-          "sourceType": "image/png",
-          "srcset": "/img/mathjslab-logo-1200.png 1200w",
-          "filename": "mathjslab-logo-1200.png",
-          "outputPath": "images\\img\\mathjslab-logo-1200.png",
-          "size": 88428
-        }
       ]
     }
   },
@@ -140,15 +261,10 @@
     "image": {
       "src": "mathjslab-logo-light.svg",
       "widths": [
-        300,
-        600,
-        1200
+        1024
       ],
       "formats": [
-        "jpeg",
-        "webp",
-        "svg",
-        "png"
+        "svg"
       ],
       "outputDir": "./images/img"
     },
@@ -165,141 +281,6 @@
           "outputPath": "images\\img\\mathjslab-logo-light-1024.svg",
           "size": 1359
         }
-      ],
-      "jpeg": [
-        {
-          "format": "jpeg",
-          "width": 300,
-          "height": 300,
-          "url": "/img/mathjslab-logo-light-300.jpeg",
-          "sourceType": "image/jpeg",
-          "srcset": "/img/mathjslab-logo-light-300.jpeg 300w",
-          "filename": "mathjslab-logo-light-300.jpeg",
-          "outputPath": "images\\img\\mathjslab-logo-light-300.jpeg",
-          "size": 12919
-        },
-        {
-          "format": "jpeg",
-          "width": 600,
-          "height": 600,
-          "url": "/img/mathjslab-logo-light-600.jpeg",
-          "sourceType": "image/jpeg",
-          "srcset": "/img/mathjslab-logo-light-600.jpeg 600w",
-          "filename": "mathjslab-logo-light-600.jpeg",
-          "outputPath": "images\\img\\mathjslab-logo-light-600.jpeg",
-          "size": 30488
-        },
-        {
-          "format": "jpeg",
-          "width": 1200,
-          "height": 1200,
-          "url": "/img/mathjslab-logo-light-1200.jpeg",
-          "sourceType": "image/jpeg",
-          "srcset": "/img/mathjslab-logo-light-1200.jpeg 1200w",
-          "filename": "mathjslab-logo-light-1200.jpeg",
-          "outputPath": "images\\img\\mathjslab-logo-light-1200.jpeg",
-          "size": 68257
-        }
-      ],
-      "webp": [
-        {
-          "format": "webp",
-          "width": 300,
-          "height": 300,
-          "url": "/img/mathjslab-logo-light-300.webp",
-          "sourceType": "image/webp",
-          "srcset": "/img/mathjslab-logo-light-300.webp 300w",
-          "filename": "mathjslab-logo-light-300.webp",
-          "outputPath": "images\\img\\mathjslab-logo-light-300.webp",
-          "size": 9258
-        },
-        {
-          "format": "webp",
-          "width": 600,
-          "height": 600,
-          "url": "/img/mathjslab-logo-light-600.webp",
-          "sourceType": "image/webp",
-          "srcset": "/img/mathjslab-logo-light-600.webp 600w",
-          "filename": "mathjslab-logo-light-600.webp",
-          "outputPath": "images\\img\\mathjslab-logo-light-600.webp",
-          "size": 18740
-        },
-        {
-          "format": "webp",
-          "width": 1200,
-          "height": 1200,
-          "url": "/img/mathjslab-logo-light-1200.webp",
-          "sourceType": "image/webp",
-          "srcset": "/img/mathjslab-logo-light-1200.webp 1200w",
-          "filename": "mathjslab-logo-light-1200.webp",
-          "outputPath": "images\\img\\mathjslab-logo-light-1200.webp",
-          "size": 38670
-        }
-      ],
-      "png": [
-        {
-          "format": "png",
-          "width": 300,
-          "height": 300,
-          "url": "/img/mathjslab-logo-light-300.png",
-          "sourceType": "image/png",
-          "srcset": "/img/mathjslab-logo-light-300.png 300w",
-          "filename": "mathjslab-logo-light-300.png",
-          "outputPath": "images\\img\\mathjslab-logo-light-300.png",
-          "size": 17352
-        },
-        {
-          "format": "png",
-          "width": 600,
-          "height": 600,
-          "url": "/img/mathjslab-logo-light-600.png",
-          "sourceType": "image/png",
-          "srcset": "/img/mathjslab-logo-light-600.png 600w",
-          "filename": "mathjslab-logo-light-600.png",
-          "outputPath": "images\\img\\mathjslab-logo-light-600.png",
-          "size": 38897
-        },
-        {
-          "format": "png",
-          "width": 1200,
-          "height": 1200,
-          "url": "/img/mathjslab-logo-light-1200.png",
-          "sourceType": "image/png",
-          "srcset": "/img/mathjslab-logo-light-1200.png 1200w",
-          "filename": "mathjslab-logo-light-1200.png",
-          "outputPath": "images\\img\\mathjslab-logo-light-1200.png",
-          "size": 88428
-        }
-      ]
-    }
-  },
-  {
-    "image": {
-      "src": "mathjslab-logo-light.svg",
-      "widths": [
-        16,
-        32,
-        48,
-        64,
-        96,
-        128,
-        192,
-        256,
-        512
-      ],
-      "formats": [
-        "ico"
-      ],
-      "outputDir": "./images/img/icon",
-      "outputBasename": "favicon"
-    },
-    "metadata": {
-      "ico": [
-        {
-          "format": "ico",
-          "filename": "mathjslab-logo-light.svg",
-          "outputPath": "H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-github\\images\\img\\icon\\favicon.ico"
-        }
       ]
     }
   },
@@ -307,15 +288,10 @@
     "image": {
       "src": "mathjslab-logo-dark.svg",
       "widths": [
-        300,
-        600,
-        1200
+        1024
       ],
       "formats": [
-        "jpeg",
-        "webp",
-        "svg",
-        "png"
+        "svg"
       ],
       "outputDir": "./images/img"
     },
@@ -331,141 +307,6 @@
           "filename": "mathjslab-logo-dark-1024.svg",
           "outputPath": "images\\img\\mathjslab-logo-dark-1024.svg",
           "size": 1359
-        }
-      ],
-      "jpeg": [
-        {
-          "format": "jpeg",
-          "width": 300,
-          "height": 300,
-          "url": "/img/mathjslab-logo-dark-300.jpeg",
-          "sourceType": "image/jpeg",
-          "srcset": "/img/mathjslab-logo-dark-300.jpeg 300w",
-          "filename": "mathjslab-logo-dark-300.jpeg",
-          "outputPath": "images\\img\\mathjslab-logo-dark-300.jpeg",
-          "size": 11984
-        },
-        {
-          "format": "jpeg",
-          "width": 600,
-          "height": 600,
-          "url": "/img/mathjslab-logo-dark-600.jpeg",
-          "sourceType": "image/jpeg",
-          "srcset": "/img/mathjslab-logo-dark-600.jpeg 600w",
-          "filename": "mathjslab-logo-dark-600.jpeg",
-          "outputPath": "images\\img\\mathjslab-logo-dark-600.jpeg",
-          "size": 28357
-        },
-        {
-          "format": "jpeg",
-          "width": 1200,
-          "height": 1200,
-          "url": "/img/mathjslab-logo-dark-1200.jpeg",
-          "sourceType": "image/jpeg",
-          "srcset": "/img/mathjslab-logo-dark-1200.jpeg 1200w",
-          "filename": "mathjslab-logo-dark-1200.jpeg",
-          "outputPath": "images\\img\\mathjslab-logo-dark-1200.jpeg",
-          "size": 63920
-        }
-      ],
-      "webp": [
-        {
-          "format": "webp",
-          "width": 300,
-          "height": 300,
-          "url": "/img/mathjslab-logo-dark-300.webp",
-          "sourceType": "image/webp",
-          "srcset": "/img/mathjslab-logo-dark-300.webp 300w",
-          "filename": "mathjslab-logo-dark-300.webp",
-          "outputPath": "images\\img\\mathjslab-logo-dark-300.webp",
-          "size": 8578
-        },
-        {
-          "format": "webp",
-          "width": 600,
-          "height": 600,
-          "url": "/img/mathjslab-logo-dark-600.webp",
-          "sourceType": "image/webp",
-          "srcset": "/img/mathjslab-logo-dark-600.webp 600w",
-          "filename": "mathjslab-logo-dark-600.webp",
-          "outputPath": "images\\img\\mathjslab-logo-dark-600.webp",
-          "size": 17612
-        },
-        {
-          "format": "webp",
-          "width": 1200,
-          "height": 1200,
-          "url": "/img/mathjslab-logo-dark-1200.webp",
-          "sourceType": "image/webp",
-          "srcset": "/img/mathjslab-logo-dark-1200.webp 1200w",
-          "filename": "mathjslab-logo-dark-1200.webp",
-          "outputPath": "images\\img\\mathjslab-logo-dark-1200.webp",
-          "size": 36306
-        }
-      ],
-      "png": [
-        {
-          "format": "png",
-          "width": 300,
-          "height": 300,
-          "url": "/img/mathjslab-logo-dark-300.png",
-          "sourceType": "image/png",
-          "srcset": "/img/mathjslab-logo-dark-300.png 300w",
-          "filename": "mathjslab-logo-dark-300.png",
-          "outputPath": "images\\img\\mathjslab-logo-dark-300.png",
-          "size": 16739
-        },
-        {
-          "format": "png",
-          "width": 600,
-          "height": 600,
-          "url": "/img/mathjslab-logo-dark-600.png",
-          "sourceType": "image/png",
-          "srcset": "/img/mathjslab-logo-dark-600.png 600w",
-          "filename": "mathjslab-logo-dark-600.png",
-          "outputPath": "images\\img\\mathjslab-logo-dark-600.png",
-          "size": 37522
-        },
-        {
-          "format": "png",
-          "width": 1200,
-          "height": 1200,
-          "url": "/img/mathjslab-logo-dark-1200.png",
-          "sourceType": "image/png",
-          "srcset": "/img/mathjslab-logo-dark-1200.png 1200w",
-          "filename": "mathjslab-logo-dark-1200.png",
-          "outputPath": "images\\img\\mathjslab-logo-dark-1200.png",
-          "size": 86194
-        }
-      ]
-    }
-  },
-  {
-    "image": {
-      "src": "mathjslab-logo-dark.svg",
-      "widths": [
-        16,
-        32,
-        48,
-        64,
-        96,
-        128,
-        192,
-        256,
-        512
-      ],
-      "formats": [
-        "ico"
-      ],
-      "outputDir": "./images/img/icon",
-      "outputBasename": "favicon-dark"
-    },
-    "metadata": {
-      "ico": [
-        {
-          "format": "ico",
-          "filename": "mathjslab-logo-dark.svg",
-          "outputPath": "H:\\workarea\\mathjslab-project\\mathjslab-repositories\\mathjslab-github\\images\\img\\icon\\favicon-dark.ico"
         }
       ]
     }
