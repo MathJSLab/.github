@@ -28,4 +28,4 @@ try {
     global.console.error('ignoring...');
 }
 global.console.warn('Removing package-lock.json file and node_modules directory done.');
-global.console.log(`Running ${__filename} done.\r\r\r\r\r\r\n`);
+global.console.log(`Running ${__filename} done.\r\n`);
