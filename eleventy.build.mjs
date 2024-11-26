@@ -106,7 +106,7 @@ const stepData = [
                     return `\"${name}:update\": \"cd ${repo} && npm run update\"`;
                 },
                 scriptGitAddCommitPush: function (name, repo) {
-                    return `\"${name}:git:add:commit:push\": \"cd ${repo} && npm run git:add:commit:push\"`;
+                    return `\"${name}:git:all\": \"cd ${repo} && npm run git:all\"`;
                 },
                 scriptAllAction: function (names, action, postfix) {
                     return `\"all:${action}${postfix ? ':' + postfix : ''}\": \"${names.map((name) => `npm run ${name}:${action}`).join(' && ')}\"`;
