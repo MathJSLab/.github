@@ -13,13 +13,13 @@ import mathjslabLogoSvg from './script/mathjslabLogoSvg.mjs';
 const scriptName = path.basename(fileURLToPath(import.meta.url));
 
 /**
- * The 'data/mathjslab.json' data parsed.
+ * The `data/mathjslab.json` data parsed.
  */
 const mathjslab = JSON.parseFileSync(path.resolve('.', 'data', 'mathjslab.json'));
 
 /**
- *
- * @param {*} n
+ * Transforms the images as specified in the `data/mathjslab.json` file.
+ * @param {*} n Build step.
  * @returns
  */
 async function transformImage(n) {
@@ -47,8 +47,8 @@ async function transformImage(n) {
 }
 
 /**
- *
- * @param {*} s
+ * Get Eleventy configuration option.
+ * @param {*} s Build step.
  * @returns
  */
 const getStepOption = (s) => ({
@@ -57,7 +57,7 @@ const getStepOption = (s) => ({
 });
 
 /**
- *
+ * Build step options and configuration.
  */
 const stepData = [
     {
@@ -157,7 +157,7 @@ const stepData = [
 ];
 
 /**
- *
+ * Run Eleventy static build.
  */
 EleventyUtil.console.log(`Building ${mathjslab.organization.name} organization <${mathjslab.organization.url}> repository (build script: ${scriptName}) ...`);
 EleventyUtil.console.log(`Running step01 ...`);
@@ -168,6 +168,6 @@ EleventyUtil.run(stepData[0].config, stepData[0].options, () => {
         EleventyUtil.console.log(`Running step02 done.`);
         EleventyUtil.console.log(`Building ${mathjslab.organization.name} organization <${mathjslab.organization.url}> repository (build script: ${scriptName}) done.`);
     });
-})
-    .then()
-    .catch();
+});
+// .then()
+// .catch();

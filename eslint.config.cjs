@@ -8,10 +8,6 @@ const imprt = require('eslint-plugin-import');
 
 console.log(`Running project lint (configuration: ${path.basename(__filename)}) ...`);
 
-/* The following rule is being removed from the object because it is producing
-   an error in the latest versions of the plugin (8.14.0). */
-delete tsPlugin.configs['recommended'].rules['@typescript-eslint/no-unused-expressions'];
-
 module.exports = [
     {
         files: ['**/*.ts'],

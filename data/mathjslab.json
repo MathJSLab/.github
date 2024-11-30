@@ -1,5 +1,6 @@
-{ /* Aqui pode um comentário? Carregamos json5-override? */
+{
   "languages": {
+    /* Available languages ​​and some terms and expressions translated into each of them. */
     "en": {
       "language": "English",
       "home": "Home",
@@ -23,6 +24,7 @@
     }
   },
   "colors": {
+    /* Color sets for logo and application. */
     "light": {
       "fillSymbol": "hsl(120, 52%, 16%)",
       "strokePanel": "green",
@@ -38,8 +40,9 @@
       "fillTrace": "hsl(0, 0%, 92%)"
     }
   },
-  "logo_width": 1024,
+  "logo_width": 630,
   "organization": {
+    /* Information about the organization on GitHub and its repositories. */
     "name": "MathJSLab",
     "url": "https://github.com/MathJSLab",
     "repositories": [
@@ -70,6 +73,7 @@
     ]
   },
   "build": {
+    /* Organization profile project construction parameters. */
     "eleventy": {
       "commonOptions": {
         "htmlTemplateEngine": "njk",
@@ -102,6 +106,7 @@
             }
           },
           "images": {
+            /* Construction and transformation parameters for the organization profile project images and other repositories as well. */
             "transform": [
               {
                 "src": "mathjslab-logo.svg",

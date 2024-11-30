@@ -2,6 +2,9 @@
 
 This file contains general information about the actions of the [MathJSLab Project](https://mathjslab.com/) that go beyond the scope of the individual projects. In other words, what cannot be recorded in the `CHANGES.md` file of each software project, or the general actions of the organization, are recorded here, indexed by date.
 
+## 2024-11-30
+- More useful files have been added to the `script/helper` directory. The `resource` directory was created to hold files from other repositories (which are built into the organization project). A directory was created for each project, and in it the `download.config.json` file specifies files in the organization repository that are downloaded into each project. The `script/helper/download-files.cjs` tool is used for this purpose.
+
 ## 2024-11-20
 - Several tools for configuring Eleventy and rendering templates at build time have been grouped into the `EleventyUtil.mjs` file in the `script` directory. Other useful files have been added to the `script/helper` directory. The functions and templates for generating the MathJSLab logo in SVG format have been improved.
 
