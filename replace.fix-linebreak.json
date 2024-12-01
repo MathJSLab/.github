@@ -1,15 +1,5 @@
 {
-  "files":  [
-    "script/build/**",
-    "images/**/*.md",
-    "images/**/*.svg",
-    "images/**/*.htm",
-    "images/**/*.html",
-    "images/**/*.json",
-    "profile/**/*.md",
-    "profile/**/*.json",
-    "test/**"
-  ],
+  "files": ["script/build/**", "images/**/*.md", "images/**/*.svg", "images/**/*.htm", "images/**/*.html", "images/**/*.json", "profile/**/*.md", "profile/**/*.json", "test/**"],
   "from": "/\\r?\\n/gm",
   "to": "\r\n"
 }

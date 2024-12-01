@@ -1,3 +1,6 @@
+/**
+ * eslint.config.cjs: ESLint configuration.
+ */
 const path = require('node:path');
 const globals = require('globals');
 const tsPlugin = require('@typescript-eslint/eslint-plugin');

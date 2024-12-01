@@ -79,9 +79,7 @@
         "htmlTemplateEngine": "njk",
         "markdownTemplateEngine": "njk",
         "dataTemplateEngine": "njk",
-        "templateFormats": [
-          "njk"
-        ]
+        "templateFormats": ["njk"]
       },
       "steps": [
         {

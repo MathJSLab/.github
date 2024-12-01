@@ -21,7 +21,7 @@
     "git:commit": "git commit -m \"Initial Commit\"",
     "git:push": "git push",
     "git:all": "npm run git:add && npm run git:commit && npm run git:push",
-    "format": "prettier --write **/*.{ts,tsx,js,jsx,cjs,mjs}",
+    "format": "prettier --write **/*.{ts,tsx,js,jsx,cjs,mjs,json}",
     "lint": "eslint --fix",
     "format:lint": "npm run format && npm run lint",
     "script:test": "node --disable-warning=DEP0040 script/test.mjs",
