@@ -15,7 +15,9 @@
         192,
         256,
         384,
-        512
+        512,
+        630,
+        1024
       ],
       "formats": [
         "png"
@@ -166,6 +168,28 @@
           "filename": "mathjslab-logo-512.png",
           "outputPath": "images\\img\\ico\\mathjslab-logo-512.png",
           "size": 32514
+        },
+        {
+          "format": "png",
+          "width": 630,
+          "height": 630,
+          "url": "/img/mathjslab-logo-630.png",
+          "sourceType": "image/png",
+          "srcset": "/img/mathjslab-logo-630.png 630w",
+          "filename": "mathjslab-logo-630.png",
+          "outputPath": "images\\img\\ico\\mathjslab-logo-630.png",
+          "size": 41377
+        },
+        {
+          "format": "png",
+          "width": 1024,
+          "height": 1024,
+          "url": "/img/mathjslab-logo-1024.png",
+          "sourceType": "image/png",
+          "srcset": "/img/mathjslab-logo-1024.png 1024w",
+          "filename": "mathjslab-logo-1024.png",
+          "outputPath": "images\\img\\ico\\mathjslab-logo-1024.png",
+          "size": 74055
         }
       ]
     }

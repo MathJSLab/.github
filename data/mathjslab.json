@@ -108,7 +108,7 @@
             "transform": [
               {
                 "src": "mathjslab-logo.svg",
-                "widths": [16, 32, 48, 64, 72, 96, 128, 144, 152, 192, 256, 384, 512],
+                "widths": [16, 32, 48, 64, 72, 96, 128, 144, 152, 192, 256, 384, 512, 630, 1024],
                 "formats": ["png"],
                 "outputDir": "./images/img/ico"
               },
