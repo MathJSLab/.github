@@ -25,7 +25,7 @@ export default function mathjslabLogoSvg(style, width = defaultOGWidth, precisio
         /*  3 */ 1 / 2 /* Half width coordinate */,
         /*  4 */ 16 / 35 /* Main circle panel radius */,
         /*  5 */ 1 / 3 /* Pi symbol x coordinate */,
-        /*  6 */ 2 / 5 /* Pi symbol y coordinate */,
+        /*  6 */ 8 / 21 /* Pi symbol y coordinate */,
         /*  7 */ 11 / 35 /* Expression x coordinate */,
         /*  8 */ 24 / 35 /* Expression y coordinate */,
         /*  9 */ 1 / 5 /* X axis origin */,
