@@ -22,7 +22,7 @@
  * Install development dependencies with:
  *
  * ```
- * npm install --save-dev uuid chalk yaml json5 smol-toml sass coffeescript cson
+ * npm install --save-dev uuid chalk @11ty/eleventy @11ty/eleventy-img yaml json5 smol-toml sass coffeescript cson
  * ```
  *
  * MIT License, Copyright (c) 2016-2024 Sergio Lindau, mathjslab.com
