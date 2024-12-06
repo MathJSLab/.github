@@ -1,3 +1,7 @@
+<p align="center">
+    <a href="https://mathjslab.com/" target="_blank" rel="noopener"><img src="images/mathjslab-logo.svg" alt="MathJSLab" width="200" height="200" /></a>
+</p>
+
 # [MathJSLab](https://mathjslab.com/) - [mathjslab.com](https://mathjslab.com/)
 
 [![English](https://img.shields.io/badge/English-8484FF)](README.md)

@@ -105,7 +105,7 @@ const stepData = [
                 scriptUpdate: function (name, repo) {
                     return `\"${name}:update\": \"cd ${repo} && npm run update\"`;
                 },
-                scriptGitAddCommitPush: function (name, repo) {
+                scriptGitAll: function (name, repo) {
                     return `\"${name}:git:all\": \"cd ${repo} && npm run git:all\"`;
                 },
                 scriptAllAction: function (names, action, postfix) {
@@ -144,13 +144,15 @@ const stepData = [
                     .join('\r\n'),
             );
             await transformImage(0);
+            EleventyUtil.configAddDateTimeTools(eleventyConfig);
             return getStepOption(0);
         },
     },
     {
         options: getStepOption(1),
-        config: async function (_eleventyConfig) {
+        config: async function (eleventyConfig) {
             await transformImage(1);
+            EleventyUtil.configAddDateTimeTools(eleventyConfig);
             return getStepOption(1);
         },
     },

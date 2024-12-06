@@ -46,6 +46,7 @@ import TOML from 'smol-toml';
 import CSON from 'cson';
 import CoffeeScript from 'coffeescript';
 import * as SASS from 'sass';
+import { DateTime } from 'luxon';
 
 /**
  * Useful functions for listing and reading files.
@@ -1155,6 +1156,15 @@ async function transformImage(transform, options) {
     );
 }
 /**
+ * Adds useful shortcodes and filters to the configuration for dealing with dates and times.
+ * @param {*} eleventyConfig
+ */
+function configAddDateTimeTools(eleventyConfig) {
+    eleventyConfig.addShortcode('currentDate', function (format) {
+        return DateTime.now().toFormat(format || 'yyyy-MM-dd');
+    });
+}
+/**
  * Exports
  */
 export {
@@ -1175,6 +1185,7 @@ export {
     configAddRenderTemplateTools,
     run,
     transformImage,
+    configAddDateTimeTools,
 };
 /**
  * Default exports
@@ -1197,4 +1208,5 @@ export default {
     configAddRenderTemplateTools,
     run,
     transformImage,
+    configAddDateTimeTools,
 };
