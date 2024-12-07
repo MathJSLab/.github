@@ -22,7 +22,7 @@
  * Install development dependencies with:
  *
  * ```
- * npm install --save-dev uuid chalk @11ty/eleventy @11ty/eleventy-img yaml json5 smol-toml sass coffeescript cson
+ * npm install --save-dev uuid chalk @11ty/eleventy @11ty/eleventy-img yaml json5 smol-toml sass coffeescript cson png-to-ico
  * ```
  *
  * MIT License, Copyright (c) 2016-2024 Sergio Lindau, mathjslab.com
@@ -593,14 +593,14 @@ const templateEngine = {
     Nunjucks: {
         /* Aliasing Nunjucks template. */
         extension: templateExtension.Nunjucks,
-        config: function (eleventyConfig, _format, _engine) {
+        config: function (eleventyConfig, _format, permalinkPrefixRemove, _engine) {
             eleventyConfig.addTemplateFormats(templateExtension.Nunjucks[0]);
             eleventyConfig.setNunjucksEnvironmentOptions({
                 autoescape: false,
             });
             eleventyConfig.addExtension(templateExtension.Nunjucks[0], {
                 compileOptions: {
-                    permalink: prefixExtensionRemoveFactory('\\./input/', templateExtension.Nunjucks[0]),
+                    permalink: prefixExtensionRemoveFactory(permalinkPrefixRemove, templateExtension.Nunjucks[0]),
                 },
             });
         },
@@ -608,11 +608,11 @@ const templateEngine = {
     SASS: {
         /* Custom SASS template. */
         extension: templateExtension.SASS,
-        config: function (eleventyConfig, _format, _engine) {
+        config: function (eleventyConfig, _format, permalinkPrefixRemove, _engine) {
             eleventyConfig.addTemplateFormats(templateExtension.SASS[0]);
             eleventyConfig.addExtension(templateExtension.SASS[0], {
                 compileOptions: {
-                    permalink: prefixExtensionRemoveFactory('\\./input/', templateExtension.SASS[0]),
+                    permalink: prefixExtensionRemoveFactory(permalinkPrefixRemove, templateExtension.SASS[0]),
                 },
                 // `compile` is called once per .scss file in the input directory
                 compile: function (inputContent, inputPath) {
@@ -633,11 +633,11 @@ const templateEngine = {
     CoffeeScript: {
         /* Custom CoffeeScript template. */
         extension: templateExtension.CoffeeScript,
-        config: function (eleventyConfig, _format, _engine) {
+        config: function (eleventyConfig, _format, permalinkPrefixRemove, _engine) {
             eleventyConfig.addTemplateFormats([templateExtension.CoffeeScript[0], templateExtension.CSON[0]]);
             eleventyConfig.addExtension(templateExtension.CoffeeScript[0], {
                 compileOptions: {
-                    permalink: prefixExtensionRemoveFactory('\\./input/', templateExtension.CoffeeScript[0]),
+                    permalink: prefixExtensionRemoveFactory(permalinkPrefixRemove, templateExtension.CoffeeScript[0]),
                 },
                 compile: function (inputContent, _inputPath) {
                     let result = CoffeeScript.compile(inputContent);
@@ -648,7 +648,7 @@ const templateEngine = {
             });
             eleventyConfig.addExtension(templateExtension.CSON[0], {
                 compileOptions: {
-                    permalink: prefixExtensionRemoveFactory('\\./input/', templateExtension.CSON[0]),
+                    permalink: prefixExtensionRemoveFactory(permalinkPrefixRemove, templateExtension.CSON[0]),
                 },
                 compile: function (inputContent, _inputPath) {
                     let result = CSON.parse(inputContent);
@@ -664,11 +664,12 @@ const templateEngine = {
  * Adds template formats to Eleventy configuration.
  * @param {*} eleventyConfig
  * @param {*} formats
+ * @param {*} permalinkPrefixRemove
  */
-function configAddTemplateFormat(eleventyConfig, formats = ['njk', 'scss', 'coffee']) {
+function configAddTemplateFormat(eleventyConfig, formats = ['njk', 'scss'], permalinkPrefixRemove = '\\./input/') {
     const eleventyUtil = this;
     formats.forEach((format) => {
-        templateEngine[templateFormatAlias[format]].config.bind(eleventyUtil)(eleventyConfig, format, templateEngine[templateFormatAlias[format]]);
+        templateEngine[templateFormatAlias[format]].config.bind(eleventyUtil)(eleventyConfig, format, permalinkPrefixRemove, templateEngine[templateFormatAlias[format]]);
     });
 }
 /**

@@ -112,7 +112,7 @@ const stepData = [
                     return `\"all:${action}${postfix ? ':' + postfix : ''}\": \"${names.map((name) => `npm run ${name}:${action}`).join(' && ')}\"`;
                 },
             };
-            EleventyUtil.configAddTemplateFormat(eleventyConfig);
+            EleventyUtil.configAddTemplateFormat(eleventyConfig, ['njk'], '\\./input/');
             EleventyUtil.configAddEntries(eleventyConfig, filters, 'addFilter');
             EleventyUtil.configAddEntries(
                 eleventyConfig,
