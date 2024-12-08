@@ -1,4 +1,5 @@
 {
+  "dataset": "mathjslab",
   "files": [
     {
       "src": "https://raw.githubusercontent.com/MathJSLab/.github/refs/heads/main/script/helper/clean-package-lock.cjs",

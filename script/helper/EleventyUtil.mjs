@@ -40,6 +40,7 @@ import { v4 as uuid } from 'uuid';
 import chalk from 'chalk';
 import Eleventy, { EleventyRenderPlugin } from '@11ty/eleventy';
 import Image from '@11ty/eleventy-img';
+import markdownIt from 'markdown-it';
 import JSON5 from 'json5';
 import YAML from 'yaml';
 import TOML from 'smol-toml';
