@@ -2,6 +2,10 @@
   "dataset": "mathjslab-app",
   "files": [
     {
+      "src": "https://raw.githubusercontent.com/MathJSLab/.github/refs/heads/main/resource/mathjslab-app/builddata.json",
+      "dest": "data/builddata.json"
+    },
+    {
       "src": "https://raw.githubusercontent.com/MathJSLab/.github/refs/heads/main/script/helper/clean-package-lock.cjs",
       "dest": "script/helper/clean-package-lock.cjs"
     },
@@ -10,20 +14,20 @@
       "dest": "script/helper/EleventyUtil.mjs"
     },
     {
-      "src": "https://raw.githubusercontent.com/MathJSLab/.github/refs/heads/main/script/build/helper/readFileBom.js",
-      "dest": "script/build/helper/readFileBom.js"
+      "src": "https://raw.githubusercontent.com/MathJSLab/.github/refs/heads/main/script/helper/readFileBom.ts",
+      "dest": "script/helper/readFileBom.ts"
     },
     {
-      "src": "https://raw.githubusercontent.com/MathJSLab/.github/refs/heads/main/script/build/helper/readFileBomSync.js",
-      "dest": "script/build/helper/readFileBomSync.js"
+      "src": "https://raw.githubusercontent.com/MathJSLab/.github/refs/heads/main/script/helper/readFileBomSync.ts",
+      "dest": "script/helper/readFileBomSync.ts"
     },
     {
-      "src": "https://raw.githubusercontent.com/MathJSLab/.github/refs/heads/main/script/build/helper/mkDirIfNotExist.js",
-      "dest": "script/build/helper/mkDirIfNotExist.js"
+      "src": "https://raw.githubusercontent.com/MathJSLab/.github/refs/heads/main/script/helper/mkDirIfNotExist.ts",
+      "dest": "script/helper/mkDirIfNotExist.ts"
     },
     {
-      "src": "https://raw.githubusercontent.com/MathJSLab/.github/refs/heads/main/script/build/helper/toIco.js",
-      "dest": "script/build/helper/toIco.js"
+      "src": "https://raw.githubusercontent.com/MathJSLab/.github/refs/heads/main/script/helper/toIco.ts",
+      "dest": "script/helper/toIco.ts"
     },
     {
       "src": "https://raw.githubusercontent.com/MathJSLab/.github/refs/heads/main/images/img/ico/favicon.ico",
