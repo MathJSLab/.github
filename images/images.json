@@ -2,26 +2,8 @@
   {
     "image": {
       "src": "mathjslab-logo.svg",
-      "widths": [
-        16,
-        32,
-        48,
-        64,
-        72,
-        96,
-        128,
-        144,
-        152,
-        192,
-        256,
-        384,
-        512,
-        630,
-        1024
-      ],
-      "formats": [
-        "png"
-      ],
+      "widths": [16, 32, 48, 64, 72, 96, 128, 144, 152, 192, 256, 384, 512, 630, 1024],
+      "formats": ["png"],
       "outputDir": "./images/img/ico"
     },
     "metadata": {
@@ -197,20 +179,8 @@
   {
     "image": {
       "src": "mathjslab-logo-light.svg",
-      "widths": [
-        16,
-        32,
-        48,
-        64,
-        96,
-        128,
-        192,
-        256,
-        512
-      ],
-      "formats": [
-        "ico"
-      ],
+      "widths": [16, 32, 48, 64, 96, 128, 192, 256, 512],
+      "formats": ["ico"],
       "outputDir": "./images/img/ico",
       "outputBasename": "favicon"
     },
@@ -227,20 +197,8 @@
   {
     "image": {
       "src": "mathjslab-logo-dark.svg",
-      "widths": [
-        16,
-        32,
-        48,
-        64,
-        96,
-        128,
-        192,
-        256,
-        512
-      ],
-      "formats": [
-        "ico"
-      ],
+      "widths": [16, 32, 48, 64, 96, 128, 192, 256, 512],
+      "formats": ["ico"],
       "outputDir": "./images/img/ico",
       "outputBasename": "favicon-dark"
     },
@@ -257,12 +215,8 @@
   {
     "image": {
       "src": "mathjslab-logo.svg",
-      "widths": [
-        1024
-      ],
-      "formats": [
-        "svg"
-      ],
+      "widths": [1024],
+      "formats": ["svg"],
       "outputDir": "./images/img"
     },
     "metadata": {
@@ -284,12 +238,8 @@
   {
     "image": {
       "src": "mathjslab-logo-light.svg",
-      "widths": [
-        1024
-      ],
-      "formats": [
-        "svg"
-      ],
+      "widths": [1024],
+      "formats": ["svg"],
       "outputDir": "./images/img"
     },
     "metadata": {
@@ -311,12 +261,8 @@
   {
     "image": {
       "src": "mathjslab-logo-dark.svg",
-      "widths": [
-        1024
-      ],
-      "formats": [
-        "svg"
-      ],
+      "widths": [1024],
+      "formats": ["svg"],
       "outputDir": "./images/img"
     },
     "metadata": {

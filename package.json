@@ -30,7 +30,7 @@
     "prebuild": "npm run build:script",
     "build": "npm run clean:build && node --disable-warning=DEP0040 eleventy.build.mjs",
     "postbuild": "npm run fix:linebreak",
-    "do:all": "npm run clean:all && npm run update && npm run format:lint && npm run build && npm run git:all"
+    "do:all": "npm run clean:all && npm run update && npm run build && npm run format:lint && npm run git:all"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
