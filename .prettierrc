@@ -1,5 +1,13 @@
 {
     "singleQuote": true,
     "trailingComma": "all",
-    "printWidth": 190
+    "printWidth": 190,
+    "overrides": [
+        {
+            "files": "*.svg",
+            "options": {
+                "parser": "html"
+            }
+        }
+    ]
 }
