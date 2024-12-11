@@ -15,12 +15,12 @@ console.log(`Running project lint (configuration: ${path.basename(__filename)}) 
 module.exports = [
     {
         files: ['**/*.ts'],
-        ignores: ['script/build/*', 'script/helper/EleventyUtil.ts'],
+        ignores: ['script/build/**/*', 'script/helper/EleventyUtil.ts'],
         languageOptions: {
             parser: tsParser,
             parserOptions: {
-                project: 'tsconfig.build.json',
-                tsconfigRootDir: __dirname,
+                project: 'tsconfig.json',
+                tsconfigRootDir: path.join(__dirname, 'script'),
                 sourceType: 'module',
                 globals: globals.es2015,
             },

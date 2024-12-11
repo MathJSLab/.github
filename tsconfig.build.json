@@ -1,9 +1,0 @@
-{
-  "extends": "./tsconfig.json",
-  "include": ["./script/"],
-  "exclude": ["node_modules"],
-  "compilerOptions": {
-    "rootDir": "./script/",
-    "outDir": "./script/build/"
-  }
-}
