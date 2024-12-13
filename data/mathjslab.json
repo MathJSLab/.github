@@ -73,7 +73,7 @@
     ]
   },
   "build": {
-    /* Organization profile project construction parameters. */
+    /* Organization profile project build parameters. */
     "eleventy": {
       "commonOptions": {
         "htmlTemplateEngine": "njk",
@@ -104,7 +104,7 @@
             }
           },
           "images": {
-            /* Construction and transformation parameters for the organization profile project images and other repositories as well. */
+            /* Build and transformation parameters for the organization profile project images and other repositories as well. */
             "transform": [
               {
                 "src": "mathjslab-logo.svg",
