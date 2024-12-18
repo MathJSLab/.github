@@ -27,11 +27,9 @@
  *
  * MIT License, Copyright (c) 2016-2024 Sergio Lindau, mathjslab.com
  */
-
 /**
  * @module EleventyUtil
  */
-
 import os from 'node:os';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -48,17 +46,14 @@ import CSON from 'cson';
 import CoffeeScript from 'coffeescript';
 import * as SASS from 'sass';
 import { DateTime } from 'luxon';
-
 /**
  * Useful functions for listing and reading files.
  */
 import readFileBom from '../build/helper/readFileBom.js';
 import readFileBomSync from '../build/helper/readFileBomSync.js';
 import mkDirIfNotExist from '../build/helper/mkDirIfNotExist.js';
-
 // import createIcon from '../build/helper/createIcon.js';
 import toIco from '../build/helper/toIco.js';
-
 /**
  * Overrides the platform's default line break format with the Microsoft
  * Windows format (CRLF). This is done because otherwise it would be done when
@@ -68,7 +63,6 @@ Object.defineProperty(os, 'EOL', {
     value: '\r\n',
     writable: false,
 });
-
 /**
  * Backup, extend and overriding JSON object functions with `json5` package.
  * The `JSON.stringify` function is not overridden because its equivalent from
@@ -101,7 +95,6 @@ global.JSON.saveFileSync = function (value, filePath, replacer, space, options) 
 global.JSON.saveFile = async function (value, filePath, replacer, space, options) {
     fs.writeFile(filePath, global.JSON.backup.stringify(value, replacer, space).replace(/\n/g, '\r\n'), options);
 };
-
 /**
  * Default template extensions and their aliases. The first element of the array is the default extension and others are aliases.
  */
@@ -213,7 +206,6 @@ const defaultDirectories = {
     layouts: './layouts',
     output: './',
 };
-
 /**
  * Default eleventy configuration options.
  */
@@ -224,7 +216,6 @@ const defaultEleventyOptions = {
     dataTemplateEngine: templateExtension.Nunjucks[0],
     templateFormats: [templateExtension.Nunjucks[0]],
 };
-
 /**
  * The following Definitions create a version of the `console` object to emit
  * log, warn, error, and debug messages with the Eleventy prefix and colors.
@@ -259,18 +250,14 @@ function logFactory(options = { type: 'log', prefix: consolePrefix.colored, colo
     color = color || 'white';
     if (typeof type === 'string' && typeof prefix === 'string' && typeof color === 'string' && typeof logPrefix === 'string') {
         return function (...args) {
-            const t = type,
-                p = prefix,
-                c = color;
-            global.console[t](
-                p,
-                ...args.map(function (arg) {
-                    return chalk[c](arg);
-                }),
-            );
+            const t = type, p = prefix, c = color;
+            global.console[t](p, ...args.map(function (arg) {
+                return chalk[c](arg);
+            }));
             return;
         }.bind(global.console);
-    } else {
+    }
+    else {
         throw new Error('logFactory: invalid options:\n' + util.inspect(options, { compact: false, colors: true }));
     }
 }
@@ -286,7 +273,6 @@ const console = {
     debug: logFactory({ type: 'debug', color: 'white' }),
     table: global.console.table.bind(global.console),
 };
-
 /**
  * This is the engines available to parse front matter of templates. The
  * Eleventy sets a `jsLegacy` engine with
@@ -349,9 +335,11 @@ function frontMatterOptionLanguage(options = { language: defaultFrontMatterLangu
         let language;
         if (typeof options === 'object') {
             language = options.language || options.lang || defaultFrontMatterLanguage;
-        } else if (typeof options === 'string') {
+        }
+        else if (typeof options === 'string') {
             language = options || defaultFrontMatterLanguage;
-        } else {
+        }
+        else {
             throw new Error('frontMatterOptionLanguage: invalid options: ' + util.inspect(options, { compact: true, colors: true }));
         }
         if (typeof language !== 'string') {
@@ -383,7 +371,8 @@ function frontMatterOptionLanguage(options = { language: defaultFrontMatterLangu
             default:
                 return { language };
         }
-    } else {
+    }
+    else {
         return {};
     }
 }
@@ -401,30 +390,38 @@ function frontMatterOptionDelimiters(options = { delimiters: defaultFrontMatterD
         let delimiters;
         if (Array.isArray(options)) {
             delimiters = options;
-        } else if (typeof options === 'object') {
+        }
+        else if (typeof options === 'object') {
             delimiters = options.delims || options.delimiters || [defaultFrontMatterDelimiter, defaultFrontMatterDelimiter];
-        } else if (typeof options === 'string') {
+        }
+        else if (typeof options === 'string') {
             delimiters = [options, options];
-        } else {
+        }
+        else {
             throw new Error('invalid options: ' + util.inspect(options, { compact: true, colors: true }));
         }
         delimiters = Array.isArray(delimiters) ? delimiters : [delimiters];
         if (delimiters.length === 0) {
             return {};
-        } else if (delimiters.length === 1) {
+        }
+        else if (delimiters.length === 1) {
             delimiters.push(delimiters[0]);
-        } else if (delimiters.length === 2) {
+        }
+        else if (delimiters.length === 2) {
             /* excerpt */
             // TODO
-        } else {
+        }
+        else {
             throw new Error('invalid options: ' + util.inspect(options, { compact: true, colors: true }));
         }
         if (delimiters[0] === defaultFrontMatterDelimiter && delimiters[1] === defaultFrontMatterDelimiter) {
             return {};
-        } else {
+        }
+        else {
             return { delimiters };
         }
-    } else {
+    }
+    else {
         return {};
     }
 }
@@ -434,10 +431,7 @@ function frontMatterOptionDelimiters(options = { delimiters: defaultFrontMatterD
  * @returns
  */
 function frontMatterOptionExcerpt(options = { excerpt: false, excerpt_separator: defaultFrontMatterDelimiter, excerpt_alias: 'page.excerpt' }) {
-    let excerpt,
-        excerpt_separator,
-        excerpt_alias,
-        result = {};
+    let excerpt, excerpt_separator, excerpt_alias, result = {};
     if (options) {
         switch (typeof options) {
             case 'object':
@@ -469,24 +463,30 @@ function frontMatterOptionExcerpt(options = { excerpt: false, excerpt_separator:
                     excerpt_separator = excerpt;
                 }
                 result.excerpt = true;
-            } else if (typeof excerpt !== 'boolean' && typeof excerpt !== 'function') {
+            }
+            else if (typeof excerpt !== 'boolean' && typeof excerpt !== 'function') {
                 throw new Error('frontMatterOptionExcerpt: invalid excerpt: ' + util.inspect(excerpt, { compact: true, colors: true }));
-            } else {
+            }
+            else {
                 result.excerpt = excerpt;
             }
             if (excerpt_separator && excerpt_separator !== defaultFrontMatterDelimiter) {
                 result = Object.assign(result, { excerpt_separator });
             }
-        } else if (typeof excerpt !== 'boolean' && excerpt_separator && typeof excerpt_separator === 'string') {
+        }
+        else if (typeof excerpt !== 'boolean' && excerpt_separator && typeof excerpt_separator === 'string') {
             if (excerpt_separator !== defaultFrontMatterDelimiter) {
                 result = { excerpt: true, excerpt_separator };
-            } else {
+            }
+            else {
                 result = { excerpt: true };
             }
-        } else {
+        }
+        else {
             result = {};
         }
-    } else {
+    }
+    else {
         result = {};
     }
     if (result.excerpt) {
@@ -535,11 +535,13 @@ function configAddFileContentAsGlobalData(eleventyConfig, dataPath, slugify, ext
         slugify = function (name) {
             return name.replace(/[\-\ ]/g, '_');
         };
-    } else if (slugify === null || slugify === false) {
+    }
+    else if (slugify === null || slugify === false) {
         slugify = function (name) {
             return name;
         };
-    } else if (typeof slugify !== 'function') {
+    }
+    else if (typeof slugify !== 'function') {
         // error
     }
     function loadContent(obj, dataPath) {
@@ -548,7 +550,8 @@ function configAddFileContentAsGlobalData(eleventyConfig, dataPath, slugify, ext
             const stats = fs.statSync(dataPathEntry);
             if (stats.isDirectory()) {
                 loadContent((obj[entry] = {}), dataPathEntry);
-            } else if (stats.isFile() || stats.isSymbolicLink()) {
+            }
+            else if (stats.isFile() || stats.isSymbolicLink()) {
                 let extname = path.extname(entry);
                 let basename = slugify(path.basename(entry, extname));
                 extname = extname ? slugify(extname.substring(1)) : '.';
@@ -559,15 +562,18 @@ function configAddFileContentAsGlobalData(eleventyConfig, dataPath, slugify, ext
                             obj[extname] = {};
                         }
                         obj[extname][basename] = content;
-                    } else {
+                    }
+                    else {
                         if (typeof obj[basename] === 'undefined') {
                             obj[basename] = {};
                         }
                         obj[basename][extname] = content;
                     }
-                } else if (typeof extFirstKey === 'string') {
+                }
+                else if (typeof extFirstKey === 'string') {
                     obj[basename + extFirstKey + extname] = content;
-                } else {
+                }
+                else {
                     // error
                 }
             }
@@ -688,11 +694,7 @@ function renderTemplateFunctionFactory(eleventyConfig, accessGlobalData = true, 
             throw new Error('invalid input argument');
         }
         /* Locally define externals for better performance. */
-        const { engines, ...defaultOptions } = eleventyConfig.frontMatterParsingOptions,
-            config = eleventyConfig,
-            globalDataAccess = accessGlobalData,
-            defaultData = Object.assign({}, defaultTemplateData),
-            render = config.javascript.functions[tagName].bind(this);
+        const { engines, ...defaultOptions } = eleventyConfig.frontMatterParsingOptions, config = eleventyConfig, globalDataAccess = accessGlobalData, defaultData = Object.assign({}, defaultTemplateData), render = config.javascript.functions[tagName].bind(this);
         /* Parse arguments (args).
            Default is function(inputPath, templateLang, data, options) but
            we want to support any arguments order too. Additionally the
@@ -703,7 +705,8 @@ function renderTemplateFunctionFactory(eleventyConfig, accessGlobalData = true, 
             args = args.map((arg) => (typeof arg !== 'undefined' ? arg : null));
             if (args.filter((arg) => typeof arg !== 'string' && typeof arg !== 'object' && (typeof arg !== 'boolean' || arg)).length > 0) {
                 throw new Error('invalid arguments');
-            } else {
+            }
+            else {
                 const languageArg = args.filter((arg) => typeof arg === 'string' || (typeof arg === 'boolean' && !arg));
                 switch (languageArg.length) {
                     case 0:
@@ -736,7 +739,8 @@ function renderTemplateFunctionFactory(eleventyConfig, accessGlobalData = true, 
                             data = Object.assign(defaultData, dataOptionsArg[0] || {});
                             options = Object.assign({}, dataOptionsArg[1] || {});
                             isTemplateLangSet = true;
-                        } else {
+                        }
+                        else {
                             throw new Error('invalid arguments');
                         }
                         break;
@@ -744,15 +748,18 @@ function renderTemplateFunctionFactory(eleventyConfig, accessGlobalData = true, 
                 if (typeof options.templateLang !== 'undefined') {
                     if (isTemplateLangSet) {
                         throw new Error('invalid arguments');
-                    } else if (typeof options.templateLang === 'string' || (typeof options.templateLang === 'boolean' && !options.templateLang)) {
+                    }
+                    else if (typeof options.templateLang === 'string' || (typeof options.templateLang === 'boolean' && !options.templateLang)) {
                         templateLang = options.templateLang;
                         delete options.templateLang;
-                    } else {
+                    }
+                    else {
                         throw new Error('invalid arguments');
                     }
                 }
             }
-        } else {
+        }
+        else {
             templateLang = false;
             data = defaultData;
             options = defaultOptions;
@@ -770,9 +777,12 @@ function renderTemplateFunctionFactory(eleventyConfig, accessGlobalData = true, 
             parsed.content = match[3] || '';
             if (options.excerpt) {
                 if (typeof options.excerpt === 'function') {
-                } else if (typeof options.excerpt === 'boolean') {
-                } else if (typeof options.excerpt === 'string') {
-                } else {
+                }
+                else if (typeof options.excerpt === 'boolean') {
+                }
+                else if (typeof options.excerpt === 'string') {
+                }
+                else {
                     // error
                 }
             }
@@ -780,14 +790,16 @@ function renderTemplateFunctionFactory(eleventyConfig, accessGlobalData = true, 
             let parseEngine = engines[parsed.language];
             parsed.data = typeof parseEngine !== 'function' ? parseEngine.parse(parsed.matterRendered) : parseEngine(parsed.matterRendered);
             Object.assign(data, parsed.data);
-        } catch (err) {
+        }
+        catch (err) {
             err.message = 'cannot parse front matter of template: ' + err.message;
             throw err;
         }
         /* Render template file. */
         try {
             parsed.rendered = await render(parsed.content, data, templateLang);
-        } catch (err) {
+        }
+        catch (err) {
             err.message = 'cannot render template: ' + err.message;
             throw err;
         }
@@ -943,14 +955,17 @@ function configAddRenderTemplateTools(eleventyConfig, rootPath, defaultTemplateD
     const { tagName, tagNameFile, filterName, accessGlobalData } = renderPlugin.options;
     if (typeof defaultTemplateData === 'undefined' || defaultTemplateData === null) {
         defaultTemplateData = {};
-    } else if (typeof defaultTemplateData !== 'object') {
+    }
+    else if (typeof defaultTemplateData !== 'object') {
         throw new Error('configAddRenderTemplateTools: invalid defaultTemplateData argument');
     }
     if (typeof defaultTemplateOptions === 'undefined' || defaultTemplateOptions === null) {
         defaultTemplateOptions = {};
-    } else if (typeof defaultTemplateOptions === 'string') {
+    }
+    else if (typeof defaultTemplateOptions === 'string') {
         defaultTemplateOptions = { templateLang: defaultTemplateOptions };
-    } else if (Array.isArray(defaultTemplateOptions) && defaultTemplateOptions.length <= 2 && defaultTemplateOptions.every((lang) => typeof lang === 'string')) {
+    }
+    else if (Array.isArray(defaultTemplateOptions) && defaultTemplateOptions.length <= 2 && defaultTemplateOptions.every((lang) => typeof lang === 'string')) {
         const result = {};
         if (defaultTemplateOptions[0]) {
             result.templateLang = defaultTemplateOptions[0];
@@ -959,7 +974,8 @@ function configAddRenderTemplateTools(eleventyConfig, rootPath, defaultTemplateD
             result.language = frontMatterOptionLanguage({ language: defaultTemplateOptions[1] });
         }
         defaultTemplateOptions = result;
-    } else if (typeof defaultTemplateOptions !== 'object') {
+    }
+    else if (typeof defaultTemplateOptions !== 'object') {
         // error
     }
     /* Inhibits selected warnings. */
@@ -969,14 +985,7 @@ function configAddRenderTemplateTools(eleventyConfig, rootPath, defaultTemplateD
         }
         console.warn(warning);
     };
-    eleventyConfig.setFrontMatterParsingOptions(
-        Object.assign(
-            frontMatterOptionEngines(defaultTemplateOptions),
-            frontMatterOptionLanguage(defaultTemplateOptions),
-            frontMatterOptionDelimiters(defaultTemplateOptions),
-            frontMatterOptionExcerpt(defaultTemplateOptions),
-        ),
-    );
+    eleventyConfig.setFrontMatterParsingOptions(Object.assign(frontMatterOptionEngines(defaultTemplateOptions), frontMatterOptionLanguage(defaultTemplateOptions), frontMatterOptionDelimiters(defaultTemplateOptions), frontMatterOptionExcerpt(defaultTemplateOptions)));
     const { engines } = eleventyConfig.frontMatterParsingOptions;
     eleventyConfig.addShortcode('parse', function (text, reviver, language = 'json') {
         return engines[frontMatterOptionLanguage({ language: language || 'json' }).language || defaultFrontMatterLanguage].parse(text, reviver);
@@ -998,19 +1007,20 @@ function configAddRenderTemplateTools(eleventyConfig, rootPath, defaultTemplateD
             throw new Error('invalid inputPath argument');
         }
         /* Locally define externals for better performance. */
-        const config = eleventyConfig,
-            root = rootPath,
-            renderTemplateFunctionBound = renderTemplateFunction.bind(this);
+        const config = eleventyConfig, root = rootPath, renderTemplateFunctionBound = renderTemplateFunction.bind(this);
         /* Set absolute input path. */
         if (typeof root === 'undefined' || root === null || root === false) {
             /* The inputPath is a current working directory relative path. */
             inputPath = path.resolve(process.cwd(), inputPath);
-        } else if (root === true && typeof config.dir !== 'undefined' && typeof config.dir.input === 'string') {
+        }
+        else if (root === true && typeof config.dir !== 'undefined' && typeof config.dir.input === 'string') {
             /* The inputPath is a input directory relative path. */
             inputPath = path.resolve(config.dir.input, inputPath);
-        } else if (typeof root !== 'string') {
+        }
+        else if (typeof root !== 'string') {
             throw new Error('configAddRenderTemplateTools: invalid rootPath: ' + util.inspect(root, { compact: true, colors: true }));
-        } else {
+        }
+        else {
             /* The inputPath is a rootPath argument relative path. */
             inputPath = path.resolve(root, inputPath);
         }
@@ -1019,16 +1029,15 @@ function configAddRenderTemplateTools(eleventyConfig, rootPath, defaultTemplateD
         let input;
         try {
             input = readFileBomSync(inputPath);
-        } catch (err) {
+        }
+        catch (err) {
             err.message = 'cannot read input file ' + inputPath + ': ' + err.message;
             throw err;
         }
         return (await renderTemplateFunctionBound(input, ...args)).rendered;
     });
     eleventyConfig.addAsyncFilter(tagNameTemplateFile, eleventyConfig.javascript.functions[tagNameTemplateFile]);
-    console.log(
-        `EleventyRenderPlugin loaded with:\n${consolePrefix.indentation}  - Shortcodes: ${tagName}, ${tagNameFile}, ${tagNameTemplateString}, ${tagNameTemplateFile}\n${consolePrefix.indentation}  - Filters:    ${filterName}, ${tagNameTemplateString}, ${tagNameTemplateFile}`,
-    );
+    console.log(`EleventyRenderPlugin loaded with:\n${consolePrefix.indentation}  - Shortcodes: ${tagName}, ${tagNameFile}, ${tagNameTemplateString}, ${tagNameTemplateFile}\n${consolePrefix.indentation}  - Filters:    ${filterName}, ${tagNameTemplateString}, ${tagNameTemplateFile}`);
 }
 /**
  * Default Render Plugin options.
@@ -1054,14 +1063,9 @@ const defaultRenderPluginOptions = {
  * @param {*} error
  * @returns
  */
-async function run(
-    config = async function (_eleventyConfig) {
-        return defaultEleventyOptions;
-    },
-    options,
-    callback,
-    error,
-) {
+async function run(config = async function (_eleventyConfig) {
+    return defaultEleventyOptions;
+}, options, callback, error) {
     const configPath = path.resolve(os.tmpdir(), `eleventy-${uuid()}.js`);
     fs.writeFileSync(configPath, `module.exports = function (eleventyConfig) {\n    return ${JSON.stringify(options, null, 2)};\n}`);
     async function runEleventy() {
@@ -1076,23 +1080,25 @@ async function run(
     }
     return runEleventy()
         .then(function (eleventy) {
-            fs.unlinkSync(configPath);
-            if (callback && typeof callback === 'function') {
-                return callback(eleventy);
-            } else {
-                return eleventy;
-            }
-        })
+        fs.unlinkSync(configPath);
+        if (callback && typeof callback === 'function') {
+            return callback(eleventy);
+        }
+        else {
+            return eleventy;
+        }
+    })
         .catch(function (err) {
-            console.error(err.message);
-            try {
-                fs.unlinkSync(configPath);
-            } catch {}
-            if (error && typeof error === 'function') {
-                error(err);
-            }
-            throw err;
-        });
+        console.error(err.message);
+        try {
+            fs.unlinkSync(configPath);
+        }
+        catch { }
+        if (error && typeof error === 'function') {
+            error(err);
+        }
+        throw err;
+    });
 }
 /**
  * Transform image files.
@@ -1101,61 +1107,60 @@ async function run(
  * @returns
  */
 async function transformImage(transform, options) {
-    return Promise.all(
-        transform.map(async function (image) {
-            const imageOptions = Object.assign({}, image);
-            delete imageOptions.src;
-            if (typeof imageOptions.outputDir === 'undefined') {
-                imageOptions.outputDir = options.dir.output;
-            }
-            mkDirIfNotExist(imageOptions.outputDir);
-            const src = options.dir.input + '/' + image.src;
-            console.log(`Building image from source: ${src} ...`);
-            const icoIndex = imageOptions.formats.indexOf('ico');
-            let outputIcoPath;
-            if (icoIndex > -1) {
-                imageOptions.formats.splice(icoIndex, 1);
-                const ico = await toIco(src, imageOptions.widths);
-                const filename = `${imageOptions.outputBasename || src.split('/').pop().split('.')[0]}.ico`;
-                outputIcoPath = path.resolve(imageOptions.outputDir, filename);
-                fs.writeFileSync(outputIcoPath, ico);
-                console.log(`Building image format: ico, widths: ${imageOptions.widths.join(',')}, output: ${filename}`);
-            }
-            let metadata = {};
-            if (imageOptions.formats.length > 0) {
-                try {
-                    let basename;
-                    if (imageOptions.outputBasename) {
-                        basename = imageOptions.outputBasename;
-                        delete imageOptions.outputBasename;
-                    }
-                    metadata = await Image(src, {
-                        filenameFormat: function (_id, src, width, format, _options) {
-                            const result = `${basename || src.split('/').pop().split('.')[0]}-${width}.${format}`;
-                            console.log(`Building image format: ${format}, width: ${width}, output: ${result}`);
-                            return result;
-                        },
-                        ...imageOptions,
-                    });
-                } catch (err) {
-                    console.error(`Error building image from source: ${src}: ${err.message}`);
-                    throw err;
+    return Promise.all(transform.map(async function (image) {
+        const imageOptions = Object.assign({}, image);
+        delete imageOptions.src;
+        if (typeof imageOptions.outputDir === 'undefined') {
+            imageOptions.outputDir = options.dir.output;
+        }
+        mkDirIfNotExist(imageOptions.outputDir);
+        const src = options.dir.input + '/' + image.src;
+        console.log(`Building image from source: ${src} ...`);
+        const icoIndex = imageOptions.formats.indexOf('ico');
+        let outputIcoPath;
+        if (icoIndex > -1) {
+            imageOptions.formats.splice(icoIndex, 1);
+            const ico = await toIco(src, imageOptions.widths);
+            const filename = `${imageOptions.outputBasename || src.split('/').pop().split('.')[0]}.ico`;
+            outputIcoPath = path.resolve(imageOptions.outputDir, filename);
+            fs.writeFileSync(outputIcoPath, ico);
+            console.log(`Building image format: ico, widths: ${imageOptions.widths.join(',')}, output: ${filename}`);
+        }
+        let metadata = {};
+        if (imageOptions.formats.length > 0) {
+            try {
+                let basename;
+                if (imageOptions.outputBasename) {
+                    basename = imageOptions.outputBasename;
+                    delete imageOptions.outputBasename;
                 }
-            }
-            if (icoIndex > -1) {
-                image.formats.push('ico');
-                metadata.ico = [
-                    {
-                        format: 'ico',
-                        filename: path.basename(src),
-                        outputPath: outputIcoPath,
+                metadata = await Image(src, {
+                    filenameFormat: function (_id, src, width, format, _options) {
+                        const result = `${basename || src.split('/').pop().split('.')[0]}-${width}.${format}`;
+                        console.log(`Building image format: ${format}, width: ${width}, output: ${result}`);
+                        return result;
                     },
-                ];
+                    ...imageOptions,
+                });
             }
-            console.log(`Building image from source: ${src} done.`);
-            return { image, metadata };
-        }),
-    );
+            catch (err) {
+                console.error(`Error building image from source: ${src}: ${err.message}`);
+                throw err;
+            }
+        }
+        if (icoIndex > -1) {
+            image.formats.push('ico');
+            metadata.ico = [
+                {
+                    format: 'ico',
+                    filename: path.basename(src),
+                    outputPath: outputIcoPath,
+                },
+            ];
+        }
+        console.log(`Building image from source: ${src} done.`);
+        return { image, metadata };
+    }));
 }
 /**
  * Adds useful shortcodes and filters to the configuration for dealing with dates and times.
@@ -1166,7 +1171,8 @@ function configAddDateTimeTools(eleventyConfig) {
     eleventyConfig.addShortcode('currentDate', function (format) {
         if (format === 'HTTP') {
             return DateTime.now().toHTTP();
-        } else {
+        }
+        else {
             return DateTime.now().toFormat(format || 'yyyy-MM-dd');
         }
     });
@@ -1174,26 +1180,7 @@ function configAddDateTimeTools(eleventyConfig) {
 /**
  * Exports
  */
-export {
-    readFileBom,
-    readFileBomSync,
-    templateExtension,
-    templateFormatAlias,
-    defaultDirectories,
-    defaultEleventyOptions,
-    console,
-    parseEngine,
-    configGetPlugin,
-    configAddEntries,
-    configAddFileContentAsGlobalData,
-    prefixExtensionRemoveFactory,
-    templateEngine,
-    configAddTemplateFormat,
-    configAddRenderTemplateTools,
-    run,
-    transformImage,
-    configAddDateTimeTools,
-};
+export { readFileBom, readFileBomSync, templateExtension, templateFormatAlias, defaultDirectories, defaultEleventyOptions, console, parseEngine, configGetPlugin, configAddEntries, configAddFileContentAsGlobalData, prefixExtensionRemoveFactory, templateEngine, configAddTemplateFormat, configAddRenderTemplateTools, run, transformImage, configAddDateTimeTools, };
 /**
  * Default exports
  */
