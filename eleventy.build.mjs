@@ -64,29 +64,13 @@ const stepData = [
         options: getStepOption(0),
         config: async function (eleventyConfig) {
             const filters = {
-                prefix: function (value, prefix, postfix) {
-                    return `${typeof prefix === 'string' ? prefix : ''}${value}${typeof postfix === 'string' ? postfix : ''}`;
-                },
-                postfix: function (value, postfix, prefix) {
-                    return `${typeof prefix === 'string' ? prefix : ''}${value}${typeof postfix === 'string' ? postfix : ''}`;
-                },
-                filterField: function (value, field) {
-                    return value[field];
-                },
-                getField: function (value, field) {
-                    return value.map((value) => value[field]);
-                },
-                readFile: function (filePath, encoding) {
-                    return fs.readFileSync(path.resolve(filePath), encoding || 'utf-8');
-                },
-                removeFrontMatter: function (value) {
-                    return value.match(/^(?:---\r?\n(?:[\s\S]*)?---\r?\n)?([\s\S]+)$/)[1];
-                },
+                ...EleventyUtil.utilFilters,
                 noWikiRepoMessage: function (value) {
                     return `echo \"Warning: there is no wiki repository associated with the ${value} repository\"`;
                 },
             };
-            const packageJsonShortcodes = {
+            const shortcodes = {
+                ...EleventyUtil.utilShortcodes,
                 packageJsonHeader: function (...args) {
                     return ['name', 'version', 'description', 'author'].map((field, i) => `\"${field}\": \"${args[i]}\"`).join(',\n  ');
                 },
@@ -119,7 +103,7 @@ const stepData = [
                 {
                     mathjslabLogoSvg,
                     xmlHeader,
-                    ...packageJsonShortcodes,
+                    ...shortcodes,
                 },
                 'addShortcode',
             );
@@ -144,15 +128,13 @@ const stepData = [
                     .join('\r\n'),
             );
             await transformImage(0);
-            EleventyUtil.configAddDateTimeTools(eleventyConfig);
             return getStepOption(0);
         },
     },
     {
         options: getStepOption(1),
-        config: async function (eleventyConfig) {
+        config: async function (_eleventyConfig) {
             await transformImage(1);
-            EleventyUtil.configAddDateTimeTools(eleventyConfig);
             return getStepOption(1);
         },
     },

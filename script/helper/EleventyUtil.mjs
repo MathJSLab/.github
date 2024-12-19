@@ -513,6 +513,59 @@ function configGetPlugin(eleventyConfig, name) {
     });
 }
 /**
+ * Util filters.
+ */
+const utilFilters = {
+    prefix: function (value, prefix, postfix) {
+        return `${typeof prefix === 'string' ? prefix : ''}${value}${typeof postfix === 'string' ? postfix : ''}`;
+    },
+    postfix: function (value, postfix, prefix) {
+        return `${typeof prefix === 'string' ? prefix : ''}${value}${typeof postfix === 'string' ? postfix : ''}`;
+    },
+    field: function (value, field) {
+        return value[field];
+    },
+    mapField: function (value, field) {
+        return value.map((value) => value[field]);
+    },
+    readFile: function (filePath, encoding) {
+        return readFileBomSync(path.resolve(filePath));
+    },
+    removeFrontMatter: function (value) {
+        return value.match(/^(?:---\r?\n(?:[\s\S]*)?---\r?\n)?([\s\S]+)$/)[1];
+    },
+};
+/**
+ * Util shortcodes.
+ */
+const utilShortcodes = {
+    processEnv: function (name, defaultValue = '') {
+        if (typeof name === 'undefined') {
+            return process.env;
+        } else if (typeof name === 'string') {
+            if (typeof process.env[name] === 'string') {
+                return process.env[name].trim();
+            } else if (typeof process.env[name] !== 'undefined') {
+                return process.env[name];
+            } else {
+                return defaultValue;
+            }
+        } else {
+            throw new Error(`processEnv shortcode: invalid environment variable name: ${name}`);
+        }
+    },
+    currentDate: function (format) {
+        /* About formatting specification: https://moment.github.io/luxon/#/formatting */
+        if (format === 'HTTP') {
+            return DateTime.now().toHTTP();
+        } else if (format === 'RFC2822') {
+            return DateTime.now().toRFC2822();
+        } else {
+            return DateTime.now().toFormat(format || 'yyyy-MM-dd');
+        }
+    },
+};
+/**
  * Add entries from obj to configuration.
  * @param {*} eleventyConfig
  * @param {*} obj
@@ -1158,20 +1211,6 @@ async function transformImage(transform, options) {
     );
 }
 /**
- * Adds useful shortcodes and filters to the configuration for dealing with dates and times.
- * https://moment.github.io/luxon/#/formatting
- * @param {*} eleventyConfig
- */
-function configAddDateTimeTools(eleventyConfig) {
-    eleventyConfig.addShortcode('currentDate', function (format) {
-        if (format === 'HTTP') {
-            return DateTime.now().toHTTP();
-        } else {
-            return DateTime.now().toFormat(format || 'yyyy-MM-dd');
-        }
-    });
-}
-/**
  * Exports
  */
 export {
@@ -1183,6 +1222,8 @@ export {
     defaultEleventyOptions,
     console,
     parseEngine,
+    utilFilters,
+    utilShortcodes,
     configGetPlugin,
     configAddEntries,
     configAddFileContentAsGlobalData,
@@ -1192,7 +1233,6 @@ export {
     configAddRenderTemplateTools,
     run,
     transformImage,
-    configAddDateTimeTools,
 };
 /**
  * Default exports
@@ -1206,6 +1246,8 @@ export default {
     defaultEleventyOptions,
     console,
     parseEngine,
+    utilFilters,
+    utilShortcodes,
     configGetPlugin,
     configAddEntries,
     configAddFileContentAsGlobalData,
@@ -1215,5 +1257,4 @@ export default {
     configAddRenderTemplateTools,
     run,
     transformImage,
-    configAddDateTimeTools,
 };

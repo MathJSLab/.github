@@ -16,7 +16,7 @@
   "license": "UNLICENSED",
   "scripts": {
     {% set itemList = mathjslab.organization.repositories %}{% for item in itemList %}{{ scriptsRepository(item.shortName, item.name, item.rename, item.wiki) }}{% if not loop.last %},
-    {% endif %}{% endfor %},{% set repoShortNames = mathjslab.organization.repositories | getField('shortName') %}
+    {% endif %}{% endfor %},{% set repoShortNames = mathjslab.organization.repositories | mapField('shortName') %}
     {% scriptAllAction repoShortNames, "clone" %},
     {% scriptAllAction repoShortNames, "wiki:clone" %},
     {% scriptAllAction ["all", "all:wiki"], "clone", "all" %},
