@@ -6,6 +6,7 @@
 
 The files in this directory are test templates for the information in the [data](https://github.com/MathJSLab/.github/tree/main/data) directory.
 
+* [Environment](data/environment.md)
 * [Date time test](data/date-time-test.md)
 * [Config data test](data/config-data-test.md)
 * [Badges checkup](data/badges-checkup.md)

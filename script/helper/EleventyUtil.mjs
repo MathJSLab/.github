@@ -534,6 +534,9 @@ const utilFilters = {
     removeFrontMatter: function (value) {
         return value.match(/^(?:---\r?\n(?:[\s\S]*)?---\r?\n)?([\s\S]+)$/)[1];
     },
+    messageIfTruthy: function (test, message) {
+        return test ? message : '';
+    },
 };
 /**
  * Util shortcodes.
