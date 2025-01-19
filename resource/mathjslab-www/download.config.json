@@ -22,6 +22,10 @@
       "dest": "script/build/helper/mkDirIfNotExist.js"
     },
     {
+      "src": "https://raw.githubusercontent.com/MathJSLab/.github/refs/heads/main/script/helper/git-commit.cjs",
+      "dest": "script/helper/git-commit.cjs"
+    },
+    {
       "src": "https://raw.githubusercontent.com/MathJSLab/.github/refs/heads/main/script/build/helper/toIco.js",
       "dest": "script/build/helper/toIco.js"
     },

@@ -19,7 +19,6 @@
     "update": "npx npm-check-updates -u && npm install",
     "fix:linebreak": "replace-in-file --verbose --configFile=replace.fix-linebreak.json",
     "git:add": "git add .",
-    "old-git:commit": "git commit -m \"Initial Commit\"",
     "git:commit": "node script/helper/git-commit.cjs",
     "git:push": "git push",
     "git:all": "npm run git:add && npm run git:commit && npm run git:push",

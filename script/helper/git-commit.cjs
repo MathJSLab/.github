@@ -4,7 +4,7 @@
 const { exec } = require('node:child_process');
 
 /* Default commit message. */
-const defaultMessage = `Initial Commit`;
+const defaultMessage = `Committed on ${new Date().toGMTString()}`;
 /* Wait time in milliseconds (3 seconds). */
 const timeoutDuration = 3000;
 

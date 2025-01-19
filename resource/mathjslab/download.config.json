@@ -22,6 +22,10 @@
       "dest": "script/helper/mkDirIfNotExist.ts"
     },
     {
+      "src": "https://raw.githubusercontent.com/MathJSLab/.github/refs/heads/main/script/helper/git-commit.cjs",
+      "dest": "script/helper/git-commit.cjs"
+    },
+    {
       "src": "https://raw.githubusercontent.com/MathJSLab/.github/refs/heads/main/images/mathjslab-logo.svg",
       "dest": "mathjslab-logo.svg"
     }
