@@ -47,4 +47,4 @@ Copyright &copy; 2016-2024 [Sergio Lindau](mailto:sergiolindau@gmail.com), [![OR
 [![ISBN](https://img.shields.io/badge/ISBN-978--65--00--84828--1-blue?style=flat&link=https://grp.isbn-international.org/search/piid_solr?keys=978-65-00-84828-1)](https://grp.isbn-international.org/search/piid_solr?keys=978-65-00-84828-1)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8396263.svg)](https://doi.org/10.5281/zenodo.8396263)
 
-This organization profile was last modified on 2025-01-19.
+This organization profile was last modified on 2025-01-26.
