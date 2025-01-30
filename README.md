@@ -16,9 +16,18 @@
 
 > An [interpreter](https://en.wikipedia.org/wiki/Interpreter_(computing)) with language syntax like [MATLAB&reg;](https://www.mathworks.com/)/[Octave](https://www.gnu.org/software/octave/) written in [TypeScript](https://www.typescriptlang.org/).
 
-The [**MathJSLab Organization**](https://github.com/MathJSLab) was created to bring together the [MathJSLab Project](https://mathjslab.com/) [repositories](https://github.com/orgs/MathJSLab/repositories).
+The **[MathJSLab Organization](https://github.com/MathJSLab)** was created to
+bring together the [MathJSLab Project](https://mathjslab.com/)
+[repositories](https://github.com/orgs/MathJSLab/repositories).
 
-Copyright &copy; 2016-2024 [Sergio Lindau](mailto:sergiolindau@gmail.com), [![ORCID](https://img.shields.io/badge/ORCID-0009--0006--9115--0291-blue)](https://orcid.org/0009-0006-9115-0291)
+**Important Notice:** This software, the **[MathJSLab](https://mathjslab.com/),
+is not affiliated, sponsored, or endorsed by [The MathWorks, Inc.](https://www.mathworks.com/)**
+[MATLAB&reg;](https://www.mathworks.com/products/matlab.html) is a registered
+trademark of [The MathWorks, Inc.](https://www.mathworks.com/) For more
+information about [MATLAB](https://www.mathworks.com/products/matlab.html), visit
+[www.mathworks.com](https://www.mathworks.com/).
+
+Copyright &copy; 2016-2025 [Sergio Lindau](mailto:sergiolindau@gmail.com), [![ORCID](https://img.shields.io/badge/ORCID-0009--0006--9115--0291-blue)](https://orcid.org/0009-0006-9115-0291)
 
 [mathjslab.com](https://mathjslab.com/), [mathjslab@gmail.com](mailto:mathjslab@gmail.com).
 

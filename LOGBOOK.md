@@ -2,6 +2,10 @@
 
 This file contains general information about the actions of the [MathJSLab Project](https://mathjslab.com/) that go beyond the scope of the individual projects. In other words, what cannot be recorded in the `CHANGES.md` file of each software project, or the general actions of the organization, are recorded here, indexed by date.
 
+## 2025-01-26
+- Version 1.7.0-b1 has been released for testing. The new version builds 6 different bundles, optimized for the Node.js environment and the browser environment. This beta version was released to test access to the specific bundles via CDNs (jsDelivr and unpkg). CodePens for Web bundles has been created testing MathJSLab bundles with jsDelivr an unpkg CDNs.
+- Trademark advices are created and incorporated in all MathJSLab projects.
+
 ## 2024-11-30
 - More useful files have been added to the `script/helper` directory. The `resource` directory was created to hold files from other repositories (which are built into the organization project). A directory was created for each project, and in it the `download.config.json` file specifies files in the organization repository that are downloaded into each project. The `script/helper/download-files.cjs` tool is used for this purpose.
 

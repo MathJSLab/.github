@@ -16,7 +16,14 @@
 
 > Um [interpretador](https://pt.wikipedia.org/wiki/Interpretador) com sintaxe de linguagem tipo [MATLAB&reg;](https://www.mathworks.com/)/[Octave](https://www.gnu.org/software/octave/) escrito em [TypeScript](https://www.typescriptlang.org/).
 
-A **Organização MathJSLab** foi criada para reunir os [repositórios](https://github.com/orgs/MathJSLab/repositories) do [Projeto MathJSLab](https://mathjslab.com/).
+A **[Organização MathJSLab](https://github.com/MathJSLab)** foi criada para reunir os [repositórios](https://github.com/orgs/MathJSLab/repositories) do [Projeto MathJSLab](https://mathjslab.com/).
+
+**Aviso importante:** Este software, o **[MathJSLab](https://mathjslab.com/),
+não é afiliado, patrocinado ou endossado por [The MathWorks, Inc.](https://www.mathworks.com/)**
+[MATLAB&reg;](https://www.mathworks.com/products/matlab.html) é uma marca
+registrada de [The MathWorks, Inc.](https://www.mathworks.com/) Para mais
+informações sobre o [MATLAB](https://www.mathworks.com/products/matlab.html),
+visite [www.mathworks.com](https://www.mathworks.com).
 
 Esta organização é proprietária dos seguintes repositórios:
 - O [repositório](https://github.com/MathJSLab/.github) do perfil da organização.
@@ -37,7 +44,7 @@ curl -k -o ./package.json https://raw.githubusercontent.com/MathJSLab/.github/re
 npm run all:clone:all
 ```
 
-Copyright &copy; 2016-2024 [Sergio Lindau](mailto:sergiolindau@gmail.com), [![ORCID](https://img.shields.io/badge/ORCID-0009--0006--9115--0291-blue)](https://orcid.org/0009-0006-9115-0291)
+Copyright &copy; 2016-2025 [Sergio Lindau](mailto:sergiolindau@gmail.com), [![ORCID](https://img.shields.io/badge/ORCID-0009--0006--9115--0291-blue)](https://orcid.org/0009-0006-9115-0291)
 
 [mathjslab.com](https://mathjslab.com/), [mathjslab@gmail.com](mailto:mathjslab@gmail.com).
 
@@ -47,4 +54,4 @@ Copyright &copy; 2016-2024 [Sergio Lindau](mailto:sergiolindau@gmail.com), [![OR
 [![ISBN](https://img.shields.io/badge/ISBN-978--65--00--84828--1-blue?style=flat&link=https://grp.isbn-international.org/search/piid_solr?keys=978-65-00-84828-1)](https://grp.isbn-international.org/search/piid_solr?keys=978-65-00-84828-1)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8396263.svg)](https://doi.org/10.5281/zenodo.8396263)
 
-Este perfil da organização foi modificado pela última vez em 26/01/2025.
+Este perfil da organização foi modificado pela última vez em 30/01/2025.
