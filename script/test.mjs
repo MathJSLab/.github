@@ -9,7 +9,7 @@
 
 import chalk from 'chalk';
 
-global.console.log(chalk.blue(`########################## ${chalk.magenta.bold('Test')} ##########################`));
+globalThis.console.log(chalk.blue(`########################## ${chalk.magenta.bold('Test')} ##########################`));
 
 let frontMatterExampleCount = 0;
 
@@ -287,21 +287,21 @@ process.emitWarning = (warning) => {
 // }
 // const permalink = permalinkPrefixExtensionReplaceFactory('\\./input/', 'njk');
 // const inputPath = './input/foo/test.json.njk';
-// global.console.log(permalink('', inputPath));
+// globalThis.console.log(permalink('', inputPath));
 
 // import thisFilePath from './helper/thisFilePath.mjs';
 // console.log(thisFilePath());
 // console.log(path.sep === '\\');
 
 // import { globSync } from 'glob';
-// global.console.log(globSync('./input/test/data/*'));
+// globalThis.console.log(globSync('./input/test/data/*'));
 
 // import util from 'node:util';
 // const obj = { name: 'Alice', age: 25, hobbies: ['reading', 'gaming'] };
-// global.console.log(util.inspect(obj, { compact: false, colors: true }));
+// globalThis.console.log(util.inspect(obj, { compact: false, colors: true }));
 
 import createIcon from './build/helper/createIcon.js';
 
-global.console.log(createIcon);
+globalThis.console.log(createIcon);
 
-global.console.log(chalk.yellow(`##########################################################`));
+globalThis.console.log(chalk.yellow(`##########################################################`));
