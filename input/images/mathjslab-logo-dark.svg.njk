@@ -1,4 +1,4 @@
 ---
 ---
 {% xmlHeader %}
-{% mathjslabLogoSvg "layouts/mathjslab-logo-dark.css.njk" | renderTemplateFile({ logo_colors: mathjslab.colors }), mathjslab.logo_width %}
+{% mathjslabLogoSvg "layouts/mathjslab-logo-dark.css.scss" | compileSCSS, mathjslab.logo_width %}

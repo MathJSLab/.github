@@ -11,8 +11,9 @@
 
 [![mathjslab.com](https://img.shields.io/badge/mathjslab.com-D0F0D0)](https://mathjslab.com/)
 [![Website status](https://img.shields.io/website?url=https%3A%2F%2Fmathjslab.com%2F)](https://mathjslab.com/)
-[![GitHub Created At](https://img.shields.io/github/created-at/MathJSLab/mathjslab-www)](https://github.com/MathJSLab/.github)
-[![MIT License](https://img.shields.io/npm/l/mathjslab)](https://github.com/MathJSLab/mathjslab/blob/main/LICENSE)
+[![GitHub Created At](https://img.shields.io/github/created-at/MathJSLab/.github)](https://github.com/MathJSLab/.github)
+[![GitHub License](https://img.shields.io/github/license/MathJSLab/mathjslab)](https://github.com/MathJSLab/mathjslab/blob/main/LICENSE)
+[![OpenAIRE](https://img.shields.io/badge/OpenAIRE-blue?style=flat&link=https://explore.openaire.eu/search/advanced/research-outcomes?f0=q&fv0=MathJSLab)](https://explore.openaire.eu/search/advanced/research-outcomes?f0=q&fv0=MathJSLab)
 
 > Un [intérprete](https://es.wikipedia.org/wiki/Int%C3%A9rprete_(inform%C3%A1tica)) con sintaxis de lenguaje como [MATLAB&reg;](https://www.mathworks.com/)/[Octave](https://www.gnu.org/software/octave/) escrito en [TypeScript](https://www.typescriptlang.org/).
 

@@ -1,0 +1,24 @@
+@use '../base/colors';
+
+@mixin generate-styles($mode: light, $inverted: dark, $trace-stroke-fill: none) {
+    .fill-symbol {
+        fill: colors.get($inverted, green-background);
+    }
+
+    .stroke-fill-panel {
+        stroke: colors.get($inverted, green-border);
+        fill: colors.get($mode, green-background);
+    }
+
+    .stroke-trace {
+        @if $trace-stroke-fill == none {
+            fill: none;
+        }
+
+        stroke: colors.get($mode, color-trace-stroke);
+    }
+
+    .fill-trace {
+        fill: colors.get($mode, color-trace-fill);
+    }
+}

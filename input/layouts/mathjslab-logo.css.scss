@@ -1,0 +1,9 @@
+@use '../../includes/styles/image/mathjslab-logo';
+
+// light
+@include mathjslab-logo.generate-styles();
+
+// dark
+@media (prefers-color-scheme: dark) {
+    @include mathjslab-logo.generate-styles(dark, light, null);
+}

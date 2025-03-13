@@ -23,24 +23,6 @@
       "markdownIndex": "LEAME.md"
     }
   },
-  "colors": {
-    /* Color sets for logo and application. */
-    "light": {
-      "fillSymbol": "hsl(120, 52%, 16%)",
-      "strokePanel": "green",
-      "fillPanel": "hsl(120, 52%, 88%)",
-      "strokeTrace": "hsl(0, 0%, 24%)",
-      "fillTrace": "hsl(0, 0%, 24%)"
-    },
-    "dark": {
-      "fillSymbol": "hsl(120, 52%, 88%)",
-      "strokePanel": "green",
-      "fillPanel": "hsl(120, 52%, 16%)",
-      "strokeTrace": "hsl(0, 0%, 92%)",
-      "fillTrace": "hsl(0, 0%, 92%)"
-    }
-  },
-  "logo_width": 630,
   "organization": {
     /* Information about the organization on GitHub and its repositories. */
     "name": "MathJSLab",
@@ -72,6 +54,7 @@
       }
     ]
   },
+  "logo_width": 630,
   "build": {
     /* Organization profile project build parameters. */
     "eleventy": {

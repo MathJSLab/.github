@@ -1,0 +1,4 @@
+@use '../../includes/styles/image/mathjslab-logo';
+
+// dark
+@include mathjslab-logo.generate-styles(dark, light);

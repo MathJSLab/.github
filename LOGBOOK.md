@@ -2,6 +2,12 @@
 
 This file contains general information about the actions of the [MathJSLab Project](https://mathjslab.com/) that go beyond the scope of the individual projects. In other words, what cannot be recorded in the `CHANGES.md` file of each software project, or the general actions of the organization, are recorded here, indexed by date.
 
+## 2025-03-13
+- The functions and templates for generating the MathJSLab logo in SVG format have been improved: the pi symbol, which was in text form, was converted to a path. The reason was that some devices do not have the 'Symbol' font. This way the SVG file becomes absolutely standalone, in fact.
+- The `includes/styles/` directory has been created with `SASS` templates common to the projects. Other style definitions include element classes in the logo SVG files. The `compileSCSS` filter has been included in the `script/helper/EleventyUtil.mjs` file to process and include `.scss` templates directly in Nunjucks templates.
+- A badge pointing to the [OpenAIRE](https://explore.openaire.eu/) search for MathJSLab has been added to the documentation.
+
+
 ## 2025-01-26
 - Version 1.7.0-b1 has been released for testing. The new version builds 6 different bundles, optimized for the Node.js environment and the browser environment. This beta version was released to test access to the specific bundles via CDNs (jsDelivr and unpkg). CodePens for Web bundles has been created testing MathJSLab bundles with jsDelivr an unpkg CDNs.
 - Trademark advices are created and incorporated in all MathJSLab projects.

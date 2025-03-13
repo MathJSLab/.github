@@ -103,20 +103,6 @@ teststr: "testando"
         ['---', '---'],
     ],
     [
-        `---
-dark: {{ mathjslab.colors.dark | JsonStringify }}
----
-<content>Template content [${frontMatterExampleCount++}]</content>`,
-        ['---', '---'],
-    ],
-    [
-        `---
-dark: { mathjslab.colors.dark | JsonStringify }
----
-<content>Template content [${frontMatterExampleCount++}]</content>`,
-        ['---', '---'],
-    ],
-    [
         `   ---
 permalink: images.html
 ---
