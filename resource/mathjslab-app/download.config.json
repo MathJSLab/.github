@@ -34,8 +34,8 @@
       "dest": "src/styles/base/_colors.scss"
     },
     {
-      "src": "https://raw.githubusercontent.com/MathJSLab/.github/refs/heads/main/includes/styles/abstract/_mixin-define-map.scss",
-      "dest": "src/styles/abstract/_mixin-define-map.scss"
+      "src": "https://raw.githubusercontent.com/MathJSLab/.github/refs/heads/main/includes/styles/abstract/_define-map.scss",
+      "dest": "src/styles/abstract/_define-map.scss"
     },
     {
       "src": "https://raw.githubusercontent.com/MathJSLab/.github/refs/heads/main/script/helper/toIco.ts",
