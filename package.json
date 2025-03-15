@@ -23,7 +23,7 @@
     "git:all": "npm run git:add && npm run git:commit && npm run git:push",
     "fix:linebreak": "replace-in-file --verbose --configFile=replace.fix-linebreak.json",
     "preformat": "npm run fix:linebreak",
-    "format": "prettier --plugin=@prettier/plugin-xml --write **/*.{ts,tsx,js,jsx,cjs,mjs,css,scss,sass,html,htm,json,jsonc,yml,yaml,svg}",
+    "format": "prettier --plugin=@prettier/plugin-xml --write **/*.{ts,tsx,js,jsx,cjs,mjs,css,html,htm,json,jsonc,yml,yaml,svg}",
     "lint": "eslint --fix",
     "format:lint": "npm run format && npm run lint",
     "script:test": "node --disable-warning=DEP0040 script/test.mjs",
