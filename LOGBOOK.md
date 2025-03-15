@@ -2,6 +2,9 @@
 
 This file contains general information about the actions of the [MathJSLab Project](https://mathjslab.com/) that go beyond the scope of the individual projects. In other words, what cannot be recorded in the `CHANGES.md` file of each software project, or the general actions of the organization, are recorded here, indexed by date.
 
+## 2025-03-15
+- More files added to `includes/styles/` directory.
+
 ## 2025-03-13
 - The functions and templates for generating the MathJSLab logo in SVG format have been improved: the pi symbol, which was in text form, was converted to a path. The reason was that some devices do not have the 'Symbol' font. This way the SVG file becomes absolutely standalone, in fact.
 - The `includes/styles/` directory has been created with `SASS` templates common to the projects. Other style definitions include element classes in the logo SVG files. The `compileSCSS` filter has been included in the `script/helper/EleventyUtil.mjs` file to process and include `.scss` templates directly in Nunjucks templates.
