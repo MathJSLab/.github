@@ -7,5 +7,4 @@
     {%- set value = parts[1] | trim | replace(";", "") %}
     {%- set vars = vars.concat('  "' + variable + '": "' + value + '"') %}
   {%- endif %}
-{%- endfor %}
-{{ "{\n" + vars | join(",\n") + "\n}" }}
+{%- endfor %}{{ "{\n" + vars | join(",\n") + "\n}" }}
