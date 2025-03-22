@@ -5,5 +5,5 @@
 
 // dark
 @media (prefers-color-scheme: dark) {
-    @include mathjslab-logo.generate-styles(dark, light, null);
+  @include mathjslab-logo.generate-styles(dark, light, null);
 }

@@ -13,6 +13,17 @@
                 "proseWrap": "preserve",
                 "htmlWhitespaceSensitivity": "strict"
             }
+        },
+        {
+            "files": "*.scss",
+            "options": {
+                "parser": "scss",
+                "tabWidth": 2,
+                "useTabs": false,
+                "printWidth": 120,
+                "bracketSpacing": false,
+                "proseWrap": "preserve"
+            }
         }
     ]
 }
