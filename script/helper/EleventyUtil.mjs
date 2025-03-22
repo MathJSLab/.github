@@ -46,7 +46,7 @@ import YAML from 'yaml';
 import TOML from 'smol-toml';
 import CSON from 'cson';
 import CoffeeScript from 'coffeescript';
-import * as SASS from 'sass';
+import sass from 'sass';
 import { DateTime } from 'luxon';
 
 /**
@@ -548,7 +548,7 @@ const utilFilters = {
         return test ? message : '';
     },
     compileSCSS: function (scssPath) {
-        const result = SASS.compile(path.resolve(this.eleventy.directories.input, scssPath), {
+        const result = sass.compile(path.resolve(this.eleventy.directories.input, scssPath), {
             silenceDeprecations: ['global-builtin'],
             loadPaths: ['.', this.eleventy.directories.includes],
         });

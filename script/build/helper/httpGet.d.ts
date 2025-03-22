@@ -1,5 +1,5 @@
 import { URL } from 'node:url';
-import * as http from 'node:http';
+import http from 'node:http';
 /**
  * Gets the `http` or `https` module according to the protocol in the `url`
  * and executes the GET method on the `url`.

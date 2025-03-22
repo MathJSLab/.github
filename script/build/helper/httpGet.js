@@ -1,5 +1,5 @@
-import * as http from 'node:http';
-import * as https from 'node:https';
+import http from 'node:http';
+import https from 'node:https';
 /**
  * Gets the `http` or `https` module according to the protocol in the `url`
  * and executes the GET method on the `url`.

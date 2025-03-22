@@ -1,4 +1,4 @@
-import * as http from 'node:http';
+import http from 'node:http';
 import { HTMLElement, Options } from 'node-html-parser';
 /**
  * Downloads an HTML file and parses it, returning an object of type

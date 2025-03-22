@@ -13,7 +13,7 @@ import YAML from 'yaml';
 import TOML from 'smol-toml';
 import CSON from 'cson';
 import CoffeeScript from 'coffeescript';
-import * as SASS from 'sass';
+// import sass from 'sass';
 
 export type ImageFormat = 'webp' | 'jpeg' | 'png' | 'svg' | 'avif' | 'ico';
 export type ImageFormatWithAliases = ImageFormat | 'jpg' | 'svg+xml';

@@ -5,7 +5,7 @@
 // import JSON5 from 'json5';
 // import TOML from 'smol-toml';
 // import CSON from 'cson';
-// import * as SASS from 'sass';
+// import sass from 'sass';
 
 import chalk from 'chalk';
 
@@ -240,7 +240,7 @@ process.emitWarning = (warning) => {
 //         parse: TOML.parse.bind(TOML),
 //         stringify: TOML.stringify.bind(TOML),
 //     },
-//     sass: SASS.compile.bind(SASS),
+//     sass: sass.compile.bind(sass),
 // };
 // const yamlExamples = [
 //     `title: Hello
