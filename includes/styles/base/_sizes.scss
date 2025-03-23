@@ -50,10 +50,10 @@ $sizes-spec: (
 );
 
 /// Iterate over the $sizes-spec map generating size values in the global $generated-sizes map.
-// prettier-ignore
 @each $size-name, $size-spec in $sizes-spec {
-    /// Generate the colors for each variation. If there's no definition for x- or xx- size, then use the nearest definition.
-    $generated-map: (
+  /// Generate the colors for each variation. If there's no definition for x- or xx- size, then use the nearest definition.
+  // prettier-ignore
+  $generated-map: (
         '#{$size-name}': map-get($size-spec, base),
         '#{$size-name}-base': map-get($size-spec, base),
         '#{$size-name}-xx-small': map-get($size-spec, base) * (map-get($size-spec, xx-small) or map-get($size-spec, x-small) or map-get($size-spec, small)),
@@ -64,8 +64,8 @@ $sizes-spec: (
         '#{$size-name}-x-large': map-get($size-spec, base) * (map-get($size-spec, x-large) or map-get($size-spec, large)),
         '#{$size-name}-xx-large': map-get($size-spec, base) * (map-get($size-spec, xx-large) or map-get($size-spec, x-large) or map-get($size-spec, large)),
     );
-/// Store the $generated-map in the global $generated-sizes map.
-$generated-sizes: map-merge($generated-sizes, $generated-map) !global;
+  /// Store the $generated-map in the global $generated-sizes map.
+  $generated-sizes: map-merge($generated-sizes, $generated-map) !global;
 }
 
 /// Gets size value from size-name.
