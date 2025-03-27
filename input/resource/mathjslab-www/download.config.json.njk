@@ -1,0 +1,22 @@
+---json
+{
+  dataset: "mathjslab-www",
+  baseUrl: "https://raw.githubusercontent.com/MathJSLab/.github/refs/heads/main",
+  fileList: [
+    { src: "resource/mathjslab-www/eleventy.build.json", dest: "eleventy.build.json" },
+    "script/helper/clean-package-lock.cjs",
+    "script/helper/EleventyUtil.mjs",
+    "script/build/helper/readFileBom.js",
+    "script/build/helper/readFileBomSync.js",
+    "script/build/helper/mkDirIfNotExist.js",
+    "script/helper/git-commit.cjs",
+    "script/build/helper/toIco.js",
+    { src: "images/img/ico/favicon.ico", dest: "site/img/favicon.ico" },
+    { src: "images/img/ico/favicon-dark.ico", dest: "site/img/favicon-dark.ico" },
+    { src: "images/mathjslab-logo.svg", dest: "site/img/mathjslab-logo.svg" },
+    ".prettierignore",
+    ".prettierrc"
+  ]
+}
+---
+{% from "macros.njk" import downloadConfigJSON %}{{ downloadConfigJSON(dataset, baseUrl, fileList) }}

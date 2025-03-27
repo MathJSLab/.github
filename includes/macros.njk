@@ -9,3 +9,21 @@
     <p>&copy; {{ year }}</p>
   </footer>
 {% endmacro %}
+
+{#
+    Macro: downloadConfigJSON
+    Description: Generates a download configuration JSON file to be processed
+      by `script/helper/download-files.cjs` script.
+#}
+{% macro downloadConfigJSON(dataset, baseUrl, fileList) %}{
+  "dataset": "{{ dataset }}",
+  "files": [
+    {%- for file in fileList %}
+    {
+      "src": "{{ baseUrl }}/{{ (file.src if file.src else file) }}",
+      "dest": "{{ file.dest if file.dest else file }}"
+    }{%- if not loop.last -%},{%- endif %}
+    {%- endfor %}
+  ]
+}
+{% endmacro %}

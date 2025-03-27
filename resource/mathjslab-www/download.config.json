@@ -2,6 +2,10 @@
   "dataset": "mathjslab-www",
   "files": [
     {
+      "src": "https://raw.githubusercontent.com/MathJSLab/.github/refs/heads/main/resource/mathjslab-www/eleventy.build.json",
+      "dest": "eleventy.build.json"
+    },
+    {
       "src": "https://raw.githubusercontent.com/MathJSLab/.github/refs/heads/main/script/helper/clean-package-lock.cjs",
       "dest": "script/helper/clean-package-lock.cjs"
     },

@@ -1,0 +1,18 @@
+---json
+{
+  dataset: "mathjslab",
+  baseUrl: "https://raw.githubusercontent.com/MathJSLab/.github/refs/heads/main",
+  fileList: [
+    "script/helper/clean-package-lock.cjs",
+    "script/helper/downloadIfNotExist.ts",
+    "script/helper/getHtmlParsed.ts",
+    "script/helper/httpGet.ts",
+    "script/helper/mkDirIfNotExist.ts",
+    "script/helper/git-commit.cjs",
+    { src: "images/mathjslab-logo.svg", dest: "mathjslab-logo.svg" },
+    ".prettierignore",
+    ".prettierrc"
+  ]
+}
+---
+{% from "macros.njk" import downloadConfigJSON %}{{ downloadConfigJSON(dataset, baseUrl, fileList) }}
