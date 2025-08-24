@@ -1,0 +1,81 @@
+{
+  "dataset": "mathjslab-github",
+  "build": {
+    /* Project build parameters. */
+    "eleventy": {
+      "commonOptions": {
+        "htmlTemplateEngine": "njk",
+        "markdownTemplateEngine": "njk",
+        "dataTemplateEngine": "njk",
+        "templateFormats": ["njk"]
+      },
+      "steps": [
+        {
+          "options": {
+            "dir": {
+              "input": "./input",
+              "data": "../data",
+              "includes": "../includes",
+              "layouts": "./layouts",
+              "output": "./"
+            }
+          }
+        },
+        {
+          "options": {
+            "dir": {
+              "input": "./images",
+              "data": "../data",
+              "includes": "../includes",
+              "layouts": "./",
+              "output": "./images"
+            }
+          },
+          "images": {
+            /* Build and transformation parameters for the organization profile project images and other repositories as well. */
+            "transform": [
+              {
+                "src": "mathjslab-logo.svg",
+                "widths": [16, 32, 48, 64, 72, 96, 128, 144, 152, 192, 256, 384, 512, 630, 1024],
+                "formats": ["png"],
+                "outputDir": "./images/img/ico"
+              },
+              {
+                "src": "mathjslab-logo-light.svg",
+                "widths": [16, 32, 48, 64, 96, 128, 192, 256, 512],
+                "formats": ["ico"],
+                "outputDir": "./images/img/ico",
+                "outputBasename": "favicon"
+              },
+              {
+                "src": "mathjslab-logo-dark.svg",
+                "widths": [16, 32, 48, 64, 96, 128, 192, 256, 512],
+                "formats": ["ico"],
+                "outputDir": "./images/img/ico",
+                "outputBasename": "favicon-dark"
+              },
+              {
+                "src": "mathjslab-logo.svg",
+                "widths": [1024],
+                "formats": ["svg"],
+                "outputDir": "./images/img"
+              },
+              {
+                "src": "mathjslab-logo-light.svg",
+                "widths": [1024],
+                "formats": ["svg"],
+                "outputDir": "./images/img"
+              },
+              {
+                "src": "mathjslab-logo-dark.svg",
+                "widths": [1024],
+                "formats": ["svg"],
+                "outputDir": "./images/img"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

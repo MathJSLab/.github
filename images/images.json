@@ -17,7 +17,7 @@
           "srcset": "/img/mathjslab-logo-16.png 16w",
           "filename": "mathjslab-logo-16.png",
           "outputPath": "images\\img\\ico\\mathjslab-logo-16.png",
-          "size": 666
+          "size": 662
         },
         {
           "format": "png",
@@ -28,7 +28,7 @@
           "srcset": "/img/mathjslab-logo-32.png 32w",
           "filename": "mathjslab-logo-32.png",
           "outputPath": "images\\img\\ico\\mathjslab-logo-32.png",
-          "size": 1423
+          "size": 1444
         },
         {
           "format": "png",
@@ -39,7 +39,7 @@
           "srcset": "/img/mathjslab-logo-48.png 48w",
           "filename": "mathjslab-logo-48.png",
           "outputPath": "images\\img\\ico\\mathjslab-logo-48.png",
-          "size": 2330
+          "size": 2301
         },
         {
           "format": "png",
@@ -50,7 +50,7 @@
           "srcset": "/img/mathjslab-logo-64.png 64w",
           "filename": "mathjslab-logo-64.png",
           "outputPath": "images\\img\\ico\\mathjslab-logo-64.png",
-          "size": 3222
+          "size": 3184
         },
         {
           "format": "png",
@@ -61,7 +61,7 @@
           "srcset": "/img/mathjslab-logo-72.png 72w",
           "filename": "mathjslab-logo-72.png",
           "outputPath": "images\\img\\ico\\mathjslab-logo-72.png",
-          "size": 3638
+          "size": 3603
         },
         {
           "format": "png",
@@ -72,7 +72,7 @@
           "srcset": "/img/mathjslab-logo-96.png 96w",
           "filename": "mathjslab-logo-96.png",
           "outputPath": "images\\img\\ico\\mathjslab-logo-96.png",
-          "size": 4861
+          "size": 4852
         },
         {
           "format": "png",
@@ -83,7 +83,7 @@
           "srcset": "/img/mathjslab-logo-128.png 128w",
           "filename": "mathjslab-logo-128.png",
           "outputPath": "images\\img\\ico\\mathjslab-logo-128.png",
-          "size": 6641
+          "size": 6572
         },
         {
           "format": "png",
@@ -94,7 +94,7 @@
           "srcset": "/img/mathjslab-logo-144.png 144w",
           "filename": "mathjslab-logo-144.png",
           "outputPath": "images\\img\\ico\\mathjslab-logo-144.png",
-          "size": 7579
+          "size": 7588
         },
         {
           "format": "png",
@@ -105,7 +105,7 @@
           "srcset": "/img/mathjslab-logo-152.png 152w",
           "filename": "mathjslab-logo-152.png",
           "outputPath": "images\\img\\ico\\mathjslab-logo-152.png",
-          "size": 8077
+          "size": 8040
         },
         {
           "format": "png",
@@ -116,7 +116,7 @@
           "srcset": "/img/mathjslab-logo-192.png 192w",
           "filename": "mathjslab-logo-192.png",
           "outputPath": "images\\img\\ico\\mathjslab-logo-192.png",
-          "size": 10502
+          "size": 10569
         },
         {
           "format": "png",
@@ -127,7 +127,7 @@
           "srcset": "/img/mathjslab-logo-256.png 256w",
           "filename": "mathjslab-logo-256.png",
           "outputPath": "images\\img\\ico\\mathjslab-logo-256.png",
-          "size": 14546
+          "size": 14651
         },
         {
           "format": "png",
@@ -138,7 +138,7 @@
           "srcset": "/img/mathjslab-logo-384.png 384w",
           "filename": "mathjslab-logo-384.png",
           "outputPath": "images\\img\\ico\\mathjslab-logo-384.png",
-          "size": 23294
+          "size": 23463
         },
         {
           "format": "png",
@@ -149,7 +149,7 @@
           "srcset": "/img/mathjslab-logo-512.png 512w",
           "filename": "mathjslab-logo-512.png",
           "outputPath": "images\\img\\ico\\mathjslab-logo-512.png",
-          "size": 32731
+          "size": 32717
         },
         {
           "format": "png",
@@ -160,7 +160,7 @@
           "srcset": "/img/mathjslab-logo-630.png 630w",
           "filename": "mathjslab-logo-630.png",
           "outputPath": "images\\img\\ico\\mathjslab-logo-630.png",
-          "size": 41510
+          "size": 41849
         },
         {
           "format": "png",
@@ -171,7 +171,7 @@
           "srcset": "/img/mathjslab-logo-1024.png 1024w",
           "filename": "mathjslab-logo-1024.png",
           "outputPath": "images\\img\\ico\\mathjslab-logo-1024.png",
-          "size": 74633
+          "size": 75017
         }
       ]
     }
@@ -230,7 +230,7 @@
           "srcset": "/img/mathjslab-logo-630.svg 630w",
           "filename": "mathjslab-logo-630.svg",
           "outputPath": "images\\img\\mathjslab-logo-630.svg",
-          "size": 2297
+          "size": 2485
         }
       ]
     }
@@ -253,7 +253,7 @@
           "srcset": "/img/mathjslab-logo-light-630.svg 630w",
           "filename": "mathjslab-logo-light-630.svg",
           "outputPath": "images\\img\\mathjslab-logo-light-630.svg",
-          "size": 2017
+          "size": 2205
         }
       ]
     }
@@ -276,7 +276,7 @@
           "srcset": "/img/mathjslab-logo-dark-630.svg 630w",
           "filename": "mathjslab-logo-dark-630.svg",
           "outputPath": "images\\img\\mathjslab-logo-dark-630.svg",
-          "size": 2017
+          "size": 2205
         }
       ]
     }

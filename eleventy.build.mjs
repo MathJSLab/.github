@@ -13,6 +13,11 @@ import mathjslabLogoSvg from './script/mathjslabLogoSvg.mjs';
 const scriptName = path.basename(fileURLToPath(import.meta.url));
 
 /**
+ * The `eleventy.build.json` data parsed.
+ */
+const eleventyBuild = JSON.parseFileSync(path.resolve('.', 'eleventy.build.json'));
+
+/**
  * The `data/mathjslab.json` data parsed.
  */
 const mathjslab = JSON.parseFileSync(path.resolve('.', 'data', 'mathjslab.json'));
@@ -23,7 +28,7 @@ const mathjslab = JSON.parseFileSync(path.resolve('.', 'data', 'mathjslab.json')
  * @returns
  */
 async function transformImage(n) {
-    const step = mathjslab.build.eleventy.steps[n];
+    const step = eleventyBuild.build.eleventy.steps[n];
     if (
         typeof step !== 'undefined' &&
         typeof step.images !== 'undefined' &&
@@ -52,8 +57,8 @@ async function transformImage(n) {
  * @returns
  */
 const getStepOption = (s) => ({
-    ...mathjslab.build.eleventy.steps[s].options,
-    ...mathjslab.build.eleventy.commonOptions,
+    ...eleventyBuild.build.eleventy.steps[s].options,
+    ...eleventyBuild.build.eleventy.commonOptions,
 });
 
 /**
