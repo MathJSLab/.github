@@ -2,6 +2,9 @@
 
 This file contains general information about the actions of the [MathJSLab Project](https://mathjslab.com/) that go beyond the scope of the individual projects. In other words, what cannot be recorded in the `CHANGES.md` file of each software project, or the general actions of the organization, are recorded here, indexed by date.
 
+## 2025-08-28
+- The `@resvg/resvg-js` package has been installed as development dependency. The `src/helper/toIco.ts` file has been modifyed to support image conversion through `resvg-js` too. This was done because of warnings that started occurring during the build after the last dependencies update.
+
 ## 2025-08-24
 - Dependencies updated in all projects.
 - MathJSLab logo updated (`script/mathjslabLogoSvg.mjs` file). Bug fix in Pi symbol and changes in the polynomial expression: constant added. Fine-grain optimizations (borders, margins, optimizations in the SVG code generated). All organization projects have been updated (logo and dependencies).
