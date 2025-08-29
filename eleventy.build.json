@@ -36,20 +36,20 @@
             "transform": [
               {
                 "src": "mathjslab-logo.svg",
-                "widths": [16, 32, 48, 64, 72, 96, 128, 144, 152, 192, 256, 384, 512, 630, 1024],
+                "widths": [16, 24, 32, 48, 64, 72, 96, 128, 144, 152, 192, 256, 384, 512, 630, 768, 1024],
                 "formats": ["png"],
                 "outputDir": "./images/img/ico"
               },
               {
                 "src": "mathjslab-logo-light.svg",
-                "widths": [16, 32, 48, 64, 96, 128, 192, 256, 512],
+                "widths": [16, 24, 32, 48, 64, 128, 256],
                 "formats": ["ico"],
                 "outputDir": "./images/img/ico",
                 "outputBasename": "favicon"
               },
               {
                 "src": "mathjslab-logo-dark.svg",
-                "widths": [16, 32, 48, 64, 96, 128, 192, 256, 512],
+                "widths": [16, 24, 32, 48, 64, 128, 256],
                 "formats": ["ico"],
                 "outputDir": "./images/img/ico",
                 "outputBasename": "favicon-dark"

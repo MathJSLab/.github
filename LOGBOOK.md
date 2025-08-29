@@ -2,12 +2,12 @@
 
 This file contains general information about the actions of the [MathJSLab Project](https://mathjslab.com/) that go beyond the scope of the individual projects. In other words, what cannot be recorded in the `CHANGES.md` file of each software project, or the general actions of the organization, are recorded here, indexed by date.
 
-## 2025-08-28
-- The `@resvg/resvg-js` package has been installed as development dependency. The `src/helper/toIco.ts` file has been modifyed to support image conversion through `resvg-js` too. This was done because of warnings that started occurring during the build after the last dependencies update.
+## 2025-08-29
+- The `@resvg/resvg-js` package has been installed as development dependency. The `script/helper/toIco.ts` file has been improved to support image conversion through `resvg-js` too. This was done because of warnings that started occurring during the build after the last dependencies update. The `script/helper/createIcon.ts` file has been unused and removed.
 
 ## 2025-08-24
 - Dependencies updated in all projects.
-- MathJSLab logo updated (`script/mathjslabLogoSvg.mjs` file). Bug fix in Pi symbol and changes in the polynomial expression: constant added. Fine-grain optimizations (borders, margins, optimizations in the SVG code generated). All organization projects have been updated (logo and dependencies).
+- MathJSLab logo updated (`script/mathjslabLogoSvg.mjs` file). Bug fix in Pi symbol and changes in the polynomial expression: constant added. Fine-grain optimizations (borders, margins, optimizations in the SVG code generated).This was done so the logo could be printed on advertising flyers and bookmarks. The 'advertising' directory was created with related files, including the 190 x 50 mm bookmark in SVG and PDF formats. All organization projects have been updated (logo and dependencies).
 
 ## 2025-03-30
 - The `eleventy.build.json` file has been created.

@@ -2,7 +2,7 @@
   {
     "image": {
       "src": "mathjslab-logo.svg",
-      "widths": [16, 32, 48, 64, 72, 96, 128, 144, 152, 192, 256, 384, 512, 630, 1024],
+      "widths": [16, 24, 32, 48, 64, 72, 96, 128, 144, 152, 192, 256, 384, 512, 630, 768, 1024],
       "formats": ["png"],
       "outputDir": "./images/img/ico"
     },
@@ -18,6 +18,17 @@
           "filename": "mathjslab-logo-16.png",
           "outputPath": "images\\img\\ico\\mathjslab-logo-16.png",
           "size": 662
+        },
+        {
+          "format": "png",
+          "width": 24,
+          "height": 24,
+          "url": "/img/mathjslab-logo-24.png",
+          "sourceType": "image/png",
+          "srcset": "/img/mathjslab-logo-24.png 24w",
+          "filename": "mathjslab-logo-24.png",
+          "outputPath": "images\\img\\ico\\mathjslab-logo-24.png",
+          "size": 1024
         },
         {
           "format": "png",
@@ -164,6 +175,17 @@
         },
         {
           "format": "png",
+          "width": 768,
+          "height": 768,
+          "url": "/img/mathjslab-logo-768.png",
+          "sourceType": "image/png",
+          "srcset": "/img/mathjslab-logo-768.png 768w",
+          "filename": "mathjslab-logo-768.png",
+          "outputPath": "images\\img\\ico\\mathjslab-logo-768.png",
+          "size": 53050
+        },
+        {
+          "format": "png",
           "width": 1024,
           "height": 1024,
           "url": "/img/mathjslab-logo-1024.png",
@@ -179,7 +201,7 @@
   {
     "image": {
       "src": "mathjslab-logo-light.svg",
-      "widths": [16, 32, 48, 64, 96, 128, 192, 256, 512],
+      "widths": [16, 24, 32, 48, 64, 128, 256],
       "formats": ["ico"],
       "outputDir": "./images/img/ico",
       "outputBasename": "favicon"
@@ -197,7 +219,7 @@
   {
     "image": {
       "src": "mathjslab-logo-dark.svg",
-      "widths": [16, 32, 48, 64, 96, 128, 192, 256, 512],
+      "widths": [16, 24, 32, 48, 64, 128, 256],
       "formats": ["ico"],
       "outputDir": "./images/img/ico",
       "outputBasename": "favicon-dark"

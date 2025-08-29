@@ -54,9 +54,6 @@ import { DateTime } from 'luxon';
  */
 import readFileBom from '../build/helper/readFileBom.js';
 import readFileBomSync from '../build/helper/readFileBomSync.js';
-// import mkDirIfNotExist from '../build/helper/mkDirIfNotExist.js';
-
-// import createIcon from '../build/helper/createIcon.js';
 import toIco from '../build/helper/toIco.js';
 
 /**
