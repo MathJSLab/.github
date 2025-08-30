@@ -2,7 +2,7 @@
 
 This file contains general information about the actions of the [MathJSLab Project](https://mathjslab.com/) that go beyond the scope of the individual projects. In other words, what cannot be recorded in the `CHANGES.md` file of each software project, or the general actions of the organization, are recorded here, indexed by date.
 
-## 2025-08-29
+## 2025-08-30
 - The `@resvg/resvg-js` package has been installed as development dependency. The `script/helper/toIco.ts` file has been improved to support image conversion through `resvg-js` too. This was done because of warnings that started occurring during the build after the last dependencies update. The `script/helper/createIcon.ts` file has been unused and removed.
 
 ## 2025-08-24
