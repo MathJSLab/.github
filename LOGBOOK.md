@@ -4,6 +4,7 @@ This file contains general information about the actions of the [MathJSLab Proje
 
 ## 2025-09-21
 - The `script/helper/buildInterfaceKeyTable.ts` helper was created in the `mathjslab` repository and then moved to the organization repository.
+- The `src/includes/miscBibtexEntry.njk` macro file was created in the `mathjslab-app` repository and then moved to the organization repository.
 - All dependencies have been updated.
 - More advertising bookmarks has been added in the `advertising/` diretory.
 
