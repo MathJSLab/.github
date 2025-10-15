@@ -2,7 +2,7 @@
 
 This file contains general information about the actions of the [MathJSLab Project](https://mathjslab.com/) that go beyond the scope of the individual projects. In other words, what cannot be recorded in the `CHANGES.md` file of each software project, or the general actions of the organization, are recorded here, indexed by date.
 
-## 2025-10-14
+## 2025-10-15
 
 - The `.prettierrc` file has been improved to format `.md` files too.
 
