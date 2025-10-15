@@ -12,8 +12,8 @@
   "scripts": {
     "update": "npx npm-check-updates -u && npm install && npm run clean",
     "clean:package-lock": "node script/helper/clean-package-lock.cjs",
-    "clean:build": "rimraf images profile resource test README.md LEIAME.md LEAME.md",
-    "clean:script": "rimraf script/build",
+    "clean:build": "shx rm -rf images profile resource test README.md LEIAME.md LEAME.md",
+    "clean:script": "shx rm -rf script/build",
     "clean:build:script": "npm run clean:script && npm run clean:build",
     "clean": "npm run clean:build:script",
     "clean:all": "npm run clean && npm run clean:package-lock",
