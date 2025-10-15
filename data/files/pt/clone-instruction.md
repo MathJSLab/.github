@@ -1,10 +1,1 @@
-Para clonar todos os
-[repositórios da organização](https://github.com/orgs/MathJSLab/repositories)
-localmente, crie um diretório chamado `mathjslab-repositories` e salve nele o
-arquivo
-[`mathjslab.package.json`](https://github.com/MathJSLab/.github/blob/main/mathjslab.package.json)
-com o nome `package.json`. Os scripts deste arquivo clonam todos os
-[repositórios da **Organização MathJSLab**](https://github.com/orgs/MathJSLab/repositories),
-criando um espaço de trabalho completo localmente. Neste arquivo também há
-outros scripts de build para os projetos individuais. Execute os comandos a
-seguir:
+Para clonar todos os [repositórios da organização](https://github.com/orgs/MathJSLab/repositories) localmente, crie um diretório chamado `mathjslab-repositories` e salve nele o arquivo [`mathjslab.package.json`](https://github.com/MathJSLab/.github/blob/main/mathjslab.package.json) com o nome `package.json`. Os scripts deste arquivo clonam todos os [repositórios da **Organização MathJSLab**](https://github.com/orgs/MathJSLab/repositories), criando um espaço de trabalho completo localmente. Neste arquivo também há outros scripts de build para os projetos individuais. Execute os comandos a seguir:

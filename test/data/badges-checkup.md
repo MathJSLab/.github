@@ -4,21 +4,15 @@
 
 ### English
 
-[![English](https://img.shields.io/badge/English-8484FF)](README.md)
-[![Português](https://img.shields.io/badge/Portugu%C3%AAs-blue)](LEIAME.md)
-[![Español](https://img.shields.io/badge/Espa%C3%B1ol-blue)](LEAME.md)
+[![English](https://img.shields.io/badge/English-8484FF)](README.md) [![Português](https://img.shields.io/badge/Portugu%C3%AAs-blue)](LEIAME.md) [![Español](https://img.shields.io/badge/Espa%C3%B1ol-blue)](LEAME.md)
 
 ### Português
 
-[![English](https://img.shields.io/badge/English-blue)](README.md)
-[![Português](https://img.shields.io/badge/Portugu%C3%AAs-8484FF)](LEIAME.md)
-[![Español](https://img.shields.io/badge/Espa%C3%B1ol-blue)](LEAME.md)
+[![English](https://img.shields.io/badge/English-blue)](README.md) [![Português](https://img.shields.io/badge/Portugu%C3%AAs-8484FF)](LEIAME.md) [![Español](https://img.shields.io/badge/Espa%C3%B1ol-blue)](LEAME.md)
 
 ### Español
 
-[![English](https://img.shields.io/badge/English-blue)](README.md)
-[![Português](https://img.shields.io/badge/Portugu%C3%AAs-blue)](LEIAME.md)
-[![Español](https://img.shields.io/badge/Espa%C3%B1ol-8484FF)](LEAME.md)
+[![English](https://img.shields.io/badge/English-blue)](README.md) [![Português](https://img.shields.io/badge/Portugu%C3%AAs-blue)](LEIAME.md) [![Español](https://img.shields.io/badge/Espa%C3%B1ol-8484FF)](LEAME.md)
 
 ## Website - [mathjslab.com](https://mathjslab.com/)
 
@@ -50,11 +44,9 @@
 
 ### [mathjslab](https://github.com/MathJSLab/mathjslab)
 
-github:
-[![GitHub License](https://img.shields.io/github/license/MathJSLab/mathjslab)](https://github.com/MathJSLab/mathjslab/blob/main/LICENSE)
+github: [![GitHub License](https://img.shields.io/github/license/MathJSLab/mathjslab)](https://github.com/MathJSLab/mathjslab/blob/main/LICENSE)
 
-npm:
-[![NPM License](https://img.shields.io/npm/l/mathjslab)](https://github.com/MathJSLab/mathjslab/blob/main/LICENSE)
+npm: [![NPM License](https://img.shields.io/npm/l/mathjslab)](https://github.com/MathJSLab/mathjslab/blob/main/LICENSE)
 
 ### [mathjslab-app](https://github.com/MathJSLab/mathjslab-app)
 

@@ -1,3 +1,1 @@
-As diretrizes gerais de design do projeto, o roteiro das próximas etapas,
-pesquisas e informações relevantes estão registrados no diretório
-[`roadmap`](https://github.com/MathJSLab/.github/tree/main/roadmap).
+As diretrizes gerais de design do projeto, o roteiro das próximas etapas, pesquisas e informações relevantes estão registrados no diretório [`roadmap`](https://github.com/MathJSLab/.github/tree/main/roadmap).
