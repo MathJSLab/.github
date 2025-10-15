@@ -1,4 +1,4 @@
-# Configuration data test (data/*.json)
+# Configuration data test (data/\*.json)
 
 ## mathjslab.json
 

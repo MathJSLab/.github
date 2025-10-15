@@ -1,7 +1,10 @@
 {
+    "printWidth": 190,
     "singleQuote": true,
     "trailingComma": "all",
-    "printWidth": 190,
+    "semi": true,
+    "arrowParens": "always",
+    "bracketSpacing": true,
     "overrides": [
         {
             "files": "*.svg",
@@ -23,6 +26,20 @@
                 "useTabs": false,
                 "proseWrap": "preserve",
                 "bracketSpacing": false
+            }
+        },
+        {
+            "files": "*.md",
+            "options": {
+                "printWidth": 79,
+                "tabWidth": 4,
+                "useTabs": false,
+                "proseWrap": "always",
+                "embeddedLanguageFormatting": "auto",
+                "singleQuote": false,
+                "trailingComma": "all",
+                "semi": true,
+                "arrowParens": "always"
             }
         }
     ]

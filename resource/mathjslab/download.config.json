@@ -6,8 +6,8 @@
       "dest": "script/tsconfig.json"
     },
     {
-      "src": "https://raw.githubusercontent.com/MathJSLab/.github/refs/heads/main/script/helper/buildInterfaceKeyTable.ts",
-      "dest": "script/helper/buildInterfaceKeyTable.ts"
+      "src": "https://raw.githubusercontent.com/MathJSLab/.github/refs/heads/main/script/helper/buildKeyTable.ts",
+      "dest": "script/helper/buildKeyTable.ts"
     },
     {
       "src": "https://raw.githubusercontent.com/MathJSLab/.github/refs/heads/main/script/helper/clean-package-lock.cjs",

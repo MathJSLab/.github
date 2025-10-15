@@ -50,10 +50,11 @@
 
 ### [mathjslab](https://github.com/MathJSLab/mathjslab)
 
-github: [![GitHub License](https://img.shields.io/github/license/MathJSLab/mathjslab)](https://github.com/MathJSLab/mathjslab/blob/main/LICENSE)
+github:
+[![GitHub License](https://img.shields.io/github/license/MathJSLab/mathjslab)](https://github.com/MathJSLab/mathjslab/blob/main/LICENSE)
 
-npm: [![NPM License](https://img.shields.io/npm/l/mathjslab)](https://github.com/MathJSLab/mathjslab/blob/main/LICENSE)
-
+npm:
+[![NPM License](https://img.shields.io/npm/l/mathjslab)](https://github.com/MathJSLab/mathjslab/blob/main/LICENSE)
 
 ### [mathjslab-app](https://github.com/MathJSLab/mathjslab-app)
 
@@ -83,5 +84,4 @@ npm: [![NPM License](https://img.shields.io/npm/l/mathjslab)](https://github.com
 
 ### [mathjslab-www](https://github.com/MathJSLab/mathjslab-www)
 
-[![GitHub Created At](https://img.shields.io/github/created-at/MathJSLab/mathjslab-www)](https://github.com/MathJSLab/mathjslab-www
-)
+[![GitHub Created At](https://img.shields.io/github/created-at/MathJSLab/mathjslab-www)](https://github.com/MathJSLab/mathjslab-www)
