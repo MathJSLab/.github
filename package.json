@@ -29,7 +29,7 @@
     "format:lint": "npm run format && npm run lint",
     "build:script": "tsc -p script/tsconfig.json",
     "prebuild": "npm run build:script",
-    "build": "npm run clean:build && node eleventy.build.mjs",
+    "build": "npm run clean:build && node eleventy.build.mjs && shx mv resource/mathjslab/config.prettierrc resource/mathjslab/.prettierrc",
     "build:format:lint": "npm run build && npm run format:lint",
     "do:all": "npm run clean:all && npm run update && npm run format:lint && npm run build:format:lint && npm run git:all"
   },

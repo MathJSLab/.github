@@ -42,7 +42,7 @@
       "dest": ".prettierignore"
     },
     {
-      "src": "https://raw.githubusercontent.com/MathJSLab/.github/refs/heads/main/.prettierrc",
+      "src": "https://raw.githubusercontent.com/MathJSLab/.github/refs/heads/main/resource/mathjslab/.prettierrc",
       "dest": ".prettierrc"
     }
   ]

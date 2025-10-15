@@ -1,0 +1,29 @@
+---json
+{
+    "printWidth": 79
+}
+---
+{
+    "printWidth": 190,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "semi": true,
+    "arrowParens": "always",
+    "bracketSpacing": true,
+    "overrides": [
+        {
+            "files": "*.md",
+            "options": {
+                "printWidth": {{ printWidth }},
+                "tabWidth": 4,
+                "useTabs": false,
+                "proseWrap": "always",
+                "embeddedLanguageFormatting": "auto",
+                "singleQuote": false,
+                "trailingComma": "all",
+                "semi": true,
+                "arrowParens": "always"
+            }
+        }
+    ]
+}
