@@ -1,3 +1,4 @@
+import path from 'node:path';
 import fs from 'node:fs';
 import ts from 'typescript';
 /**
@@ -38,7 +39,7 @@ export const buildKeyTable = (inputFile, outputFile, declName) => {
     }
     visit(source);
     /* Generate output */
-    const fileContent = `export const ${declName}KeyTable: (keyof ${declName})[] = ${JSON.stringify(keys, null, 4).replace(/\"/gm, "'")};\n`;
+    const fileContent = `import { ${declName}Key } from './${path.parse(inputFile).name}';\nexport const ${declName}KeyTable: (keyof ${declName})[] = ${JSON.stringify(keys, null, 4).replace(/\"/gm, "'")};\n`;
     fs.writeFileSync(outputFile, fileContent, 'utf-8');
     console.log(`Source file generated: ${outputFile}`);
 };
