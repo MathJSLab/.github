@@ -31,7 +31,7 @@
         {
             "files": "*.md",
             "options": {
-                "printWidth": 1000,
+                "printWidth": 10000,
                 "tabWidth": 4,
                 "useTabs": false,
                 "proseWrap": "always",

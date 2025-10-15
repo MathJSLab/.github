@@ -6,15 +6,7 @@
 
 [![English](https://img.shields.io/badge/English-8484FF)](README.md) [![Português](https://img.shields.io/badge/Portugu%C3%AAs-blue)](LEIAME.md) [![Español](https://img.shields.io/badge/Espa%C3%B1ol-blue)](LEAME.md)
 
-[![mathjslab.com](https://img.shields.io/badge/mathjslab.com-D0F0D0)](https://mathjslab.com/)
-
-[![Website status](https://img.shields.io/website?url=https%3A%2F%2Fmathjslab.com%2F)](https://mathjslab.com/)
-
-[![GitHub Created At](https://img.shields.io/github/created-at/MathJSLab/.github)](https://github.com/MathJSLab/.github)
-
-[![GitHub License](https://img.shields.io/github/license/MathJSLab/mathjslab)](https://github.com/MathJSLab/mathjslab/blob/main/LICENSE)
-
-[![OpenAIRE](https://img.shields.io/badge/OpenAIRE-blue?style=flat&link=https://explore.openaire.eu/search/advanced/research-outcomes?f0=q&fv0=MathJSLab)](https://explore.openaire.eu/search/advanced/research-outcomes?f0=q&fv0=MathJSLab)
+[![mathjslab.com](https://img.shields.io/badge/mathjslab.com-D0F0D0)](https://mathjslab.com/) [![Website status](https://img.shields.io/website?url=https%3A%2F%2Fmathjslab.com%2F)](https://mathjslab.com/) [![GitHub Created At](https://img.shields.io/github/created-at/MathJSLab/.github)](https://github.com/MathJSLab/.github) [![GitHub License](https://img.shields.io/github/license/MathJSLab/mathjslab)](https://github.com/MathJSLab/mathjslab/blob/main/LICENSE) [![OpenAIRE](https://img.shields.io/badge/OpenAIRE-blue?style=flat&link=https://explore.openaire.eu/search/advanced/research-outcomes?f0=q&fv0=MathJSLab)](https://explore.openaire.eu/search/advanced/research-outcomes?f0=q&fv0=MathJSLab)
 
 > An [interpreter](<https://en.wikipedia.org/wiki/Interpreter_(computing)>) with language syntax like [MATLAB&reg;](https://www.mathworks.com/)/[Octave](https://www.gnu.org/software/octave/) written in [TypeScript](https://www.typescriptlang.org/).
 
@@ -24,7 +16,7 @@ The **[MathJSLab Organization](https://github.com/MathJSLab)** was created to br
 
 Copyright &copy; 2016-2025 [Sergio Lindau](mailto:sergiolindau@gmail.com), [![ORCID](https://img.shields.io/badge/ORCID-0009--0006--9115--0291-blue)](https://orcid.org/0009-0006-9115-0291)
 
-[mathjslab.com](https://mathjslab.com/), [mathjslab@gmail.com](mailto:mathjslab@gmail.com) .
+[mathjslab.com](https://mathjslab.com/), [mathjslab@gmail.com](mailto:mathjslab@gmail.com).
 
 [![ISBN](https://img.shields.io/badge/ISBN-978--65--00--82338--7-blue?style=flat&link=https://grp.isbn-international.org/search/piid_solr?keys=978-65-00-82338-7)](https://grp.isbn-international.org/search/piid_solr?keys=978-65-00-82338-7) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8396265.svg)](https://doi.org/10.5281/zenodo.8396265)
 
