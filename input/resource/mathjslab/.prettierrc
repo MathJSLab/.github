@@ -1,8 +1,3 @@
----json
-{
-    "printWidth": 79
-}
----
 {
     "printWidth": 190,
     "singleQuote": true,
@@ -14,7 +9,7 @@
         {
             "files": "*.md",
             "options": {
-                "printWidth": {{ printWidth }},
+                "printWidth": 10000,
                 "tabWidth": 4,
                 "useTabs": false,
                 "proseWrap": "always",

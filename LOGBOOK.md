@@ -5,6 +5,7 @@ This file contains general information about the actions of the [MathJSLab Proje
 ## 2025-10-15
 
 - The `.prettierrc` file has been improved to format `.md` files too.
+- The `rimraf` package has been removed from development dependencies. The scripts in the `package.json` file have been changed to use `shx rm -rf` instead of `rimraf`.
 
 ## 2025-09-21
 

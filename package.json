@@ -29,7 +29,8 @@
     "format:lint": "npm run format && npm run lint",
     "build:script": "tsc -p script/tsconfig.json",
     "prebuild": "npm run build:script",
-    "build": "npm run clean:build && node eleventy.build.mjs && shx mv resource/mathjslab/config.prettierrc resource/mathjslab/.prettierrc",
+    "build": "npm run clean:build && node eleventy.build.mjs",
+    "postbuild": "shx cp input/resource/mathjslab/.prettierrc resource/mathjslab/.prettierrc",
     "build:format:lint": "npm run build && npm run format:lint",
     "do:all": "npm run clean:all && npm run update && npm run format:lint && npm run build:format:lint && npm run git:all"
   },
@@ -62,7 +63,6 @@
     "png-to-ico": "^3.0.1",
     "prettier": "^3.6.2",
     "replace-in-file": "^8.3.0",
-    "rimraf": "^6.0.1",
     "sass": "^1.93.2",
     "sharp": "^0.34.4",
     "shelljs": "^0.10.0",
