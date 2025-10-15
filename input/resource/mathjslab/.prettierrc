@@ -9,7 +9,7 @@
         {
             "files": "*.md",
             "options": {
-                "printWidth": 10000,
+                "printWidth": 79,
                 "tabWidth": 4,
                 "useTabs": false,
                 "proseWrap": "always",

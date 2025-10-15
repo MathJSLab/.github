@@ -32,7 +32,7 @@
     "build": "npm run clean:build && node eleventy.build.mjs",
     "postbuild": "shx cp input/resource/mathjslab/.prettierrc resource/mathjslab/.prettierrc",
     "build:format:lint": "npm run build && npm run format:lint",
-    "do:all": "npm run clean:all && npm run update && npm run format:lint && npm run build:format:lint && npm run git:all"
+    "do:all": "npm run clean:all && npm run update && npm run format:lint && npm run build:format:lint && npm run git:all && echo script \"do:all\" finished."
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",
