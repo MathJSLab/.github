@@ -2,6 +2,11 @@
 
 This file contains general information about the actions of the [MathJSLab Project](https://mathjslab.com/) that go beyond the scope of the individual projects. In other words, what cannot be recorded in the `CHANGES.md` file of each software project, or the general actions of the organization, are recorded here, indexed by date.
 
+## 2025-10-16
+
+- The `ts-node` and `ts-loader` packages were installed as development dependencies. The `"tsx"` script was created in the `package.json` file.
+- The `script/helper/prettier-unescape-math.ts` script file was created in the `mathjslab-app` repository and then moved to the organization repository. The `"postformat"` script in the `package.json` was created.
+
 ## 2025-10-15
 
 - The `.prettierrc` file has been improved to format `.md` files too.
