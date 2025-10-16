@@ -5,7 +5,7 @@ This file contains general information about the actions of the [MathJSLab Proje
 ## 2025-10-16
 
 - The `ts-node` and `ts-loader` packages were installed as development dependencies. The `"tsx"` script was created in the `package.json` file.
-- The `script/helper/prettier-unescape-math.ts` script file was created in the `mathjslab-app` repository and then moved to the organization repository. The `"postformat"` script in the `package.json` was created.
+- The `script/helper/prettier-unescape-math.ts` and `script/helper/prettier-math-protect.ts` script files was created in the `mathjslab-app` repository and then moved to the organization repository. The `"preformat"` and `"postformat"` script using `script/helper/prettier-math-protect.ts` was created in the `package.json` file.
 
 ## 2025-10-15
 

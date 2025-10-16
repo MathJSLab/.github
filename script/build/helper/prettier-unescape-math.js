@@ -13,17 +13,26 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
+import { isMatch } from 'micromatch';
 const options = {
     dryRun: false,
-    ignored: new Set(),
+    ignorePatterns: [],
 };
+/**
+ * Checks whether the path should be ignored.
+ * @param filePath
+ * @returns
+ */
+function isIgnored(filePath) {
+    return options.ignorePatterns.some((pattern) => isMatch(filePath, pattern));
+}
 /**
  * Processes an individual Markdown file.
  * @param filePath
  * @returns
  */
 function processMarkdownFile(filePath) {
-    if (!filePath.endsWith('.md'))
+    if (!filePath.endsWith('.md') || isIgnored(filePath))
         return;
     const original = fs.readFileSync(filePath, 'utf8');
     const updated = original.replace(/(%{2,3})([\s\S]*?)\1/gs, (_, delim, inner) => {
@@ -43,14 +52,18 @@ function processMarkdownFile(filePath) {
         console.log(`${filePath} (unchanged)`);
     }
 }
-/* Recursive traversal of directories. */
+/**
+ * Recursive traversal of directories.
+ * @param dir
+ * @returns
+ */
 function walkDir(dir) {
-    if (options.ignored.has(dir))
+    if (isIgnored(dir))
         return;
     const entries = fs.readdirSync(dir, { withFileTypes: true });
     for (const entry of entries) {
         const fullPath = path.join(dir, entry.name);
-        if (options.ignored.has(entry.name) || options.ignored.has(fullPath))
+        if (isIgnored(fullPath))
             continue;
         if (entry.isDirectory()) {
             walkDir(fullPath);
@@ -62,33 +75,35 @@ function walkDir(dir) {
 }
 /* Processing command line arguments. */
 const args = process.argv.slice(2);
-let pathsToProcess = [];
+let targets = [];
 for (let i = 0; i < args.length; i++) {
     const arg = args[i];
     if (arg === '--ignore') {
         while (args[i + 1] && !args[i + 1].startsWith('--')) {
-            options.ignored.add(args[++i]);
+            options.ignorePatterns.push(args[++i]);
         }
     }
     else if (arg === '--dry-run') {
         options.dryRun = true;
     }
     else {
-        pathsToProcess.push(arg);
+        targets.push(arg);
     }
 }
-if (pathsToProcess.length === 0) {
-    pathsToProcess = ['.'];
+if (targets.length === 0)
+    targets = ['.'];
+if (options.ignorePatterns.length === 0) {
+    options.ignorePatterns = ['**/node_modules/**', '**/dist/**'];
 }
-console.log('🧩 Directories/files to preccess:', pathsToProcess.join(', '));
-if (options.ignored.size > 0) {
-    console.log('🚫 Ignoring:', [...options.ignored].join(', '));
+console.log('🧩 Directories/files to proccess:', targets.join(', '));
+if (options.ignorePatterns.length > 0) {
+    console.log('🚫 Ignoring:', [...options.ignorePatterns].join(', '));
 }
 if (options.dryRun) {
     console.log('🔍 Dry-run mode (no one file will be modified).');
 }
 /* Main execution pipeline. */
-for (const target of pathsToProcess) {
+for (const target of targets) {
     const fullPath = path.resolve(target);
     if (!fs.existsSync(fullPath))
         continue;
