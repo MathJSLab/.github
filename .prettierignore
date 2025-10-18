@@ -2,10 +2,6 @@
 node_modules/
 # Advertising directory (there are Inkscape .svg files that cannot be changed).
 advertising/
-# Report directory.
-report/
-# Resource directory.
-resource/
 # Minifyed javascript.
 *.min.js
 # Scripts build directory.
