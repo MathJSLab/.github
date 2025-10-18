@@ -5,6 +5,7 @@ This file contains general information about the actions of the [MathJSLab Proje
 ## 2025-10-18
 
 - The `src/importUMD.ts` file in the `mathjslab-app` repository has been deprecated and then moved to the organization repository.
+- Changes in `.prettierignore` file.
 
 ## 2025-10-17
 
