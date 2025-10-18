@@ -2,6 +2,10 @@
 
 This file contains general information about the actions of the [MathJSLab Project](https://mathjslab.com/) that go beyond the scope of the individual projects. In other words, what cannot be recorded in the `CHANGES.md` file of each software project, or the general actions of the organization, are recorded here, indexed by date.
 
+## 2025-10-18
+
+- The `src/importUMD.ts` file in the `mathjslab-app` repository has been deprecated and then moved to the organization repository.
+
 ## 2025-10-17
 
 - Changes in the `input/resource/mathjslab-app/download-config.json.njk`. The `script/helper/prettier-math-protect.ts` script was removed from list due to changes in math markdown patterns in the `mathjslab-app` project. The `script/helper/prettier-math-protect.ts` and `script/helper/prettier-unescape-math.ts` files were kept in the organization repository to serve as the basis for other command line utility scripts.
