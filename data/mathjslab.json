@@ -1,58 +1,58 @@
 {
-  "languages": {
-    /* Available languages ​​and some terms and expressions translated into each of them. */
-    "en": {
-      "language": "English",
-      "home": "Home",
-      "about": "About",
-      "welcomeMessage": "Welcome to MathJSLab",
-      "markdownIndex": "README.md"
+    "languages": {
+        /* Available languages ​​and some terms and expressions translated into each of them. */
+        "en": {
+            "language": "English",
+            "home": "Home",
+            "about": "About",
+            "welcomeMessage": "Welcome to MathJSLab",
+            "markdownIndex": "README.md"
+        },
+        "pt": {
+            "language": "Português",
+            "home": "Início",
+            "about": "Sobre",
+            "welcomeMessage": "Bem-vindo ao MathJSLab",
+            "markdownIndex": "LEIAME.md"
+        },
+        "es": {
+            "language": "Español",
+            "home": "Inicio",
+            "about": "Acerca de",
+            "welcomeMessage": "Bienvenido a MathJSLab",
+            "markdownIndex": "LEAME.md"
+        }
     },
-    "pt": {
-      "language": "Português",
-      "home": "Início",
-      "about": "Sobre",
-      "welcomeMessage": "Bem-vindo ao MathJSLab",
-      "markdownIndex": "LEIAME.md"
+    "organization": {
+        /* Information about the organization on GitHub and its repositories. */
+        "name": "MathJSLab",
+        "url": "https://github.com/MathJSLab",
+        "repositories": [
+            {
+                "shortName": "pkg",
+                "name": "mathjslab",
+                "rename": null,
+                "wiki": "mathjslab.wiki"
+            },
+            {
+                "shortName": "app",
+                "name": "mathjslab-app",
+                "rename": null,
+                "wiki": "mathjslab-app.wiki"
+            },
+            {
+                "shortName": "org",
+                "name": ".github",
+                "rename": "mathjslab-github",
+                "wiki": "mathjslab-github.wiki"
+            },
+            {
+                "shortName": "www",
+                "name": "mathjslab-www",
+                "rename": null,
+                "wiki": null
+            }
+        ]
     },
-    "es": {
-      "language": "Español",
-      "home": "Inicio",
-      "about": "Acerca de",
-      "welcomeMessage": "Bienvenido a MathJSLab",
-      "markdownIndex": "LEAME.md"
-    }
-  },
-  "organization": {
-    /* Information about the organization on GitHub and its repositories. */
-    "name": "MathJSLab",
-    "url": "https://github.com/MathJSLab",
-    "repositories": [
-      {
-        "shortName": "pkg",
-        "name": "mathjslab",
-        "rename": null,
-        "wiki": "mathjslab.wiki"
-      },
-      {
-        "shortName": "app",
-        "name": "mathjslab-app",
-        "rename": null,
-        "wiki": "mathjslab-app.wiki"
-      },
-      {
-        "shortName": "org",
-        "name": ".github",
-        "rename": "mathjslab-github",
-        "wiki": "mathjslab-github.wiki"
-      },
-      {
-        "shortName": "www",
-        "name": "mathjslab-www",
-        "rename": null,
-        "wiki": null
-      }
-    ]
-  },
-  "logo_width": 630
+    "logo_width": 630
 }

@@ -5,6 +5,7 @@ This file contains general information about the actions of the [MathJSLab Proje
 ## 2025-10-19
 
 - Changes in `.prettierignore` file.
+- The file `replace.fix-endnl.json` has been created to run "postformat" script, replacing end-of-file new line in `.md` files in `data/` directory.
 
 ## 2025-10-18
 

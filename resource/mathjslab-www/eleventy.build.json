@@ -1,28 +1,28 @@
 {
-  "dataset": "mathjslab-www",
-  "build": {
-    /* Project build parameters. */
-    "eleventy": {
-      "commonOptions": {
-        "htmlTemplateEngine": "njk",
-        "markdownTemplateEngine": "njk",
-        "dataTemplateEngine": "njk",
-        "templateFormats": ["njk"]
-      },
-      "steps": [
-        {
-          "options": {
-            "dir": {
-              "input": "./site",
-              "data": "../data",
-              "includes": "../includes",
-              "layouts": "./layouts",
-              "output": "./www"
+    "dataset": "mathjslab-www",
+    "build": {
+        /* Project build parameters. */
+        "eleventy": {
+            "commonOptions": {
+                "htmlTemplateEngine": "njk",
+                "markdownTemplateEngine": "njk",
+                "dataTemplateEngine": "njk",
+                "templateFormats": ["njk"]
             },
-            "pathPrefix": "/"
-          }
+            "steps": [
+                {
+                    "options": {
+                        "dir": {
+                            "input": "./site",
+                            "data": "../data",
+                            "includes": "../includes",
+                            "layouts": "./layouts",
+                            "output": "./www"
+                        },
+                        "pathPrefix": "/"
+                    }
+                }
+            ]
         }
-      ]
     }
-  }
 }
