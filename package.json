@@ -24,7 +24,7 @@
     "tsx": "tsx --require tsconfig-paths/register",
     "fix:linebreak": "replace-in-file --verbose --configFile=replace.fix-linebreak.json",
     "strip:md:endnl": "node -e \"import {readFileSync,writeFileSync} from 'node:fs';import {globSync} from 'glob';for(const f of globSync('data/files/**/*.md')){let c=readFileSync(f,'utf8');if(c.endsWith('\\r\\n'))writeFileSync(f,c.replace(/\\r\\n$/,''));}\"",
-    "format": "prettier --plugin=@prettier/plugin-xml --write **/*.{ts,tsx,js,jsx,cjs,mjs,css,scss,html,htm,json,jsonc,yml,yaml,xml,svg,md}",
+    "format": "prettier --plugin=@prettier/plugin-xml --write **/*.{ts,tsx,js,jsx,cjs,mjs,css,scss,html,htm,json,jsonc,yml,yaml,xml,svg,md,yml,yaml}",
     "postformat": "npm run strip:md:endnl",
     "lint": "eslint --fix",
     "format:lint": "npm run format && npm run lint",
