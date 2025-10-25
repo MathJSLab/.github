@@ -2,6 +2,10 @@
 
 This file contains general information about the actions of the [MathJSLab Project](https://mathjslab.com/) that go beyond the scope of the individual projects. In other words, what cannot be recorded in the `CHANGES.md` file of each software project, or the general actions of the organization, are recorded here, indexed by date.
 
+## 2025-10-25
+
+- The script `script/helper/copy-repo-files.ts` has been created (the file `input/resource/mathjslab/copy.repo.config.json` has also been created).
+
 ## 2025-10-19
 
 - Changes in `.prettierignore` file.
