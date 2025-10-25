@@ -5,6 +5,7 @@ This file contains general information about the actions of the [MathJSLab Proje
 ## 2025-10-25
 
 - The script `script/helper/copy-repo-files.ts` has been created (the file `input/resource/mathjslab/copy.repo.config.json` has also been created).
+- The file `rplace.fix-linebreak.jso` has been created (the script `"pregit:add"` in the `package.json` file has been created too).
 
 ## 2025-10-19
 

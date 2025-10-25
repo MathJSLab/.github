@@ -17,6 +17,7 @@
         "clean:build:script": "npm run clean:script && npm run clean:build",
         "clean": "npm run clean:build:script",
         "clean:all": "npm run clean && npm run clean:package-lock",
+        "pregit:add": "replace-in-file --verbose --configFile=replace.fix-linebreak.json",
         "git:add": "git add .",
         "git:commit": "node script/helper/git-commit.cjs",
         "git:push": "git push",
