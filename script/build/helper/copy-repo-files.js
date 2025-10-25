@@ -74,10 +74,16 @@ for (const config of options.config) {
                     dest = path.resolve(file);
                 }
                 if (!options.dryRun) {
-                    fs.copyFileSync(src, dest);
+                    if (options.mode === 'copy') {
+                        fs.copyFileSync(src, dest);
+                        console.log(`copy file from: ${src}`);
+                        console.log(`to: ${dest}`);
+                    }
+                    else {
+                        fs.unlinkSync(dest);
+                        console.log(`file removed: ${dest}`);
+                    }
                 }
-                console.log(`copy file from: ${src}`);
-                console.log(`to: ${dest}`);
             });
         }
         else {
