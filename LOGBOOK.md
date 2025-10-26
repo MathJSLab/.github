@@ -2,10 +2,14 @@
 
 This file contains general information about the actions of the [MathJSLab Project](https://mathjslab.com/) that go beyond the scope of the individual projects. In other words, what cannot be recorded in the `CHANGES.md` file of each software project, or the general actions of the organization, are recorded here, indexed by date.
 
+## 2025-10-26
+
+- In all of the organization's projects, the system for downloading raw files from the repository on GitHub has been replaced by cloning the repository and copying selected files.
+
 ## 2025-10-25
 
-- The script `script/helper/copy-repo-files.ts` has been created (the file `input/resource/mathjslab/copy.repo.config.json` has also been created).
-- The file `rplace.fix-linebreak.jso` has been created (the script `"pregit:add"` in the `package.json` file has been created too).
+- The script `script/helper/copy-repo-files.ts` has been created (the files `input/resource/**/copy.repo.config.json` has also been created).
+- The file `rplace.fix-linebreak.json` has been created (the script `"pregit:add"` in the `package.json` file has been created too).
 
 ## 2025-10-19
 

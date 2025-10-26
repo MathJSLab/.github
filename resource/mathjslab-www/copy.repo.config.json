@@ -1,0 +1,19 @@
+{
+    "repository": ".github",
+    "files": [
+        { "src": "resource/mathjslab-www/eleventy.build.json", "dest": "eleventy.build.json" },
+        "script/tsconfig.json",
+        "script/helper/clean-package-lock.cjs",
+        "script/helper/EleventyUtil.mjs",
+        "script/helper/readFileBom.ts",
+        "script/helper/readFileBomSync.ts",
+        "script/helper/mkDirIfNotExist.ts",
+        "script/helper/git-commit.cjs",
+        "script/helper/toIco.ts",
+        { "src": "images/img/ico/favicon.ico", "dest": "site/img/favicon.ico" },
+        { "src": "images/img/ico/favicon-dark.ico", "dest": "site/img/favicon-dark.ico" },
+        { "src": "images/mathjslab-logo.svg", "dest": "site/img/mathjslab-logo.svg" },
+        ".prettierignore",
+        ".prettierrc"
+    ]
+}

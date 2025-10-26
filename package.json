@@ -30,9 +30,10 @@
         "build:script": "tsc -p script/tsconfig.json",
         "prebuild": "npm run build:script",
         "build": "npm run clean:build && node eleventy.build.mjs",
+        "mkdir:resource": "shx mkdir -p resource/mathjslab resource/mathjslab-app resource/mathjslab-www",
         "copy:prettierrc": "shx cp input/resource/mathjslab/.prettierrc resource/mathjslab/.prettierrc",
-        "copy:repo": "shx cp input/resource/mathjslab/copy.repo.config.json resource/mathjslab/copy.repo.config.json",
-        "postbuild": "npm run copy:prettierrc && npm run copy:repo",
+        "copy:repo": "shx cp input/resource/mathjslab/copy.repo.config.json resource/mathjslab/copy.repo.config.json && shx cp input/resource/mathjslab-app/copy.repo.config.json resource/mathjslab-app/copy.repo.config.json && shx cp input/resource/mathjslab-www/copy.repo.config.json resource/mathjslab-www/copy.repo.config.json",
+        "postbuild": "npm run mkdir:resource && npm run copy:prettierrc && npm run copy:repo",
         "build:format:lint": "npm run build && npm run format:lint",
         "do:all": "npm run clean:all && npm run update && npm run format:lint && npm run build:format:lint && npm run git:all && echo script \"do:all\" finished."
     },
