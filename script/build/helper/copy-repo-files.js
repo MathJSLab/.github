@@ -80,8 +80,13 @@ for (const config of options.config) {
                         console.log(`to: ${dest}`);
                     }
                     else {
-                        fs.unlinkSync(dest);
-                        console.log(`file removed: ${dest}`);
+                        try {
+                            fs.unlinkSync(dest);
+                            console.log(`file removed: ${dest}`);
+                        }
+                        catch {
+                            console.error(`error removing file (ignored): ${dest}`);
+                        }
                     }
                 }
             });
