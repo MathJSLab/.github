@@ -5,6 +5,7 @@ This file contains general information about the actions of the [MathJSLab Proje
 ## 2025-10-26
 
 - In all of the organization's projects, the system for downloading raw files from the repository on GitHub has been replaced by cloning the repository and copying selected files.
+- The MathJSLab logo in the .md files has been modified to use logo image in the website (mathjslab-www repository).
 
 ## 2025-10-25
 
