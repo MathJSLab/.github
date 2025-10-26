@@ -112,10 +112,7 @@
         "src/components/WebComponentInterface.d.ts",
         "src/components/WebComponentType.d.ts",
         "src/components/WebComponentType.d.ts",
-        {
-            "src": "includes/miscBibtexEntry.njk",
-            "dest": "src/includes/miscBibtexEntry.njk"
-        },
+        "src/includes/miscBibtexEntry.njk",
         "types/styles.scss.d.ts",
         "types/module.scss.d.ts",
         ".prettierrc"

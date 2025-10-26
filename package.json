@@ -23,6 +23,7 @@
         "git:push": "git push",
         "git:all": "npm run git:add && npm run git:commit && npm run git:push",
         "tsx": "tsx --require tsconfig-paths/register",
+        "npx:tsx": "npx tsx",
         "format": "prettier --plugin=@prettier/plugin-xml --write **/*.{ts,tsx,js,jsx,cjs,mjs,css,scss,html,htm,json,jsonc,yml,yaml,xml,svg,md,yml,yaml}",
         "postformat": "replace-in-file --verbose --configFile=replace.fix-endnl.json",
         "lint": "eslint --fix",
