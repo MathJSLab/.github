@@ -1,5 +1,5 @@
 <p align="center">
-<a href="https://mathjslab.com/" target="_blank" rel="noopener"><img src="https://mathjslab.com/img/mathjslab-logo.svg" alt="MathJSLab" width="200" height="200" /></a>
+  <a href="https://mathjslab.com/" target="_blank" rel="noopener"><img src="https://mathjslab.com/img/mathjslab-logo.svg" alt="MathJSLab" width="200" height="200" /></a>
 </p>
 
 # [MathJSLab](https://mathjslab.com/) - [mathjslab.com](https://mathjslab.com/)
@@ -34,7 +34,7 @@ curl -k -o ./package.json https://raw.githubusercontent.com/MathJSLab/.github/re
 npm run all:clone:all
 ```
 
-Copyright &copy; 2016-2025 [Sergio Lindau](mailto:sergiolindau@gmail.com), [![ORCID](https://img.shields.io/badge/ORCID-0009--0006--9115--0291-blue)](https://orcid.org/0009-0006-9115-0291)
+Copyright &copy; 2016-2026 [Sergio Lindau](mailto:sergiolindau@gmail.com), [![ORCID](https://img.shields.io/badge/ORCID-0009--0006--9115--0291-blue)](https://orcid.org/0009-0006-9115-0291)
 
 [mathjslab.com](https://mathjslab.com/), [mathjslab@gmail.com](mailto:mathjslab@gmail.com).
 
@@ -42,4 +42,4 @@ Copyright &copy; 2016-2025 [Sergio Lindau](mailto:sergiolindau@gmail.com), [![OR
 
 [![ISBN](https://img.shields.io/badge/ISBN-978--65--00--84828--1-blue?style=flat&link=https://grp.isbn-international.org/search/piid_solr?keys=978-65-00-84828-1)](https://grp.isbn-international.org/search/piid_solr?keys=978-65-00-84828-1) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8396263.svg)](https://doi.org/10.5281/zenodo.8396263)
 
-El perfil de esta organización fue modificado por última vez el 26/10/2025.
+El perfil de esta organización fue modificado por última vez el 28/01/2026.

@@ -1,5 +1,5 @@
 <p align="center">
-<a href="https://mathjslab.com/" target="_blank" rel="noopener"><img src="https://mathjslab.com/img/mathjslab-logo.svg" alt="MathJSLab" width="200" height="200" /></a>
+  <a href="https://mathjslab.com/" target="_blank" rel="noopener"><img src="https://mathjslab.com/img/mathjslab-logo.svg" alt="MathJSLab" width="200" height="200" /></a>
 </p>
 
 # [MathJSLab](https://mathjslab.com/) - [mathjslab.com](https://mathjslab.com/)
@@ -14,7 +14,7 @@ La **[Organización MathJSLab](https://github.com/MathJSLab)** fue creada para r
 
 **Aviso Importante:** Este software, **[MathJSLab](https://mathjslab.com/), no está afiliado, patrocinado ni respaldado por [The MathWorks, Inc.](https://www.mathworks.com/)** [MATLAB&reg;](https://www.mathworks.com/products/matlab.html) es una marca registrada de [The MathWorks, Inc.](https://www.mathworks.com/) Para más información sobre [MATLAB](https://www.mathworks.com/products/matlab.html), visita [www.mathworks.com](https://www.mathworks.com).
 
-Copyright &copy; 2016-2025 [Sergio Lindau](mailto:sergiolindau@gmail.com), [![ORCID](https://img.shields.io/badge/ORCID-0009--0006--9115--0291-blue)](https://orcid.org/0009-0006-9115-0291)
+Copyright &copy; 2016-2026 [Sergio Lindau](mailto:sergiolindau@gmail.com), [![ORCID](https://img.shields.io/badge/ORCID-0009--0006--9115--0291-blue)](https://orcid.org/0009-0006-9115-0291)
 
 [mathjslab.com](https://mathjslab.com/), [mathjslab@gmail.com](mailto:mathjslab@gmail.com).
 

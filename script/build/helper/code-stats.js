@@ -1,0 +1,11 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const stats = JSON.parse(fs.readFileSync(path.resolve(__dirname, '..', '..', 'report', 'code.stats.json'), 'utf-8')).totals;
+console.log('==================== Code statistics ====================');
+console.log(`Total lines: ${stats.totalLines}`);
+console.log(`Code lines: ${stats.totalCode}`);
+console.log(`Comment lines: ${stats.totalComments}`);
+console.log('=========================================================');

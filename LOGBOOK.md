@@ -2,6 +2,12 @@
 
 This file contains general information about the actions of the [MathJSLab Project](https://mathjslab.com/) that go beyond the scope of the individual projects. In other words, what cannot be recorded in the `CHANGES.md` file of each software project, or the general actions of the organization, are recorded here, indexed by date.
 
+## 2026-01-28
+
+- The `script/helper/code-stats.ts` helper was created in the `mathjslab` repository and then copied to `mathjslab-app` repository and moved to the organization repository. The `"code:stats"` and `"code:stats:summary"` scripts in the `package.json` has been created.
+- Year's references modifyed to `2026`.
+- First MathJSLab release of 2026 (chronos).
+
 ## 2025-10-26
 
 - In all of the organization's projects, the system for downloading raw files from the repository on GitHub has been replaced by cloning the repository and copying selected files.
