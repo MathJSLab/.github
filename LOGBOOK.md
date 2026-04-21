@@ -2,6 +2,10 @@
 
 This file contains general information about the actions of the [MathJSLab Project](https://mathjslab.com/) that go beyond the scope of the individual projects. In other words, what cannot be recorded in the `CHANGES.md` file of each software project, or the general actions of the organization, are recorded here, indexed by date.
 
+## 2026-04-21
+
+- The `script/tsconfig.json` has been improved due to dependencies updated.
+
 ## 2026-01-28
 
 - The `script/helper/code-stats.ts` helper was created in the `mathjslab` repository and then copied to `mathjslab-app` repository and moved to the organization repository. The `"code:stats"` and `"code:stats:summary"` scripts in the `package.json` has been created.
