@@ -1,0 +1,2557 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children no
+\language english
+\language_package default
+\inputencoding utf8
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command biber
+\index_command default
+\float_placement H
+\float_alignment class
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_title "Uma proposta metodológica que articula a resolução literal de problemas de Física e o software MathJSLab"
+\pdf_author "Sergio Lindau"
+\pdf_keywords "Pensamento Computacional. Resolução Literal de Problemas. Ensino de Física. MATLAB."
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen true
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine biblatex-natbib
+\cite_engine_type authoryear
+\biblio_style plain
+\biblatex_bibstyle authoryear-comp
+\biblatex_citestyle authoryear-comp
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content true
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Title
+A methodological proposal that integrates symbolic problem-solving in physics with the MathJSLab software
+\end_layout
+
+\begin_layout Author
+Sergio Lindau
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "sergiolindau@gmail.com"
+target "mailto:sergiolindau@gmail.com"
+type "mailto:"
+literal "false"
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "ORCID: 0009-0006-9115-0291"
+target "https://orcid.org/0009-0006-9115-0291"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Date
+July 10,
+ 2026
+\end_layout
+
+\begin_layout Abstract
+This work proposes that the learning of Physics and Mathematics in High School should be guided by the symbolic resolution of problems,
+ delegating numerical execution to computational tools.
+ To make this proposal viable,
+ we present MathJSLab,
+ a free software that simulates a subset of the MATLAB language.
+ The proposed methodology is supported by an epistemological,
+ ontological,
+ and semiotic foundation,
+ based on Actor-Network Theory and Cultural-Historical Activity Theory.
+ These frameworks structure the basis for the pillars of Computational Thinking in order to overcome its criticisms,
+ culminating in a methodological approach exemplified and articulated with a didactic resource.
+ The study concludes by providing a well-founded strategy to overcome traditional approaches centered on manual calculations,
+ effectively integrating computational mathematics into the daily life of High School education.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Keywords:
+
+\series default
+ Computational Thinking.
+ Symbolic Problem Solving.
+ Physics Teaching.
+ MATLAB.
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Standard
+Symbolic (or literal) problem-solving consists of listing all the equations relevant to the solution and performing algebraic manipulations with symbolic variables before substituting numerical values,
+ converting units,
+ and carrying out the arithmetic calculations to obtain the specific numerical solution.
+\end_layout
+
+\begin_layout Standard
+In physics education literature,
+ this method is described as a way to foster meaningful problem-solving,
+ as opposed to a mechanical approach.
+ It also means that,
+ by solving problems in this manner,
+ students construct algebraic and symbolic representations of real physical situations,
+ thereby recreating the modeling and deduction processes that characterize scientific activity.
+ In general,
+ problem-solving can be understood as a strategy that mobilizes prior knowledge and develops logical reasoning (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "karam2009habilidades,oliveira2017problemas"
+literal "false"
+
+\end_inset
+
+).
+ Another motivation for adopting a methodology based on literal problem-solving stems from the recurring difficulty we observe in students when applying their established mathematical skills to the field of physics.
+ Research indicates that these failures arise not from a deficiency in abstract mathematics,
+ but from an inability to contextualize (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "badmus2024physics,ince2018overview"
+literal "false"
+
+\end_inset
+
+).
+ In physics,
+ equations describe real systems and symbols carry specific physical meanings,
+ differing from the purely abstract relations of mathematics.
+ Research dating back over 30 years (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "perez1992questionando"
+literal "false"
+
+\end_inset
+
+) had already identified a tendency to reduce problem-solving,
+ in general,
+ to a mechanical and superficial exercise in calculation.
+ Therefore,
+ the central pedagogical challenge in physics education lies in translating and applying mathematical knowledge to models of physical phenomena.
+ Furthermore,
+ it is recognized that problem-solving is an essential 21st-century competency and a high-level cognitive skill (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "ince2018overview"
+literal "false"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Nowadays,
+ the term 
+\shape italic
+Symbolic Problem-Solving
+\shape default
+ has become somewhat unwieldy,
+ and many of its original formulations have been integrated into the scope of 
+\shape italic
+Computational Thinking
+\shape default
+ (CT).
+ CT is defined as a cognitive method for solving complex problems in a way that allows both humans and machines to execute the solutions effectively (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "wing2006computational"
+literal "false"
+
+\end_inset
+
+).
+ While CT can be defined in various other ways,
+ a critical distinction is always made:
+ whereas computing is a process defined in terms of an underlying model (language,
+ algorithms,
+ data structures,
+ the machine,
+ etc.),
+ CT is the mental process of formulating the problem and deriving the solutions that such a process will execute.
+ In other words,
+ it is not merely about programming,
+ but about employing analytical capabilities to develop mathematical abstractions and structure problems so that algorithm design and problem-solving techniques can be applied effectively (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "aho2011computational"
+literal "false"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+We propose that students,
+ while solving problems symbolically,
+ engage in another common practice of modern scientific activity:
+ delegating the numerical computation to a computational mathematics tool.
+ Thus,
+ the teaching methodology we propose is epistemologically and ontologically aligned with contemporary scientific practice:
+ it transforms teaching activity into action,
+ and an action analogous to the agencies of modern Science and Engineering.
+\end_layout
+
+\begin_layout Standard
+This separation between symbolic and deductive work (performed by hand) and numerical and executable work (performed via code) allows the pedagogical focus to shift toward the development of deeper competencies:
+ the ability to model,
+ represent,
+ deduce,
+ abstract,
+ and translate the physical world into symbolic languages.
+\end_layout
+
+\begin_layout Standard
+To make our methodological proposal fully viable —
+ and to ensure its long-term sustainability for use by teachers in daily classroom practice and as a foundation for educational research —
+ we developed the MathJSLab software (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "lindau2026mathjslab"
+literal "false"
+
+\end_inset
+
+).
+ This software simulates a subset of the MATLAB language and runs within a web browser environment.
+\end_layout
+
+\begin_layout Standard
+Additionally,
+ we are developing a theoretical synthesis grounded in Actor-Network Theory (ANT) (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "latour2012en"
+literal "false"
+
+\end_inset
+
+) and Cultural-Historical Activity Theory (CHAT) (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "vygotsky2007social,leontiev2022atividade,cenci2018atividade"
+literal "false"
+
+\end_inset
+
+);
+ the convergence of these theories is justified by the centrality of the concept of mediation in both frameworks.
+ While Computational Thinking (CT) offers an instrumental and systematized framework for teaching,
+ adopting these broader perspectives provides the epistemological,
+ ontological,
+ and semiotic grounding necessary to establish clear pedagogical guidelines and justify the work's comprehensive proposal.
+ From this integrated perspective,
+ we aim to address recurring criticisms of CT and problem-solving-focused instruction by consolidating a theoretical framework that supports a physics teaching methodology based on literal problem-solving —
+ one in which the execution of manual calculations is delegated to computational mathematics tools.
+\end_layout
+
+\begin_layout Standard
+The synthesis of ANT and CHAT characterizes MATLAB as an actant possessing multiple epistemological and ontological agencies within the sociotechnical network of mathematics.
+ As an active mediator,
+ software has reconfigured human activity and collective cognition,
+ expanding the scope of tractable problems and stabilizing new scientific practices.
+ This foundation allows for overcoming conceptual criticisms of Computational Thinking while guiding pedagogical approaches to physics education.
+\end_layout
+
+\begin_layout Standard
+This paper presents MathJSLab as a teaching resource for the symbolic resolution of problems.
+ The research is motivated by a shift in pedagogical emphasis:
+ moving away from traditional manual numerical calculation,
+ it proposes developing skills in coding numerical solutions based on symbolic ones.
+ By delegating the arithmetic component to a computational tool,
+ this approach aligns mathematics with the reality of contemporary research —
+ which assigns the numerical execution of models to computational tools —
+ thereby prioritizing the intelligibility of physical phenomena.
+\end_layout
+
+\begin_layout Section
+Methods
+\end_layout
+
+\begin_layout Subsection
+Research Methodology
+\end_layout
+
+\begin_layout Standard
+This work is grounded in two axiomatic principles of constructivism—
+rooted in genetic epistemology and historical-cultural development theory—
+to structure a didactic methodology within the framework of constructionism.
+\end_layout
+
+\begin_layout Standard
+The first axiom establishes that learning should foster the recapitulation of phylogenesis within the individual's ontogenesis.
+ Based on this premise,
+ didactic processes are designed to allow the learner to reproduce—
+analogously and through didactic transpositions—
+the historical trajectory of scientific knowledge production by the human collective.
+ Aligned with the ideas of 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "piaget2010simbolo"
+literal "false"
+
+\end_inset
+
+,
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "bruner2000instrucao"
+literal "false"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "vygotsky2007social"
+literal "false"
+
+\end_inset
+
+,
+ this guideline informs a pedagogy based on the imitation,
+ reconstruction,
+ and recapitulation of practices and concepts in their historical and logical genesis.
+\end_layout
+
+\begin_layout Standard
+The second axiom is grounded in Vygotsky’s thesis regarding the internalization of cultural mediations.
+ Cognitive development is understood as a process mediated by sign systems and tools (such as language,
+ writing,
+ and mathematics) which,
+ upon being incorporated and internally reconstructed,
+ transform elementary psychological functions into higher psychological functions.
+ Such mediators are not merely communicative channels but instruments that reorganize thought and expand intellectual capacity through social interaction and instruction within the Zone of Proximal Development (ZPD).
+ Successful appropriation of these mediations and the resulting autonomous development are manifested in the student's ability to articulate and navigate between different equivalent representation systems (e.g.,
+ verbal,
+ symbolic,
+ and graphic).
+\end_layout
+
+\begin_layout Standard
+Based on these axiomatic principles,
+ we propose a theoretical-methodological articulation between Actor-Network Theory (ANT) and Cultural-Historical Activity Theory (CHAT).
+ The objective is to provide a robust conceptual framework for planning and analyzing educational practices in the teaching of Physics,
+ Mathematics,
+ and Computing,
+ focusing specifically on 
+\shape italic
+Symbolic Problem-Solving
+\shape default
+.
+ This approach aims to integrate symbolic modeling and the use of computational tools as essential actants and mediators for the intelligibility of contemporary scientific phenomena.
+\end_layout
+
+\begin_layout Standard
+CHAT posits that a person's learning and cognitive development are fundamentally shaped by social interactions and the surrounding culture,
+ just as the human collective is shaped by mediations within social interaction and cultural processes.
+ ANT emphasizes the agency of non-human actors in establishing stable sociotechnical networks.
+ An amalgamation of these two theories to address issues in the epistemology of science,
+ education,
+ or cognitive theory appears not only feasible but highly appropriate.
+ The convergence between ANT and CHAT centers on the premise that human action and interaction are always mediated by intermediate elements.
+ However,
+ the theories operate at distinct scales and with different objectives:
+ mediation (CHAT) relates to the development of higher psychological functions (internalization),
+ whereas translation (ANT) deals with the stabilization of sociotechnical networks and collectives (external to subjectivity).
+\end_layout
+
+\begin_layout Standard
+Computational Thinking (CT) has established itself as a core 21st-century competency,
+ extending beyond computer science to become broadly relevant for problem-solving across multiple domains.
+ Its historical roots date back to the 1950s,
+ although many of its fundamental ideas are significantly older.
+ The term was formally used by Seymour Papert in 1980 (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "papert1993mindstorms"
+literal "false"
+
+\end_inset
+
+) and again in 1996.
+ These concepts build upon work developed by the author in collaboration with Cynthia Solomon in the 1971 article 
+\begin_inset Quotes eld
+\end_inset
+
+Twenty things to do with a computer
+\begin_inset Quotes erd
+\end_inset
+
+ (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "papert1972twenty"
+literal "false"
+
+\end_inset
+
+).
+ Prior to the term's popularization,
+ related notions were already circulating under different names (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "tedre2016quest"
+literal "false"
+
+\end_inset
+
+).
+ The concept gained global prominence in the field of education in 2006,
+ following work by Jeannette Wing (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "wing2006computational"
+literal "false"
+
+\end_inset
+
+),
+ who defined CT as a universal basic skill and argued that it should be integrated into the education of all children,
+ much like reading,
+ writing,
+ and arithmetic.
+\end_layout
+
+\begin_layout Standard
+Despite its widespread acceptance,
+ computational thinking (CT) faces criticism regarding its conceptual imprecision and the difficulty of distinguishing it from other forms of logical,
+ scientific,
+ or engineering reasoning (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "tedre2016quest,jones2016trouble"
+literal "false"
+
+\end_inset
+
+).
+ Critics also point to a tendency to force computational solutions into inappropriate contexts or unrelated fields (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "tedre2016quest"
+literal "false"
+
+\end_inset
+
+).
+ Furthermore,
+ it is argued that an excessive emphasis on technical and algorithmic problem-solving can obscure the social,
+ ethical,
+ and environmental implications inherent in the technologies being created (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "easterbrook2014systems,tedre2016quest"
+literal "false"
+
+\end_inset
+
+).
+ Added to this is the debate regarding the best strategy for curricular integration:
+ while some advocate for cross-curricular integration within subjects such as Mathematics and Science (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "barr2011bringing,grover2013review"
+literal "false"
+
+\end_inset
+
+),
+ others argue that computational thinking should be taught as a distinct,
+ standalone subject (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "wolfram2010code"
+literal "false"
+
+\end_inset
+
+).
+ Researchers also highlight the limitations of generalizing educational models and research primarily developed in the United States and Europe,
+ questioning their effectiveness and suitability when transferred to other cultural contexts (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "saqr2021scientometric,tedre2016quest"
+literal "false"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Computational Thinking (CT) is commonly expressed through four fundamental pillars which,
+ within this integrated framework,
+ cease to be isolated techniques and are instead understood as higher psychological functions resulting from the appropriation of historical artifacts:
+\end_layout
+
+\begin_layout Enumerate
+
+\shape italic
+Decomposition
+\shape default
+:
+ equivalent to 
+\shape italic
+depunctualization
+\shape default
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+From the perspective of ANT,
+ 
+\shape italic
+punctualization
+\shape default
+ refers to the process by which a complex,
+ heterogeneous network of elements (human and non-human —
+ such as technologies,
+ people,
+ institutions,
+ and documents) is “gathered” or “translated” to act in unison,
+ as if it were a single agent or a simple entity —
+ or,
+ for analytical purposes,
+ a single point or “actor-network.” When a network functions well and is punctualized,
+ its internal components become invisible.
+ A computer,
+ for instance,
+ is a punctualized network (chips,
+ wires,
+ electricity,
+ software,
+ users) that we treat simply as “the computer,” effectively becoming a “black box.” Punctualization is never permanent;
+ it must be constantly maintained,
+ otherwise the network unravels (
+\shape italic
+depunctualization
+\shape default
+) and the black box “opens up.”
+\end_layout
+
+\end_inset
+
+(the opening of “black boxes”) to trace actants (ANT) and to the internalization of the collective division of labor (CHAT).
+\end_layout
+
+\begin_layout Enumerate
+
+\shape italic
+Pattern Recognition
+\shape default
+:
+ identification of immutable inscriptions (ANT) and sedimented cultural signs that allow for the anticipation of network behaviors.
+\end_layout
+
+\begin_layout Enumerate
+
+\shape italic
+Abstraction and Generalization
+\shape default
+:
+ translation process to create a “mandatory point of passage” (TAR) and movement towards the formal concept via ZPD (CHAT).
+\end_layout
+
+\begin_layout Enumerate
+
+\shape italic
+Algorithms
+\shape default
+:
+ active mediators that transform meanings (ANT) and intellectual tools that reorganize the learner's thinking (CHAT).
+\end_layout
+
+\begin_layout Standard
+This rationale addresses key criticisms of CT.
+ Conceptual vagueness is overcome by defining CT as the construction of mediation networks geared toward execution by agents.
+ Computational chauvinism is countered by Generalized Symmetry,
+ which mandates that social and ethical implications be treated as relevant components of the network.
+ Finally,
+ the critique regarding the generalization of Western models is addressed by CHAT,
+ which emphasizes that all development is historically and culturally situated.
+\end_layout
+
+\begin_layout Standard
+Since even a sketch of this theoretical integration between ANT and CHAT provides a solid foundation for the pillars of CT —
+ thereby overcoming its main criticisms —
+ we can proceed to describe mathematics and MATLAB from the perspective of this theoretical amalgam,
+ without claiming to exhaust the subject.
+ We do so with the aim of articulating and better illustrating how the didactic activities we propose —
+ involving literal problem-solving using MathJSLab —
+ can be conceived and implemented.
+\end_layout
+
+\begin_layout Standard
+A contemporary understanding of mathematics and its computational tools requires a perspective that transcends the dichotomy between the thinking subject and the object of thought.
+ Viewed through the lenses of Actor-Network Theory (ANT) and Cultural-Historical Activity Theory (CHAT),
+ mathematics and algorithmic code reveal themselves to be inseparable from the systems of representation and the technical and cultural means of computation that underpin them.
+ These are not merely supports or auxiliary tools,
+ but active non-human actors —
+ co-constituents of a vast,
+ heterogeneous sociotechnical network.
+ Mathematics,
+ a fundamental pillar of civilizational development,
+ operates today as an invisible infrastructure supporting everything from complex financial operations to cutting-edge scientific production —
+ the result of a centuries-long process of historical weaving.
+\end_layout
+
+\begin_layout Standard
+Numerous studies from an educational perspective characterize mathematics in this way,
+ even without explicitly stating the theoretical frameworks we propose:
+\end_layout
+
+\begin_layout Quotation
+Thus,
+ mathematics is rooted in physical concepts;
+ for instance,
+ it is embodied in science as a mediating element rather than serving as a mere attachment or addendum.
+ Consequently,
+ while mathematics —
+ as a formal and technical tool —
+ can be understood in other contexts,
+ mathematics as a structuring skill of physics cannot be understood or applied independently (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "pietrocola2002matematica"
+literal "false"
+
+\end_inset
+
+ apud 
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "oliveirajunior2021matematica"
+literal "false"
+
+\end_inset
+
+,
+ p.
+ 2,
+ author's translation).
+\end_layout
+
+\begin_layout Standard
+From the perspective of Actor-Network Theory (ANT),
+ mathematics is a complex network in which agency is distributed among humans and non-humans —
+ scribes,
+ papyri and clay tablets,
+ numerals,
+ engineers,
+ abacuses,
+ astrolabes,
+ builders,
+ notations,
+ scientists,
+ axioms,
+ algorithms,
+ instruments,
+ equations,
+ theorems,
+ merchants,
+ navigators,
+ astronomers,
+ accountants,
+ weights and measures,
+ standardization committees,
+ economists,
+ curricula,
+ teaching and research institutions,
+ teachers,
+ textbooks,
+ students,
+ symbolic conventions,
+ programming languages,
+ gear-based calculators,
+ and silicon-chip processors,
+ among a multitude of other agents aggregated into a unified collective populated by subjects and objects.
+ This network is not limited to material objects;
+ many of its most powerful actants are symbolic,
+ such as axioms,
+ theorems,
+ and symbolic conventions.
+ Mathematical practice only materializes through effective ways of recording and manipulating relations and patterns by consensus.
+ Consequently,
+ applications of mathematics throughout history have consistently been well-recorded;
+ furthermore,
+ as it began to be applied in the realm of science,
+ it became even more thoroughly documented —
+ in an absolutely formal manner (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "badmus2024physics"
+literal "false"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Such records,
+ however,
+ are not neutral.
+ They constitute inscriptions (material or symbolic) that reconfigure the problems open to analysis,
+ stabilize practices,
+ and reorganize human cognition itself;
+ for some of these records are cultural mediators —
+ as established by CHAT —
+ that become internalized,
+ giving rise to higher psychological functions.
+ In other words,
+ these inscriptions become ontological and epistemological agents.
+\end_layout
+
+\begin_layout Standard
+From the perspective of CHAT,
+ these inscriptions act as psychological tools and signs that mediate human activity.
+ While written text conveys meaning through a one-dimensional,
+ phonetic channel,
+ mathematical representations operate within multidimensional structures possessing limitless instrumental and operational aspects.
+ The move toward increasing abstraction is not an exercise in distancing oneself from reality,
+ but rather a strategy to aggregate powerful actants and secure a consensual,
+ absolute grasp of the real world.
+ The stabilization of this network depends intrinsically on formal education institutions,
+ where curricula and pedagogies shape collective modes of thought,
+ cumulatively consolidating 
+\begin_inset Quotes eld
+\end_inset
+
+know-how
+\begin_inset Quotes erd
+\end_inset
+
+ across generations.
+\end_layout
+
+\begin_layout Standard
+The MATLAB (Matrix Laboratory) software exemplifies the materialization of this instrumental and operational nature of algorithmic code,
+ emerging as an epistemological actant.
+ It is marketed as a platform optimized for solving scientific and engineering problems,
+ and its matrix-based language is described as the "most natural way" to express computational mathematics.
+ (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "mathworks2025product"
+literal "false"
+
+\end_inset
+
+).
+ However,
+ beyond its technical definition as a multi-paradigm interpreter,
+ MATLAB must be understood as an ontological and epistemological agent.
+ It intervenes in the constitution of the real by defining what can be calculated and mediated,
+ acting as a central node that translates algorithmic knowledge into concrete action.
+\end_layout
+
+\begin_layout Standard
+The origin of MATLAB does not lie in a sudden flash of genius but is the result of a dense series of prior inscriptions and heterogeneous associations.
+ Its roots trace back to the work of J.
+ H.
+ Wilkinson and other researchers in the 1960s and 1970s,
+ whose algorithms for eigenvalues and linear equations were translated into a textbook (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "wilkinson1971handbook"
+literal "false"
+
+\end_inset
+
+) and into Fortran libraries such as EISPACK and LINPACK
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+EISPACK and LINPACK are Fortran libraries for linear algebra developed at 
+\shape italic
+Argonne National Laboratory
+\shape default
+:
+ EISPACK focuses on the computation of eigenvalues \SpecialChar allowbreak
+\SpecialChar allowbreak
+and eigenvectors,
+ while LINPACK solves linear equations and least-squares problems.
+ Both were succeeded by LAPACK.
+ Available at:
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+ https://www.netlib.org/eispack/
+\end_layout
+
+\end_inset
+
+,
+ 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.netlib.org/linpack/
+\end_layout
+
+\end_inset
+
+ e 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.netlib.org/lapack/
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ at
+\shape italic
+ Argonne National Laboratory
+\shape default
+ (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "haigh2008moler,moler2004origins,moler2018brief,moler2020history"
+literal "false"
+
+\end_inset
+
+).
+ In this sense,
+ MATLAB emerged from an aggregation of human actors who produced equations and papers;
+ these were subsequently condensed into manuals and libraries that —
+ upon being translated into executable code —
+ became protagonists within the network in their own right.
+ The birth of the first MATLAB,
+ coded by Cleve Moler in 1976 at the University of New Mexico (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "haigh2008moler"
+literal "false"
+
+\end_inset
+
+),
+ was an act of translation.
+ Moler —
+ a developer of the LINPACK library who was teaching Linear Algebra and Numerical Analysis at the University of New Mexico —
+ sought to create a way for his students to utilize the capabilities of the EISPACK and LINPACK libraries without needing to write code or execute the full program-building cycle:
+ editing,
+ compiling,
+ loading,
+ and running.
+ The original MATLAB was,
+ therefore,
+ a mediator that simplified the interaction between the student (subject) and computational linear algebra (object/activity).
+ Since then,
+ it has acted to mediate,
+ translate,
+ and stabilize inscriptions within the sociotechnical network of mathematics.
+\end_layout
+
+\begin_layout Standard
+Throughout the 1980s,
+ Moler’s collaboration with John Little and Steve Bangert —
+ aimed at reprogramming the software in C and launching it commercially via MathWorks in 1984 —
+ marked a process of punctualization.
+ The software evolved from a free academic tool into a stable “black box” —
+ a globally recognized standard engineering tool.
+ Its logo,
+ a plot representing the eigenvalue problem of an L-shaped membrane,
+ serves as a signifier referencing its memorable origins and the network of algorithms by Wilkinson and Forsythe that preceded it.
+\end_layout
+
+\begin_layout Standard
+The integration of mathematics and MATLAB,
+ viewed through the frameworks of Actor-Network Theory (ANT) and the Theory of Actor-Human-Computer (CHAT),
+ reveals that intelligence and problem-solving capabilities reside not merely in the human brain but in the performance of the sociotechnical network.
+ MATLAB’s applications span fields such as “active automotive safety systems,
+ interplanetary spacecraft,
+ health monitoring devices,
+ smart grids and Long-Term Evolution (LTE) cellular networks,
+ machine learning,
+ signal processing,
+ image processing,
+ computer vision,
+ communications,
+ computational finance,
+ control design,
+ and robotics” (
+\begin_inset CommandInset citation
+LatexCommand citealp
+key "mathworks2025product"
+literal "false"
+
+\end_inset
+
+).
+ Consequently,
+ MATLAB cannot be viewed merely as an instrument;
+ it is an actant that fosters new forms of agency.
+ It reorganizes human activity by enabling the intuitive application of linear algebra operations to multidimensional matrices,
+ acting as an effective agent that executes instructions and materializes computational thinking.
+\end_layout
+
+\begin_layout Standard
+In this context,
+ mathematics and software serve as mediators that shape our perception of the world.
+ The stability of these actants is ensured by their continuous integration into curricula and professional practice,
+ where humans and non-humans interact in a state of generalized symmetry.
+ Synthesizing these theories allows us to recognize that,
+ by using MATLAB,
+ we align ourselves with centuries of mathematical history,
+ stabilized code libraries,
+ and educational institutions.
+ We thus form a collective in which knowing,
+ doing,
+ and know-how are continuously distributed and performed to shape and comprehend reality,
+ increasingly establishing a symmetry between the human and the algorithm.
+\end_layout
+
+\begin_layout Subsection
+The MathJSLab
+\end_layout
+
+\begin_layout Standard
+MathJSLab was initially developed in JavaScript
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+JavaScript implements the ECMAScript standard (the name of the language standardized by ECMA-262),
+ defining its syntax and basic types,
+ and adding environment APIs (DOM in the browser,
+ file system in Node.js);
+ Specification:
+ 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://262.ecma-international.org/16.0/index.html
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ and later evolved into TypeScript
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+TypeScript is a strongly typed superset of the JavaScript language that compiles to JavaScript.
+ Specification:
+ 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.typescriptlang.org/
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+.
+ The initial development goal was to create a calculator capable of defining variables and evaluating mathematical expressions using those variables,
+ allowing it to be embedded in a web page.
+ Early versions relied solely on character substitution within a string (the input mathematical expression) followed by the execution of the 
+\family typewriter
+eval
+\family default
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+The 
+\family typewriter
+eval
+\family default
+ function executes a string containing JavaScript commands,
+ following the concept of 
+\shape italic
+bootstrap
+\shape default
+:
+ a function that executes commands of the language itself.
+\end_layout
+
+\end_inset
+
+ function on the resulting string.
+ There was no mechanism to parse the input expression string,
+ nor was there proper mathematical notation for displaying the input and the calculated result.
+\end_layout
+
+\begin_layout Standard
+Currently,
+ MathJSLab uses ANTLR
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+ANTLR is a parser generator that,
+ based on a grammar specification,
+ produces parsers for reading,
+ processing,
+ or translating text or bits.
+ Available at:
+ 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.antlr.org/
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ to generate the lexical and syntactic analyzer for its interpreter and employs MathML
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+MathML is a markup language for describing mathematical notation,
+ capturing its structure and content,
+ with the aim of enabling the use of mathematics on the World Wide Web.
+ Specification:
+ 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.w3.org/TR/mathml4/
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ to render expressions in standard mathematical notation.
+ The initial concept was to create educational software that runs in a web browser and helps users practice coding mathematical expressions in a programming language.
+ Consequently,
+ solving physics problems symbolically emerged as the ideal application for the software,
+ allowing for the development of coding skills within the context of physics education.
+ The name 
+\begin_inset Quotes eld
+\end_inset
+
+MathJSLab
+\begin_inset Quotes erd
+\end_inset
+
+ alludes to the concept of a mathematical laboratory built in JavaScript.
+\end_layout
+
+\begin_layout Standard
+The software was released with a strategy ensuring full availability,
+ support for collaborative development,
+ frequent maintenance,
+ and the assignment of an ISBN and DOI to every released version.
+ This allows it to be properly cited in any research work that uses it as a research tool or as a subject of study in the field of education.
+ Furthermore,
+ it is released under a permissive free software license —
+ the MIT License
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+The MIT License is an extremely permissive and popular open-source software license that originated at the Massachusetts Institute of Technology (MIT).
+ It allows anyone to use,
+ copy,
+ modify,
+ distribute,
+ sublicense,
+ and sell the software with few restrictions,
+ requiring only that the original copyright notice be retained.
+ Available at:
+ 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://opensource.org/license/mit
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ —
+ and runs on any internet-connected device,
+ while also supporting offline use
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+It is a Progressive Web App.
+\end_layout
+
+\end_inset
+
+.
+ The software was developed using modern web technologies
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+HTML5,
+ SCSS and Nunjucks templates,
+ Markdown documentation,
+ and Web Components.
+\end_layout
+
+\end_inset
+
+ to ensure ease of maintenance and future extension.
+ The entire application,
+ including help documentation for each command,
+ is available in three languages:
+ English,
+ Portuguese,
+ and Spanish.
+ All documentation was written in Markdown format
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Markdown is a lightweight markup language for formatting plain text using intuitive symbols and converting it into HTML or other formats.
+ It was designed to be readable as plain text and easy to write,
+ and is widely used in documentation,
+ websites,
+ and project READMEs.
+ See 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.markdownguide.org/
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename mathjslab-prompt.png
+	lyxscale 30
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+MathJSLab command prompt,
+ showing the translation and solution of the code,
+ displayed in standard mathematical notation.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:mathjslab-prompt"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The MathJSLab prompt,
+ shown in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:mathjslab-prompt"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ differs from MATLAB's approach by being designed around the second axiom we adopted —
+ regarding the translation of equivalent representations.
+ The prompt accepts a command in code format and immediately displays the expression below it using standard mathematical notation,
+ similar to the way one writes with paper and pencil.
+ Thus,
+ simply observing the result of each prompt serves as an exercise,
+ training the user to translate code into standard mathematical notation.
+\end_layout
+
+\begin_layout Standard
+To demonstrate the complete solution to a problem within the application environment,
+ we present a sequence of prompts that solve a quadratic equation using Bhaskara's formula (Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:mathjslab-bhaskara"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+).
+ Each prompt entered as code is interpreted and computed,
+ with both the input and the result displayed in standard mathematical notation.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename mathjslab-bhaskara-1.png
+	lyxscale 20
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename mathjslab-bhaskara-2.png
+	lyxscale 20
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+(a)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\longrightarrow$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+(b)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename mathjslab-bhaskara-3.png
+	lyxscale 20
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename mathjslab-bhaskara-4.png
+	lyxscale 20
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+(c)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\longrightarrow$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+(d)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+MathJSLab screens showing the solution of a quadratic equation:
+ (a) starting by clearing all variables;
+ (b) defining the equation's coefficients;
+ (c) solving using the quadratic formula;
+ (d) defining the function and plotting the graph.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:mathjslab-bhaskara"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Results and Discussion
+\end_layout
+
+\begin_layout Subsection
+Examples of classroom application at the high school level:
+ symbolic problem-solving
+\end_layout
+
+\begin_layout Standard
+Para demonstrar atividades didáticas de resolução literal de problemas no ensino de Física usando o MathJSLab,
+ mostramos dois exemplos.
+\end_layout
+
+\begin_layout Standard
+O primeiro exemplo é um problema do ENEM,
+ onde é necessário solucionar o problema num tempo minimamente viável e justifica-se por mostrar toda a potencialidade dos métodos e recursos aqui apresentados.
+\end_layout
+
+\begin_layout Standard
+O segundo exemplo é um problema análogo ao resolvido em experimentos com plano inclinado.
+ Este exemplo justifica-se pela relevância do problema como actante e mediador cultural,
+ e por exemplificar também as transposições didáticas sem limites que podemos fazer quando os objetos são pensados como actantes e mediadores socioculturais.
+\end_layout
+
+\begin_layout Subsubsection
+UM PROBLEMA DO ENEM
+\end_layout
+
+\begin_layout Standard
+O Exame Nacional do Ensino Médio (ENEM),
+ com grande número de questões em cada caderno (90),
+ tem tempo bastante limitado por questão para executar sua solução.
+ Questões que envolvem a manipulação de duas ou mais equações exigem a resolução literal para que o tempo de solução da questão seja minimamente viável.
+ Um bom exemplo de questão assim é a do ENEM de 2015,
+ que está na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:enem-2015-carro-solar"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ que trata de um carro movido por energia solar,
+ calculando o tempo que leva para atingir determinada velocidade.
+\end_layout
+
+\begin_layout Standard
+A solução do problema consiste em equacionar a potência efetiva entregue pelo painel solar em termos dos dados fornecidos e considerar que essa energia é transformada em energia cinética,
+ calculando o tempo total através da definição de potência como a taxa de variação da energia em relação ao tempo.
+ Em resumo:
+ a solução literal é o melhor caminho.
+\end_layout
+
+\begin_layout Standard
+O código para a solução da questão no MathJSLab está na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:codigo-enem-2015-carro-solar"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ É uma sequência de definições e cálculo de expressões baseada na resolução literal do problema.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename enem-2015-carro-solar.png
+	lyxscale 25
+	scale 15
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Questão de física do ENEM 2015:
+ desempenho de um carro solar.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:enem-2015-carro-solar"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="12" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<column alignment="left" valignment="top">
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+expression
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+comment
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+D_P = 1000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+% densidade de potência da radiação solar
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+m = 200
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+% massa do carro
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+A = 9
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+% área do painel solar
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+eta = 0.30
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+% rendimento do painel solar
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+Pe = D_P * A * eta
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+% potência efetiva do painel
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+km = 1000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+% quilômetro em metros
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+h = 60*60
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+% hora em segundos
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+m_s = km/h
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+% fator de conversão km/h em m/s
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+v = 108 * m_s
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+% velocidade em m/s
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+Ec = m * v^2 / 2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+% energia cinética
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+Delta_t = Ec / Pe
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+% tempo para adquirir a energia cinética
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Código da solução da questão do ENEM 2015:
+ desempenho de um carro solar.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:codigo-enem-2015-carro-solar"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Free fall
+\end_layout
+
+\begin_layout Standard
+An analysis of Galileo’s inclined plane through the lens of Actor-Network Theory (ANT) reveals that this artifact transcends the status of a passive support,
+ acting instead as a central actant within heterogeneous networks of scientific production.
+ By slowing down motion and translating free fall into measurable sequences,
+ the device reconfigures the physical phenomenon,
+ enabling the stabilization of statements grounded in mathematical regularity.
+ This material translation not only facilitates observation but also enacts new ontologies of motion by articulating dimensions of time,
+ space,
+ and number.
+ Indeed,
+ it was through Galileo,
+ the inclined plane,
+ and the laws of motion that mathematics became stably and irreversibly incorporated into the description of physical phenomena,
+ spreading throughout and permeating the entire sociotechnical network of knowledge —
+ as 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "pietrocola2002matematica"
+literal "false"
+
+\end_inset
+
+ describes concisely and with the necessary emphasis:
+\end_layout
+
+\begin_layout Quotation
+It was with the advent of modern science in the 17th century —
+ with Galileo and others —
+ that natural phenomena began to be systematically expressed through mathematical relations,
+ a practice that came to serve as a criterion for scientific validity.
+ This practice represents a legacy of the Pythagorean tradition (author's translation).
+\end_layout
+
+\begin_layout Standard
+Within the framework of CHAT,
+ the inclined plane is understood as a mediating tool that reorganizes the cognitive structure of investigative activity by mediating the relationship between the subject and accelerated motion.
+ It links practical action to complex sign systems,
+ situating the individual within historically established cultural practices.
+ Its continued presence in educational laboratories reaffirms its agency as a historical actant,
+ connecting students to digital sensors and pedagogical traditions.
+\end_layout
+
+\begin_layout Standard
+As a material operator of intelligibility,
+ the artifact remains fundamental to the constitution of physics and its ongoing reinscription within contemporary educational contexts.
+\end_layout
+
+\begin_layout Standard
+Adapting inclined plane experiments to our proposed methodology would involve presenting free-fall problems to be solved using MathJSLab.
+ This would be preceded by a presentation on deriving free-fall velocity—
+based on the conservation of energy—
+and unit conversion,
+ as illustrated in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:free-fall-scheme"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+;
+ in other words,
+ a symbolic solution to the free-fall problem.
+\end_layout
+
+\begin_layout Standard
+For this derivation,
+ we have access to concepts —
+ specifically energy and the principle of its conservation —
+ that were unavailable to Galileo.
+ The code (9 lines) for calculating free-fall velocity in km/h is shown in the Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:free-fall-code"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename esquema-queda-livre.png
+	lyxscale 30
+	scale 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+A scheme for deducing the velocity of free fall,
+ based on the conservation of energy,
+ for implementation in code applications.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:free-fall-scheme"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="10" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<column alignment="left" valignment="top">
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+expressão
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+comentário
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+y = 3000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+% definition of free-fall height in meters
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+g = 10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+% definition of gravitational acceleration in m/s^2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+v = sqrt(2*g*y)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+% calculation of free-fall velocity in m/s
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+km = 1000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+% kilometer to meters
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+h = 60*60
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+% hour to seconds
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+m_s = km/h
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+% conversion factor from km/h to m/s
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+km_h = 1/m_s
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+% conversion factor from m/s to km/h
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+v_m_s = v
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+% free-fall velocity in m/s
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+v_km_h = v * km_h
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\series bold
+% free-fall velocity in km/h
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Code for calculating free-fall velocity.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:free-fall-code"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This example runs counter to the first axiom we adopted —
+ which relies on the principle of conservation of energy —
+ thereby contradicting the problem's historical and logical genesis.
+ We justify this approach because our goal is to practice numerical solution coding skills,
+ while acknowledging that a derivation made in this manner "breaks" the problem's historical genesis by invoking the principle of conservation of energy.
+\end_layout
+
+\begin_layout Standard
+It should be clarified that the two axiomatic principles we adopted serve to support and justify the theoretical synthesis we have outlined,
+ but they should not be regarded as rigid rules of this methodology.
+ The analytical solution,
+ the use of a numerical computing tool like MathJSLab,
+ and the second axiom —
+ linked to the aim of practicing coding skills —
+ ensure that this example remains aligned with the proposed methodology.
+\end_layout
+
+\begin_layout Section
+Conclusion
+\end_layout
+
+\begin_layout Standard
+In this work,
+ we aim to initiate a theoretical convergence between ANT (Actor-Network Theory) and CHAT (Cultural-Historical Activity Theory),
+ with the goal of outlining a physics teaching methodology based on Literal Problem Solving.
+ Although we only sketch this theoretical convergence without reaching a definitive synthesis,
+ we identify consistent axiomatic guidelines derived from genetic epistemology and developmental psychology.
+ These guidelines are indeed evident and definitive,
+ as well as perfectly aligned with the methodology we propose.
+\end_layout
+
+\begin_layout Standard
+We propose an innovative theoretical foundation for Computational Thinking,
+ transcending purely technical perspectives by integrating it into a sociotechnical synthesis of ANT and CHAT.
+ This approach redefines the discipline's four classic pillars not merely as cognitive skills,
+ but as processes involving the internalization of cultural mediations and the construction of sociotechnical networks linking humans and non-humans.
+\end_layout
+
+\begin_layout Standard
+We conclude by providing a didactic tool to implement our proposed methodology:
+ a mature software application called MathJSLab.
+ It is freely available,
+ supports collaborative development,
+ and is accessible via the web.
+\end_layout
+
+\begin_layout Standard
+Future developments will enable the software to generate notes containing equations,
+ graphs,
+ figures,
+ diagrams,
+ flowcharts,
+ and more  —
+  all easily edited in Markdown format —
+ allowing students and teachers to effortlessly create high-quality notes.
+ Work is already underway to adapt the software for release on online app stores.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintCited"
+bibfiles "H:/workarea/mathjslab-project/mathjslab-repositories/mathjslab/extra/paper/mathjslab"
+encoding "default"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
