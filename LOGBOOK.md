@@ -2,6 +2,11 @@
 
 This file contains general information about the actions of the [MathJSLab Project](https://mathjslab.com/) that go beyond the scope of the individual projects. In other words, what cannot be recorded in the `CHANGES.md` file of each software project, or the general actions of the organization, are recorded here, indexed by date.
 
+## 2026-07-12
+
+- The `script/helper/mark-crono.ts` helper was created in the `mathjslab` repository and then copied to `mathjslab-app` repository and moved to the organization repository. The `"crono:start"`, `"crono:mark"` and `"crono:stop"` scripts in the `package.json` has been created.
+- The `script/tsconfig.json` has been improved due to dependencies updated and the `script/tsconfig.node.json` file has been created to support scripts build.
+
 ## 2026-04-21
 
 - The `script/tsconfig.json` has been improved due to dependencies updated.

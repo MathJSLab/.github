@@ -10,7 +10,7 @@
     "homepage": "https://mathjslab.com/",
     "type": "module",
     "scripts": {
-        "install:approve:all": "npm install-scripts approve --all",
+        "install:approve:all": "npm install-scripts approve --all && npm install",
         "update": "npx npm-check-updates -u -x typescript && npm install && npm run clean",
         "clean:package-lock": "node script/helper/clean-package-lock.cjs",
         "clean:build": "shx rm -rf images profile resource test README.md LEIAME.md LEAME.md",
@@ -88,5 +88,10 @@
         "typescript": "^6.0.3",
         "uuid": "^14.0.1",
         "yaml": "^2.9.0"
+    },
+    "allowScripts": {
+        "@parcel/watcher@2.5.6": true,
+        "esbuild@0.28.1": true,
+        "sharp@0.33.5": true
     }
 }
