@@ -16,7 +16,7 @@
                             "input": "./site",
                             "data": "../data",
                             "includes": "../includes",
-                            "layouts": "./layouts",
+                            "layouts": "./includes",
                             "output": "./www"
                         },
                         "pathPrefix": "/"
