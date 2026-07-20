@@ -4,7 +4,7 @@ This file contains general information about the actions of the [MathJSLab Proje
 
 ## 2026-07-20
 
-- Files in the `script/helper/` and `src/components` directories modified.
+- Files in the `script/helper/` and `src/components` directories modified. DOI badges were modified.
 
 ## 2026-07-19
 
