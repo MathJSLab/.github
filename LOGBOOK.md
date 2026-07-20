@@ -2,6 +2,10 @@
 
 This file contains general information about the actions of the [MathJSLab Project](https://mathjslab.com/) that go beyond the scope of the individual projects. In other words, what cannot be recorded in the `CHANGES.md` file of each software project, or the general actions of the organization, are recorded here, indexed by date.
 
+## 2026-07-20
+
+- Files in the `script/helper/` and `src/components` directories modified.
+
 ## 2026-07-19
 
 - The file `input/matjslab-www/eleventy.build.json.njk` has been modified. Launch of the MathJSlab project page (`mathjslab-www`).
