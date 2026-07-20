@@ -4,7 +4,7 @@ This file contains general information about the actions of the [MathJSLab Proje
 
 ## 2026-07-19
 
-- The file `input/matjslab-www/eleventy.build.json.njk` has been modified.
+- The file `input/matjslab-www/eleventy.build.json.njk` has been modified. Launch of the MathJSlab project page (`mathjslab-www`).
 
 ## 2026-07-18
 
