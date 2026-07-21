@@ -20,8 +20,8 @@
         { "src": "extra/advertising/Octicons-mark-github.svg", "dest": "site/img/Octicons-mark-github.svg" },
         ".prettierignore",
         ".prettierrc",
-        { "src": "extra/paper/01-physics-education-symbolic-problem-solving/main-en.pdf", "dest": "site/paper/01/main-en.pdf" },
-        { "src": "extra/paper/01-physics-education-symbolic-problem-solving/main-pt.pdf", "dest": "site/paper/01/main-pt.pdf" },
-        { "src": "extra/paper/02-mathjslab-publishing-research-software/main-pt.pdf", "dest": "site/paper/02/main-pt.pdf" }
+        { "src": "extra/paper/01-physics-education-symbolic-problem-solving/main-en.pdf", "dest": "site/archive/01/main-en.pdf" },
+        { "src": "extra/paper/01-physics-education-symbolic-problem-solving/main-pt.pdf", "dest": "site/archive/01/main-pt.pdf" },
+        { "src": "extra/paper/02-mathjslab-publishing-research-software/main-pt.pdf", "dest": "site/archive/02/main-pt.pdf" }
     ]
 }
