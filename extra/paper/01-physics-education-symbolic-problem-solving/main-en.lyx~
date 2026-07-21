@@ -2545,7 +2545,7 @@ Future developments will enable the software to generate notes containing equati
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 btprint "btPrintCited"
-bibfiles "H:/workarea/mathjslab-project/mathjslab-repositories/mathjslab/extra/paper/mathjslab"
+bibfiles "../mathjslab"
 encoding "default"
 
 \end_inset

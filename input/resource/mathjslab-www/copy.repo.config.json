@@ -14,6 +14,9 @@
         { "src": "images/img/ico/favicon-dark.ico", "dest": "site/img/favicon-dark.ico" },
         { "src": "images/mathjslab-logo.svg", "dest": "site/img/mathjslab-logo.svg" },
         ".prettierignore",
-        ".prettierrc"
+        ".prettierrc",
+        { "src": "extra/paper/01-physics-education-symbolic-problem-solving/main-en.pdf", "dest": "site/paper/01/main-en.pdf" },
+        { "src": "extra/paper/01-physics-education-symbolic-problem-solving/main-pt.pdf", "dest": "site/paper/01/main-pt.pdf" },
+        { "src": "extra/paper/02-mathjslab-publishing-research-software/main-pt.pdf", "dest": "site/paper/02/main-pt.pdf" }
     ]
 }

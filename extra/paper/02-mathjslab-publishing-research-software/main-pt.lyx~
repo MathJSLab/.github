@@ -785,7 +785,7 @@ placement document
 alignment document
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -893,7 +893,450 @@ A viabilidade contemporânea desse modelo computacional está diretamente associ
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
 
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename H:/workarea/mathjslab-project/mathjslab-repositories/mathjslab/extra/paper/01-physics-education-symbolic-problem-solving/mathjslab-bhaskara-1.png
+	lyxscale 20
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename H:/workarea/mathjslab-project/mathjslab-repositories/mathjslab/extra/paper/01-physics-education-symbolic-problem-solving/mathjslab-bhaskara-2.png
+	lyxscale 20
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+(a)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\longrightarrow$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+(b)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename H:/workarea/mathjslab-project/mathjslab-repositories/mathjslab/extra/paper/01-physics-education-symbolic-problem-solving/mathjslab-bhaskara-3.png
+	lyxscale 20
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename H:/workarea/mathjslab-project/mathjslab-repositories/mathjslab/extra/paper/01-physics-education-symbolic-problem-solving/mathjslab-bhaskara-4.png
+	lyxscale 20
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+(c)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\longrightarrow$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+(d)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Telas do MathJSLab mostrando a resolução da equação do 2º grau:
+ (a) começa apagando todas as variáveis;
+ (b) definição dos coeficientes da equação;
+ (c) solução pela fórmula de Bhaskara;
+ (d) definição da função e construção do gráfico.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:mathjslab-bhaskara"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Em contextos anteriores da computação interpretada,
+ diferenças aparentemente simples na escrita de um algoritmo frequentemente exigiam avaliação empírica detalhada de eficiência.
+ Estruturas logicamente equivalentes poderiam apresentar tempos de execução significativamente distintos,
+ tornando comum a necessidade de reescrever rotinas inteiras apenas para contornar limitações do interpretador.
+ Em JavaScript contemporâneo,
+ entretanto,
+ mecanismos JIT reduzem substancialmente essa dependência de micro-otimizações manuais.
+ Por exemplo,
+ operações iterativas semanticamente equivalentes como:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+for (let i = 0;
+ i < n;
+ i++) {
+\end_layout
+
+\begin_layout Plain Layout
+
+	soma += vetor[i];
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+e:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+for (const valor of vetor) {
+\end_layout
+
+\begin_layout Plain Layout
+
+	soma += valor;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+tendem a convergir para desempenhos semelhantes após os ciclos de otimização realizados pela engine.
+ Semelhantemente,
+ expressões matemáticas escritas de forma mais declarativa e semanticamente legível podem atingir desempenho comparável a implementações manualmente especializadas,
+ pois o compilador identifica padrões recorrentes e reorganiza dinamicamente a execução interna do código.
+ Essa característica altera significativamente o próprio processo de desenvolvimento de software científico,
+ permitindo uma programação relativamente mais “descuidada” do ponto de vista microestrutural,
+ sem comprometer necessariamente a eficiência final da execução.
+\end_layout
+
+\begin_layout Standard
+Sob perspectiva histórica,
+ essa transformação possui relevância particular para a computação científica em ambiente Web.
+ A combinação entre compilação dinâmica,
+ otimização adaptativa e crescente poder computacional dos navegadores contemporâneos tornou viável a execução local de aplicações anteriormente restritas a ambientes científicos especializados.
+ Assim,
+ o navegador deixa de atuar apenas como interface de acesso remoto e passa a constituir efetivamente um ambiente distribuído de modelagem,
+ experimentação e computação científica executável.
+\end_layout
+
+\begin_layout Standard
+Além disso,
+ o MathJSLab é implementado como uma Progressive Web Application (PWA) .
+ Esse modelo arquitetural permite que a aplicação seja instalada diretamente pelo navegador,
+ utilize mecanismos locais de armazenamento em cache e continue funcionando mesmo em cenários de conectividade limitada ou inexistente.
+ Sob perspectiva educacional e científica,
+ essa característica amplia significativamente a acessibilidade do sistema,
+ reduzindo dependências de instalação tradicional e aproximando aplicações Web do comportamento historicamente associado a softwares científicos desktop.
+ Em contextos educacionais,
+ isso favorece a utilização do sistema em laboratórios escolares,
+ dispositivos móveis e ambientes com infraestrutura computacional heterogênea.
+\end_layout
+
+\begin_layout Standard
+A arquitetura distribuída do sistema também se articula com práticas contemporâneas de ciência aberta e desenvolvimento cooperativo.
+ O núcleo computacional é publicado como pacote reutilizável no npm,
+ os repositórios são mantidos publicamente no GitHub da organização MathJSLab e a distribuição da aplicação utiliza plataformas de hospedagem,
+ integração e entrega contínua,
+ como Netlify e CircleCI .
+ O projeto também adota a licença MIT,
+ favorecendo reutilização,
+ modificação e circulação aberta do software.
+\end_layout
+
+\begin_layout Standard
+A formalização institucional do MathJSLab por meio de DOI e ISBN reforça sua inserção nos mecanismos contemporâneos de preservação e citabilidade científica.
+ Dessa forma,
+ o sistema evidencia que o software científico contemporâneo não circula apenas como ferramenta computacional,
+ mas também como artefato acadêmico executável,
+ distribuído e institucionalmente reconhecido.
+ Assim,
+ o MathJSLab demonstra que a computação científica Web contemporânea não constitui apenas uma adaptação simplificada de ambientes tradicionais,
+ mas uma transformação mais ampla das formas de produção,
+ mediação,
+ circulação e preservação do conhecimento científico em ambientes digitais distribuídos.
+\end_layout
+
+\begin_layout Subsection
+IMPLICAÇÕES EPISTEMOLÓGICAS E EDUCACIONAIS
+\end_layout
+
+\begin_layout Standard
+As transformações discutidas ao longo deste trabalho evidenciam que a computação científica contemporânea ultrapassa uma mudança meramente técnica das plataformas computacionais.
+ A consolidação do navegador Web como ambiente capaz de executar aplicações matemáticas complexas altera também as formas de mediação,
+ circulação e produção do conhecimento científico,
+ aproximando infraestrutura computacional,
+ experimentação acadêmica e interação educacional em um mesmo espaço distribuído.
+\end_layout
+
+\begin_layout Standard
+Nesse contexto,
+ o MathJSLab exemplifica uma convergência entre computação científica,
+ mediação educacional e produção intelectual baseada em software.
+ Ao integrar modelagem matemática,
+ interpretação de linguagem,
+ representação simbólica e execução interativa diretamente no navegador,
+ o sistema evidencia que tecnologias Web contemporâneas podem atuar simultaneamente como ambiente computacional,
+ instrumento pedagógico e infraestrutura científica distribuída.
+\end_layout
+
+\begin_layout Standard
+Sob perspectiva educacional,
+ essa mediação aproxima-se das discussões relacionadas ao Pensamento Computacional (AHO,
+ 2011) e às teorias de aprendizagem mediadas por tecnologias digitais.
+ Ao automatizar operações técnicas de baixo nível e favorecer práticas de modelagem,
+ abstração e experimentação algorítmica,
+ o software amplia possibilidades de interação ativa com objetos matemáticos e computacionais.
+ A execução diretamente no navegador reduz barreiras técnicas de instalação e acesso,
+ favorecendo ambientes de aprendizagem mais acessíveis,
+ interativos e compatíveis com propostas contemporâneas de educação científica e computacional.
+\end_layout
+
+\begin_layout Standard
+Paralelamente,
+ a inserção do MathJSLab em ecossistemas de Software Livre e Ciência Aberta evidencia mudanças significativas na própria materialidade da produção científica contemporânea.
+ O conhecimento científico deixa progressivamente de circular apenas por meio de textos estáticos e passa a incorporar modelos executáveis,
+ repositórios distribuídos,
+ infraestruturas computacionais abertas e artefatos digitais preserváveis.
+ Nesse cenário,
+ identificadores persistentes,
+ como DOI e ISBN,
+ não representam apenas mecanismos administrativos de catalogação,
+ mas instrumentos de legitimação institucional do software como produção intelectual acadêmica.
+\end_layout
+
+\begin_layout Standard
+A integração entre desenvolvimento distribuído,
+ preservação digital,
+ versionamento público e citabilidade formal demonstra que o software científico contemporâneo pode assumir simultaneamente funções operacionais,
+ metodológicas e epistemológicas.
+ O MathJSLab materializa essa transformação ao atuar não apenas como ferramenta computacional executável,
+ mas também como artefato acadêmico inserido em redes de circulação,
+ validação e preservação do conhecimento científico.
+\end_layout
+
+\begin_layout Standard
+Assim,
+ o presente estudo reforça a compreensão de que a computação científica em ambiente Web não constitui apenas uma evolução tecnológica das plataformas digitais contemporâneas,
+ mas também uma transformação mais ampla das formas pelas quais o conhecimento científico é produzido,
+ compartilhado,
+ operacionalizado e legitimado em contextos mediados por software.
+\end_layout
+
+\begin_layout Section
+CONCLUSÃO
+\end_layout
+
+\begin_layout Standard
+O presente trabalho demonstrou que o MathJSLab constitui uma prova de conceito consistente da viabilidade da computação científica em ambiente Web e,
+ simultaneamente,
+ um modelo de software compreendido como artefato acadêmico institucionalmente reconhecido.
+ A análise evidenciou que a evolução dos navegadores Web —
+ impulsionada por engines JavaScript de alto desempenho,
+ mecanismos de compilação Just-In-Time (JIT) e padrões como o MathML —
+ ampliou significativamente as capacidades computacionais do navegador,
+ permitindo que ele deixasse de atuar apenas como interface de acesso à informação para assumir funções de execução,
+ modelagem e mediação científica distribuída.
+\end_layout
+
+\begin_layout Standard
+Sob perspectiva epistemológica,
+ concluiu-se que o software deixou de ocupar uma posição estritamente instrumental para integrar diretamente a infraestrutura contemporânea de produção do conhecimento científico.
+ Ao operacionalizar estruturas conceituais,
+ modelos matemáticos e procedimentos experimentais,
+ o código executável torna-se indissociável das práticas de modelagem,
+ simulação e validação científica.
+ Essa transformação é reforçada por infraestruturas contemporâneas de Ciência Aberta,
+ como o Zenodo (CERN/OpenAIRE,
+ 2026),
+ que,
+ ao atribuírem DOI ao código-fonte,
+ inserem o software nos mecanismos formais de preservação,
+ citabilidade e circulação da comunicação científica.
+\end_layout
+
+\begin_layout Standard
+No campo educacional,
+ o MathJSLab materializa princípios associados ao Pensamento Computacional e às diretrizes da BNCC Computação (BRASIL,
+ 2022),
+ oferecendo um ambiente interativo de modelagem matemática e experimentação algorítmica executado diretamente no navegador.
+ Ao reduzir barreiras técnicas relacionadas à instalação e configuração de ambientes especializados,
+ o sistema amplia possibilidades de acesso a ferramentas computacionais voltadas ao ensino e à aprendizagem científica.
+ A atribuição de ISBN reforça adicionalmente sua natureza de objeto educacional digital e produção intelectual catalogável.
+\end_layout
+
+\begin_layout Standard
+Em síntese,
+ o trabalho evidencia que a materialidade da produção científica contemporânea vem sendo progressivamente reconfigurada por infraestruturas computacionais distribuídas,
+ modelos executáveis e ecossistemas digitais abertos.
+ Nesse contexto,
+ o MathJSLab exemplifica como a computação científica em ambiente Web pode articular acessibilidade,
+ reprodutibilidade,
+ circulação aberta do conhecimento e preservação institucional do software científico.
+ Mais do que uma adaptação técnica de ambientes computacionais tradicionais,
+ o sistema evidencia transformações mais amplas nas formas de produção,
+ operacionalização e legitimação do conhecimento científico mediado por software.
 \end_layout
 
 \begin_layout Standard
