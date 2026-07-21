@@ -2,6 +2,10 @@
 
 This file contains general information about the actions of the [MathJSLab Project](https://mathjslab.com/) that go beyond the scope of the individual projects. In other words, what cannot be recorded in the `CHANGES.md` file of each software project, or the general actions of the organization, are recorded here, indexed by date.
 
+## 2026-07-21
+
+- SVG logo files for npm, GitHub, and MIT were included as assets in the `mathjslab-www` project.
+
 ## 2026-07-20
 
 - Files in the `script/helper/` and `src/components` directories modified. DOI badges were modified.
