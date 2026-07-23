@@ -6,5 +6,5 @@ package-lock.json
 *.min.js
 # Scripts build directory.
 script/build/
-# Advertising directory (there are Inkscape .svg files that cannot be changed).
-advertising/
+# extra directory (there are Inkscape .svg files that cannot be changed).
+extra/
