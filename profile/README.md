@@ -19,6 +19,7 @@ This organization owns:
 - The organization profile [repository](https://github.com/MathJSLab/.github).
 - The [npm package](https://www.npmjs.com/package/mathjslab) [repository](https://github.com/MathJSLab/mathjslab).
 - The [demo web application](https://app.mathjslab.com) [repository](https://github.com/MathJSLab/mathjslab-app).
+- The [calculator web application](https://calc.mathjslab.com) [repository](https://github.com/MathJSLab/mathjslab-calc).
 - The [project page](https://mathjslab.com) [repository](https://github.com/MathJSLab/mathjslab-www).
 
 All relevant actions of this organization are recorded in our [logbook](../LOGBOOK.md).
@@ -42,4 +43,4 @@ Copyright &copy; 2016-2026 [Sergio Lindau](mailto:sergiolindau@gmail.com), [![OR
 
 [![ISBN](https://img.shields.io/badge/ISBN-978--65--00--84828--1-blue?style=flat&link=https://grp.isbn-international.org/search/piid_solr?keys=978-65-00-84828-1)](https://grp.isbn-international.org/search/piid_solr?keys=978-65-00-84828-1) [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.8396263-blue?style=flat&link=https://doi.org/10.5281/zenodo.8396263)](https://doi.org/10.5281/zenodo.8396263)
 
-This organization profile was last modified on 2026-07-23.
+This organization profile was last modified on 2026-07-24.

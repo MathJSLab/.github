@@ -19,6 +19,7 @@ Esta organización posee los siguientes repositorios:
 - El [repositorio](https://github.com/MathJSLab/.github) del perfil de la organización.
 - El [repositorio](https://github.com/MathJSLab/mathjslab) del [paquete npm](https://www.npmjs.com/package/mathjslab).
 - El [repositorio](https://github.com/MathJSLab/mathjslab-app) de la [aplicación web de demostración](https://app.mathjslab.com).
+- El [repositorio](https://github.com/MathJSLab/mathjslab-calc) de la [aplicación web de calculadora](https://calc.mathjslab.com).
 - El [repositorio](https://github.com/MathJSLab/mathjslab-www) de la [página del proyecto](https://mathjslab.com).
 
 Todas las acciones relevantes de esta organización quedan registradas en nuestro [diario de a bordo](../LOGBOOK.md).
@@ -42,4 +43,4 @@ Copyright &copy; 2016-2026 [Sergio Lindau](mailto:sergiolindau@gmail.com), [![OR
 
 [![ISBN](https://img.shields.io/badge/ISBN-978--65--00--84828--1-blue?style=flat&link=https://grp.isbn-international.org/search/piid_solr?keys=978-65-00-84828-1)](https://grp.isbn-international.org/search/piid_solr?keys=978-65-00-84828-1) [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.8396263-blue?style=flat&link=https://doi.org/10.5281/zenodo.8396263)](https://doi.org/10.5281/zenodo.8396263)
 
-El perfil de esta organización fue modificado por última vez el 23/07/2026.
+El perfil de esta organización fue modificado por última vez el 24/07/2026.

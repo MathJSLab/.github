@@ -2,6 +2,10 @@
 
 This file contains general information about the actions of the [MathJSLab Project](https://mathjslab.com/) that go beyond the scope of the individual projects. In other words, what cannot be recorded in the `CHANGES.md` file of each software project, or the general actions of the organization, are recorded here, indexed by date.
 
+## 2026-07-24
+
+- The `mathjslab-calc` repository has been added to the organization's repository list (used to generate `README.md`, `LEAME.md`, and `LEIAME.md`).
+
 ## 2026-07-23
 
 - The `mathjslab-calc` repository was created, featuring a new `mathjslab` web application. Additionally, the entire infrastructure for the new repository was set up within the organization's repository.
