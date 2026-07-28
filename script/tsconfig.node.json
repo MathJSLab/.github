@@ -2,6 +2,6 @@
     "extends": "./tsconfig.json",
     "compilerOptions": {
         "module": "ES2022" /* Specify what module code is generated. */,
-        "moduleResolution": "node" /* Specify how TypeScript looks up a file from a given module specifier. */
+        "moduleResolution": "bundler" /* Specify how TypeScript looks up a file from a given module specifier. */
     }
 }
