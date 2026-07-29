@@ -2,6 +2,10 @@
 
 This file contains general information about the actions of the [MathJSLab Project](https://mathjslab.com/) that go beyond the scope of the individual projects. In other words, what cannot be recorded in the `CHANGES.md` file of each software project, or the general actions of the organization, are recorded here, indexed by date.
 
+## 2026-07-28
+
+- The `mathjslab-batch` repository has been added to the organization's repository list (used to generate `README.md`, `LEAME.md`, and `LEIAME.md`) and in the `input/resource/` directory.
+
 ## 2026-07-27
 
 - Script `mark-crono.ts` added in the project `mathjslab-www`. DOI assigned to `mathjslab-calc` project.

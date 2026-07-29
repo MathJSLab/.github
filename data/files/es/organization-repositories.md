@@ -4,4 +4,5 @@ Esta organización posee los siguientes repositorios:
 - El [repositorio](https://github.com/MathJSLab/mathjslab) del [paquete npm](https://www.npmjs.com/package/mathjslab).
 - El [repositorio](https://github.com/MathJSLab/mathjslab-app) de la [aplicación web de demostración](https://app.mathjslab.com).
 - El [repositorio](https://github.com/MathJSLab/mathjslab-calc) de la [aplicación web de calculadora](https://calc.mathjslab.com).
+- El [repositorio](https://github.com/MathJSLab/mathjslab-batch) de la [aplicación web de procesamiento por lotes](https://batch.mathjslab.com).
 - El [repositorio](https://github.com/MathJSLab/mathjslab-www) de la [página del proyecto](https://mathjslab.com).
