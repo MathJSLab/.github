@@ -6,7 +6,15 @@
 
 [![English](https://img.shields.io/badge/English-8484FF)](README.md) [![Português](https://img.shields.io/badge/Portugu%C3%AAs-blue)](LEIAME.md) [![Español](https://img.shields.io/badge/Espa%C3%B1ol-blue)](LEAME.md)
 
-[![mathjslab.com](https://img.shields.io/badge/mathjslab.com-D0F0D0)](https://mathjslab.com/) [![Website status](https://img.shields.io/website?url=https%3A%2F%2Fmathjslab.com%2F)](https://mathjslab.com/) [![GitHub Created At](https://img.shields.io/github/created-at/MathJSLab/.github)](https://github.com/MathJSLab/.github) [![GitHub License](https://img.shields.io/github/license/MathJSLab/mathjslab)](https://github.com/MathJSLab/mathjslab/blob/main/LICENSE) [![OpenAIRE](https://img.shields.io/badge/OpenAIRE-blue?style=flat&link=https://explore.openaire.eu/search/advanced/research-outcomes?f0=q&fv0=MathJSLab)](https://explore.openaire.eu/search/advanced/research-outcomes?f0=q&fv0=MathJSLab)
+[![mathjslab.com](https://img.shields.io/badge/mathjslab.com-D0F0D0)](https://mathjslab.com/)
+
+[![Website status](https://img.shields.io/website?url=https%3A%2F%2Fmathjslab.com%2F)](https://mathjslab.com/)
+
+[![GitHub Created At](https://img.shields.io/github/created-at/MathJSLab/.github)](https://github.com/MathJSLab/.github)
+
+[![GitHub License](https://img.shields.io/github/license/MathJSLab/mathjslab)](https://github.com/MathJSLab/mathjslab/blob/main/LICENSE)
+
+[![OpenAIRE](https://img.shields.io/badge/OpenAIRE-blue?style=flat&link=https://explore.openaire.eu/search/advanced/research-outcomes?f0=q&fv0=MathJSLab)](https://explore.openaire.eu/search/advanced/research-outcomes?f0=q&fv0=MathJSLab)
 
 > An [interpreter](<https://en.wikipedia.org/wiki/Interpreter_(computing)>) with language syntax like [MATLAB&reg;](https://www.mathworks.com/)/[Octave](https://www.gnu.org/software/octave/) written in [TypeScript](https://www.typescriptlang.org/).
 
@@ -17,10 +25,10 @@ The **[MathJSLab Organization](https://github.com/MathJSLab)** was created to br
 This organization owns:
 
 - The organization profile [repository](https://github.com/MathJSLab/.github).
-- The [npm package](https://www.npmjs.com/package/mathjslab) [repository](https://github.com/MathJSLab/mathjslab).
-- The [demo web application](https://app.mathjslab.com) [repository](https://github.com/MathJSLab/mathjslab-app).
-- The [calculator web application](https://calc.mathjslab.com) [repository](https://github.com/MathJSLab/mathjslab-calc).
-- The [batch web application](https://batch.mathjslab.com) [repository](https://github.com/MathJSLab/mathjslab-batch).
+- The [npm package](https://www.npmjs.com/package/mathjslab) [repository](https://github.com/MathJSLab/mathjslab). [![ISBN](https://img.shields.io/badge/ISBN-978--65--00--82338--7-blue?style=flat&link=https://grp.isbn-international.org/search/piid_solr?keys=978-65-00-82338-7)](https://grp.isbn-international.org/search/piid_solr?keys=978-65-00-82338-7) [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.8396265-blue?style=flat&link=https://doi.org/10.5281/zenodo.8396265)](https://doi.org/10.5281/zenodo.8396265)
+- The [demo web application](https://app.mathjslab.com) [repository](https://github.com/MathJSLab/mathjslab-app). [![ISBN](https://img.shields.io/badge/ISBN-978--65--00--84828--1-blue?style=flat&link=https://grp.isbn-international.org/search/piid_solr?keys=978-65-00-84828-1)](https://grp.isbn-international.org/search/piid_solr?keys=978-65-00-84828-1) [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.8396263-blue?style=flat&link=https://doi.org/10.5281/zenodo.8396263)](https://doi.org/10.5281/zenodo.8396263)
+- The [calculator web application](https://calc.mathjslab.com) [repository](https://github.com/MathJSLab/mathjslab-calc). [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.21628416-blue?style=flat&link=https://doi.org/10.5281/zenodo.21628416)](https://doi.org/10.5281/zenodo.21628416)
+- The [batch web application](https://batch.mathjslab.com) [repository](https://github.com/MathJSLab/mathjslab-batch). [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.21680709-blue?style=flat&link=https://doi.org/10.5281/zenodo.21680709)](https://doi.org/10.5281/zenodo.21680709)
 - The [project page](https://mathjslab.com) [repository](https://github.com/MathJSLab/mathjslab-www).
 
 All relevant actions of this organization are recorded in our [logbook](../LOGBOOK.md).
@@ -38,10 +46,10 @@ npm run all:clone:all
 
 Copyright &copy; 2016-2026 [Sergio Lindau](mailto:sergiolindau@gmail.com), [![ORCID](https://img.shields.io/badge/ORCID-0009--0006--9115--0291-blue)](https://orcid.org/0009-0006-9115-0291)
 
-[mathjslab.com](https://mathjslab.com/), [mathjslab@gmail.com](mailto:mathjslab@gmail.com).
+[mathjslab.com](https://mathjslab.com/), [mathjslab@gmail.com](mailto:mathjslab@gmail.com) .
 
 [![ISBN](https://img.shields.io/badge/ISBN-978--65--00--82338--7-blue?style=flat&link=https://grp.isbn-international.org/search/piid_solr?keys=978-65-00-82338-7)](https://grp.isbn-international.org/search/piid_solr?keys=978-65-00-82338-7) [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.8396265-blue?style=flat&link=https://doi.org/10.5281/zenodo.8396265)](https://doi.org/10.5281/zenodo.8396265)
 
 [![ISBN](https://img.shields.io/badge/ISBN-978--65--00--84828--1-blue?style=flat&link=https://grp.isbn-international.org/search/piid_solr?keys=978-65-00-84828-1)](https://grp.isbn-international.org/search/piid_solr?keys=978-65-00-84828-1) [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.8396263-blue?style=flat&link=https://doi.org/10.5281/zenodo.8396263)](https://doi.org/10.5281/zenodo.8396263)
 
-This organization profile was last modified on 2026-07-28.
+This organization profile was last modified on 2026-08-01.

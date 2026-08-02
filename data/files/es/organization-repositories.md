@@ -1,8 +1,8 @@
 Esta organización posee los siguientes repositorios:
 
 - El [repositorio](https://github.com/MathJSLab/.github) del perfil de la organización.
-- El [repositorio](https://github.com/MathJSLab/mathjslab) del [paquete npm](https://www.npmjs.com/package/mathjslab).
-- El [repositorio](https://github.com/MathJSLab/mathjslab-app) de la [aplicación web de demostración](https://app.mathjslab.com).
-- El [repositorio](https://github.com/MathJSLab/mathjslab-calc) de la [aplicación web de calculadora](https://calc.mathjslab.com).
-- El [repositorio](https://github.com/MathJSLab/mathjslab-batch) de la [aplicación web de procesamiento por lotes](https://batch.mathjslab.com).
+- El [repositorio](https://github.com/MathJSLab/mathjslab) del [paquete npm](https://www.npmjs.com/package/mathjslab). [![ISBN](https://img.shields.io/badge/ISBN-978--65--00--82338--7-blue?style=flat&link=https://grp.isbn-international.org/search/piid_solr?keys=978-65-00-82338-7)](https://grp.isbn-international.org/search/piid_solr?keys=978-65-00-82338-7) [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.8396265-blue?style=flat&link=https://doi.org/10.5281/zenodo.8396265)](https://doi.org/10.5281/zenodo.8396265)
+- El [repositorio](https://github.com/MathJSLab/mathjslab-app) de la [aplicación web de demostración](https://app.mathjslab.com). [![ISBN](https://img.shields.io/badge/ISBN-978--65--00--84828--1-blue?style=flat&link=https://grp.isbn-international.org/search/piid_solr?keys=978-65-00-84828-1)](https://grp.isbn-international.org/search/piid_solr?keys=978-65-00-84828-1) [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.8396263-blue?style=flat&link=https://doi.org/10.5281/zenodo.8396263)](https://doi.org/10.5281/zenodo.8396263)
+- El [repositorio](https://github.com/MathJSLab/mathjslab-calc) de la [aplicación web de calculadora](https://calc.mathjslab.com). [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.21628416-blue?style=flat&link=https://doi.org/10.5281/zenodo.21628416)](https://doi.org/10.5281/zenodo.21628416)
+- El [repositorio](https://github.com/MathJSLab/mathjslab-batch) de la [aplicación web de procesamiento por lotes](https://batch.mathjslab.com). [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.21680709-blue?style=flat&link=https://doi.org/10.5281/zenodo.21680709)](https://doi.org/10.5281/zenodo.21680709)
 - El [repositorio](https://github.com/MathJSLab/mathjslab-www) de la [página del proyecto](https://mathjslab.com).

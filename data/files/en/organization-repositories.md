@@ -1,8 +1,8 @@
 This organization owns:
 
 - The organization profile [repository](https://github.com/MathJSLab/.github).
-- The [npm package](https://www.npmjs.com/package/mathjslab) [repository](https://github.com/MathJSLab/mathjslab).
-- The [demo web application](https://app.mathjslab.com) [repository](https://github.com/MathJSLab/mathjslab-app).
-- The [calculator web application](https://calc.mathjslab.com) [repository](https://github.com/MathJSLab/mathjslab-calc).
-- The [batch web application](https://batch.mathjslab.com) [repository](https://github.com/MathJSLab/mathjslab-batch).
+- The [npm package](https://www.npmjs.com/package/mathjslab) [repository](https://github.com/MathJSLab/mathjslab). [![ISBN](https://img.shields.io/badge/ISBN-978--65--00--82338--7-blue?style=flat&link=https://grp.isbn-international.org/search/piid_solr?keys=978-65-00-82338-7)](https://grp.isbn-international.org/search/piid_solr?keys=978-65-00-82338-7) [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.8396265-blue?style=flat&link=https://doi.org/10.5281/zenodo.8396265)](https://doi.org/10.5281/zenodo.8396265)
+- The [demo web application](https://app.mathjslab.com) [repository](https://github.com/MathJSLab/mathjslab-app). [![ISBN](https://img.shields.io/badge/ISBN-978--65--00--84828--1-blue?style=flat&link=https://grp.isbn-international.org/search/piid_solr?keys=978-65-00-84828-1)](https://grp.isbn-international.org/search/piid_solr?keys=978-65-00-84828-1) [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.8396263-blue?style=flat&link=https://doi.org/10.5281/zenodo.8396263)](https://doi.org/10.5281/zenodo.8396263)
+- The [calculator web application](https://calc.mathjslab.com) [repository](https://github.com/MathJSLab/mathjslab-calc). [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.21628416-blue?style=flat&link=https://doi.org/10.5281/zenodo.21628416)](https://doi.org/10.5281/zenodo.21628416)
+- The [batch web application](https://batch.mathjslab.com) [repository](https://github.com/MathJSLab/mathjslab-batch). [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.21680709-blue?style=flat&link=https://doi.org/10.5281/zenodo.21680709)](https://doi.org/10.5281/zenodo.21680709)
 - The [project page](https://mathjslab.com) [repository](https://github.com/MathJSLab/mathjslab-www).

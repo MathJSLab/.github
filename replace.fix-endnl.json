@@ -1,5 +1,0 @@
-{
-    "files": ["data/files/**/*.md"],
-    "from": "/\\r?\\n$/",
-    "to": ""
-}
