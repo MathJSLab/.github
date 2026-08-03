@@ -8,3 +8,5 @@ package-lock.json
 script/build/
 # extra directory (there are Inkscape .svg files that cannot be changed).
 extra/
+# Markdown data
+data/files/

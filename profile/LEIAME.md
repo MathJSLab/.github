@@ -6,15 +6,7 @@
 
 [![English](https://img.shields.io/badge/English-blue)](README.md) [![Português](https://img.shields.io/badge/Portugu%C3%AAs-8484FF)](LEIAME.md) [![Español](https://img.shields.io/badge/Espa%C3%B1ol-blue)](LEAME.md)
 
-[![mathjslab.com](https://img.shields.io/badge/mathjslab.com-D0F0D0)](https://mathjslab.com/)
-
-[![Website status](https://img.shields.io/website?url=https%3A%2F%2Fmathjslab.com%2F)](https://mathjslab.com/)
-
-[![GitHub Created At](https://img.shields.io/github/created-at/MathJSLab/.github)](https://github.com/MathJSLab/.github)
-
-[![GitHub License](https://img.shields.io/github/license/MathJSLab/mathjslab)](https://github.com/MathJSLab/mathjslab/blob/main/LICENSE)
-
-[![OpenAIRE](https://img.shields.io/badge/OpenAIRE-blue?style=flat&link=https://explore.openaire.eu/search/advanced/research-outcomes?f0=q&fv0=MathJSLab)](https://explore.openaire.eu/search/advanced/research-outcomes?f0=q&fv0=MathJSLab)
+[![mathjslab.com](https://img.shields.io/badge/mathjslab.com-D0F0D0)](https://mathjslab.com/) [![Website status](https://img.shields.io/website?url=https%3A%2F%2Fmathjslab.com%2F)](https://mathjslab.com/) [![GitHub Created At](https://img.shields.io/github/created-at/MathJSLab/.github)](https://github.com/MathJSLab/.github) [![GitHub License](https://img.shields.io/github/license/MathJSLab/mathjslab)](https://github.com/MathJSLab/mathjslab/blob/main/LICENSE) [![OpenAIRE](https://img.shields.io/badge/OpenAIRE-blue?style=flat&link=https://explore.openaire.eu/search/advanced/research-outcomes?f0=q&fv0=MathJSLab)](https://explore.openaire.eu/search/advanced/research-outcomes?f0=q&fv0=MathJSLab)
 
 > Um [interpretador](https://pt.wikipedia.org/wiki/Interpretador) com sintaxe de linguagem tipo [MATLAB&reg;](https://www.mathworks.com/)/[Octave](https://www.gnu.org/software/octave/) escrito em [TypeScript](https://www.typescriptlang.org/).
 
@@ -46,6 +38,6 @@ npm run all:clone:all
 
 Copyright &copy; 2016-2026 [Sergio Lindau](mailto:sergiolindau@gmail.com), [![ORCID](https://img.shields.io/badge/ORCID-0009--0006--9115--0291-blue)](https://orcid.org/0009-0006-9115-0291)
 
-[mathjslab.com](https://mathjslab.com/), [mathjslab@gmail.com](mailto:mathjslab@gmail.com) .
+[mathjslab.com](https://mathjslab.com/), [mathjslab@gmail.com](mailto:mathjslab@gmail.com).
 
-Este perfil da organização foi modificado pela última vez em 02/08/2026.
+Este perfil da organização foi modificado pela última vez em 03/08/2026.

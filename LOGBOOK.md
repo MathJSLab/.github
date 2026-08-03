@@ -2,6 +2,10 @@
 
 This file contains general information about the actions of the [MathJSLab Project](https://mathjslab.com/) that go beyond the scope of the individual projects. In other words, what cannot be recorded in the `CHANGES.md` file of each software project, or the general actions of the organization, are recorded here, indexed by date.
 
+## 2026-08-03
+
+- The trailing newline was removed from files in `data/files/**`. The directory was included in the `.prettierrc` file.
+
 ## 2026-08-01
 
 - ISBN and DOI have been added to the Organization's homepage, in the list of repositories. The reference (to the package and the web application) at the bottom of the homepage has been removed. The file `data/files/batch-isbn-doi.md` was created.
