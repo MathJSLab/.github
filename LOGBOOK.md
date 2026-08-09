@@ -2,6 +2,10 @@
 
 This file contains general information about the actions of the [MathJSLab Project](https://mathjslab.com/) that go beyond the scope of the individual projects. In other words, what cannot be recorded in the `CHANGES.md` file of each software project, or the general actions of the organization, are recorded here, indexed by date.
 
+## 2026-08-09
+
+- Images explaining the MathJSLab execution flow have been added to `input/images`.
+
 ## 2026-08-03
 
 - The trailing newline was removed from files in `data/files/**`. The directory was included in the `.prettierrc` file.
