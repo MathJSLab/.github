@@ -2,6 +2,10 @@
 
 This file contains general information about the actions of the [MathJSLab Project](https://mathjslab.com/) that go beyond the scope of the individual projects. In other words, what cannot be recorded in the `CHANGES.md` file of each software project, or the general actions of the organization, are recorded here, indexed by date.
 
+## 2026-08-14
+
+- The file `input/images/language-switch.svg` was added to the organization's repository and to the `mathjslab-www` project.
+
 ## 2026-08-09
 
 - Images explaining the MathJSLab execution flow have been added to `input/images`.
