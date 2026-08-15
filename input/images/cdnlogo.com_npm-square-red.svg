@@ -1,1 +1,43 @@
-<svg viewBox="0 0 2500 2500" xmlns="http://www.w3.org/2000/svg" width="2500" height="2500"><path d="M0 0h2500v2500H0z" fill="#c00"/><path d="M1241.5 268.5h-973v1962.9h972.9V763.5h495v1467.9h495V268.5z" fill="#fff"/></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="50mm"
+   height="50.000004mm"
+   viewBox="0 0 50 50.000004"
+   version="1.1"
+   id="svg1"
+   xml:space="preserve"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"><inkscape:page
+       x="0"
+       y="0"
+       width="50"
+       height="50.000004"
+       id="page2"
+       margin="0"
+       bleed="0" /></sodipodi:namedview><defs
+     id="defs1" /><g
+     inkscape:label="Camada 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-46.11586,-84.01487)"><g
+       id="g1"
+       transform="matrix(0.02,0,0,0.02,46.115864,84.014868)"><path
+         d="M 0,0 H 2500 V 2500 H 0 Z"
+         fill="#cc0000"
+         id="path1" /><path
+         d="m 1241.5,268.5 h -973 v 1962.9 h 972.9 V 763.5 h 495 v 1467.9 h 495 V 268.5 Z"
+         fill="#ffffff"
+         id="path2" /></g></g></svg>
