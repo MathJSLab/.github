@@ -1,5 +1,5 @@
 {
-    "files": ["input/**", "src/**", "script/**"],
+    "files": ["input/**", "src/**", "script/**", "images/**/*.svg"],
     "from": "/\\r?\\n/gm",
     "to": "\r\n"
 }
