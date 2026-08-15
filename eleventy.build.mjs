@@ -102,7 +102,7 @@ const stepData = [
                 },
             };
             EleventyUtil.configAddTemplateFormat(eleventyConfig, ['njk', 'scss'], '\\./input/');
-            eleventyConfig.addPassthroughCopy({ './input/images/*.svg': 'images' });
+            eleventyConfig.addPassthroughCopy({ './input/images/*.{svg,webp}': 'images' });
             EleventyUtil.configAddEntries(eleventyConfig, filters, 'addFilter');
             EleventyUtil.configAddEntries(
                 eleventyConfig,
