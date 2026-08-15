@@ -10,3 +10,5 @@ script/build/
 extra/
 # Markdown data
 data/files/
+# SVG files.
+*.svg
