@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xml:lang="es"
+   lang="es"
+   width="1285.2001"
+   height="101.2"
+   viewBox="0 0 1285.2001 101.2"
+   role="img"
+   aria-labelledby="svg-title svg-desc"
+   version="1.1"
+   id="svg125"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <title
+     id="svg-title">MathJSLab: de la gramática al resultado</title>
+  <desc
+     id="svg-desc">Flujo vectorial que muestra la gramática, el código de ejemplo, el árbol de sintaxis abstracta y la evaluación recursiva mediante Evaluator.</desc>
+  <defs
+     id="defs25">
+    <filter
+       id="soft-shadow"
+       x="-0.0051886793"
+       y="-0.076744186"
+       width="1.0103774"
+       height="1.1767442"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         in="SourceAlpha"
+         stdDeviation="2.5"
+         result="blur"
+         id="feGaussianBlur2" />
+      <feOffset
+         in="blur"
+         dx="0"
+         dy="2"
+         result="offsetBlur"
+         id="feOffset2" />
+      <feFlood
+         flood-color="#092451"
+         flood-opacity="0.09"
+         result="shadowColor"
+         id="feFlood2" />
+      <feComposite
+         in="shadowColor"
+         in2="offsetBlur"
+         operator="in"
+         result="shadowImage"
+         id="feComposite2" />
+      <feMerge
+         id="feMerge4">
+        <feMergeNode
+           in="shadowImage"
+           id="feMergeNode3" />
+        <feMergeNode
+           in="SourceGraphic"
+           id="feMergeNode4" />
+      </feMerge>
+    </filter>
+    <symbol
+       id="icon-document"
+       viewBox="0 0 48 48">
+      <path
+         d="m 10,4 h 20 l 8,8 V 44 H 10 Z"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="3"
+         stroke-linejoin="round"
+         id="path10" />
+      <path
+         d="m 30,4 v 10 h 8"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="3"
+         stroke-linejoin="round"
+         id="path11" />
+      <path
+         d="M 17,23 H 31 M 17,30 H 31 M 17,37 H 27"
+         stroke="currentColor"
+         stroke-width="3"
+         stroke-linecap="round"
+         id="path12" />
+    </symbol>
+    <symbol
+       id="icon-terminal"
+       viewBox="0 0 48 48">
+      <rect
+         x="5"
+         y="7"
+         width="38"
+         height="34"
+         rx="4"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="3"
+         id="rect12" />
+      <path
+         d="m 13,18 6,6 -6,6 m 11,0 h 10"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="3"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         id="path13" />
+    </symbol>
+    <symbol
+       id="icon-tree"
+       viewBox="0 0 48 48">
+      <path
+         d="m 24,13 v 9 m -14,9 v -9 h 28 v 9"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="3"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         id="path14" />
+      <circle
+         cx="24"
+         cy="9"
+         r="5"
+         fill="currentColor"
+         id="circle14" />
+      <circle
+         cx="10"
+         cy="37"
+         r="5"
+         fill="currentColor"
+         id="circle15" />
+      <circle
+         cx="24"
+         cy="37"
+         r="5"
+         fill="currentColor"
+         id="circle16" />
+      <circle
+         cx="38"
+         cy="37"
+         r="5"
+         fill="currentColor"
+         id="circle17" />
+    </symbol>
+    <symbol
+       id="icon-recursion"
+       viewBox="0 0 48 48">
+      <path
+         d="m 13,13 a 16,16 0 0 1 24,5"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="4"
+         stroke-linecap="round"
+         id="path17" />
+      <path
+         d="m 36,10 2,9 -9,-2"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="4"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         id="path18" />
+      <path
+         d="M 35,35 A 16,16 0 0 1 11,30"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="4"
+         stroke-linecap="round"
+         id="path19" />
+      <path
+         d="m 12,38 -2,-9 9,2"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="4"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         id="path20" />
+    </symbol>
+  </defs>
+  <style
+     id="style25">
+    .ui { font-family: &quot;Segoe UI&quot;, Arial, sans-serif; }
+    .mono { font-family: &quot;Cascadia Mono&quot;, Consolas, &quot;DejaVu Sans Mono&quot;, monospace; }
+    .panel { fill: #ffffff; stroke-width: 2; }
+    .panel-title { font-size: 26px; font-weight: 700; }
+    .step-number { fill: #ffffff; font-size: 27px; font-weight: 700; text-anchor: middle; dominant-baseline: middle; }
+    .node-title { font-size: 18px; font-weight: 700; text-anchor: middle; }
+    .node-sub { font-size: 17px; font-weight: 600; text-anchor: middle; }
+    .footer-text { fill: #0b1733; font-size: 17px; }
+    .grammar-key { fill: #0b4acb; font-weight: 700; }
+    .grammar-text { fill: #101820; }
+    .stack-text { fill: #171923; font-size: 13px; }
+    .small-label { font-size: 15px; fill: #1a2232; }
+  </style>
+  <g
+     id="g2"
+     transform="translate(-169.32715,-806.4)">
+    <rect
+       x="175.92715"
+       y="813"
+       width="1272"
+       height="86"
+       rx="16"
+       fill="#ffffff"
+       stroke="#d6d9de"
+       stroke-width="1.2"
+       filter="url(#soft-shadow)"
+       id="rect118"
+       style="font-family:'Segoe UI', Arial, sans-serif" />
+    <g
+       color="#0b4acb"
+       id="g28-8"
+       style="font-family:'Segoe UI', Arial, sans-serif"
+       transform="translate(104.92716,657)">
+      <use
+         href="#icon-document"
+         xlink:href="#icon-document"
+         x="111"
+         y="173"
+         width="48"
+         height="48"
+         id="use28-2" />
+    </g>
+    <text
+       class="footer-text"
+       x="286.92715"
+       y="850"
+       data-i18n="footer-grammar-1"
+       id="text118"
+       style="font-family:'Segoe UI', Arial, sans-serif">La gramática define</text>
+    <text
+       class="footer-text"
+       x="286.92715"
+       y="876"
+       data-i18n="footer-grammar-2"
+       id="text119"
+       style="font-family:'Segoe UI', Arial, sans-serif">las reglas del lenguaje.</text>
+    <g
+       color="#0b8f84"
+       id="g119"
+       style="font-family:'Segoe UI', Arial, sans-serif"
+       transform="translate(-19.07284,-5)">
+      <use
+         href="#icon-terminal"
+         xlink:href="#icon-terminal"
+         x="521"
+         y="837"
+         width="44"
+         height="44"
+         id="use119" />
+    </g>
+    <text
+       class="footer-text"
+       x="563.92719"
+       y="850"
+       data-i18n="footer-code-1"
+       id="text120"
+       style="font-family:'Segoe UI', Arial, sans-serif">El código se analiza</text>
+    <text
+       class="footer-text"
+       x="563.92719"
+       y="876"
+       data-i18n="footer-code-2"
+       id="text121"
+       style="font-family:'Segoe UI', Arial, sans-serif">de acuerdo con la gramática.</text>
+    <g
+       color="#f06400"
+       id="g121"
+       style="font-family:'Segoe UI', Arial, sans-serif"
+       transform="translate(-19.07284,-5)">
+      <use
+         href="#icon-tree"
+         xlink:href="#icon-tree"
+         x="817"
+         y="835"
+         width="48"
+         height="48"
+         id="use121" />
+    </g>
+    <text
+       class="footer-text"
+       x="858.92719"
+       y="850"
+       data-i18n="footer-ast-1"
+       id="text122"
+       style="font-family:'Segoe UI', Arial, sans-serif">El AST representa la estructura</text>
+    <text
+       class="footer-text"
+       x="858.92719"
+       y="876"
+       data-i18n="footer-ast-2"
+       id="text123"
+       style="font-family:'Segoe UI', Arial, sans-serif">sintáctica del código.</text>
+    <g
+       color="#5b21c7"
+       id="g123"
+       style="font-family:'Segoe UI', Arial, sans-serif"
+       transform="translate(-19.07284,-5)">
+      <use
+         href="#icon-recursion"
+         xlink:href="#icon-recursion"
+         x="1128"
+         y="835"
+         width="48"
+         height="48"
+         id="use123" />
+    </g>
+    <text
+       class="footer-text"
+       x="1164.9271"
+       y="850"
+       data-i18n="footer-evaluator-1"
+       id="text124"
+       style="font-family:'Segoe UI', Arial, sans-serif">El Evaluator recorre el AST</text>
+    <text
+       class="footer-text"
+       x="1164.9271"
+       y="876"
+       data-i18n="footer-evaluator-2"
+       id="text125"
+       style="font-family:'Segoe UI', Arial, sans-serif">recursivamente para obtener el valor.</text>
+  </g>
+</svg>

@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xml:lang="en"
+   lang="en"
+   width="355.54303"
+   height="780.24512"
+   viewBox="0 0 355.54304 780.24512"
+   role="img"
+   aria-labelledby="svg-title svg-desc"
+   version="1.1"
+   id="svg125"
+   xml:space="preserve"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><title
+     id="svg-title">MathJSLab: from grammar to result</title><desc
+     id="svg-desc">Vector flow showing grammar, example code, the abstract syntax tree, and recursive evaluation by Evaluator.</desc><defs
+     id="defs25"><filter
+       id="shadow"
+       x="-0.031736527"
+       y="-0.016510903"
+       width="1.0634731"
+       height="1.0392523"
+       color-interpolation-filters="sRGB"><feGaussianBlur
+         in="SourceAlpha"
+         stdDeviation="4"
+         result="blur"
+         id="feGaussianBlur1" /><feOffset
+         in="blur"
+         dx="0"
+         dy="4"
+         result="offsetBlur"
+         id="feOffset1" /><feFlood
+         flood-color="#092451"
+         flood-opacity="0.13"
+         result="shadowColor"
+         id="feFlood1" /><feComposite
+         in="shadowColor"
+         in2="offsetBlur"
+         operator="in"
+         result="shadowImage"
+         id="feComposite1" /><feMerge
+         id="feMerge2"><feMergeNode
+           in="shadowImage"
+           id="feMergeNode1" /><feMergeNode
+           in="SourceGraphic"
+           id="feMergeNode2" /></feMerge></filter><!-- Logotipo original do MathJSLab, sem alterar nenhuma geometria.
+         A única remoção é o elemento <text> que continha a equação. --><!-- Ícones vetoriais reutilizáveis --><symbol
+       id="icon-document"
+       viewBox="0 0 48 48"><path
+         d="m 10,4 h 20 l 8,8 V 44 H 10 Z"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="3"
+         stroke-linejoin="round"
+         id="path10" /><path
+         d="m 30,4 v 10 h 8"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="3"
+         stroke-linejoin="round"
+         id="path11" /><path
+         d="M 17,23 H 31 M 17,30 H 31 M 17,37 H 27"
+         stroke="currentColor"
+         stroke-width="3"
+         stroke-linecap="round"
+         id="path12" /></symbol><filter
+       id="soft-shadow"
+       x="-0.0051886793"
+       y="-0.076744186"
+       width="1.0103774"
+       height="1.1767442"
+       color-interpolation-filters="sRGB"><feGaussianBlur
+         in="SourceAlpha"
+         stdDeviation="2.5"
+         result="blur"
+         id="feGaussianBlur2" /><feOffset
+         in="blur"
+         dx="0"
+         dy="2"
+         result="offsetBlur"
+         id="feOffset2" /><feFlood
+         flood-color="#092451"
+         flood-opacity="0.09"
+         result="shadowColor"
+         id="feFlood2" /><feComposite
+         in="shadowColor"
+         in2="offsetBlur"
+         operator="in"
+         result="shadowImage"
+         id="feComposite2" /><feMerge
+         id="feMerge4"><feMergeNode
+           in="shadowImage"
+           id="feMergeNode3" /><feMergeNode
+           in="SourceGraphic"
+           id="feMergeNode4" /></feMerge></filter><symbol
+       id="icon-document-2"
+       viewBox="0 0 48 48"><path
+         d="m 10,4 h 20 l 8,8 V 44 H 10 Z"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="3"
+         stroke-linejoin="round"
+         id="path10-4" /><path
+         d="m 30,4 v 10 h 8"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="3"
+         stroke-linejoin="round"
+         id="path11-5" /><path
+         d="M 17,23 H 31 M 17,30 H 31 M 17,37 H 27"
+         stroke="currentColor"
+         stroke-width="3"
+         stroke-linecap="round"
+         id="path12-5" /></symbol></defs><style
+     id="style25">
+    .ui { font-family: &quot;Segoe UI&quot;, Arial, sans-serif; }
+    .mono { font-family: &quot;Cascadia Mono&quot;, Consolas, &quot;DejaVu Sans Mono&quot;, monospace; }
+    .panel { fill: #ffffff; stroke-width: 2; }
+    .panel-title { font-size: 26px; font-weight: 700; }
+    .step-number { fill: #ffffff; font-size: 27px; font-weight: 700; text-anchor: middle; dominant-baseline: middle; }
+    .node-title { font-size: 18px; font-weight: 700; text-anchor: middle; }
+    .node-sub { font-size: 17px; font-weight: 600; text-anchor: middle; }
+    .footer-text { fill: #0b1733; font-size: 17px; }
+    .grammar-key { fill: #0b4acb; font-weight: 700; }
+    .grammar-text { fill: #101820; }
+    .stack-text { fill: #171923; font-size: 13px; }
+    .small-label { font-size: 15px; fill: #1a2232; }
+  </style><!-- CABEÇALHO --><!-- SETAS PRINCIPAIS --><!-- PAINEL 1: GRAMÁTICA --><!-- PAINEL 2: CÓDIGO EXEMPLO --><!-- PAINEL 3: AST --><!-- PAINEL 4: EVALUATOR --><!-- RODAPÉ EXPLICATIVO --><style
+     id="style1">
+.fill-symbol {
+  fill: hsl(120, 52%, 16%);
+}
+
+.stroke-fill-panel {
+  stroke: hsl(120, 100%, 25%);
+  fill: hsl(120, 52%, 88%);
+}
+
+.stroke-trace {
+  fill: none;
+  stroke: hsl(0, 0%, 24%);
+}
+
+.fill-trace {
+  fill: hsl(0, 0%, 24%);
+}
+
+@media (prefers-color-scheme: dark) {
+  .fill-symbol {
+    fill: hsl(120, 52%, 88%);
+  }
+  .stroke-fill-panel {
+    stroke: hsl(120, 100%, 25%);
+    fill: hsl(120, 52%, 16%);
+  }
+  .stroke-trace {
+    stroke: hsl(0, 0%, 92%);
+  }
+  .fill-trace {
+    fill: hsl(0, 0%, 92%);
+  }
+}
+  </style><style
+     id="style1-5">
+.fill-symbol {
+  fill: hsl(120, 52%, 16%);
+}
+
+.stroke-fill-panel {
+  stroke: hsl(120, 100%, 25%);
+  fill: hsl(120, 52%, 88%);
+}
+
+.stroke-trace {
+  fill: none;
+  stroke: hsl(0, 0%, 24%);
+}
+
+.fill-trace {
+  fill: hsl(0, 0%, 24%);
+}
+
+@media (prefers-color-scheme: dark) {
+  .fill-symbol {
+    fill: hsl(120, 52%, 88%);
+  }
+  .stroke-fill-panel {
+    stroke: hsl(120, 100%, 25%);
+    fill: hsl(120, 52%, 16%);
+  }
+  .stroke-trace {
+    stroke: hsl(0, 0%, 92%);
+  }
+  .fill-trace {
+    fill: hsl(0, 0%, 92%);
+  }
+}
+  </style><style
+     id="style25-1">
+    .ui { font-family: &quot;Segoe UI&quot;, Arial, sans-serif; }
+    .mono { font-family: &quot;Cascadia Mono&quot;, Consolas, &quot;DejaVu Sans Mono&quot;, monospace; }
+    .panel { fill: #ffffff; stroke-width: 2; }
+    .panel-title { font-size: 26px; font-weight: 700; }
+    .step-number { fill: #ffffff; font-size: 27px; font-weight: 700; text-anchor: middle; dominant-baseline: middle; }
+    .node-title { font-size: 18px; font-weight: 700; text-anchor: middle; }
+    .node-sub { font-size: 17px; font-weight: 600; text-anchor: middle; }
+    .footer-text { fill: #0b1733; font-size: 17px; }
+    .grammar-key { fill: #0b4acb; font-weight: 700; }
+    .grammar-text { fill: #101820; }
+    .stack-text { fill: #171923; font-size: 13px; }
+    .small-label { font-size: 15px; fill: #1a2232; }
+  </style><style
+     id="style1-7">
+.fill-symbol {
+  fill: hsl(120, 52%, 16%);
+}
+
+.stroke-fill-panel {
+  stroke: hsl(120, 100%, 25%);
+  fill: hsl(120, 52%, 88%);
+}
+
+.stroke-trace {
+  fill: none;
+  stroke: hsl(0, 0%, 24%);
+}
+
+.fill-trace {
+  fill: hsl(0, 0%, 24%);
+}
+
+@media (prefers-color-scheme: dark) {
+  .fill-symbol {
+    fill: hsl(120, 52%, 88%);
+  }
+  .stroke-fill-panel {
+    stroke: hsl(120, 100%, 25%);
+    fill: hsl(120, 52%, 16%);
+  }
+  .stroke-trace {
+    stroke: hsl(0, 0%, 92%);
+  }
+  .fill-trace {
+    fill: hsl(0, 0%, 92%);
+  }
+}
+  </style><style
+     id="style1-5-1">
+.fill-symbol {
+  fill: hsl(120, 52%, 16%);
+}
+
+.stroke-fill-panel {
+  stroke: hsl(120, 100%, 25%);
+  fill: hsl(120, 52%, 88%);
+}
+
+.stroke-trace {
+  fill: none;
+  stroke: hsl(0, 0%, 24%);
+}
+
+.fill-trace {
+  fill: hsl(0, 0%, 24%);
+}
+
+@media (prefers-color-scheme: dark) {
+  .fill-symbol {
+    fill: hsl(120, 52%, 88%);
+  }
+  .stroke-fill-panel {
+    stroke: hsl(120, 100%, 25%);
+    fill: hsl(120, 52%, 16%);
+  }
+  .stroke-trace {
+    stroke: hsl(0, 0%, 92%);
+  }
+  .fill-trace {
+    fill: hsl(0, 0%, 92%);
+  }
+}
+  </style><g
+     id="grammar-panel"
+     class="ui"
+     transform="translate(-19.228508,-142.4)"><rect
+       class="panel"
+       x="30"
+       y="153"
+       width="334"
+       height="642"
+       rx="18"
+       stroke="#0b4acb"
+       filter="url(#shadow)"
+       id="rect28" /><circle
+       cx="64"
+       cy="196"
+       r="23"
+       fill="#0b4acb"
+       id="circle28" /><text
+       class="step-number"
+       x="64"
+       y="197"
+       id="text28">1</text><g
+       color="#0b4acb"
+       id="g28"><use
+         href="#icon-document"
+         xlink:href="#icon-document"
+         x="111"
+         y="173"
+         width="48"
+         height="48"
+         id="use28" /></g><text
+       class="panel-title"
+       x="183"
+       y="211"
+       fill="#0b4acb"
+       data-i18n="grammar-title"
+       id="text29">Grammar</text><rect
+       x="44"
+       y="245"
+       width="305"
+       height="533"
+       rx="16"
+       fill="#fbfcff"
+       stroke="#7e8792"
+       stroke-width="1.4"
+       id="rect29" /><g
+       class="mono"
+       font-size="18.5px"
+       id="g48"><text
+         x="56"
+         y="285"
+         class="grammar-key"
+         id="text30">statement</text><text
+         x="167"
+         y="285"
+         class="grammar-text"
+         id="text31">:</text><text
+         x="85"
+         y="312"
+         class="grammar-text"
+         id="text32">assignment | expr ;</text><text
+         x="56"
+         y="370"
+         class="grammar-key"
+         id="text33">assignment</text><text
+         x="167"
+         y="370"
+         class="grammar-text"
+         id="text34">:</text><text
+         x="85"
+         y="397"
+         class="grammar-text"
+         id="text35">ID '=' expr ;</text><text
+         x="56"
+         y="455"
+         class="grammar-key"
+         id="text36">expr</text><text
+         x="138"
+         y="455"
+         class="grammar-text"
+         id="text37">:</text><text
+         x="85"
+         y="482"
+         class="grammar-text"
+         id="text38">expr ('+'|'-') term</text><text
+         x="85"
+         y="509"
+         class="grammar-text"
+         id="text39">| term ;</text><text
+         x="56"
+         y="567"
+         class="grammar-key"
+         id="text40">term</text><text
+         x="138"
+         y="567"
+         class="grammar-text"
+         id="text41">:</text><text
+         x="85"
+         y="594"
+         class="grammar-text"
+         id="text42">term ('*'|'/') factor</text><text
+         x="85"
+         y="621"
+         class="grammar-text"
+         id="text43">| factor ;</text><text
+         x="56"
+         y="679"
+         class="grammar-key"
+         id="text44">factor</text><text
+         x="138"
+         y="679"
+         class="grammar-text"
+         id="text45">:</text><text
+         x="85"
+         y="706"
+         class="grammar-text"
+         id="text46">ID | NUMBER |</text><text
+         x="85"
+         y="733"
+         class="grammar-text"
+         id="text47">'(' expr ')' |</text><text
+         x="85"
+         y="760"
+         class="grammar-text"
+         id="text48">factor '^' factor ;</text></g></g><g
+     id="g2"
+     transform="translate(618.41297,-116.31872)"><rect
+       x="-613.42572"
+       y="797.8692"
+       width="1272"
+       height="86"
+       rx="16"
+       fill="#ffffff"
+       stroke="#d6d9de"
+       stroke-width="1.2"
+       filter="url(#soft-shadow)"
+       id="rect118"
+       style="font-family:'Segoe UI', Arial, sans-serif"
+       transform="matrix(0.2766441,0,0,1.0715124,-446.88651,-59.72797)" /><g
+       id="g1"
+       transform="translate(13.786701)"><text
+         class="footer-text"
+         x="-502.42572"
+         y="834.8692"
+         data-i18n="footer-grammar-1"
+         id="text118"
+         style="font-family:'Segoe UI', Arial, sans-serif">The grammar defines</text><text
+         class="footer-text"
+         x="-502.42572"
+         y="860.8692"
+         data-i18n="footer-grammar-2"
+         id="text119"
+         style="font-family:'Segoe UI', Arial, sans-serif">the language rules.</text><g
+         color="#0b4acb"
+         id="g28-8"
+         style="font-family:'Segoe UI', Arial, sans-serif"
+         transform="translate(-684.42572,641.86919)"><use
+           href="#icon-document-2"
+           xlink:href="#icon-document-2"
+           x="111"
+           y="173"
+           width="48"
+           height="48"
+           id="use28-2" /></g></g></g></svg>

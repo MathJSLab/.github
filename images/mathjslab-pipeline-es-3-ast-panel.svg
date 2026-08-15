@@ -1,0 +1,538 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xml:lang="en"
+   lang="en"
+   width="457.49637"
+   height="779.92822"
+   viewBox="0 0 457.49638 779.92822"
+   role="img"
+   aria-labelledby="svg-title svg-desc"
+   version="1.1"
+   id="svg125"
+   xml:space="preserve"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"><title
+     id="svg-title">MathJSLab: from grammar to result</title><desc
+     id="svg-desc">Vector flow showing grammar, example code, the abstract syntax tree, and recursive evaluation by Evaluator.</desc><defs
+     id="defs25"><filter
+       id="shadow"
+       x="-0.02448037"
+       y="-0.0165625"
+       width="1.0489607"
+       height="1.039375"
+       color-interpolation-filters="sRGB"><feGaussianBlur
+         in="SourceAlpha"
+         stdDeviation="4"
+         result="blur"
+         id="feGaussianBlur1" /><feOffset
+         in="blur"
+         dx="0"
+         dy="4"
+         result="offsetBlur"
+         id="feOffset1" /><feFlood
+         flood-color="#092451"
+         flood-opacity="0.13"
+         result="shadowColor"
+         id="feFlood1" /><feComposite
+         in="shadowColor"
+         in2="offsetBlur"
+         operator="in"
+         result="shadowImage"
+         id="feComposite1" /><feMerge
+         id="feMerge2"><feMergeNode
+           in="shadowImage"
+           id="feMergeNode1" /><feMergeNode
+           in="SourceGraphic"
+           id="feMergeNode2" /></feMerge></filter><marker
+       id="ast-arrow"
+       markerWidth="9"
+       markerHeight="9"
+       refX="8"
+       refY="4.5"
+       orient="auto"
+       markerUnits="strokeWidth"><path
+         d="M 0,0 9,4.5 0,9 Z"
+         fill="#111827"
+         id="path5" /></marker><!-- Logotipo original do MathJSLab, sem alterar nenhuma geometria.
+         A única remoção é o elemento <text> que continha a equação. --><!-- Ícones vetoriais reutilizáveis --><symbol
+       id="icon-tree"
+       viewBox="0 0 48 48"><path
+         d="m 24,13 v 9 m -14,9 v -9 h 28 v 9"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="3"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         id="path14" /><circle
+         cx="24"
+         cy="9"
+         r="5"
+         fill="currentColor"
+         id="circle14" /><circle
+         cx="10"
+         cy="37"
+         r="5"
+         fill="currentColor"
+         id="circle15" /><circle
+         cx="24"
+         cy="37"
+         r="5"
+         fill="currentColor"
+         id="circle16" /><circle
+         cx="38"
+         cy="37"
+         r="5"
+         fill="currentColor"
+         id="circle17" /></symbol><filter
+       id="soft-shadow"
+       x="-0.0051886793"
+       y="-0.076744186"
+       width="1.0103774"
+       height="1.1767442"
+       color-interpolation-filters="sRGB"><feGaussianBlur
+         in="SourceAlpha"
+         stdDeviation="2.5"
+         result="blur"
+         id="feGaussianBlur2" /><feOffset
+         in="blur"
+         dx="0"
+         dy="2"
+         result="offsetBlur"
+         id="feOffset2" /><feFlood
+         flood-color="#092451"
+         flood-opacity="0.09"
+         result="shadowColor"
+         id="feFlood2" /><feComposite
+         in="shadowColor"
+         in2="offsetBlur"
+         operator="in"
+         result="shadowImage"
+         id="feComposite2" /><feMerge
+         id="feMerge4"><feMergeNode
+           in="shadowImage"
+           id="feMergeNode3" /><feMergeNode
+           in="SourceGraphic"
+           id="feMergeNode4" /></feMerge></filter><symbol
+       id="icon-tree-6"
+       viewBox="0 0 48 48"><path
+         d="m 24,13 v 9 m -14,9 v -9 h 28 v 9"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="3"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         id="path14-8" /><circle
+         cx="24"
+         cy="9"
+         r="5"
+         fill="currentColor"
+         id="circle14-5" /><circle
+         cx="10"
+         cy="37"
+         r="5"
+         fill="currentColor"
+         id="circle15-7" /><circle
+         cx="24"
+         cy="37"
+         r="5"
+         fill="currentColor"
+         id="circle16-6" /><circle
+         cx="38"
+         cy="37"
+         r="5"
+         fill="currentColor"
+         id="circle17-1" /></symbol></defs><style
+     id="style25">
+    .ui { font-family: &quot;Segoe UI&quot;, Arial, sans-serif; }
+    .mono { font-family: &quot;Cascadia Mono&quot;, Consolas, &quot;DejaVu Sans Mono&quot;, monospace; }
+    .panel { fill: #ffffff; stroke-width: 2; }
+    .panel-title { font-size: 26px; font-weight: 700; }
+    .step-number { fill: #ffffff; font-size: 27px; font-weight: 700; text-anchor: middle; dominant-baseline: middle; }
+    .node-title { font-size: 18px; font-weight: 700; text-anchor: middle; }
+    .node-sub { font-size: 17px; font-weight: 600; text-anchor: middle; }
+    .footer-text { fill: #0b1733; font-size: 17px; }
+    .grammar-key { fill: #0b4acb; font-weight: 700; }
+    .grammar-text { fill: #101820; }
+    .stack-text { fill: #171923; font-size: 13px; }
+    .small-label { font-size: 15px; fill: #1a2232; }
+  </style><!-- CABEÇALHO --><!-- SETAS PRINCIPAIS --><!-- PAINEL 1: GRAMÁTICA --><!-- PAINEL 2: CÓDIGO EXEMPLO --><!-- PAINEL 3: AST --><!-- PAINEL 4: EVALUATOR --><!-- RODAPÉ EXPLICATIVO --><style
+     id="style1">
+.fill-symbol {
+  fill: hsl(120, 52%, 16%);
+}
+
+.stroke-fill-panel {
+  stroke: hsl(120, 100%, 25%);
+  fill: hsl(120, 52%, 88%);
+}
+
+.stroke-trace {
+  fill: none;
+  stroke: hsl(0, 0%, 24%);
+}
+
+.fill-trace {
+  fill: hsl(0, 0%, 24%);
+}
+
+@media (prefers-color-scheme: dark) {
+  .fill-symbol {
+    fill: hsl(120, 52%, 88%);
+  }
+  .stroke-fill-panel {
+    stroke: hsl(120, 100%, 25%);
+    fill: hsl(120, 52%, 16%);
+  }
+  .stroke-trace {
+    stroke: hsl(0, 0%, 92%);
+  }
+  .fill-trace {
+    fill: hsl(0, 0%, 92%);
+  }
+}
+  </style><style
+     id="style1-5">
+.fill-symbol {
+  fill: hsl(120, 52%, 16%);
+}
+
+.stroke-fill-panel {
+  stroke: hsl(120, 100%, 25%);
+  fill: hsl(120, 52%, 88%);
+}
+
+.stroke-trace {
+  fill: none;
+  stroke: hsl(0, 0%, 24%);
+}
+
+.fill-trace {
+  fill: hsl(0, 0%, 24%);
+}
+
+@media (prefers-color-scheme: dark) {
+  .fill-symbol {
+    fill: hsl(120, 52%, 88%);
+  }
+  .stroke-fill-panel {
+    stroke: hsl(120, 100%, 25%);
+    fill: hsl(120, 52%, 16%);
+  }
+  .stroke-trace {
+    stroke: hsl(0, 0%, 92%);
+  }
+  .fill-trace {
+    fill: hsl(0, 0%, 92%);
+  }
+}
+  </style><g
+     id="ast-panel"
+     class="ui"
+     transform="translate(-760.4,-143.4)"><rect
+       class="panel"
+       x="771"
+       y="154"
+       width="433"
+       height="640"
+       rx="18"
+       stroke="#f06400"
+       filter="url(#shadow)"
+       id="rect71" /><circle
+       cx="807"
+       cy="197"
+       r="23"
+       fill="#f06400"
+       id="circle71" /><text
+       class="step-number"
+       x="807"
+       y="198"
+       id="text72">3</text><g
+       color="#f06400"
+       id="g72"><use
+         href="#icon-tree"
+         xlink:href="#icon-tree"
+         x="858"
+         y="172"
+         width="48"
+         height="48"
+         id="use72" /></g><text
+       class="panel-title"
+       x="970"
+       y="211"
+       fill="#e95c00"
+       id="text73">AST</text><!-- Arestas da árvore --><g
+       fill="none"
+       stroke="#111827"
+       stroke-width="2"
+       marker-end="url(#ast-arrow)"
+       id="g80"><path
+         d="M 981,300 881,345"
+         id="path73" /><path
+         d="m 981,300 71,45"
+         id="path74" /><path
+         d="M 1052,409 915,460"
+         id="path75" /><path
+         d="m 1052,409 64,51"
+         id="path76" /><path
+         d="m 915,522 -78,49"
+         id="path77" /><path
+         d="m 915,522 31,49"
+         id="path78" /><path
+         d="m 1116,522 -59,49"
+         id="path79" /><path
+         d="m 1116,522 36,49"
+         id="path80" /></g><!-- Nós --><g
+       id="ast-nodes"><rect
+         x="927"
+         y="248"
+         width="108"
+         height="52"
+         rx="17"
+         fill="#fff4eb"
+         stroke="#f06400"
+         stroke-width="1.8"
+         id="rect80" /><text
+         class="node-title"
+         x="981"
+         y="281"
+         id="text80">Assign</text><rect
+         x="833"
+         y="345"
+         width="99"
+         height="64"
+         rx="17"
+         fill="#fff8df"
+         stroke="#df9f00"
+         stroke-width="1.6"
+         id="rect81" /><text
+         class="node-title"
+         x="882.5"
+         y="373"
+         id="text81">Identifier</text><text
+         class="node-sub"
+         x="882.5"
+         y="398"
+         id="text82">: z</text><rect
+         x="1012"
+         y="345"
+         width="80"
+         height="64"
+         rx="17"
+         fill="#fff0e7"
+         stroke="#f06400"
+         stroke-width="1.6"
+         id="rect82" /><text
+         class="node-title"
+         x="1052"
+         y="373"
+         id="text83">Plus</text><text
+         class="node-sub"
+         x="1052"
+         y="398"
+         id="text84">(+)</text><rect
+         x="875"
+         y="460"
+         width="80"
+         height="62"
+         rx="17"
+         fill="#eef8e6"
+         stroke="#5f9e31"
+         stroke-width="1.6"
+         id="rect84" /><text
+         class="node-title"
+         x="915"
+         y="487"
+         id="text85">Power</text><text
+         class="node-sub"
+         x="915"
+         y="512"
+         id="text86">(^)</text><rect
+         x="1078"
+         y="460"
+         width="76"
+         height="62"
+         rx="17"
+         fill="#eaf3ff"
+         stroke="#2162d3"
+         stroke-width="1.6"
+         id="rect86" /><text
+         class="node-title"
+         x="1116"
+         y="487"
+         id="text87">Times</text><text
+         class="node-sub"
+         x="1116"
+         y="512"
+         id="text88">(*)</text><rect
+         x="795"
+         y="571"
+         width="84"
+         height="64"
+         rx="17"
+         fill="#fff8df"
+         stroke="#df9f00"
+         stroke-width="1.6"
+         id="rect88" /><text
+         class="node-title"
+         x="837"
+         y="599"
+         id="text89">Identifier</text><text
+         class="node-sub"
+         x="837"
+         y="624"
+         id="text90">: x</text><rect
+         x="905"
+         y="571"
+         width="82"
+         height="64"
+         rx="17"
+         fill="#f1ebff"
+         stroke="#7148db"
+         stroke-width="1.6"
+         id="rect90" /><text
+         class="node-title"
+         x="946"
+         y="599"
+         id="text91">Number</text><text
+         class="node-sub"
+         x="946"
+         y="624"
+         id="text92">: 2</text><rect
+         x="1016"
+         y="571"
+         width="82"
+         height="64"
+         rx="17"
+         fill="#f1ebff"
+         stroke="#7148db"
+         stroke-width="1.6"
+         id="rect92" /><text
+         class="node-title"
+         x="1057"
+         y="599"
+         id="text93">Number</text><text
+         class="node-sub"
+         x="1057"
+         y="624"
+         id="text94">: 2</text><rect
+         x="1111"
+         y="571"
+         width="82"
+         height="64"
+         rx="17"
+         fill="#fff8df"
+         stroke="#df9f00"
+         stroke-width="1.6"
+         id="rect94" /><text
+         class="node-title"
+         x="1152"
+         y="599"
+         id="text95">Identifier</text><text
+         class="node-sub"
+         x="1152"
+         y="624"
+         id="text96">: y</text></g><path
+       d="m 792,714 h 391"
+       stroke="#d2d5d9"
+       stroke-width="1.2"
+       id="path96" /><g
+       class="small-label"
+       id="g100"><circle
+         cx="803"
+         cy="744"
+         r="9"
+         fill="#fff1b2"
+         stroke="#df9f00"
+         stroke-width="1.3"
+         id="circle96" /><text
+         x="820"
+         y="750"
+         id="text97">Identifier</text><circle
+         cx="903"
+         cy="744"
+         r="9"
+         fill="#e7ddff"
+         stroke="#7148db"
+         stroke-width="1.3"
+         id="circle97" /><text
+         x="920"
+         y="750"
+         id="text98">Number</text><circle
+         cx="999"
+         cy="744"
+         r="9"
+         fill="#ffe2d3"
+         stroke="#f06400"
+         stroke-width="1.3"
+         id="circle98" /><text
+         x="1016"
+         y="750"
+         id="text99">Operator</text><circle
+         cx="1102"
+         cy="744"
+         r="9"
+         fill="#e4f4d7"
+         stroke="#5f9e31"
+         stroke-width="1.3"
+         id="circle99" /><text
+         x="1119"
+         y="750"
+         id="text100">Expression</text></g></g><style
+     id="style25-8">
+    .ui { font-family: &quot;Segoe UI&quot;, Arial, sans-serif; }
+    .mono { font-family: &quot;Cascadia Mono&quot;, Consolas, &quot;DejaVu Sans Mono&quot;, monospace; }
+    .panel { fill: #ffffff; stroke-width: 2; }
+    .panel-title { font-size: 26px; font-weight: 700; }
+    .step-number { fill: #ffffff; font-size: 27px; font-weight: 700; text-anchor: middle; dominant-baseline: middle; }
+    .node-title { font-size: 18px; font-weight: 700; text-anchor: middle; }
+    .node-sub { font-size: 17px; font-weight: 600; text-anchor: middle; }
+    .footer-text { fill: #0b1733; font-size: 17px; }
+    .grammar-key { fill: #0b4acb; font-weight: 700; }
+    .grammar-text { fill: #101820; }
+    .stack-text { fill: #171923; font-size: 13px; }
+    .small-label { font-size: 15px; fill: #1a2232; }
+  </style><g
+     id="g2"
+     transform="translate(-3.5660749,-39.986292)"><rect
+       x="-532.68402"
+       y="721.38977"
+       width="1272"
+       height="86"
+       rx="16"
+       fill="#ffffff"
+       stroke="#d6d9de"
+       stroke-width="1.2"
+       filter="url(#soft-shadow)"
+       id="rect118"
+       style="font-family:'Segoe UI', Arial, sans-serif"
+       transform="matrix(0.35072264,0,0,1.0685451,199.4528,-52.007384)" /><g
+       id="g1"><g
+         color="#f06400"
+         id="g121"
+         style="font-family:'Segoe UI', Arial, sans-serif"
+         transform="translate(-727.684,-96.610212)"><use
+           href="#icon-tree-6"
+           xlink:href="#icon-tree-6"
+           x="817"
+           y="835"
+           width="48"
+           height="48"
+           id="use121" /></g><text
+         class="footer-text"
+         x="150.31599"
+         y="758.38977"
+         data-i18n="footer-ast-1"
+         id="text122"
+         style="font-family:'Segoe UI', Arial, sans-serif">El AST representa la estructura</text><text
+         class="footer-text"
+         x="150.31599"
+         y="784.38977"
+         data-i18n="footer-ast-2"
+         id="text123"
+         style="font-family:'Segoe UI', Arial, sans-serif">sintáctica del código.</text></g></g><metadata
+     id="metadata2"><rdf:RDF><cc:Work
+         rdf:about=""><dc:title>MathJSLab: from grammar to result</dc:title></cc:Work></rdf:RDF></metadata></svg>

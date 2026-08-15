@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1285.2001"
+   height="101.2"
+   viewBox="0 0 1285.2001 101.2"
+   role="img"
+   aria-labelledby="svg-title svg-desc"
+   version="1.1"
+   id="svg125"
+   xml:space="preserve"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><title
+     id="svg-title">MathJSLab: da gramática ao resultado</title><desc
+     id="svg-desc">Fluxo vetorial mostrando gramática, código de exemplo, árvore sintática abstrata e avaliação recursiva pelo Evaluator.</desc><defs
+     id="defs25"><filter
+       id="soft-shadow"
+       x="-0.0051886793"
+       y="-0.076744186"
+       width="1.0103774"
+       height="1.1767442"
+       color-interpolation-filters="sRGB"><feGaussianBlur
+         in="SourceAlpha"
+         stdDeviation="2.5"
+         result="blur"
+         id="feGaussianBlur2" /><feOffset
+         in="blur"
+         dx="0"
+         dy="2"
+         result="offsetBlur"
+         id="feOffset2" /><feFlood
+         flood-color="#092451"
+         flood-opacity="0.09"
+         result="shadowColor"
+         id="feFlood2" /><feComposite
+         in="shadowColor"
+         in2="offsetBlur"
+         operator="in"
+         result="shadowImage"
+         id="feComposite2" /><feMerge
+         id="feMerge4"><feMergeNode
+           in="shadowImage"
+           id="feMergeNode3" /><feMergeNode
+           in="SourceGraphic"
+           id="feMergeNode4" /></feMerge></filter><!-- Logotipo original do MathJSLab, sem alterar nenhuma geometria.
+         A única remoção é o elemento <text> que continha a equação. --><!-- Ícones vetoriais reutilizáveis --><symbol
+       id="icon-document"
+       viewBox="0 0 48 48"><path
+         d="m 10,4 h 20 l 8,8 V 44 H 10 Z"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="3"
+         stroke-linejoin="round"
+         id="path10" /><path
+         d="m 30,4 v 10 h 8"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="3"
+         stroke-linejoin="round"
+         id="path11" /><path
+         d="M 17,23 H 31 M 17,30 H 31 M 17,37 H 27"
+         stroke="currentColor"
+         stroke-width="3"
+         stroke-linecap="round"
+         id="path12" /></symbol><symbol
+       id="icon-terminal"
+       viewBox="0 0 48 48"><rect
+         x="5"
+         y="7"
+         width="38"
+         height="34"
+         rx="4"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="3"
+         id="rect12" /><path
+         d="m 13,18 6,6 -6,6 m 11,0 h 10"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="3"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         id="path13" /></symbol><symbol
+       id="icon-tree"
+       viewBox="0 0 48 48"><path
+         d="m 24,13 v 9 m -14,9 v -9 h 28 v 9"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="3"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         id="path14" /><circle
+         cx="24"
+         cy="9"
+         r="5"
+         fill="currentColor"
+         id="circle14" /><circle
+         cx="10"
+         cy="37"
+         r="5"
+         fill="currentColor"
+         id="circle15" /><circle
+         cx="24"
+         cy="37"
+         r="5"
+         fill="currentColor"
+         id="circle16" /><circle
+         cx="38"
+         cy="37"
+         r="5"
+         fill="currentColor"
+         id="circle17" /></symbol><symbol
+       id="icon-recursion"
+       viewBox="0 0 48 48"><path
+         d="m 13,13 a 16,16 0 0 1 24,5"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="4"
+         stroke-linecap="round"
+         id="path17" /><path
+         d="m 36,10 2,9 -9,-2"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="4"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         id="path18" /><path
+         d="M 35,35 A 16,16 0 0 1 11,30"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="4"
+         stroke-linecap="round"
+         id="path19" /><path
+         d="m 12,38 -2,-9 9,2"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="4"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         id="path20" /></symbol></defs><style
+     id="style25">
+    .ui { font-family: &quot;Segoe UI&quot;, Arial, sans-serif; }
+    .mono { font-family: &quot;Cascadia Mono&quot;, Consolas, &quot;DejaVu Sans Mono&quot;, monospace; }
+    .panel { fill: #ffffff; stroke-width: 2; }
+    .panel-title { font-size: 26px; font-weight: 700; }
+    .step-number { fill: #ffffff; font-size: 27px; font-weight: 700; text-anchor: middle; dominant-baseline: middle; }
+    .node-title { font-size: 18px; font-weight: 700; text-anchor: middle; }
+    .node-sub { font-size: 17px; font-weight: 600; text-anchor: middle; }
+    .footer-text { fill: #0b1733; font-size: 17px; }
+    .grammar-key { fill: #0b4acb; font-weight: 700; }
+    .grammar-text { fill: #101820; }
+    .stack-text { fill: #171923; font-size: 13px; }
+    .small-label { font-size: 15px; fill: #1a2232; }
+  </style><!-- CABEÇALHO --><!-- SETAS PRINCIPAIS --><!-- PAINEL 1: GRAMÁTICA --><!-- PAINEL 2: CÓDIGO EXEMPLO --><!-- PAINEL 3: AST --><!-- PAINEL 4: EVALUATOR --><!-- RODAPÉ EXPLICATIVO --><style
+     id="style1">
+.fill-symbol {
+  fill: hsl(120, 52%, 16%);
+}
+
+.stroke-fill-panel {
+  stroke: hsl(120, 100%, 25%);
+  fill: hsl(120, 52%, 88%);
+}
+
+.stroke-trace {
+  fill: none;
+  stroke: hsl(0, 0%, 24%);
+}
+
+.fill-trace {
+  fill: hsl(0, 0%, 24%);
+}
+
+@media (prefers-color-scheme: dark) {
+  .fill-symbol {
+    fill: hsl(120, 52%, 88%);
+  }
+  .stroke-fill-panel {
+    stroke: hsl(120, 100%, 25%);
+    fill: hsl(120, 52%, 16%);
+  }
+  .stroke-trace {
+    stroke: hsl(0, 0%, 92%);
+  }
+  .fill-trace {
+    fill: hsl(0, 0%, 92%);
+  }
+}
+  </style><g
+     id="g128"
+     transform="translate(-188.4,-811.4)"><rect
+       x="195"
+       y="818"
+       width="1272"
+       height="86"
+       rx="16"
+       fill="#ffffff"
+       stroke="#d6d9de"
+       stroke-width="1.2"
+       filter="url(#soft-shadow)"
+       id="rect118"
+       style="font-family:'Segoe UI', Arial, sans-serif" /><g
+       color="#0b4acb"
+       id="g28-8"
+       style="font-family:'Segoe UI', Arial, sans-serif"
+       transform="translate(124,662)"><use
+         href="#icon-document"
+         xlink:href="#icon-document"
+         x="111"
+         y="173"
+         width="48"
+         height="48"
+         id="use28-2" /></g><text
+       class="footer-text"
+       x="306"
+       y="855"
+       data-i18n="footer-grammar-1"
+       id="text118"
+       style="font-family:'Segoe UI', Arial, sans-serif">A gramática define</text><text
+       class="footer-text"
+       x="306"
+       y="881"
+       data-i18n="footer-grammar-2"
+       id="text119"
+       style="font-family:'Segoe UI', Arial, sans-serif">as regras da linguagem.</text><g
+       color="#0b8f84"
+       id="g119"
+       style="font-family:'Segoe UI', Arial, sans-serif"><use
+         href="#icon-terminal"
+         xlink:href="#icon-terminal"
+         x="521"
+         y="837"
+         width="44"
+         height="44"
+         id="use119" /></g><text
+       class="footer-text"
+       x="583"
+       y="855"
+       data-i18n="footer-code-1"
+       id="text120"
+       style="font-family:'Segoe UI', Arial, sans-serif">O código é analisado</text><text
+       class="footer-text"
+       x="583"
+       y="881"
+       data-i18n="footer-code-2"
+       id="text121"
+       style="font-family:'Segoe UI', Arial, sans-serif">de acordo com a gramática.</text><g
+       color="#f06400"
+       id="g121"
+       style="font-family:'Segoe UI', Arial, sans-serif"><use
+         href="#icon-tree"
+         xlink:href="#icon-tree"
+         x="817"
+         y="835"
+         width="48"
+         height="48"
+         id="use121" /></g><text
+       class="footer-text"
+       x="878"
+       y="855"
+       data-i18n="footer-ast-1"
+       id="text122"
+       style="font-family:'Segoe UI', Arial, sans-serif">A AST representa a estrutura</text><text
+       class="footer-text"
+       x="878"
+       y="881"
+       data-i18n="footer-ast-2"
+       id="text123"
+       style="font-family:'Segoe UI', Arial, sans-serif">sintática do código.</text><g
+       color="#5b21c7"
+       id="g123"
+       style="font-family:'Segoe UI', Arial, sans-serif"><use
+         href="#icon-recursion"
+         xlink:href="#icon-recursion"
+         x="1128"
+         y="835"
+         width="48"
+         height="48"
+         id="use123" /></g><text
+       class="footer-text"
+       x="1198"
+       y="855"
+       data-i18n="footer-evaluator-1"
+       id="text124"
+       style="font-family:'Segoe UI', Arial, sans-serif">O evaluator percorre a AST</text><text
+       class="footer-text"
+       x="1198"
+       y="881"
+       data-i18n="footer-evaluator-2"
+       id="text125"
+       style="font-family:'Segoe UI', Arial, sans-serif">recursivamente para obter o valor.</text></g></svg>

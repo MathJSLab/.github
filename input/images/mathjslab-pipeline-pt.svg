@@ -7,38 +7,10 @@
    aria-labelledby="svg-title svg-desc"
    version="1.1"
    id="svg125"
-   sodipodi:docname="mathjslab-pipeline-pt.svg"
    xml:space="preserve"
-   inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview
-     id="namedview125"
-     pagecolor="#ffffff"
-     bordercolor="#000000"
-     borderopacity="0.25"
-     inkscape:showpageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="0.43304995"
-     inkscape:cx="745.87239"
-     inkscape:cy="199.74601"
-     inkscape:window-width="1920"
-     inkscape:window-height="1017"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="svg125"><inkscape:page
-       x="0"
-       y="0"
-       width="1615.163"
-       height="907.59998"
-       id="page2"
-       margin="0"
-       bleed="0" /></sodipodi:namedview><title
+   xmlns:svg="http://www.w3.org/2000/svg"><title
      id="svg-title">MathJSLab: da gramática ao resultado</title><desc
      id="svg-desc">Fluxo vetorial mostrando gramática, código de exemplo, árvore sintática abstrata e avaliação recursiva pelo Evaluator.</desc><defs
      id="defs25"><filter
@@ -280,17 +252,18 @@
   }
 }
   </style><g
-     id="g2"
-     transform="translate(-19.07284,-5)"><g
+     id="g2"><g
        id="pipeline-arrows"
-       fill="#083d78"><path
+       fill="#083d78"
+       transform="translate(-19.07284,-5)"><path
          d="m 359,444 h 30 v -14 l 24,27 -24,27 v -14 h -30 z"
          id="path26" /><path
          d="m 727,444 h 30 v -14 l 24,27 -24,27 v -14 h -30 z"
          id="path27" /><path
          d="m 1199,444 h 30 v -14 l 24,27 -24,27 v -14 h -30 z"
          id="path28" /></g><g
-       id="g127"><rect
+       id="g127"
+       transform="translate(-19.07284,-5)"><rect
          class="panel"
          x="30"
          y="153"
@@ -419,7 +392,8 @@
            class="grammar-text"
            id="text48">factor '^' factor ;</text></g></g><g
        id="code-panel"
-       class="ui"><rect
+       class="ui"
+       transform="translate(-19.07284,-5)"><rect
          class="panel"
          x="407"
          y="155"
@@ -581,7 +555,8 @@
          fill="#087c73"
          id="text71">z = x^2 + 2*y;</text></g><g
        id="ast-panel"
-       class="ui"><rect
+       class="ui"
+       transform="translate(-19.07284,-5)"><rect
          class="panel"
          x="771"
          y="154"
@@ -831,7 +806,8 @@
            x="1119"
            y="750"
            id="text100">Expression</text></g></g><g
-       id="g1"><rect
+       id="g1"
+       transform="translate(-19.07284,-5)"><rect
          class="panel"
          x="1248"
          y="155"
@@ -1032,7 +1008,8 @@
          fill="#5b21c7"
          id="text117"
          style="font-family:'Segoe UI', Arial, sans-serif">z = 17</text></g><g
-       id="g128"><rect
+       id="g128"
+       transform="translate(-19.07284,-5)"><rect
          x="195"
          y="818"
          width="1272"
@@ -1133,7 +1110,8 @@
          data-i18n="footer-evaluator-2"
          id="text125"
          style="font-family:'Segoe UI', Arial, sans-serif">recursivamente para obter o valor.</text></g><g
-       id="g126"><text
+       id="g126"
+       transform="translate(-19.07284,-5)"><text
          x="583"
          y="102"
          font-size="82px"

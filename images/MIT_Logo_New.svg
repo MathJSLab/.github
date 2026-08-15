@@ -2,37 +2,17 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="50mm"
-   height="26.470583mm"
-   viewBox="0 0 50 26.470583"
+   width="49.999996mm"
+   height="26.470591mm"
+   viewBox="0 0 49.999996 26.470591"
    version="1.1"
    id="svg1"
    xml:space="preserve"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview
-     id="namedview1"
-     pagecolor="#ffffff"
-     bordercolor="#000000"
-     borderopacity="0.25"
-     inkscape:showpageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#d1d1d1"
-     inkscape:document-units="mm"><inkscape:page
-       x="0"
-       y="0"
-       width="50"
-       height="26.470583"
-       id="page2"
-       margin="0"
-       bleed="0" /></sodipodi:namedview><defs
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
      id="defs1" /><g
-     inkscape:label="Camada 1"
-     inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-73.780709,-70.161817)"><path
+     transform="translate(-73.780713,-70.161816)"><path
        fill="#750014"
        d="m 100.2513,96.632405 h 5.88235 V 78.985346 h -5.88235 z m 8.82353,-20.588236 h 14.70588 v -5.882353 h -14.70588 z m -8.82353,-5.882352 h 5.88235 v 5.882353 h -5.88235 z m -8.823527,26.470588 h 5.88235 V 70.161816 h -5.88235 z m -8.82353,-5.882354 h 5.88235 V 70.161816 h -5.88235 z m -8.82353,5.882354 h 5.88235 V 70.161816 h -5.88235 z m 35.294117,0 h 5.88235 V 78.985346 h -5.88235 z"
        id="path1"

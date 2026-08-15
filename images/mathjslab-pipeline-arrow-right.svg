@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xml:lang="en"
+   lang="en"
+   width="54"
+   height="54"
+   viewBox="0 0 54.000001 54"
+   role="img"
+   aria-labelledby="svg-title svg-desc"
+   version="1.1"
+   id="svg125"
+   xml:space="preserve"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><title
+     id="svg-title">MathJSLab: from grammar to result</title><desc
+     id="svg-desc">Vector flow showing grammar, example code, the abstract syntax tree, and recursive evaluation by Evaluator.</desc><defs
+     id="defs25"><!-- Logotipo original do MathJSLab, sem alterar nenhuma geometria.
+         A única remoção é o elemento <text> que continha a equação. --><!-- Ícones vetoriais reutilizáveis --></defs><style
+     id="style25">
+    .ui { font-family: &quot;Segoe UI&quot;, Arial, sans-serif; }
+    .mono { font-family: &quot;Cascadia Mono&quot;, Consolas, &quot;DejaVu Sans Mono&quot;, monospace; }
+    .panel { fill: #ffffff; stroke-width: 2; }
+    .panel-title { font-size: 26px; font-weight: 700; }
+    .step-number { fill: #ffffff; font-size: 27px; font-weight: 700; text-anchor: middle; dominant-baseline: middle; }
+    .node-title { font-size: 18px; font-weight: 700; text-anchor: middle; }
+    .node-sub { font-size: 17px; font-weight: 600; text-anchor: middle; }
+    .footer-text { fill: #0b1733; font-size: 17px; }
+    .grammar-key { fill: #0b4acb; font-weight: 700; }
+    .grammar-text { fill: #101820; }
+    .stack-text { fill: #171923; font-size: 13px; }
+    .small-label { font-size: 15px; fill: #1a2232; }
+  </style><!-- CABEÇALHO --><!-- SETAS PRINCIPAIS --><!-- PAINEL 1: GRAMÁTICA --><!-- PAINEL 2: CÓDIGO EXEMPLO --><!-- PAINEL 3: AST --><!-- PAINEL 4: EVALUATOR --><!-- RODAPÉ EXPLICATIVO --><style
+     id="style1">
+.fill-symbol {
+  fill: hsl(120, 52%, 16%);
+}
+
+.stroke-fill-panel {
+  stroke: hsl(120, 100%, 25%);
+  fill: hsl(120, 52%, 88%);
+}
+
+.stroke-trace {
+  fill: none;
+  stroke: hsl(0, 0%, 24%);
+}
+
+.fill-trace {
+  fill: hsl(0, 0%, 24%);
+}
+
+@media (prefers-color-scheme: dark) {
+  .fill-symbol {
+    fill: hsl(120, 52%, 88%);
+  }
+  .stroke-fill-panel {
+    stroke: hsl(120, 100%, 25%);
+    fill: hsl(120, 52%, 16%);
+  }
+  .stroke-trace {
+    stroke: hsl(0, 0%, 92%);
+  }
+  .fill-trace {
+    fill: hsl(0, 0%, 92%);
+  }
+}
+  </style><style
+     id="style1-5">
+.fill-symbol {
+  fill: hsl(120, 52%, 16%);
+}
+
+.stroke-fill-panel {
+  stroke: hsl(120, 100%, 25%);
+  fill: hsl(120, 52%, 88%);
+}
+
+.stroke-trace {
+  fill: none;
+  stroke: hsl(0, 0%, 24%);
+}
+
+.fill-trace {
+  fill: hsl(0, 0%, 24%);
+}
+
+@media (prefers-color-scheme: dark) {
+  .fill-symbol {
+    fill: hsl(120, 52%, 88%);
+  }
+  .stroke-fill-panel {
+    stroke: hsl(120, 100%, 25%);
+    fill: hsl(120, 52%, 16%);
+  }
+  .stroke-trace {
+    stroke: hsl(0, 0%, 92%);
+  }
+  .fill-trace {
+    fill: hsl(0, 0%, 92%);
+  }
+}
+  </style><path
+     d="M 0,14 H 29.999999 V 0 l 24,27 -24,27 V 40 H 0 Z"
+     id="path28"
+     style="fill:#083d78" /></svg>

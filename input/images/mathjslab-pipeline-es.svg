@@ -9,40 +9,9 @@
    aria-labelledby="svg-title svg-desc"
    version="1.1"
    id="svg125"
-   sodipodi:docname="mathjslab-pipeline-es.svg"
-   inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
-  <sodipodi:namedview
-     id="namedview125"
-     pagecolor="#ffffff"
-     bordercolor="#000000"
-     borderopacity="0.25"
-     inkscape:showpageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="0.43304995"
-     inkscape:cx="1011.4307"
-     inkscape:cy="305.96932"
-     inkscape:window-width="1920"
-     inkscape:window-height="1017"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="svg125">
-    <inkscape:page
-       x="0"
-       y="0"
-       width="1615.163"
-       height="907.59998"
-       id="page2"
-       margin="0"
-       bleed="0" />
-  </sodipodi:namedview>
   <title
      id="svg-title">MathJSLab: de la gramática al resultado</title>
   <desc
@@ -307,11 +276,11 @@
     .small-label { font-size: 15px; fill: #1a2232; }
   </style>
   <g
-     id="g2"
-     transform="translate(-19.07284,-5)">
+     id="g3">
     <g
        id="pipeline-arrows"
-       fill="#083d78">
+       fill="#083d78"
+       transform="translate(-19.07284,-5)">
       <path
          d="m 359,444 h 30 v -14 l 24,27 -24,27 v -14 h -30 z"
          id="path26" />
@@ -324,7 +293,8 @@
     </g>
     <g
        id="grammar-panel"
-       class="ui">
+       class="ui"
+       transform="translate(-19.07284,-5)">
       <rect
          class="panel"
          x="30"
@@ -478,7 +448,8 @@
     </g>
     <g
        id="code-panel"
-       class="ui">
+       class="ui"
+       transform="translate(-19.07284,-5)">
       <rect
          class="panel"
          x="407"
@@ -678,7 +649,8 @@
     </g>
     <g
        id="ast-panel"
-       class="ui">
+       class="ui"
+       transform="translate(-19.07284,-5)">
       <rect
          class="panel"
          x="771"
@@ -986,7 +958,8 @@
       </g>
     </g>
     <g
-       id="g1">
+       id="g1"
+       transform="translate(-19.07284,-5)">
       <rect
          class="panel"
          x="1248"
@@ -1220,10 +1193,10 @@
          style="font-family:'Segoe UI', Arial, sans-serif">z = 17</text>
     </g>
     <g
-       id="g127">
+       id="g2">
       <rect
-         x="195"
-         y="818"
+         x="175.92715"
+         y="813"
          width="1272"
          height="86"
          rx="16"
@@ -1237,7 +1210,7 @@
          color="#0b4acb"
          id="g28-8"
          style="font-family:'Segoe UI', Arial, sans-serif"
-         transform="translate(124,662)">
+         transform="translate(104.92716,657)">
         <use
            href="#icon-document"
            xlink:href="#icon-document"
@@ -1249,22 +1222,23 @@
       </g>
       <text
          class="footer-text"
-         x="306"
-         y="855"
+         x="286.92715"
+         y="850"
          data-i18n="footer-grammar-1"
          id="text118"
          style="font-family:'Segoe UI', Arial, sans-serif">La gramática define</text>
       <text
          class="footer-text"
-         x="306"
-         y="881"
+         x="286.92715"
+         y="876"
          data-i18n="footer-grammar-2"
          id="text119"
          style="font-family:'Segoe UI', Arial, sans-serif">las reglas del lenguaje.</text>
       <g
          color="#0b8f84"
          id="g119"
-         style="font-family:'Segoe UI', Arial, sans-serif">
+         style="font-family:'Segoe UI', Arial, sans-serif"
+         transform="translate(-19.07284,-5)">
         <use
            href="#icon-terminal"
            xlink:href="#icon-terminal"
@@ -1276,22 +1250,23 @@
       </g>
       <text
          class="footer-text"
-         x="583"
-         y="855"
+         x="563.92719"
+         y="850"
          data-i18n="footer-code-1"
          id="text120"
          style="font-family:'Segoe UI', Arial, sans-serif">El código se analiza</text>
       <text
          class="footer-text"
-         x="583"
-         y="881"
+         x="563.92719"
+         y="876"
          data-i18n="footer-code-2"
          id="text121"
          style="font-family:'Segoe UI', Arial, sans-serif">de acuerdo con la gramática.</text>
       <g
          color="#f06400"
          id="g121"
-         style="font-family:'Segoe UI', Arial, sans-serif">
+         style="font-family:'Segoe UI', Arial, sans-serif"
+         transform="translate(-19.07284,-5)">
         <use
            href="#icon-tree"
            xlink:href="#icon-tree"
@@ -1303,22 +1278,23 @@
       </g>
       <text
          class="footer-text"
-         x="878"
-         y="855"
+         x="858.92719"
+         y="850"
          data-i18n="footer-ast-1"
          id="text122"
          style="font-family:'Segoe UI', Arial, sans-serif">El AST representa la estructura</text>
       <text
          class="footer-text"
-         x="878"
-         y="881"
+         x="858.92719"
+         y="876"
          data-i18n="footer-ast-2"
          id="text123"
          style="font-family:'Segoe UI', Arial, sans-serif">sintáctica del código.</text>
       <g
          color="#5b21c7"
          id="g123"
-         style="font-family:'Segoe UI', Arial, sans-serif">
+         style="font-family:'Segoe UI', Arial, sans-serif"
+         transform="translate(-19.07284,-5)">
         <use
            href="#icon-recursion"
            xlink:href="#icon-recursion"
@@ -1330,21 +1306,22 @@
       </g>
       <text
          class="footer-text"
-         x="1198"
-         y="855"
+         x="1164.9271"
+         y="850"
          data-i18n="footer-evaluator-1"
          id="text124"
          style="font-family:'Segoe UI', Arial, sans-serif">El Evaluator recorre el AST</text>
       <text
          class="footer-text"
-         x="1198"
-         y="881"
+         x="1164.9271"
+         y="876"
          data-i18n="footer-evaluator-2"
          id="text125"
          style="font-family:'Segoe UI', Arial, sans-serif">recursivamente para obtener el valor.</text>
     </g>
     <g
-       id="g126">
+       id="g126"
+       transform="translate(-19.07284,-5)">
       <text
          x="583"
          y="102"
