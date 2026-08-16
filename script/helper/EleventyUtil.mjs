@@ -287,6 +287,19 @@ const console = {
 };
 
 /**
+ *
+ * @param  {...any} args
+ * @returns
+ */
+function git(...args) {
+    return execFileSync('git', args, {
+        encoding: 'utf8',
+        cwd: process.cwd(),
+        stdio: ['ignore', 'pipe', 'pipe'],
+    }).trim();
+}
+
+/**
  * This is the engines available to parse front matter of templates. The
  * Eleventy sets a `jsLegacy` engine with
  * require('gray-matter').engines.javascript and sets `javascript` engine
@@ -566,12 +579,7 @@ const utilFilters = {
         if (!Array.isArray(files) || files.length === 0) {
             return '';
         }
-        const output = execFileSync('git', ['log', '-1', '--format=%cs', '--', ...files], {
-            encoding: 'utf8',
-            cwd: process.cwd(),
-            stdio: ['ignore', 'pipe', 'pipe'],
-        }).trim();
-        return output;
+        return git('log', '-1', '--format=%cs', '--', ...files);
     },
 };
 /**
