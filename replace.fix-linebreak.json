@@ -1,10 +1,6 @@
 {
-    "files": [
-        "input/**/*.{html,htm,md,txt,njk,nunj,nunjucks,json,jsonc,js,cjs,mjs,ts,d.ts,tsx,jsx,scss,sass,css,xml,yml,yaml,toml,cson,coffee}",
-        "src/**/*.{html,htm,md,txt,njk,nunj,nunjucks,json,jsonc,js,cjs,mjs,ts,d.ts,tsx,jsx,scss,sass,css,xml,yml,yaml,toml,cson,coffee}",
-        "script/**/*.{html,htm,md,txt,njk,nunj,nunjucks,json,jsonc,js,cjs,mjs,ts,d.ts,tsx,jsx,scss,sass,css,xml,yml,yaml,toml,cson,coffee}",
-        "images/**/*.svg"
-    ],
+    "files": ["input/**", "src/**", "script/**", "images/**/*.svg"],
+    "ignore": ["input/images/*.webp", "input/**/*.pdf"],
     "from": "/\\r?\\n/gm",
     "to": "\r\n"
 }
