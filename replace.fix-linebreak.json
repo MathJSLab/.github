@@ -1,5 +1,6 @@
 {
     "files": ["input/**", "src/**", "script/**", "images/**/*.svg"],
+    "ignore": ["input/images/*.webp", "input/**/*.pdf"],
     "from": "/\\r?\\n/gm",
     "to": "\r\n"
 }
