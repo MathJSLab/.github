@@ -1,8 +1,8 @@
 {
     "files": [
-        "input/**/*.{html,htm,md,txt,njk,nunj,nunjucks,json,jsonc,js,cjs,mjs,ts,.d.ts,tsx,js,jsx,scss,sass,css,xml,yml,yaml,toml,cson,coffee}",
-        "src/**/*.{html,htm,md,txt,njk,nunj,nunjucks,json,jsonc,js,cjs,mjs,ts,.d.ts,tsx,js,jsx,scss,sass,css,xml,yml,yaml,toml,cson,coffee}",
-        "script/**/*.{html,htm,md,txt,njk,nunj,nunjucks,json,jsonc,js,cjs,mjs,ts,.d.ts,tsx,js,jsx,scss,sass,css,xml,yml,yaml,toml,cson,coffee}",
+        "input/**/*.{html,htm,md,txt,njk,nunj,nunjucks,json,jsonc,js,cjs,mjs,ts,d.ts,tsx,jsx,scss,sass,css,xml,yml,yaml,toml,cson,coffee}",
+        "src/**/*.{html,htm,md,txt,njk,nunj,nunjucks,json,jsonc,js,cjs,mjs,ts,d.ts,tsx,jsx,scss,sass,css,xml,yml,yaml,toml,cson,coffee}",
+        "script/**/*.{html,htm,md,txt,njk,nunj,nunjucks,json,jsonc,js,cjs,mjs,ts,d.ts,tsx,jsx,scss,sass,css,xml,yml,yaml,toml,cson,coffee}",
         "images/**/*.svg"
     ],
     "from": "/\\r?\\n/gm",
