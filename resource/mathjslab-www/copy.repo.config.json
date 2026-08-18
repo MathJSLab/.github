@@ -14,6 +14,7 @@
         { "src": "images/img/ico/favicon.ico", "dest": "site/img/favicon.ico" },
         { "src": "images/img/ico/favicon-dark.ico", "dest": "site/img/favicon-dark.ico" },
         { "src": "images/mathjslab-logo.svg", "dest": "site/img/mathjslab-logo.svg" },
+        { "src": "images/img/ico/mathjslab-logo-630.png", "dest": "site/img/mathjslab-logo.png" },
         { "src": "images/mathjslab-pipeline-en.svg", "dest": "site/img/mathjslab-pipeline-en.svg" },
         { "src": "images/mathjslab-pipeline-en-1-grammar-panel.svg", "dest": "site/img/mathjslab-pipeline-en-1-grammar-panel.svg" },
         { "src": "images/mathjslab-pipeline-en-2-code-panel.svg", "dest": "site/img/mathjslab-pipeline-en-2-code-panel.svg" },

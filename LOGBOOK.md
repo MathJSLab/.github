@@ -2,6 +2,10 @@
 
 This file contains general information about the actions of the [MathJSLab Project](https://mathjslab.com/) that go beyond the scope of the individual projects. In other words, what cannot be recorded in the `CHANGES.md` file of each software project, or the general actions of the organization, are recorded here, indexed by date.
 
+## 2026-08-18
+
+- A PNG version of the MathJSLab logo was created for the `mathjslab-www` project.
+
 ## 2026-08-15
 
 - The files `input/images/language-switch.svg`, `input/images/matlab-icon.svg`, and `octave-logo.svg` were added to the organization's repository and the `mathjslab-www` project.
