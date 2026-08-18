@@ -4,7 +4,7 @@ This file contains general information about the actions of the [MathJSLab Proje
 
 ## 2026-08-18
 
-- A PNG version of the MathJSLab logo was created for the `mathjslab-www` project.
+- Dependecies updated.
 
 ## 2026-08-15
 
