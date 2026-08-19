@@ -42,14 +42,14 @@
                             },
                             {
                                 "src": "mathjslab-logo-light.svg",
-                                "widths": [16, 24, 32, 48, 64, 128, 256],
+                                "widths": [16, 32, 48],
                                 "formats": ["ico"],
                                 "outputDir": "./images/img/ico",
                                 "outputBasename": "favicon"
                             },
                             {
                                 "src": "mathjslab-logo-dark.svg",
-                                "widths": [16, 24, 32, 48, 64, 128, 256],
+                                "widths": [16, 32, 48],
                                 "formats": ["ico"],
                                 "outputDir": "./images/img/ico",
                                 "outputBasename": "favicon-dark"

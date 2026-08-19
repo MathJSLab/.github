@@ -4,7 +4,7 @@ This file contains general information about the actions of the [MathJSLab Proje
 
 ## 2026-08-18
 
-- Dependecies updated.
+- Removed large sizes from the `.ico` files. Now only the 16, 32, and 48 sizes remain.
 
 ## 2026-08-15
 
