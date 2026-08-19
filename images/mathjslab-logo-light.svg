@@ -19,6 +19,7 @@
   fill: hsl(0, 0%, 24%);
 }
   </style>
+
   <circle style="fill:none;stroke:none;stroke-opacity:1" cx="315" cy="315" r="315"/>
   <circle class="stroke-fill-panel" style="stroke-width:14px" cx="315" cy="315" r="288"/>
   <path
@@ -43,4 +44,5 @@
   <path class="stroke-trace" style="stroke-width:14px" d="M 126,441 H 176 V 490"/>
   <circle class="fill-trace" style="stroke:none" cx="152" cy="464" r="4.1"/>
   <path class="stroke-trace" style="stroke-width:14px;stroke-linecap:round" d="M 126,441 C 140,390 203,273 252,273 305,273 336,330 378,330 420,330 513,203 532,168"/>
+
 </svg>

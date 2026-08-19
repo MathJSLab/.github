@@ -41,6 +41,12 @@
                                 "outputDir": "./images/img/ico"
                             },
                             {
+                                "src": "mathjslab-og.svg",
+                                "widths": [1200],
+                                "formats": ["png"],
+                                "outputDir": "./images/img"
+                            },
+                            {
                                 "src": "mathjslab-logo-light.svg",
                                 "widths": [16, 32, 48],
                                 "formats": ["ico"],

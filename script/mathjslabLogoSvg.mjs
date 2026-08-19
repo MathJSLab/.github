@@ -1,7 +1,13 @@
 /**
- * This value is the default Open Graph width: 630.
+ * This value is the default Open Graph width: 1200.
  */
-const defaultOGWidth = 2 * 5 * 7 * 9;
+const defaultOGWidth = 2 * 6 * 100;
+
+/**
+ * This value is the default Open Graph height: 630.
+ */
+const defaultOGHeight = 2 * 5 * 7 * 9;
+
 /**
  * MathJSLab logo factory in SVG format.
  * @param {*} style The `style` parameter must be a string defining the following classes:
@@ -10,14 +16,18 @@ const defaultOGWidth = 2 * 5 * 7 * 9;
  *                  - fillPanel
  *                  - stroke-trace
  *                  - fill-trace
- * @param {*} width The logo is a square image. `width` defines the dimensions.
+ * @param {*} width The SVG image width.
+ * @param {*} height The SVG image height.
  * @param {*} precision Precision factor for coordinates.
  * @returns A string containing the MathJSLab logo in SVG format.
  */
-export default function mathjslabLogoSvg(style, width = defaultOGWidth, precision = 2) {
+export default function mathjslabLogoSvg(style, width = defaultOGWidth, height = defaultOGHeight, precision = 2) {
     if (precision < 1) {
         precision = 1;
     }
+    const logoSize = Math.min(width, height);
+    const offsetX = (width - logoSize) / 2;
+    const offsetY = (height - logoSize) / 2;
     const coordinates = [
         /*   0 */ 1 / 45 /* stroke-width for traces */,
         /*   1 */ 3 / 25 /* Expression font-size */,
@@ -131,33 +141,34 @@ export default function mathjslabLogoSvg(style, width = defaultOGWidth, precisio
     ];
     const c = coordinates.map((value) => {
         if (value > 1 / (10 * precision)) {
-            if (width > (defaultOGWidth * precision) / 10) {
-                return Math.round(value * width);
+            if (logoSize > (defaultOGWidth * precision) / 10) {
+                return Math.round(value * logoSize);
             } else {
-                return Math.round(value * 10 * width) / 10;
+                return Math.round(value * 10 * logoSize) / 10;
             }
         } else if (value > 1 / (100 * precision)) {
-            if (width > defaultOGWidth) {
-                return Math.round(value * width);
-            } else if (width > (defaultOGWidth * precision) / 10) {
-                return Math.round(value * 10 * width) / 10;
+            if (logoSize > defaultOGWidth) {
+                return Math.round(value * logoSize);
+            } else if (logoSize > (defaultOGWidth * precision) / 10) {
+                return Math.round(value * 10 * logoSize) / 10;
             } else {
-                return Math.round(value * 100 * width) / 100;
+                return Math.round(value * 100 * logoSize) / 100;
             }
         } else {
-            if (width > defaultOGWidth) {
-                return Math.round(value * 10 * width) / 10;
-            } else if (width > (defaultOGWidth * precision) / 10) {
-                return Math.round(value * 100 * width) / 100;
+            if (logoSize > defaultOGWidth) {
+                return Math.round(value * 10 * logoSize) / 10;
+            } else if (logoSize > (defaultOGWidth * precision) / 10) {
+                return Math.round(value * 100 * logoSize) / 100;
             } else {
-                return Math.round(value * 1000 * width) / 1000;
+                return Math.round(value * 1000 * logoSize) / 1000;
             }
         }
     });
-    return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${width}" viewBox="0 0 ${width} ${width}">
+    return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
   <style>
 ${style}
   </style>
+${offsetX !== 0 || offsetY !== 0 ? `  <g transform="translate(${offsetX},${offsetY})">` : ''}
   <circle style="fill:none;stroke:none;stroke-opacity:1" cx="${c[2]}" cy="${c[2]}" r="${c[2]}"/>
   <circle class="stroke-fill-panel" style="stroke-width:${c[0]}px" cx="${c[2]}" cy="${c[2]}" r="${c[3]}"/>
   <path
@@ -182,5 +193,6 @@ ${style}
   <path class="stroke-trace" style="stroke-width:${c[0]}px" d="M ${c[6]},${c[10]} H ${c[11]} V ${c[8]}"/>
   <circle class="fill-trace" style="stroke:none" cx="${c[12]}" cy="${c[13]}" r="${c[14]}"/>
   <path class="stroke-trace" style="stroke-width:${c[0]}px;stroke-linecap:round" d="M ${c[6]},${c[10]} C ${c[15]},${c[16]} ${c[17]},${c[18]} ${c[19]},${c[18]} ${c[20]},${c[18]} ${c[21]},${c[22]} ${c[23]},${c[22]} ${c[24]},${c[22]} ${c[25]},${c[17]} ${c[26]},${c[27]}"/>
+${offsetX !== 0 || offsetY !== 0 ? `  </g>` : ''}
 </svg>`;
 }
