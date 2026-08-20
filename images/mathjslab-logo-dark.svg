@@ -38,7 +38,6 @@
       H 240
       C 234,110 228,110 220,118 222,108 231,100 237,94
       Z" />
-  <!-- prettier-ignore -->
   <text class="fill-symbol" style="font-size:76px;font-family:'Times New Roman';font-style:italic" x="153" y="423">ax<tspan style="font-size:65%;baseline-shift:super">3</tspan><tspan style="font-style:normal;font-weight:bold;font-size:80%;font-family:'Times New Roman'">+</tspan>bx<tspan style="font-size:65%;baseline-shift:super">2</tspan><tspan style="font-style:normal;font-weight:bold;font-size:80%;font-family:'Times New Roman'">+</tspan>cx<tspan style="font-style:normal;font-weight:bold;font-size:80%;font-family:'Times New Roman'">+</tspan>d</text>
   <path class="stroke-trace" style="stroke-width:14px;stroke-linecap:round" d="M 126,135 V 490 H 513"/>
   <path class="stroke-trace" style="stroke-width:14px" d="M 126,441 H 176 V 490"/>

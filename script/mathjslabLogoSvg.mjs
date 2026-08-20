@@ -187,7 +187,6 @@ ${offsetX !== 0 || offsetY !== 0 ? `  <g transform="translate(${offsetX},${offse
       H ${c[93]}
       C ${c[89]},${c[103]} ${c[96]},${c[103]} ${c[104]},${c[105]} ${c[106]},${c[107]} ${c[94]},${c[108]} ${c[28]},${c[29]}
       Z" />
-  <!-- prettier-ignore -->
   <text class="fill-symbol" style="font-size:${c[1]}px;font-family:'Times New Roman';font-style:italic" x="${c[4]}" y="${c[5]}">ax<tspan style="font-size:65%;baseline-shift:super">3</tspan><tspan style="font-style:normal;font-weight:bold;font-size:80%;font-family:'Times New Roman'">+</tspan>bx<tspan style="font-size:65%;baseline-shift:super">2</tspan><tspan style="font-style:normal;font-weight:bold;font-size:80%;font-family:'Times New Roman'">+</tspan>cx<tspan style="font-style:normal;font-weight:bold;font-size:80%;font-family:'Times New Roman'">+</tspan>d</text>
   <path class="stroke-trace" style="stroke-width:${c[0]}px;stroke-linecap:round" d="M ${c[6]},${c[7]} V ${c[8]} H ${c[9]}"/>
   <path class="stroke-trace" style="stroke-width:${c[0]}px" d="M ${c[6]},${c[10]} H ${c[11]} V ${c[8]}"/>
