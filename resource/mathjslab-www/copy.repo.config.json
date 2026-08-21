@@ -11,6 +11,26 @@
         "script/helper/mkDirIfNotExist.ts",
         "script/helper/git-commit.cjs",
         "script/helper/toIco.ts",
+        {
+            "src": "includes/styles/base/_colors.scss",
+            "dest": "includes/styles/base/_colors.scss"
+        },
+        {
+            "src": "includes/styles/base/_sizes.scss",
+            "dest": "includes/styles/base/_sizes.scss"
+        },
+        {
+            "src": "includes/styles/abstract/_define-map.scss",
+            "dest": "includes/styles/abstract/_define-map.scss"
+        },
+        {
+            "src": "includes/styles/abstract/_constants.scss",
+            "dest": "includes/styles/abstract/_constants.scss"
+        },
+        {
+            "src": "includes/styles/constants.json.njk",
+            "dest": "includes/styles/constants.json.njk"
+        },
         { "src": "images/img/ico/favicon.ico", "dest": "site/img/favicon.ico" },
         { "src": "images/img/ico/favicon-dark.ico", "dest": "site/img/favicon-dark.ico" },
         { "src": "images/mathjslab-logo.svg", "dest": "site/img/mathjslab-logo.svg" },

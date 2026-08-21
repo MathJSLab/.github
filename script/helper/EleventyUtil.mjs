@@ -768,7 +768,7 @@ const templateEngine = {
                 // `compile` is called once per .scss file in the input directory
                 compile: function (inputContent, inputPath) {
                     let parsed = path.parse(inputPath);
-                    let result = SASS.compileString(inputContent, {
+                    let result = sass.compileString(inputContent, {
                         silenceDeprecations: ['global-builtin'],
                         loadPaths: [parsed.dir || '.', this.config.dir.includes],
                     });

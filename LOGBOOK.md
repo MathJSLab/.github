@@ -2,6 +2,11 @@
 
 This file contains general information about the actions of the [MathJSLab Project](https://mathjslab.com/) that go beyond the scope of the individual projects. In other words, what cannot be recorded in the `CHANGES.md` file of each software project, or the general actions of the organization, are recorded here, indexed by date.
 
+## 2026-08-20
+
+- Bug fix: the file `script/helper/EleventyUtil.mjs` contained a call to `SASS.compileString`. The correct call is `sass.compileString`.
+- The project page (`mathjslab-www`) was implemented using SCSS templates in the same way as in the `mathjslab-app` project, by copying files from the organization's repository.
+
 ## 2026-08-19
 
 - The `script/mathjslabLogoSvg.mjs` file has been enhanced to generate the logo with specified width and height, in order to produce an image suitable for conversion to PNG and use in Open Graph records.
