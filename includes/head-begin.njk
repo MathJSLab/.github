@@ -4,3 +4,6 @@
     <meta name="description" content="{{ main.description }}">
     <meta name="author" content="{{ pkg.author }}">
     <meta name="keywords" content="{{ pkg.keywords.join() }}">
+    {%- if robotsFollow %}
+    <meta name="robots" content="index, follow">
+    {% endif -%}
