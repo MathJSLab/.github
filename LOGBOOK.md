@@ -2,6 +2,10 @@
 
 This file contains general information about the actions of the [MathJSLab Project](https://mathjslab.com/) that go beyond the scope of the individual projects. In other words, what cannot be recorded in the `CHANGES.md` file of each software project, or the general actions of the organization, are recorded here, indexed by date.
 
+## 2026-08-23
+
+- The project page (`mathjslab-calc`) was implemented using SCSS templates in the same way as in the `mathjslab-app` project, by copying files from the organization's repository.
+
 ## 2026-08-22
 
 - Introduction of Nunjucks templates in `include/head-*.njk` for use in the HTML header.
