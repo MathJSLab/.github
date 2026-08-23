@@ -1,0 +1,71 @@
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "{{ site.url }}/{{ lang }}/#webpage",
+            "url": "{{ site.url }}/{{ lang }}/",
+            "name": "{{ main.title }}",
+            "description": "{{ main.description }}",
+            "inLanguage": "{{ pageData.htmlLang }}",
+            "isPartOf": {
+              "@id": "{{ site.url }}/#website"
+            },
+            "about": {
+              "@id": "{{ site.url }}/#software"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "{{ site.url }}/#website",
+            "url": "{{ site.url }}/",
+            "name": "{{ site.title }}",
+            "publisher": {
+              "@id": "{{ site.url }}/#organization"
+            }
+          },
+          {
+            "@type": "SoftwareApplication",
+            "@id": "{{ site.url }}/#software",
+            "name": "{{ site.title }}",
+            "url": "{{ site.url }}/{{ lang }}/",
+            "description": "{{ pageData.description }}",
+            "applicationCategory": "EducationalApplication",
+            "operatingSystem": "Web",
+            "inLanguage": "{{ pageData.htmlLang }}",
+            "license": "https://opensource.org/license/MIT",
+            "offers": {
+              "@type": "Offer",
+              "price": 0
+            },
+            "author": {
+              "@id": "{{ site.url }}/#author"
+            },
+            "publisher": {
+              "@id": "{{ site.url }}/#organization"
+            }
+          },
+          {
+            "@type": "Person",
+            "@id": "{{ site.url }}/#author",
+            "name": "Sergio Lindau"
+          },
+          {
+            "@type": "Organization",
+            "@id": "{{ site.url }}/#organization",
+            "name": "{{ site.title }}",
+            "url": "{{ site.url }}/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "{{ site.url }}/img/mathjslab-logo.svg",
+              "width": 630,
+              "height": 630
+            },
+            "sameAs": [
+              "https://github.com/MathJSLab"
+            ]
+          }
+        ]
+      }
+    </script>

@@ -1,6 +1,10 @@
 {
     "repository": ".github",
     "files": [
+        {
+            "src": "data/i18n/i18n-licenseText.js",
+            "dest": "data/i18n-licenseText.js"
+        },
         { "src": "resource/mathjslab-www/eleventy.build.json", "dest": "eleventy.build.json" },
         "script/tsconfig.json",
         "script/helper/clean-package-lock.cjs",
@@ -31,6 +35,12 @@
             "src": "includes/styles/constants.json.njk",
             "dest": "includes/styles/constants.json.njk"
         },
+        "includes/head-alternate.njk",
+        "includes/head-begin.njk",
+        "includes/head-json-ld.njk",
+        "includes/head-og.njk",
+        "includes/head-scheme-favicon.njk",
+        "includes/head-twitter.njk",
         { "src": "images/img/ico/favicon.ico", "dest": "site/img/favicon.ico" },
         { "src": "images/img/ico/favicon-dark.ico", "dest": "site/img/favicon-dark.ico" },
         { "src": "images/mathjslab-logo.svg", "dest": "site/img/mathjslab-logo.svg" },

@@ -2,6 +2,10 @@
     "repository": ".github",
     "files": [
         {
+            "src": "data/i18n/i18n-licenseText.js",
+            "dest": "data/i18n-licenseText.js"
+        },
+        {
             "src": "resource/mathjslab-batch/eleventy.build.json",
             "dest": "eleventy.build.json"
         },

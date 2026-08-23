@@ -63,7 +63,7 @@
         "cson": "^8.4.0",
         "dotenv": "^17.4.2",
         "dotenv-expand": "^1000.0.0",
-        "eslint": "^10.8.1",
+        "eslint": "^10.9.0",
         "eslint-config-prettier": "^10.1.8",
         "eslint-plugin-import": "^2.32.0",
         "eslint-plugin-prettier": "^5.5.6",

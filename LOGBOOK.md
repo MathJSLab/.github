@@ -2,6 +2,10 @@
 
 This file contains general information about the actions of the [MathJSLab Project](https://mathjslab.com/) that go beyond the scope of the individual projects. In other words, what cannot be recorded in the `CHANGES.md` file of each software project, or the general actions of the organization, are recorded here, indexed by date.
 
+## 2026-08-22
+
+- Introduction of Nunjucks templates in `include/head-*.njk` for use in the HTML header.
+
 ## 2026-08-20
 
 - Bug fix: the file `script/helper/EleventyUtil.mjs` contained a call to `SASS.compileString`. The correct call is `sass.compileString`.
