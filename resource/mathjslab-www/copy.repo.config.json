@@ -39,7 +39,7 @@
         "includes/head-begin.njk",
         "includes/head-json-ld.njk",
         "includes/head-og.njk",
-        "includes/head-scheme-favicon.njk",
+        "includes/head-icon.njk",
         "includes/head-twitter.njk",
         { "src": "images/img/ico/favicon.ico", "dest": "site/images/favicon.ico" },
         { "src": "images/img/ico/favicon-dark.ico", "dest": "site/images/favicon-dark.ico" },

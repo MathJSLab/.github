@@ -47,8 +47,8 @@
             "dest": "src/includes/head-og.njk"
         },
         {
-            "src": "includes/head-scheme-favicon.njk",
-            "dest": "src/includes/head-scheme-favicon.njk"
+            "src": "includes/head-icon.njk",
+            "dest": "src/includes/head-icon.njk"
         },
         {
             "src": "includes/head-twitter.njk",
