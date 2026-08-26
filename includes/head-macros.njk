@@ -1,11 +1,15 @@
-{% macro headIcon(light, dark, sizes = '16x16 32x32 48x48', svg, appleTouch) %}
+{% macro headIcon(light, dark, svg, appleTouch, sizes = '16x16 32x32 48x48') %}
+    {%- if dark %}
     <meta name="color-scheme" content="light dark">
     <link rel="icon" href="{{ light }}" sizes="{{ sizes }}" type="image/x-icon" media="(prefers-color-scheme: light)">
     <link rel="icon" href="{{ dark }}" sizes="{{ sizes }}" type="image/x-icon" media="(prefers-color-scheme: dark)">
-    {% if svg %}
+    {% else %}
+    <link rel="icon" href="{{ light }}" sizes="{{ sizes }}" type="image/x-icon">
+    {% endif %}
+    {%- if svg -%}
     <link rel="icon" href="{{ svg }}" sizes="any" type="image/svg+xml">
     {% endif %}
-    {% if appleTouch %}
+    {%- if appleTouch -%}
     <link rel="apple-touch-icon" href="{{ appleTouch }}">
-    {% endif %}
+    {% endif -%}
 {% endmacro %}
