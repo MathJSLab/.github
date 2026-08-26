@@ -35,13 +35,8 @@
             "src": "includes/styles/constants.json.njk",
             "dest": "includes/styles/constants.json.njk"
         },
-        "includes/head-alternate.njk",
-        "includes/head-begin.njk",
         "includes/head-json-ld.njk",
         "includes/head-macros.njk",
-        "includes/head-og.njk",
-        "includes/head-icon.njk",
-        "includes/head-twitter.njk",
         { "src": "images/img/ico/favicon.ico", "dest": "site/images/favicon.ico" },
         { "src": "images/img/ico/favicon-dark.ico", "dest": "site/images/favicon-dark.ico" },
         { "src": "images/mathjslab-logo.svg", "dest": "site/images/mathjslab-logo.svg" },
