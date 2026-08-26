@@ -38,6 +38,7 @@
         "includes/head-alternate.njk",
         "includes/head-begin.njk",
         "includes/head-json-ld.njk",
+        "includes/head-macros.njk",
         "includes/head-og.njk",
         "includes/head-icon.njk",
         "includes/head-twitter.njk",

@@ -51,6 +51,10 @@
             "dest": "src/includes/head-icon.njk"
         },
         {
+            "src": "includes/head-macros.njk",
+            "dest": "src/includes/head-macros.njk"
+        },
+        {
             "src": "includes/head-twitter.njk",
             "dest": "src/includes/head-twitter.njk"
         },
