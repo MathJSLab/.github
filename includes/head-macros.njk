@@ -1,7 +1,7 @@
 {% macro headBegin(title, description, author, keywords, robots = 'index,follow', charset = 'UTF-8') %}
     <meta charset="{{ charset }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {%- if title -%}
+    {% if title -%}
     <title>{{ title }}</title>
     {% endif %}
     {%- if decription -%}
@@ -22,7 +22,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="{{ title }}">
     <meta property="og:description" content="{{ description }}">
-    <meta property="og:url" content="{{ url }}/{{ lang }}/">
+    <meta property="og:url" content="{{ url }}/">
     <meta property="og:site_name" content="{{ name }}">
     {% if i18n %}
     <meta property="og:locale" content="{{ i18n.pages[lang].ogLocale }}">
