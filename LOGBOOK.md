@@ -2,6 +2,10 @@
 
 This file contains general information about the actions of the [MathJSLab Project](https://mathjslab.com/) that go beyond the scope of the individual projects. In other words, what cannot be recorded in the `CHANGES.md` file of each software project, or the general actions of the organization, are recorded here, indexed by date.
 
+## 2026-08-28
+
+- The file `includes/head-macros.njk` was created to centralize macro definitions for use in the `<head>` section of HTML files, specifically for defining SEO-related entries.
+
 ## 2026-08-23
 
 - The project page (`mathjslab-calc`) was implemented using SCSS templates in the same way as in the `mathjslab-app` project, by copying files from the organization's repository.
