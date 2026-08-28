@@ -4,7 +4,7 @@
     {% if title -%}
     <title>{{ title }}</title>
     {% endif %}
-    {%- if decription -%}
+    {%- if description -%}
     <meta name="description" content="{{ description }}">
     {% endif %}
     {%- if author -%}
@@ -47,6 +47,17 @@
     <meta name="twitter:description" content="{{ description }}">
     <meta name="twitter:image" content="{{ url }}{{ image }}">
     <meta name="twitter:image:alt" content="{{ imageAlt }}">
+{% endmacro %}
+
+{% macro headJsonLdGraph(context = 'https://schema.org') %}
+    <script type="application/ld+json">
+      {
+        "@context": "{{ context }}",
+        "@graph": [
+{{ caller() }}
+        ]
+      }
+    </script>
 {% endmacro %}
 
 {% macro headAlternate(i18n, canonical, url, default = '', postfix = '') %}
