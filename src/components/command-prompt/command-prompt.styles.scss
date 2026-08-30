@@ -1,0 +1,117 @@
+:host {
+  display: block;
+}
+
+.prompt {
+  display: block;
+}
+
+.frame-box,
+.good,
+.bad,
+.info {
+  border-bottom: 1px solid var(--calc-border, transparent);
+  border-radius: 0.3rem;
+  padding: 12px 14px 14px;
+}
+
+.frame-box:focus-within,
+.good:focus-within,
+.bad:focus-within,
+.info:focus-within {
+  background: var(--calc-focus, transparent);
+}
+
+.good {
+  background: var(--green-background, transparent);
+  border: 1px solid var(--green-border, var(--calc-border, transparent));
+}
+
+.bad {
+  background: var(--red-background, transparent);
+  border: 1px solid var(--red-border, var(--calc-border, transparent));
+}
+
+.info {
+  background: var(--blue-background, transparent);
+  border: 1px solid var(--blue-border, var(--calc-border, transparent));
+}
+
+.prompt-line {
+  align-items: flex-start;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1.4rem minmax(0, 1fr);
+}
+
+.marker {
+  color: var(--green-text);
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.65;
+}
+
+textarea {
+  background: transparent;
+  border: 0;
+  border-radius: 0.3rem;
+  color: var(--calc-text, var(--color-input-text, currentColor));
+  font:
+    1rem/1.55 ui-monospace,
+    SFMono-Regular,
+    Consolas,
+    monospace;
+  min-height: 1.8rem;
+  outline: 0;
+  overflow: hidden;
+  resize: none;
+  width: 100%;
+}
+
+textarea:hover {
+  background: transparent;
+}
+
+textarea:focus {
+  background: transparent;
+  color: var(--color-input-text-focus, var(--calc-text, currentColor));
+}
+
+.output {
+  display: block;
+  margin: 8px 0 0 2.15rem;
+  max-width: 100%;
+  min-height: 0;
+  overflow: visible;
+}
+
+.output:empty {
+  display: none;
+}
+
+.output table {
+  border-collapse: collapse;
+  max-width: 100%;
+}
+
+.output td {
+  padding: 2px 7px 2px 0;
+  vertical-align: middle;
+  white-space: normal;
+}
+
+.output math {
+  max-width: 100%;
+  overflow: visible;
+}
+
+.output mtext {
+  overflow-wrap: anywhere;
+}
+
+.error {
+  color: var(--calc-error, var(--red-text, #b00020));
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  white-space: pre-wrap;
+}

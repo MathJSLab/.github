@@ -1,0 +1,70 @@
+.collapsible-content-panel-wrapper {
+  background: var(--calc-surface, var(--color-background, #fbfcfe));
+  border: 1px solid var(--calc-border, var(--color-border, #cfd7df));
+  border-radius: var(--border-radius-medium, 6px);
+  box-shadow: 0 8px 18px -14px var(--color-panel-box-shadow, rgb(15 23 42 / 45%));
+  color: var(--calc-text, var(--color-text, #1f2937));
+  overflow: hidden;
+}
+
+input.collapsible-content-panel-toggle {
+  display: none;
+}
+
+.collapsible-content-panel-title {
+  align-items: center;
+  background: var(--calc-control, var(--color-background-mute, #edf1f6));
+  border: 0;
+  border-bottom: 1px solid transparent;
+  color: var(--calc-control-text, var(--color-a-text, currentColor));
+  cursor: pointer;
+  display: flex;
+  font-size: 0.95rem;
+  font-weight: 650;
+  gap: 0.55rem;
+  line-height: 1.25;
+  padding: 0.75rem 0.875rem;
+  text-align: left;
+  transition:
+    background-color 140ms ease,
+    color 140ms ease,
+    border-color 140ms ease;
+}
+
+.collapsible-content-panel-title:hover {
+  background: var(--calc-control-active, var(--color-background-soft, #f5f7fa));
+  color: var(--calc-control-text, var(--color-a-text-hover, currentColor));
+}
+
+.collapsible-content-panel-title::before {
+  border-bottom: 0.28rem solid transparent;
+  border-left: 0.34rem solid currentColor;
+  border-top: 0.28rem solid transparent;
+  content: '';
+  display: inline-block;
+  flex: 0 0 auto;
+  transition: transform 140ms ease;
+}
+
+.collapsible-content-panel-collapsible .collapsible-content-panel-inner-content {
+  background: var(--calc-surface, var(--color-background, #fbfcfe));
+  padding: 0.75rem 0.875rem;
+}
+
+.collapsible-content-panel-collapsible {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 180ms ease;
+}
+
+.collapsible-content-panel-toggle:checked + .collapsible-content-panel-title + .collapsible-content-panel-collapsible {
+  max-height: fit-content;
+}
+
+.collapsible-content-panel-toggle:checked + .collapsible-content-panel-title::before {
+  transform: rotate(90deg);
+}
+
+.collapsible-content-panel-toggle:checked + .collapsible-content-panel-title {
+  border-bottom-color: var(--calc-border, var(--color-border, #cfd7df));
+}

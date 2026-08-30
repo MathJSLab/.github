@@ -1,0 +1,11 @@
+:host {
+  display: block;
+}
+
+.command-prompt-list {
+  background: var(--calc-surface, transparent);
+  border: 1px solid var(--calc-border, transparent);
+  border-radius: 8px;
+  display: block;
+  min-height: 100%;
+}
