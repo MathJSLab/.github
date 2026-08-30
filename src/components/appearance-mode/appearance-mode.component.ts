@@ -91,11 +91,11 @@ export class AppearanceMode extends HTMLElement {
     }
 
     /**
-     * Render the icon and accessible label for the mode available on click.
+     * Render the active mode icon and the accessible label for the available action.
      */
     public render(): void {
         const nextMode = this.nextMode;
-        this.element.icon.src = this.iconFor(nextMode);
+        this.element.icon.src = this.iconFor(this.mode);
         this.element.toggle.setAttribute('aria-label', this.labelFor(nextMode));
         this.element.toggle.title = this.labelFor(nextMode);
     }

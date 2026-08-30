@@ -193,16 +193,16 @@
     {% endif %}
 {% endmacro %}
 
-{% macro headIcon(light, dark, svg, appleTouch, sizes = '16x16 32x32 48x48') %}
+{% macro headIcon(light, dark, svg, appleTouch, sizes = '16x16 32x32 48x48', svgLight = '', svgDark = '') %}
     {%- if dark %}
     <meta name="color-scheme" content="light dark">
-    <link rel="icon" href="{{ light }}" sizes="{{ sizes }}" type="image/x-icon" media="(prefers-color-scheme: light)">
-    <link rel="icon" href="{{ dark }}" sizes="{{ sizes }}" type="image/x-icon" media="(prefers-color-scheme: dark)">
+    <link rel="icon" href="{{ light }}" sizes="{{ sizes }}" type="image/x-icon" media="(prefers-color-scheme: light)" data-appearance-icon data-light-href="{{ light }}" data-dark-href="{{ dark }}">
+    <link rel="icon" href="{{ dark }}" sizes="{{ sizes }}" type="image/x-icon" media="(prefers-color-scheme: dark)" data-appearance-icon data-light-href="{{ light }}" data-dark-href="{{ dark }}">
     {% else %}
     <link rel="icon" href="{{ light }}" sizes="{{ sizes }}" type="image/x-icon">
     {% endif %}
     {%- if svg -%}
-    <link rel="icon" href="{{ svg }}" sizes="any" type="image/svg+xml">
+    <link rel="icon" href="{{ svg }}" sizes="any" type="image/svg+xml"{% if svgLight and svgDark %} data-appearance-icon data-light-href="{{ svgLight }}" data-dark-href="{{ svgDark }}"{% endif %}>
     {% endif %}
     {%- if appleTouch -%}
     <link rel="apple-touch-icon" href="{{ appleTouch }}">
