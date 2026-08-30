@@ -136,6 +136,18 @@
             "dest": "src/components/batch-code-editor/batch-code-editor.template.html"
         },
         {
+            "src": "src/components/batch-output/batch-output.component.ts",
+            "dest": "src/components/batch-output/batch-output.component.ts"
+        },
+        {
+            "src": "src/components/batch-output/batch-output.styles.scss",
+            "dest": "src/components/batch-output/batch-output.styles.scss"
+        },
+        {
+            "src": "src/components/batch-output/batch-output.template.html",
+            "dest": "src/components/batch-output/batch-output.template.html"
+        },
+        {
             "src": "src/components/language-switcher/language-switcher.component.ts",
             "dest": "src/components/language-switcher/language-switcher.component.ts"
         },
