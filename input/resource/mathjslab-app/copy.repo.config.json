@@ -188,6 +188,18 @@
             "dest": "src/components/language-switcher/language-switcher.template.html"
         },
         {
+            "src": "src/components/appearance-mode/appearance-mode.component.ts",
+            "dest": "src/components/appearance-mode/appearance-mode.component.ts"
+        },
+        {
+            "src": "src/components/appearance-mode/appearance-mode.styles.scss",
+            "dest": "src/components/appearance-mode/appearance-mode.styles.scss"
+        },
+        {
+            "src": "src/components/appearance-mode/appearance-mode.template.html",
+            "dest": "src/components/appearance-mode/appearance-mode.template.html"
+        },
+        {
             "src": "includes/miscBibtexEntry.njk",
             "dest": "src/includes/miscBibtexEntry.njk"
         },
