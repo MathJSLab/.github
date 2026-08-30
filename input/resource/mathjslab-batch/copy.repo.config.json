@@ -109,6 +109,9 @@
         "images/mathjslab-logo.svg",
         "images/mathjslab-logo-light.svg",
         "images/mathjslab-logo-dark.svg",
+        "images/language-switch.svg",
+        "images/theme-light-mathjslab.svg",
+        "images/theme-dark-mathjslab.svg",
         "src/components/component.include.ts",
         "src/components/constructorFactory.ts",
         "src/components/createElementFactory.ts",
@@ -131,6 +134,30 @@
         {
             "src": "src/components/batch-code-editor/batch-code-editor.template.html",
             "dest": "src/components/batch-code-editor/batch-code-editor.template.html"
+        },
+        {
+            "src": "src/components/language-switcher/language-switcher.component.ts",
+            "dest": "src/components/language-switcher/language-switcher.component.ts"
+        },
+        {
+            "src": "src/components/language-switcher/language-switcher.styles.scss",
+            "dest": "src/components/language-switcher/language-switcher.styles.scss"
+        },
+        {
+            "src": "src/components/language-switcher/language-switcher.template.html",
+            "dest": "src/components/language-switcher/language-switcher.template.html"
+        },
+        {
+            "src": "src/components/appearance-mode/appearance-mode.component.ts",
+            "dest": "src/components/appearance-mode/appearance-mode.component.ts"
+        },
+        {
+            "src": "src/components/appearance-mode/appearance-mode.styles.scss",
+            "dest": "src/components/appearance-mode/appearance-mode.styles.scss"
+        },
+        {
+            "src": "src/components/appearance-mode/appearance-mode.template.html",
+            "dest": "src/components/appearance-mode/appearance-mode.template.html"
         },
         ".prettierrc"
     ]
