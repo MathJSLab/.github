@@ -2,6 +2,15 @@
 
 This file contains general information about the actions of the [MathJSLab Project](https://mathjslab.com/) that go beyond the scope of the individual projects. In other words, what cannot be recorded in the `CHANGES.md` file of each software project, or the general actions of the organization, are recorded here, indexed by date.
 
+## 2026-08-30
+
+- Pre-publication update for the organization's repository after coordinated work across the MathJSLab web projects.
+- Reusable Web Components that had been generalized while working on the web applications and project pages were consolidated in the organization's repository under `src/components/`, together with their TypeScript factories, shared interfaces, templates, and SCSS styles. This includes the appearance mode selector, language switcher, collapsible content panel, fixed scroll panel, command prompt, command prompt list, batch code editor, and batch output components.
+- The `input/resource/**/copy.repo.config.json` files were updated so the reusable Web Components and their supporting files can be copied from the organization's repository into the projects that use them, especially `mathjslab-app`, `mathjslab-batch`, `mathjslab-calc`, and `mathjslab-www`.
+- Shared Nunjucks macros were centralized in `includes/head-macros.njk` for use by the web applications and the project page. These macros now provide common `<head>` generation for basic metadata, Open Graph, Twitter Card, canonical and alternate links, favicon definitions, and JSON-LD structured data for web pages, websites, applications, application lists, people, and organizations.
+- The shared Eleventy support files, SCSS constants, generated logo assets, favicons, Open Graph image, language/theme icons, pipeline illustrations, and selected paper/archive assets were prepared for distribution through the organization's resource copy configuration.
+- The reusable build infrastructure was aligned across the projects, including the shared Eleventy configuration templates for `mathjslab-batch`, `mathjslab-calc`, and `mathjslab-www`, plus common helper scripts such as `EleventyUtil.mjs`, `toIco.ts`, `mark-crono.ts`, and `git-commit.cjs`.
+
 ## 2026-08-28
 
 - The file `includes/head-macros.njk` was created to centralize macro definitions for use in the `<head>` section of HTML files, specifically for defining SEO-related entries.

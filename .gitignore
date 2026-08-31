@@ -3,6 +3,9 @@ logs
 *.log
 npm-debug.log*
 
+# Commit configuration
+git-commit.config.json
+
 # Build chronometer utility status file.
 mark.crono.json
 
@@ -44,3 +47,7 @@ package-lock.json
 # Stores VSCode versions used for testing VSCode extensions and VSCode configuration
 .vscode-test
 .vscode
+
+# OpenAI Codex Agent
+.agents/
+.codex/
