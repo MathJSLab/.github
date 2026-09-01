@@ -46,21 +46,8 @@ export class CommandPromptList extends HTMLElement {
     public static readonly null = null as unknown as CommandPromptList;
     public static readonly undefined = undefined as unknown as CommandPromptList;
     public promptIndex = -1;
-    public evalPrompt: CommandPromptEvalHandler = (prompt: CommandPrompt, index?: number) => {
-        index = typeof index === 'number' && index >= 0 ? index : this.indexOfPrompt(prompt);
-        /* eslint-disable-next-line no-console */
-        console.log(`evalPrompt:\nprompt index = ${index};\nprompt id = '${prompt.id}'\nprompt value = '${this.element.prompt[index]?.element.input.value ?? ''}'`);
-    };
-    public evalPromptRefresh: CommandPromptEvalHandler = (prompt?: CommandPrompt, index?: number) => {
-        if (prompt) {
-            index = typeof index === 'number' && index >= 0 ? index : this.indexOfPrompt(prompt);
-            /* eslint-disable-next-line no-console */
-            console.log(`evalPromptRefresh:\nprompt index = ${index};\nprompt id = '${prompt.id}'\nprompt value = '${this.element.prompt[index]?.element.input.value ?? ''}'`);
-        } else {
-            /* eslint-disable-next-line no-console */
-            console.log('evalPromptRefresh: invalid arguments: prompt undefined.');
-        }
-    };
+    public evalPrompt: CommandPromptEvalHandler = () => {};
+    public evalPromptRefresh: CommandPromptEvalHandler = () => {};
     private emptyPromptPrefix = '';
     private keyboardMode: CalcInputMode = 'app';
 
