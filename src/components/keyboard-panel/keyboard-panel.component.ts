@@ -1,0 +1,630 @@
+import styles from './keyboard-panel.styles.scss';
+import i18n from '../../i18n';
+import type WebComponentElement from '../WebComponentElement';
+import constructorFactory from '../constructorFactory';
+import createElementFactory from '../createElementFactory';
+import defineFactory from '../defineFactory';
+import keyToPostfix from '../keyToPostfix';
+import setContainerFactory from '../setContainerFactory';
+import setIdFirstFactory from '../setIdFirstFactory';
+
+/**
+ * Elements addressed inside the scientific keyboard panel shadow tree.
+ */
+export interface KeyboardPanelElementEntry {
+    root: HTMLElement;
+    title: HTMLElement;
+    brand: HTMLElement;
+    tabs: HTMLElement;
+    baseControl: HTMLFieldSetElement;
+    baseLabel: HTMLElement;
+    base: HTMLElement;
+    keys: HTMLElement;
+}
+
+export type KeyboardPanelElement = WebComponentElement<KeyboardPanelElementEntry>;
+export const KeyboardPanelElementEntryKey: (keyof KeyboardPanelElementEntry)[] = ['root', 'title', 'brand', 'tabs', 'baseControl', 'baseLabel', 'base', 'keys'] as const;
+
+type PanelId = 'calculator' | 'functions' | 'alphabet' | 'programming';
+type NumericBase = 'bin' | 'oct' | 'dec' | 'hex';
+
+/**
+ * A single keyboard key and the command it emits.
+ */
+type KeyDefinition = {
+    label: string;
+    value?: string;
+    action?: 'insert' | 'backspace' | 'clear' | 'evaluate';
+    kind?: 'number' | 'operation' | 'command';
+    wide?: boolean;
+    bases?: NumericBase[];
+};
+
+/**
+ * One tabbed keyboard panel with regular and compact key layouts.
+ */
+type KeyPanel = {
+    id: PanelId;
+    label: string;
+    rows: KeyDefinition[][];
+    compactRows: KeyDefinition[][];
+};
+
+/**
+ * Keyboard panel definitions. Each panel is capped at nine five-column rows
+ * on desktop and six four-column rows on smaller screens.
+ */
+const panels: KeyPanel[] = [
+    {
+        id: 'calculator',
+        label: '123',
+        rows: [
+            [{ label: 'a' }, { label: 'b' }, { label: 'c' }, { label: 'i' }, { label: '=', kind: 'operation' }],
+            [{ label: 'x' }, { label: 'y' }, { label: 'z' }, { label: 'pi', value: 'pi' }, { label: 'e' }],
+            [
+                { label: 'sin', value: 'sin(' },
+                { label: 'cos', value: 'cos(' },
+                { label: 'tan', value: 'tan(' },
+                { label: '^', kind: 'operation' },
+                { label: '!', kind: 'operation' },
+            ],
+            [
+                { label: '7', kind: 'number' },
+                { label: '8', kind: 'number' },
+                { label: '9', kind: 'number' },
+                { label: '*', kind: 'operation' },
+                { label: '/', kind: 'operation' },
+            ],
+            [
+                { label: '4', kind: 'number' },
+                { label: '5', kind: 'number' },
+                { label: '6', kind: 'number' },
+                { label: '+', kind: 'operation' },
+                { label: '-', kind: 'operation' },
+            ],
+            [
+                { label: '1', kind: 'number' },
+                { label: '2', kind: 'number' },
+                { label: '3', kind: 'number' },
+                { label: '<', kind: 'operation' },
+                { label: '>', kind: 'operation' },
+            ],
+            [
+                { label: '0', kind: 'number' },
+                { label: '.', kind: 'number' },
+                { label: ',', kind: 'operation' },
+                { label: '<=', kind: 'operation' },
+                { label: '>=', kind: 'operation' },
+            ],
+            [
+                { label: '(', kind: 'operation' },
+                { label: ')', kind: 'operation' },
+                { label: '==', kind: 'operation' },
+                { label: 'DEL', action: 'backspace', kind: 'command' },
+                { label: 'AC', action: 'clear', kind: 'command' },
+            ],
+            [{ label: 'Enter', action: 'evaluate', kind: 'command', wide: true }],
+        ],
+        compactRows: [
+            [{ label: 'a' }, { label: 'b' }, { label: '=', kind: 'operation' }, { label: 'AC', action: 'clear', kind: 'command' }],
+            [{ label: 'sin', value: 'sin(' }, { label: 'cos', value: 'cos(' }, { label: 'tan', value: 'tan(' }, { label: 'i' }],
+            [
+                { label: '7', kind: 'number' },
+                { label: '8', kind: 'number' },
+                { label: '9', kind: 'number' },
+                { label: '/', kind: 'operation' },
+            ],
+            [
+                { label: '4', kind: 'number' },
+                { label: '5', kind: 'number' },
+                { label: '6', kind: 'number' },
+                { label: '*', kind: 'operation' },
+            ],
+            [
+                { label: '1', kind: 'number' },
+                { label: '2', kind: 'number' },
+                { label: '3', kind: 'number' },
+                { label: '-', kind: 'operation' },
+            ],
+            [
+                { label: '0', kind: 'number' },
+                { label: '.', kind: 'number' },
+                { label: '+', kind: 'operation' },
+                { label: 'Enter', action: 'evaluate', kind: 'command' },
+            ],
+        ],
+    },
+    {
+        id: 'functions',
+        label: 'f(x)',
+        rows: [
+            [
+                { label: 'sin', value: 'sin(' },
+                { label: 'cos', value: 'cos(' },
+                { label: 'tan', value: 'tan(' },
+                { label: 'asin', value: 'asin(' },
+                { label: 'acos', value: 'acos(' },
+            ],
+            [
+                { label: 'atan', value: 'atan(' },
+                { label: 'sinh', value: 'sinh(' },
+                { label: 'cosh', value: 'cosh(' },
+                { label: 'tanh', value: 'tanh(' },
+                { label: 'sqrt', value: 'sqrt(' },
+            ],
+            [
+                { label: 'root', value: 'root(' },
+                { label: 'abs', value: 'abs(' },
+                { label: 'arg', value: 'arg(' },
+                { label: 'conj', value: 'conj(' },
+                { label: 'sign', value: 'sign(' },
+            ],
+            [
+                { label: 'log', value: 'log(' },
+                { label: 'log10', value: 'log10(' },
+                { label: 'log2', value: 'log2(' },
+                { label: 'exp', value: 'exp(' },
+                { label: '^', kind: 'operation' },
+            ],
+            [
+                { label: 'real', value: 'real(' },
+                { label: 'imag', value: 'imag(' },
+                { label: 'floor', value: 'floor(' },
+                { label: 'ceil', value: 'ceil(' },
+                { label: 'round', value: 'round(' },
+            ],
+            [
+                { label: 'rem', value: 'rem(' },
+                { label: 'mod', value: 'mod(' },
+                { label: 'gcd', value: 'gcd(' },
+                { label: 'sum', value: 'sum(' },
+                { label: 'prod', value: 'prod(' },
+            ],
+            [
+                { label: 'min', value: 'min(' },
+                { label: 'max', value: 'max(' },
+                { label: 'mean', value: 'mean(' },
+                { label: 'det', value: 'det(' },
+                { label: 'inv', value: 'inv(' },
+            ],
+            [
+                { label: 'trace', value: 'trace(' },
+                { label: 'rank', value: 'rank(' },
+                { label: 'eye', value: 'eye(' },
+                { label: 'zeros', value: 'zeros(' },
+                { label: 'ones', value: 'ones(' },
+            ],
+            [
+                { label: ',', kind: 'operation' },
+                { label: 'DEL', action: 'backspace', kind: 'command' },
+                { label: 'AC', action: 'clear', kind: 'command' },
+                { label: 'Enter', action: 'evaluate', kind: 'command', wide: true },
+            ],
+        ],
+        compactRows: [
+            [
+                { label: 'sin', value: 'sin(' },
+                { label: 'cos', value: 'cos(' },
+                { label: 'tan', value: 'tan(' },
+                { label: 'sqrt', value: 'sqrt(' },
+            ],
+            [
+                { label: 'asin', value: 'asin(' },
+                { label: 'acos', value: 'acos(' },
+                { label: 'atan', value: 'atan(' },
+                { label: '^', kind: 'operation' },
+            ],
+            [
+                { label: 'log', value: 'log(' },
+                { label: 'log10', value: 'log10(' },
+                { label: 'exp', value: 'exp(' },
+                { label: 'abs', value: 'abs(' },
+            ],
+            [
+                { label: 'real', value: 'real(' },
+                { label: 'imag', value: 'imag(' },
+                { label: 'conj', value: 'conj(' },
+                { label: 'arg', value: 'arg(' },
+            ],
+            [
+                { label: 'sum', value: 'sum(' },
+                { label: 'prod', value: 'prod(' },
+                { label: 'min', value: 'min(' },
+                { label: 'max', value: 'max(' },
+            ],
+            [
+                { label: ',', kind: 'operation' },
+                { label: 'DEL', action: 'backspace', kind: 'command' },
+                { label: 'AC', action: 'clear', kind: 'command' },
+                { label: 'Enter', action: 'evaluate', kind: 'command' },
+            ],
+        ],
+    },
+    {
+        id: 'alphabet',
+        label: 'abc',
+        rows: [
+            ['a', 'b', 'c', 'd', 'e'].map((label) => ({ label })),
+            ['f', 'g', 'h', 'i', 'j'].map((label) => ({ label })),
+            ['k', 'l', 'm', 'n', 'o'].map((label) => ({ label })),
+            ['p', 'q', 'r', 's', 't'].map((label) => ({ label })),
+            ['u', 'v', 'w', 'x', 'y'].map((label) => ({ label })),
+            [{ label: 'z' }, { label: '_' }, { label: '=' }, { label: ';' }, { label: 'pi', value: 'pi' }],
+            [
+                { label: '[', kind: 'operation' },
+                { label: ']', kind: 'operation' },
+                { label: '{', kind: 'operation' },
+                { label: '}', kind: 'operation' },
+                { label: '@', kind: 'operation' },
+            ],
+            [
+                { label: "'", kind: 'operation' },
+                { label: '"', kind: 'operation' },
+                { label: '%', kind: 'operation' },
+                { label: '...', kind: 'operation' },
+                { label: '#', kind: 'operation' },
+            ],
+            [
+                { label: 'ans', value: 'ans' },
+                { label: 'DEL', action: 'backspace', kind: 'command' },
+                { label: 'AC', action: 'clear', kind: 'command' },
+                { label: 'Enter', action: 'evaluate', kind: 'command', wide: true },
+            ],
+        ],
+        compactRows: [
+            ['a', 'b', 'c', 'x'].map((label) => ({ label })),
+            ['y', 'z', 'i', 'j'].map((label) => ({ label })),
+            ['m', 'n', 'k', 't'].map((label) => ({ label })),
+            [{ label: '_' }, { label: '=' }, { label: ';' }, { label: 'pi', value: 'pi' }],
+            [
+                { label: '[', kind: 'operation' },
+                { label: ']', kind: 'operation' },
+                { label: "'", kind: 'operation' },
+                { label: '%', kind: 'operation' },
+            ],
+            [
+                { label: 'ans', value: 'ans' },
+                { label: 'DEL', action: 'backspace', kind: 'command' },
+                { label: 'AC', action: 'clear', kind: 'command' },
+                { label: 'Enter', action: 'evaluate', kind: 'command' },
+            ],
+        ],
+    },
+    {
+        id: 'programming',
+        label: '[>',
+        rows: [
+            [
+                { label: 'A', kind: 'number', bases: ['hex'] },
+                { label: 'B', kind: 'number', bases: ['hex'] },
+                { label: 'C', kind: 'number', bases: ['hex'] },
+                { label: 'D', kind: 'number', bases: ['hex'] },
+                { label: 'E', kind: 'number', bases: ['hex'] },
+            ],
+            [
+                { label: 'F', kind: 'number', bases: ['hex'] },
+                { label: '<', kind: 'operation' },
+                { label: '>', kind: 'operation' },
+                { label: '<=', kind: 'operation' },
+                { label: '=', kind: 'operation' },
+            ],
+            [
+                { label: '7', kind: 'number', bases: ['oct', 'dec', 'hex'] },
+                { label: '8', kind: 'number', bases: ['dec', 'hex'] },
+                { label: '9', kind: 'number', bases: ['dec', 'hex'] },
+                { label: '&', kind: 'operation' },
+                { label: '>=', kind: 'operation' },
+            ],
+            [
+                { label: '4', kind: 'number', bases: ['oct', 'dec', 'hex'] },
+                { label: '5', kind: 'number', bases: ['oct', 'dec', 'hex'] },
+                { label: '6', kind: 'number', bases: ['oct', 'dec', 'hex'] },
+                { label: '|', kind: 'operation' },
+                { label: '!=', kind: 'operation' },
+            ],
+            [
+                { label: '1', kind: 'number' },
+                { label: '2', kind: 'number', bases: ['oct', 'dec', 'hex'] },
+                { label: '3', kind: 'number', bases: ['oct', 'dec', 'hex'] },
+                { label: '&&', kind: 'operation' },
+                { label: '==', kind: 'operation' },
+            ],
+            [
+                { label: '0', kind: 'number' },
+                { label: 'xor', value: 'xor(', kind: 'operation' },
+                { label: 'and', value: 'and(', kind: 'operation' },
+                { label: 'or', value: 'or(', kind: 'operation' },
+                { label: 'not', value: 'not(', kind: 'operation' },
+            ],
+            [
+                { label: '<<', kind: 'operation' },
+                { label: '>>', kind: 'operation' },
+                { label: '~', kind: 'operation' },
+                { label: '!', kind: 'operation' },
+                { label: ',', kind: 'operation' },
+            ],
+            [
+                { label: '(', kind: 'operation' },
+                { label: ')', kind: 'operation' },
+                { label: ';', kind: 'operation' },
+                { label: 'DEL', action: 'backspace', kind: 'command' },
+                { label: 'AC', action: 'clear', kind: 'command' },
+            ],
+            [{ label: 'Enter', action: 'evaluate', kind: 'command', wide: true }],
+        ],
+        compactRows: [
+            [
+                { label: 'A', kind: 'number', bases: ['hex'] },
+                { label: 'B', kind: 'number', bases: ['hex'] },
+                { label: 'C', kind: 'number', bases: ['hex'] },
+                { label: 'AC', action: 'clear', kind: 'command' },
+            ],
+            [
+                { label: 'D', kind: 'number', bases: ['hex'] },
+                { label: 'E', kind: 'number', bases: ['hex'] },
+                { label: 'F', kind: 'number', bases: ['hex'] },
+                { label: '==', kind: 'operation' },
+            ],
+            [
+                { label: '7', kind: 'number', bases: ['oct', 'dec', 'hex'] },
+                { label: '8', kind: 'number', bases: ['dec', 'hex'] },
+                { label: '9', kind: 'number', bases: ['dec', 'hex'] },
+                { label: '<', kind: 'operation' },
+            ],
+            [
+                { label: '4', kind: 'number', bases: ['oct', 'dec', 'hex'] },
+                { label: '5', kind: 'number', bases: ['oct', 'dec', 'hex'] },
+                { label: '6', kind: 'number', bases: ['oct', 'dec', 'hex'] },
+                { label: '>', kind: 'operation' },
+            ],
+            [
+                { label: '1', kind: 'number' },
+                { label: '2', kind: 'number', bases: ['oct', 'dec', 'hex'] },
+                { label: '3', kind: 'number', bases: ['oct', 'dec', 'hex'] },
+                { label: '&', kind: 'operation' },
+            ],
+            [
+                { label: '0', kind: 'number' },
+                { label: '|', kind: 'operation' },
+                { label: 'DEL', action: 'backspace', kind: 'command' },
+                { label: 'Enter', action: 'evaluate', kind: 'command' },
+            ],
+        ],
+    },
+];
+
+const numericBases: NumericBase[] = ['bin', 'oct', 'dec', 'hex'];
+const numericBasePrefixes: Record<NumericBase, string> = {
+    bin: '0b',
+    oct: '0o',
+    dec: '',
+    hex: '0x',
+};
+
+const compactLayoutMedia = '(max-width: 680px), (max-height: 520px)';
+
+/**
+ * Tabbed scientific keyboard panel that dispatches insertion and command events.
+ */
+export class KeyboardPanel extends HTMLElement {
+    public static readonly tagName = 'keyboard-panel';
+    public readonly element = {} as KeyboardPanelElement;
+    public static readonly elementFields: (keyof KeyboardPanelElementEntry)[] = KeyboardPanelElementEntryKey;
+    public static readonly elementPostfix = keyToPostfix(KeyboardPanelElementEntryKey);
+    public static readonly null = null as unknown as KeyboardPanel;
+    public static readonly undefined = undefined as unknown as KeyboardPanel;
+    private activePanel: PanelId = 'calculator';
+    private numericBase: NumericBase = 'dec';
+    private readonly compactLayout = globalThis.matchMedia(compactLayoutMedia);
+
+    public constructor() {
+        super();
+        constructorFactory(KeyboardPanel, styles).bind(this)();
+        this.renderBaseOptions();
+        this.renderTabs();
+        this.renderKeys();
+        this.setLanguage();
+    }
+
+    public set superId(id: string) {
+        super.id = id;
+    }
+
+    public get superId(): string {
+        return super.id;
+    }
+
+    public set id(id: string) {
+        this.setId(id);
+    }
+
+    public get id(): string {
+        return super.id;
+    }
+
+    public setId: (this: KeyboardPanel, id?: string) => void = setIdFirstFactory(KeyboardPanel).bind(this);
+    public static readonly createElement = createElementFactory(KeyboardPanel);
+    public static readonly define = defineFactory(KeyboardPanel);
+
+    public set container(element: HTMLElement) {
+        setContainerFactory().bind(this)(element);
+    }
+
+    public get container(): HTMLElement {
+        return this.element.container;
+    }
+
+    public connectedCallback(): void {
+        i18n.addEventListener('languagechange', this.setLanguage);
+        this.compactLayout.addEventListener('change', this.layoutChange);
+        this.element.base.addEventListener('change', this.changeNumericBase);
+    }
+
+    public disconnectedCallback(): void {
+        i18n.removeEventListener('languagechange', this.setLanguage);
+        this.compactLayout.removeEventListener('change', this.layoutChange);
+        this.element.base.removeEventListener('change', this.changeNumericBase);
+    }
+
+    /**
+     * Render the GeoGebra-inspired panel tabs.
+     */
+    private renderTabs(): void {
+        for (const panel of panels) {
+            const tab = document.createElement('button');
+            tab.type = 'button';
+            tab.className = 'tab';
+            tab.textContent = panel.label;
+            tab.dataset.panel = panel.id;
+            tab.setAttribute('role', 'tab');
+            tab.setAttribute('aria-controls', `${KeyboardPanel.tagName}-${panel.id}-panel`);
+            tab.addEventListener('click', () => {
+                this.activePanel = panel.id;
+                this.renderKeys();
+            });
+            this.element.tabs.append(tab);
+        }
+    }
+
+    /**
+     * Render the keys for the active panel and wire their events.
+     */
+    private renderKeys(): void {
+        this.element.keys.replaceChildren();
+        this.element.keys.id = `${KeyboardPanel.tagName}-${this.activePanel}-panel`;
+        this.element.keys.setAttribute('role', 'tabpanel');
+        this.element.keys.setAttribute('aria-label', panels.find((panel) => panel.id === this.activePanel)!.label);
+        this.element.keys.dataset.layout = this.compactLayout.matches ? 'compact' : 'regular';
+        this.element.root.dataset.panel = this.activePanel;
+        this.updateTabs();
+        this.updateBaseControl();
+
+        const panel = panels.find((candidate) => candidate.id === this.activePanel)!;
+        const rows = this.compactLayout.matches ? panel.compactRows : panel.rows;
+        for (const key of rows.flat()) {
+            const enabled = this.isKeyEnabled(key);
+            const button = document.createElement('button');
+            button.type = 'button';
+            button.textContent = this.getKeyLabel(key);
+            button.className = 'key';
+            button.dataset.kind = key.kind || 'operation';
+            button.disabled = !enabled;
+            button.setAttribute('aria-disabled', String(!enabled));
+            if (key.wide) {
+                button.dataset.wide = 'true';
+            }
+            button.addEventListener('click', () => {
+                this.dispatchEvent(
+                    new CustomEvent('keyboard-panel-key', {
+                        bubbles: true,
+                        composed: true,
+                        detail: {
+                            action: key.action || 'insert',
+                            value: key.value || key.label,
+                        },
+                    }),
+                );
+            });
+            this.element.keys.append(button);
+        }
+    }
+
+    /**
+     * Render supported numeric base options.
+     */
+    private renderBaseOptions(): void {
+        this.element.base.replaceChildren();
+        for (const base of numericBases) {
+            const option = document.createElement('label');
+            const input = document.createElement('input');
+            const caption = document.createElement('span');
+            input.type = 'radio';
+            input.name = `${KeyboardPanel.tagName}-base`;
+            input.value = base;
+            input.checked = base === this.numericBase;
+            caption.textContent = i18n.page.keyboardPanel.base.options[base];
+            option.append(input, caption);
+            this.element.base.append(option);
+        }
+    }
+
+    /**
+     * Keep tab ARIA state synchronized with the active panel.
+     */
+    private updateTabs(): void {
+        for (const tab of this.element.tabs.querySelectorAll<HTMLButtonElement>('.tab')) {
+            const selected = tab.dataset.panel === this.activePanel;
+            tab.setAttribute('aria-selected', String(selected));
+            tab.tabIndex = selected ? 0 : -1;
+        }
+    }
+
+    private readonly setLanguage = (): void => {
+        this.element.root.setAttribute('aria-label', i18n.page.keyboardPanel.ariaLabel);
+        this.element.tabs.setAttribute('aria-label', i18n.page.keyboardPanel.panelLabel);
+        this.element.title.textContent = i18n.page.keyboardPanel.title;
+        this.element.brand.textContent = i18n.page.keyboardPanel.brand;
+        this.element.baseLabel.textContent = i18n.page.keyboardPanel.base.label;
+        for (const tab of this.element.tabs.querySelectorAll<HTMLButtonElement>('.tab')) {
+            const panel = panels.find((candidate) => candidate.id === tab.dataset.panel);
+            if (panel) {
+                tab.title = i18n.page.keyboardPanel.panels[panel.id];
+            }
+        }
+        this.renderBaseOptions();
+        this.renderKeys();
+    };
+
+    private readonly layoutChange = (): void => {
+        this.renderKeys();
+    };
+
+    private readonly changeNumericBase = (): void => {
+        const checked = this.element.base.querySelector<HTMLInputElement>('input:checked');
+        if (!checked) {
+            return;
+        }
+        this.numericBase = checked.value as NumericBase;
+        this.renderKeys();
+        this.dispatchEvent(
+            new CustomEvent('keyboard-panel-base-change', {
+                bubbles: true,
+                composed: true,
+                detail: {
+                    base: this.numericBase,
+                    prefix: numericBasePrefixes[this.numericBase],
+                },
+            }),
+        );
+    };
+
+    /**
+     * Show the base selector only when the programming panel is active.
+     */
+    private updateBaseControl(): void {
+        const visible = this.activePanel === 'programming';
+        this.element.baseControl.hidden = !visible;
+        for (const input of this.element.base.querySelectorAll<HTMLInputElement>('input')) {
+            input.checked = input.value === this.numericBase;
+        }
+    }
+
+    private isKeyEnabled(key: KeyDefinition): boolean {
+        return this.activePanel !== 'programming' || !key.bases || key.bases.includes(this.numericBase);
+    }
+
+    private getKeyLabel(key: KeyDefinition): string {
+        if (key.action === 'evaluate') {
+            return i18n.page.keyboardPanel.keys.enter;
+        }
+        if (key.action === 'backspace') {
+            return i18n.page.keyboardPanel.keys.delete;
+        }
+        if (key.action === 'clear') {
+            return i18n.page.keyboardPanel.keys.clear;
+        }
+        return key.label;
+    }
+}
+
+KeyboardPanel.define();

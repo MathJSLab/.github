@@ -122,6 +122,18 @@
         "src/components/WebComponentInterface.d.ts",
         "src/components/WebComponentType.d.ts",
         {
+            "src": "src/components/keyboard-panel/keyboard-panel.component.ts",
+            "dest": "src/components/keyboard-panel/keyboard-panel.component.ts"
+        },
+        {
+            "src": "src/components/keyboard-panel/keyboard-panel.styles.scss",
+            "dest": "src/components/keyboard-panel/keyboard-panel.styles.scss"
+        },
+        {
+            "src": "src/components/keyboard-panel/keyboard-panel.template.html",
+            "dest": "src/components/keyboard-panel/keyboard-panel.template.html"
+        },
+        {
             "src": "src/components/command-prompt/command-prompt.component.ts",
             "dest": "src/components/command-prompt/command-prompt.component.ts"
         },
