@@ -1,3 +1,5 @@
+import hljs from 'highlight.js/lib/core';
+import matlab from 'highlight.js/lib/languages/matlab';
 import styles from './command-prompt.styles.scss';
 import i18n from '../../i18n';
 import type WebComponentElement from '../WebComponentElement';
@@ -8,6 +10,8 @@ import keyToPostfix from '../keyToPostfix';
 import setContainerFactory from '../setContainerFactory';
 import setIdFirstFactory from '../setIdFirstFactory';
 
+hljs.registerLanguage('matlab', matlab);
+
 /**
  * Elements addressed inside a single prompt shadow tree.
  */
@@ -15,12 +19,14 @@ export interface CommandPromptElementEntry {
     wrapper: HTMLElement;
     frameBox: HTMLElement;
     root: HTMLElement;
+    inputStack: HTMLElement;
+    highlight: HTMLElement;
     input: HTMLTextAreaElement;
     output: HTMLDivElement;
 }
 
 export type CommandPromptElement = WebComponentElement<CommandPromptElementEntry>;
-export const CommandPromptElementEntryKey: (keyof CommandPromptElementEntry)[] = ['wrapper', 'frameBox', 'root', 'input', 'output'] as const;
+export const CommandPromptElementEntryKey: (keyof CommandPromptElementEntry)[] = ['wrapper', 'frameBox', 'root', 'inputStack', 'highlight', 'input', 'output'] as const;
 
 type CalcInputMode = 'app' | 'native';
 
@@ -83,8 +89,9 @@ export class CommandPrompt extends HTMLElement {
 
     public connectedCallback(): void {
         i18n.addEventListener('languagechange', this.setLanguage);
-        this.element.input.addEventListener('input', this.resize);
-        this.element.input.addEventListener('change', this.resize);
+        this.element.input.addEventListener('input', this.renderInput);
+        this.element.input.addEventListener('change', this.renderInput);
+        this.element.input.addEventListener('scroll', this.syncHighlightScroll);
         this.element.input.addEventListener('cut', this.delayedResize);
         this.element.input.addEventListener('paste', this.delayedResize);
         this.element.input.addEventListener('drop', this.delayedResize);
@@ -96,13 +103,14 @@ export class CommandPrompt extends HTMLElement {
         this.outputResizeObserver.observe(this.element.output);
         this.setInputMode();
         this.setLanguage();
-        this.resize();
+        this.renderInput();
     }
 
     public disconnectedCallback(): void {
         i18n.removeEventListener('languagechange', this.setLanguage);
-        this.element.input.removeEventListener('input', this.resize);
-        this.element.input.removeEventListener('change', this.resize);
+        this.element.input.removeEventListener('input', this.renderInput);
+        this.element.input.removeEventListener('change', this.renderInput);
+        this.element.input.removeEventListener('scroll', this.syncHighlightScroll);
         this.element.input.removeEventListener('cut', this.delayedResize);
         this.element.input.removeEventListener('paste', this.delayedResize);
         this.element.input.removeEventListener('drop', this.delayedResize);
@@ -123,7 +131,7 @@ export class CommandPrompt extends HTMLElement {
      */
     public set value(value: string) {
         this.element.input.value = value;
-        this.resize();
+        this.renderInput();
     }
 
     public focusInput(): void {
@@ -156,6 +164,7 @@ export class CommandPrompt extends HTMLElement {
     public clearOutput(): void {
         this.element.output.replaceChildren();
         this.element.output.style.fontSize = '';
+        this.element.frameBox.className = 'good';
     }
 
     /**
@@ -172,10 +181,12 @@ export class CommandPrompt extends HTMLElement {
     public readonly resize = (): void => {
         this.element.input.style.height = '1px';
         this.element.input.style.height = `${this.element.input.scrollHeight}px`;
+        this.element.highlight.style.minHeight = this.element.input.style.height;
+        this.renderHighlight();
     };
 
     private readonly delayedResize = (): void => {
-        globalThis.setTimeout(this.resize, 0);
+        globalThis.setTimeout(this.renderInput, 0);
     };
 
     private readonly keydown = (event: KeyboardEvent): void => {
@@ -185,6 +196,30 @@ export class CommandPrompt extends HTMLElement {
         }
         this.delayedResize();
     };
+
+    /**
+     * Render syntax highlighting and resize the editable prompt input.
+     */
+    private readonly renderInput = (): void => {
+        this.resize();
+        this.syncHighlightScroll();
+    };
+
+    /**
+     * Keep the highlight layer aligned when the textarea scroll position moves.
+     */
+    private readonly syncHighlightScroll = (): void => {
+        this.element.highlight.style.transform = `translate(${-this.element.input.scrollLeft}px, ${-this.element.input.scrollTop}px)`;
+    };
+
+    /**
+     * Render MATLAB-style syntax highlighting for the prompt source.
+     */
+    private renderHighlight(): void {
+        const code = this.value || ' ';
+        const highlighted = hljs.highlight(code, { language: 'matlab', ignoreIllegals: true }).value;
+        this.element.highlight.innerHTML = highlighted.endsWith('\n') ? `${highlighted} ` : highlighted;
+    }
 
     private readonly clickFrameBox = (event?: Event): void => {
         if (this.onClickFrameBox) {
