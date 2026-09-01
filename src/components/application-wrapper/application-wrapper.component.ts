@@ -49,7 +49,7 @@ export class ApplicationWrapper extends HTMLElement {
     public static readonly elementPostfix = keyToPostfix(ApplicationWrapperElementEntryKey);
     public static readonly null = null as unknown as ApplicationWrapper;
     public static readonly undefined = undefined as unknown as ApplicationWrapper;
-    public static readonly observedAttributes = ['logo-src', 'storage-key'];
+    public static readonly observedAttributes = ['chrome', 'logo-src', 'storage-key'];
     private readonly colorScheme = globalThis.matchMedia('(prefers-color-scheme: dark)');
     private readonly themeObserver = new MutationObserver(() => this.syncThemeIcons());
 
@@ -90,6 +90,10 @@ export class ApplicationWrapper extends HTMLElement {
     }
 
     public connectedCallback(): void {
+        if (this.hasHiddenChrome) {
+            this.applyAttributes();
+            return;
+        }
         i18n.addEventListener('languagechange', this.setLanguage);
         this.element.language.addEventListener('language-switcher-select', this.changeLanguage as EventListener);
         this.colorScheme.addEventListener('change', this.syncThemeIcons);
@@ -113,6 +117,10 @@ export class ApplicationWrapper extends HTMLElement {
         this.applyAttributes();
     }
 
+    private get hasHiddenChrome(): boolean {
+        return this.getAttribute('chrome') === 'none';
+    }
+
     private get iconTheme(): Theme {
         const theme = document.documentElement.getAttribute('data-theme');
         if (theme === 'dark' || theme === 'light') {
@@ -130,6 +138,9 @@ export class ApplicationWrapper extends HTMLElement {
      * Apply localized title, description, and control labels.
      */
     public readonly setLanguage = (): void => {
+        if (this.hasHiddenChrome) {
+            return;
+        }
         i18n.applyDocumentLanguage();
         this.element.title.textContent = i18n.page.app.title;
         this.element.description.textContent = i18n.page.app.description;
@@ -145,6 +156,16 @@ export class ApplicationWrapper extends HTMLElement {
             return;
         }
         this.element.logo.src = this.getAttribute('logo-src') || '/images/mathjslab-logo.svg';
+        if (this.hasHiddenChrome) {
+            this.element.language.hidden = true;
+            this.element.appearance.hidden = true;
+            this.element.appearance.setAttribute('target-selector', `#${this.element.root.id}`);
+            this.element.appearance.setAttribute('target-attribute', 'data-wrapper-theme');
+            this.element.appearance.setAttribute('storage-key', `${this.element.root.id}:theme`);
+            return;
+        }
+        this.element.language.hidden = false;
+        this.element.appearance.hidden = false;
         this.element.appearance.setAttribute('storage-key', this.getAttribute('storage-key') || 'theme');
     }
 

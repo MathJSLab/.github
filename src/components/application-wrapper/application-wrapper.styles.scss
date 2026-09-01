@@ -110,18 +110,11 @@ appearance-mode,
 }
 
 :host([chrome='none']) {
-  height: auto;
-  min-height: 0;
-  overflow: visible;
+  display: contents;
 }
 
 :host([chrome='none']) .application-wrapper {
-  background: transparent;
-  color: inherit;
-  display: block;
-  height: auto;
-  min-height: 0;
-  overflow: visible;
+  display: contents;
 }
 
 :host([chrome='none']) .application-toolbar {
@@ -129,5 +122,5 @@ appearance-mode,
 }
 
 :host([chrome='none']) .application-workspace {
-  overflow: visible;
+  display: contents;
 }
