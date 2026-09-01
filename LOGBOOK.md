@@ -2,6 +2,14 @@
 
 This file contains general information about the actions of the [MathJSLab Project](https://mathjslab.com/) that go beyond the scope of the individual projects. In other words, what cannot be recorded in the `CHANGES.md` file of each software project, or the general actions of the organization, are recorded here, indexed by date.
 
+## 2026-08-31
+
+- Pre-publication update for the organization's repository after another round of reusable interface work across the MathJSLab web applications.
+- The `application-wrapper` Web Component was added to centralize the outer application shell used by MathJSLab web applications. It brings together the project logo, localized title and description, language switching, appearance mode selection, action/status slots, the main workspace slot, and an optional footer slot.
+- The new wrapper also synchronizes theme-aware favicon links with the current light/dark appearance mode, so applications copied from the shared infrastructure can keep their document icons aligned with the active theme.
+- The resource copy configurations for `mathjslab-app`, `mathjslab-batch`, and `mathjslab-calc` were updated to distribute the new `application-wrapper` component and its template and SCSS files from the organization's repository.
+- The JSON copy configuration files for the generated `resource/` directories were refreshed to match the corresponding `input/resource/` configuration files used during publication.
+
 ## 2026-08-30
 
 - Pre-publication update for the organization's repository after coordinated work across the MathJSLab web projects.

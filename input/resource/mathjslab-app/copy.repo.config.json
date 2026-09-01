@@ -114,6 +114,18 @@
         "src/components/WebComponentInterface.d.ts",
         "src/components/WebComponentType.d.ts",
         {
+            "src": "src/components/application-wrapper/application-wrapper.component.ts",
+            "dest": "src/components/application-wrapper/application-wrapper.component.ts"
+        },
+        {
+            "src": "src/components/application-wrapper/application-wrapper.styles.scss",
+            "dest": "src/components/application-wrapper/application-wrapper.styles.scss"
+        },
+        {
+            "src": "src/components/application-wrapper/application-wrapper.template.html",
+            "dest": "src/components/application-wrapper/application-wrapper.template.html"
+        },
+        {
             "src": "src/components/collapsible-content-panel/collapsible-content-panel.component.ts",
             "dest": "src/components/collapsible-content-panel/collapsible-content-panel.component.ts"
         },
