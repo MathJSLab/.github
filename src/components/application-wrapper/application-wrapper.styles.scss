@@ -82,6 +82,24 @@ appearance-mode,
   overflow: hidden;
 }
 
+:host([layout='document']) {
+  height: auto;
+  min-height: 100vh;
+  min-height: 100svh;
+  overflow: visible;
+}
+
+:host([layout='document']) .application-wrapper {
+  height: auto;
+  min-height: 100vh;
+  min-height: 100svh;
+  overflow: visible;
+}
+
+:host([layout='document']) .application-workspace {
+  overflow: visible;
+}
+
 @media (max-width: 640px) {
   .application-toolbar {
     padding: 9px 12px;

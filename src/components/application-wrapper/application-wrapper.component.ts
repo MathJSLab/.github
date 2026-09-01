@@ -49,7 +49,7 @@ export class ApplicationWrapper extends HTMLElement {
     public static readonly elementPostfix = keyToPostfix(ApplicationWrapperElementEntryKey);
     public static readonly null = null as unknown as ApplicationWrapper;
     public static readonly undefined = undefined as unknown as ApplicationWrapper;
-    public static readonly observedAttributes = ['chrome', 'logo-src', 'storage-key'];
+    public static readonly observedAttributes = ['chrome', 'layout', 'logo-src', 'storage-key'];
     private readonly colorScheme = globalThis.matchMedia('(prefers-color-scheme: dark)');
     private readonly themeObserver = new MutationObserver(() => this.syncThemeIcons());
 
