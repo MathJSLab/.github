@@ -49,9 +49,9 @@ export class ApplicationWrapper extends HTMLElement {
     public static readonly elementPostfix = keyToPostfix(ApplicationWrapperElementEntryKey);
     public static readonly null = null as unknown as ApplicationWrapper;
     public static readonly undefined = undefined as unknown as ApplicationWrapper;
-    public static readonly observedAttributes = ['chrome', 'layout', 'logo-src', 'storage-key'];
+    public static readonly observedAttributes = ['chrome', 'layout', 'logo-dark-src', 'logo-light-src', 'logo-src', 'storage-key'];
     private readonly colorScheme = globalThis.matchMedia('(prefers-color-scheme: dark)');
-    private readonly themeObserver = new MutationObserver(() => this.syncThemeIcons());
+    private readonly themeObserver = new MutationObserver(() => this.syncThemeAssets());
 
     public constructor() {
         super();
@@ -96,20 +96,20 @@ export class ApplicationWrapper extends HTMLElement {
         }
         i18n.addEventListener('languagechange', this.setLanguage);
         this.element.language.addEventListener('language-switcher-select', this.changeLanguage as EventListener);
-        this.colorScheme.addEventListener('change', this.syncThemeIcons);
+        this.colorScheme.addEventListener('change', this.syncThemeAssets);
         this.themeObserver.observe(document.documentElement, {
             attributeFilter: ['data-theme'],
             attributes: true,
         });
         this.setLanguage();
         this.applyAttributes();
-        this.syncThemeIcons();
+        this.syncThemeAssets();
     }
 
     public disconnectedCallback(): void {
         i18n.removeEventListener('languagechange', this.setLanguage);
         this.element.language.removeEventListener('language-switcher-select', this.changeLanguage as EventListener);
-        this.colorScheme.removeEventListener('change', this.syncThemeIcons);
+        this.colorScheme.removeEventListener('change', this.syncThemeAssets);
         this.themeObserver.disconnect();
     }
 
@@ -155,7 +155,6 @@ export class ApplicationWrapper extends HTMLElement {
         if (!this.element.logo || !this.element.appearance) {
             return;
         }
-        this.element.logo.src = this.getAttribute('logo-src') || '/images/mathjslab-logo.svg';
         if (this.hasHiddenChrome) {
             this.element.language.hidden = true;
             this.element.appearance.hidden = true;
@@ -167,10 +166,12 @@ export class ApplicationWrapper extends HTMLElement {
         this.element.language.hidden = false;
         this.element.appearance.hidden = false;
         this.element.appearance.setAttribute('storage-key', this.getAttribute('storage-key') || 'theme');
+        this.syncThemeAssets();
     }
 
-    private readonly syncThemeIcons = (): void => {
+    private readonly syncThemeAssets = (): void => {
         const theme = this.iconTheme;
+        this.syncLogo(theme);
         document.querySelectorAll<HTMLLinkElement>('link[data-appearance-icon]').forEach((icon) => {
             const href = theme === 'dark' ? icon.dataset.darkHref : icon.dataset.lightHref;
             if (href) {
@@ -178,6 +179,17 @@ export class ApplicationWrapper extends HTMLElement {
             }
         });
     };
+
+    private syncLogo(theme: Theme): void {
+        const fixedLogo = this.getAttribute('logo-src');
+        const darkLogo = this.getAttribute('logo-dark-src');
+        const lightLogo = this.getAttribute('logo-light-src');
+        if (fixedLogo && !darkLogo && !lightLogo) {
+            this.element.logo.src = fixedLogo;
+            return;
+        }
+        this.element.logo.src = theme === 'dark' ? darkLogo || '/images/mathjslab-logo-dark.svg' : lightLogo || '/images/mathjslab-logo-light.svg';
+    }
 }
 
 ApplicationWrapper.define();

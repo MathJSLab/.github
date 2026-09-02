@@ -35,8 +35,10 @@ type CalcInputModeEvent = CustomEvent<{
 }>;
 
 const nativeKeyboardSuppressionMedia = '(pointer: coarse) and (max-width: 680px), (pointer: coarse) and (max-height: 520px)';
-const outputBaseFontSize = 1;
-const outputMinimumFontSize = 0.72;
+const wideOutputMedia = '(min-width: 768px)';
+const outputSmallFontSize = 1.2;
+const outputWideFontSize = 1.5;
+const outputMinimumScale = 0.72;
 
 /**
  * Editable prompt row with shared input handling and rendered output support.
@@ -50,6 +52,7 @@ export class CommandPrompt extends HTMLElement {
     public static readonly undefined = undefined as unknown as CommandPrompt;
     public onClickFrameBox?: (event?: Event) => void;
     private readonly nativeKeyboardSuppression = globalThis.matchMedia(nativeKeyboardSuppressionMedia);
+    private readonly wideOutput = globalThis.matchMedia(wideOutputMedia);
     private readonly outputMutationObserver = new MutationObserver(() => this.fitOutput());
     private readonly outputResizeObserver = new ResizeObserver(() => this.fitOutput());
     private keyboardMode: CalcInputMode = 'native';
@@ -98,6 +101,7 @@ export class CommandPrompt extends HTMLElement {
         this.element.input.addEventListener('keydown', this.keydown);
         this.element.frameBox.addEventListener('click', this.clickFrameBox);
         this.nativeKeyboardSuppression.addEventListener('change', this.layoutChange);
+        this.wideOutput.addEventListener('change', this.fitOutput);
         globalThis.addEventListener('calc-input-mode-change', this.inputModeChange as EventListener);
         this.outputMutationObserver.observe(this.element.output, { childList: true, subtree: true });
         this.outputResizeObserver.observe(this.element.output);
@@ -117,6 +121,7 @@ export class CommandPrompt extends HTMLElement {
         this.element.input.removeEventListener('keydown', this.keydown);
         this.element.frameBox.removeEventListener('click', this.clickFrameBox);
         this.nativeKeyboardSuppression.removeEventListener('change', this.layoutChange);
+        this.wideOutput.removeEventListener('change', this.fitOutput);
         globalThis.removeEventListener('calc-input-mode-change', this.inputModeChange as EventListener);
         this.outputMutationObserver.disconnect();
         this.outputResizeObserver.disconnect();
@@ -233,11 +238,12 @@ export class CommandPrompt extends HTMLElement {
     private readonly fitOutput = (): void => {
         globalThis.requestAnimationFrame(() => {
             const output = this.element.output;
-            output.style.fontSize = `${outputBaseFontSize}rem`;
+            const baseFontSize = this.wideOutput.matches ? outputWideFontSize : outputSmallFontSize;
+            output.style.fontSize = `${baseFontSize}rem`;
             const availableWidth = output.clientWidth;
             const contentWidth = output.scrollWidth;
             if (availableWidth > 0 && contentWidth > availableWidth) {
-                const fontSize = Math.max(outputMinimumFontSize, outputBaseFontSize * (availableWidth / contentWidth));
+                const fontSize = Math.max(baseFontSize * outputMinimumScale, baseFontSize * (availableWidth / contentWidth));
                 output.style.fontSize = `${fontSize}rem`;
             }
         });
