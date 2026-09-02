@@ -65,8 +65,8 @@ const panels: KeyPanel[] = [
                 { label: 'sin', value: 'sin(' },
                 { label: 'cos', value: 'cos(' },
                 { label: 'tan', value: 'tan(' },
+                { label: 'log', value: 'log(' },
                 { label: '^', kind: 'operation' },
-                { label: '!', kind: 'operation' },
             ],
             [
                 { label: '7', kind: 'number' },
