@@ -8,7 +8,7 @@ import defineFactory from '../defineFactory';
 import keyToPostfix from '../keyToPostfix';
 import setContainerFactory from '../setContainerFactory';
 import setIdFirstFactory from '../setIdFirstFactory';
-import type { AppearanceMode } from '../appearance-mode/appearance-mode.component';
+import type { AppearanceMode, AppearanceModeToggleEvent } from '../appearance-mode/appearance-mode.component';
 import type { LanguageSwitcher, LanguageSwitcherSelectEvent } from '../language-switcher/language-switcher.component';
 
 type Theme = 'dark' | 'light';
@@ -96,7 +96,8 @@ export class ApplicationWrapper extends HTMLElement {
         }
         i18n.addEventListener('languagechange', this.setLanguage);
         this.element.language.addEventListener('language-switcher-select', this.changeLanguage as EventListener);
-        this.colorScheme.addEventListener('change', this.syncThemeAssets);
+        this.element.appearance.addEventListener('appearance-mode-toggle', this.changeAppearance as EventListener);
+        this.colorScheme.addEventListener('change', this.syncCurrentThemeAssets);
         this.themeObserver.observe(document.documentElement, {
             attributeFilter: ['data-theme'],
             attributes: true,
@@ -109,7 +110,8 @@ export class ApplicationWrapper extends HTMLElement {
     public disconnectedCallback(): void {
         i18n.removeEventListener('languagechange', this.setLanguage);
         this.element.language.removeEventListener('language-switcher-select', this.changeLanguage as EventListener);
-        this.colorScheme.removeEventListener('change', this.syncThemeAssets);
+        this.element.appearance.removeEventListener('appearance-mode-toggle', this.changeAppearance as EventListener);
+        this.colorScheme.removeEventListener('change', this.syncCurrentThemeAssets);
         this.themeObserver.disconnect();
     }
 
@@ -132,6 +134,15 @@ export class ApplicationWrapper extends HTMLElement {
     private readonly changeLanguage = (event: LanguageSwitcherSelectEvent): void => {
         event.preventDefault();
         appEngine.setLanguage(event.detail.locale);
+    };
+
+    private readonly changeAppearance = (event: AppearanceModeToggleEvent): void => {
+        this.syncThemeAssets(event.detail.mode);
+        requestAnimationFrame(() => this.syncThemeAssets());
+    };
+
+    private readonly syncCurrentThemeAssets = (): void => {
+        this.syncThemeAssets();
     };
 
     /**
@@ -169,8 +180,7 @@ export class ApplicationWrapper extends HTMLElement {
         this.syncThemeAssets();
     }
 
-    private readonly syncThemeAssets = (): void => {
-        const theme = this.iconTheme;
+    private readonly syncThemeAssets = (theme: Theme = this.iconTheme): void => {
         this.syncLogo(theme);
         document.querySelectorAll<HTMLLinkElement>('link[data-appearance-icon]').forEach((icon) => {
             const href = theme === 'dark' ? icon.dataset.darkHref : icon.dataset.lightHref;
