@@ -6,6 +6,10 @@
   background: var(--calc-surface, transparent);
   border: 1px solid var(--calc-border, transparent);
   border-radius: 8px;
-  display: block;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
   min-height: 100%;
+  padding: 4px;
 }

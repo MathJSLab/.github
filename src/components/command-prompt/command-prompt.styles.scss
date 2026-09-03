@@ -1,33 +1,11 @@
+@use '../../styles/component/panel';
+
 :host {
   display: block;
 }
 
 .prompt {
   display: block;
-}
-
-.frame-box,
-.good,
-.bad,
-.info {
-  border-bottom: 1px solid var(--calc-border, transparent);
-  border-radius: 0.3rem;
-  padding: 12px 14px 14px;
-}
-
-.good {
-  background: var(--green-background, transparent);
-  border: 1px solid var(--green-border, var(--calc-border, transparent));
-}
-
-.bad {
-  background: var(--red-background, transparent);
-  border: 1px solid var(--red-border, var(--calc-border, transparent));
-}
-
-.info {
-  background: var(--blue-background, transparent);
-  border: 1px solid var(--blue-border, var(--calc-border, transparent));
 }
 
 .prompt-line {

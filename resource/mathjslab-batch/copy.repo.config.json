@@ -23,6 +23,10 @@
             "dest": "src/styles/base/_sizes.scss"
         },
         {
+            "src": "includes/styles/component/_panel.scss",
+            "dest": "src/styles/component/_panel.scss"
+        },
+        {
             "src": "includes/styles/abstract/_define-map.scss",
             "dest": "src/styles/abstract/_define-map.scss"
         },

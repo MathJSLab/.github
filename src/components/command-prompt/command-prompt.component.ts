@@ -169,7 +169,7 @@ export class CommandPrompt extends HTMLElement {
     public clearOutput(): void {
         this.element.output.replaceChildren();
         this.element.output.style.fontSize = '';
-        this.element.frameBox.className = 'good';
+        this.element.frameBox.className = 'green-panel good';
     }
 
     /**
