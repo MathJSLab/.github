@@ -1,8 +1,6 @@
+@use '../../styles/component/panel';
+
 .collapsible-content-panel-wrapper {
-  background: var(--calc-surface, var(--color-background, #fbfcfe));
-  border: 1px solid var(--calc-border, var(--color-border, #cfd7df));
-  border-radius: var(--border-radius-medium, 6px);
-  box-shadow: 0 8px 18px -14px var(--color-panel-box-shadow, rgb(15 23 42 / 45%));
   color: var(--calc-text, var(--color-text, #1f2937));
   overflow: hidden;
 }
@@ -13,18 +11,21 @@ input.collapsible-content-panel-toggle {
 
 .collapsible-content-panel-title {
   align-items: center;
-  background: var(--calc-control, var(--color-background-mute, #edf1f6));
+  background: transparent;
   border: 0;
   border-bottom: 1px solid transparent;
-  color: var(--calc-control-text, var(--color-a-text, currentColor));
+  color: var(--green-text, var(--calc-control-text, var(--color-a-text, currentColor)));
   cursor: pointer;
   display: flex;
   font-size: 0.95rem;
   font-weight: 650;
   gap: 0.55rem;
+  justify-content: center;
   line-height: 1.25;
-  padding: 0.75rem 0.875rem;
-  text-align: left;
+  margin: -12px -14px 0;
+  padding: 12px 14px;
+  position: relative;
+  text-align: center;
   transition:
     background-color 140ms ease,
     color 140ms ease,
@@ -32,29 +33,40 @@ input.collapsible-content-panel-toggle {
 }
 
 .collapsible-content-panel-title:hover {
-  background: var(--calc-control-active, var(--color-background-soft, #f5f7fa));
-  color: var(--calc-control-text, var(--color-a-text-hover, currentColor));
+  color: var(--green-text-hover, var(--calc-control-text, var(--color-a-text-hover, currentColor)));
 }
 
 .collapsible-content-panel-title::before {
-  border-bottom: 0.28rem solid transparent;
-  border-left: 0.34rem solid currentColor;
-  border-top: 0.28rem solid transparent;
   content: '';
   display: inline-block;
   flex: 0 0 auto;
   transition: transform 140ms ease;
 }
 
-.collapsible-content-panel-collapsible .collapsible-content-panel-inner-content {
-  background: var(--calc-surface, var(--color-background, #fbfcfe));
-  padding: 0.75rem 0.875rem;
+.collapsible-content-panel-title::before,
+.collapsible-content-panel-title::after {
+  border-bottom: 0.28rem solid transparent;
+  border-left: 0.34rem solid currentColor;
+  border-top: 0.28rem solid transparent;
+}
+
+.collapsible-content-panel-title::after {
+  content: '';
+  display: inline-block;
+  flex: 0 0 auto;
+  visibility: hidden;
 }
 
 .collapsible-content-panel-collapsible {
+  background: var(--calc-app-background, var(--color-background, Canvas));
+  margin: 0 -14px -14px;
   max-height: 0;
   overflow: hidden;
   transition: max-height 180ms ease;
+}
+
+.collapsible-content-panel-collapsible .collapsible-content-panel-inner-content {
+  padding: 12px 14px;
 }
 
 .collapsible-content-panel-toggle:checked + .collapsible-content-panel-title + .collapsible-content-panel-collapsible {

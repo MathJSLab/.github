@@ -22,11 +22,12 @@ export interface CommandPromptElementEntry {
     inputStack: HTMLElement;
     highlight: HTMLElement;
     input: HTMLTextAreaElement;
+    outputScroller: HTMLDivElement;
     output: HTMLDivElement;
 }
 
 export type CommandPromptElement = WebComponentElement<CommandPromptElementEntry>;
-export const CommandPromptElementEntryKey: (keyof CommandPromptElementEntry)[] = ['wrapper', 'frameBox', 'root', 'inputStack', 'highlight', 'input', 'output'] as const;
+export const CommandPromptElementEntryKey: (keyof CommandPromptElementEntry)[] = ['wrapper', 'frameBox', 'root', 'inputStack', 'highlight', 'input', 'outputScroller', 'output'] as const;
 
 type CalcInputMode = 'app' | 'native';
 
@@ -35,10 +36,6 @@ type CalcInputModeEvent = CustomEvent<{
 }>;
 
 const nativeKeyboardSuppressionMedia = '(pointer: coarse) and (max-width: 680px), (pointer: coarse) and (max-height: 520px)';
-const wideOutputMedia = '(min-width: 768px)';
-const outputSmallFontSize = 1.2;
-const outputWideFontSize = 1.5;
-const outputMinimumScale = 0.72;
 
 /**
  * Editable prompt row with shared input handling and rendered output support.
@@ -52,9 +49,6 @@ export class CommandPrompt extends HTMLElement {
     public static readonly undefined = undefined as unknown as CommandPrompt;
     public onClickFrameBox?: (event?: Event) => void;
     private readonly nativeKeyboardSuppression = globalThis.matchMedia(nativeKeyboardSuppressionMedia);
-    private readonly wideOutput = globalThis.matchMedia(wideOutputMedia);
-    private readonly outputMutationObserver = new MutationObserver(() => this.fitOutput());
-    private readonly outputResizeObserver = new ResizeObserver(() => this.fitOutput());
     private keyboardMode: CalcInputMode = 'native';
 
     public constructor() {
@@ -101,10 +95,7 @@ export class CommandPrompt extends HTMLElement {
         this.element.input.addEventListener('keydown', this.keydown);
         this.element.frameBox.addEventListener('click', this.clickFrameBox);
         this.nativeKeyboardSuppression.addEventListener('change', this.layoutChange);
-        this.wideOutput.addEventListener('change', this.fitOutput);
         globalThis.addEventListener('calc-input-mode-change', this.inputModeChange as EventListener);
-        this.outputMutationObserver.observe(this.element.output, { childList: true, subtree: true });
-        this.outputResizeObserver.observe(this.element.output);
         this.setInputMode();
         this.setLanguage();
         this.renderInput();
@@ -121,10 +112,7 @@ export class CommandPrompt extends HTMLElement {
         this.element.input.removeEventListener('keydown', this.keydown);
         this.element.frameBox.removeEventListener('click', this.clickFrameBox);
         this.nativeKeyboardSuppression.removeEventListener('change', this.layoutChange);
-        this.wideOutput.removeEventListener('change', this.fitOutput);
         globalThis.removeEventListener('calc-input-mode-change', this.inputModeChange as EventListener);
-        this.outputMutationObserver.disconnect();
-        this.outputResizeObserver.disconnect();
     }
 
     public get value(): string {
@@ -160,7 +148,6 @@ export class CommandPrompt extends HTMLElement {
      */
     public setOutput(html: string): void {
         this.element.output.innerHTML = html;
-        this.fitOutput();
     }
 
     /**
@@ -168,7 +155,6 @@ export class CommandPrompt extends HTMLElement {
      */
     public clearOutput(): void {
         this.element.output.replaceChildren();
-        this.element.output.style.fontSize = '';
         this.element.frameBox.className = 'green-panel good';
     }
 
@@ -230,23 +216,6 @@ export class CommandPrompt extends HTMLElement {
         if (this.onClickFrameBox) {
             this.onClickFrameBox(event);
         }
-    };
-
-    /**
-     * Keep MathML output fitted to the prompt width without internal scrolling.
-     */
-    private readonly fitOutput = (): void => {
-        globalThis.requestAnimationFrame(() => {
-            const output = this.element.output;
-            const baseFontSize = this.wideOutput.matches ? outputWideFontSize : outputSmallFontSize;
-            output.style.fontSize = `${baseFontSize}rem`;
-            const availableWidth = output.clientWidth;
-            const contentWidth = output.scrollWidth;
-            if (availableWidth > 0 && contentWidth > availableWidth) {
-                const fontSize = Math.max(baseFontSize * outputMinimumScale, baseFontSize * (availableWidth / contentWidth));
-                output.style.fontSize = `${fontSize}rem`;
-            }
-        });
     };
 
     private readonly setLanguage = (): void => {

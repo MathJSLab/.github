@@ -111,6 +111,8 @@
             "dest": "images/mathjslab-og.png"
         },
         "images/mathjslab-logo.svg",
+        "images/mathjslab-logo-light.svg",
+        "images/mathjslab-logo-dark.svg",
         "images/language-switch.svg",
         "images/theme-light-mathjslab.svg",
         "images/theme-dark-mathjslab.svg",

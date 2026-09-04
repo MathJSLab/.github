@@ -7,7 +7,8 @@
 .doc {
   border: 1px solid var(--calc-border, var(--color-border, transparent));
   border-radius: 0.3rem;
-  box-shadow: 0 5px 7px -3.5px var(--calc-shadow, var(--color-panel-box-shadow, transparent));
+  box-shadow: none;
+  box-sizing: border-box;
   display: block;
   padding: 12px 14px 14px;
 }
@@ -36,4 +37,16 @@
 .doc {
   background: var(--color-background, var(--calc-surface, transparent));
   border-color: var(--color-border, var(--calc-border, transparent));
+}
+
+@media (min-width: 768px) {
+  .green-panel,
+  .frame-box,
+  .good,
+  .bad,
+  .warning,
+  .info,
+  .doc {
+    box-shadow: 0 5px 7px -3.5px var(--color-panel-box-shadow, transparent);
+  }
 }
