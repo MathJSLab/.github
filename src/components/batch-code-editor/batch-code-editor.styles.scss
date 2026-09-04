@@ -1,13 +1,13 @@
+@use '../../styles/component/panel';
+
 :host {
   display: block;
 }
 
 .editor {
-  background: var(--color-background, #fbfcfe);
-  border: 1px solid var(--color-border, #cfd7df);
-  border-radius: var(--border-radius-medium, 4px);
+  color: var(--calc-text, var(--color-text, #1f2937));
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-columns: max-content minmax(0, 1fr);
   min-height: 10rem;
   overflow: hidden;
 }
@@ -17,22 +17,28 @@
   border-right: 1px solid var(--color-border, #d8dee8);
   color: var(--color-text-hover, #667085);
   font:
-    0.92rem/1.5 Consolas,
+    0.95rem/1.5 Consolas,
     'SFMono-Regular',
     'Liberation Mono',
     Menlo,
     monospace;
-  min-width: 3.3rem;
-  padding: 0.875rem 0.625rem;
+  font-variant-numeric: tabular-nums;
+  min-width: 2ch;
+  padding: 0.875rem 0.35rem;
   text-align: right;
   user-select: none;
   white-space: pre;
 }
 
 .stack {
+  background: var(--calc-app-background, var(--color-background, Canvas));
   min-width: 0;
   overflow: auto;
   position: relative;
+}
+
+.stack:focus-within {
+  background: var(--color-input-background-focus, var(--yellow-background, hsl(60deg 100% 87%)));
 }
 
 .highlight,
@@ -58,14 +64,14 @@
 }
 
 .highlight {
-  color: var(--color-text, #1f2937);
+  color: var(--calc-text, var(--color-text, #1f2937));
   pointer-events: none;
   position: absolute;
 }
 
 .input {
   background: transparent;
-  caret-color: var(--color-text, #0f172a);
+  caret-color: var(--color-input-text-focus, var(--calc-text, #0f172a));
   color: transparent;
   min-height: 10rem;
   position: relative;
