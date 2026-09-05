@@ -2,6 +2,16 @@
 
 This file contains general information about the actions of the [MathJSLab Project](https://mathjslab.com/) that go beyond the scope of the individual projects. In other words, what cannot be recorded in the `CHANGES.md` file of each software project, or the general actions of the organization, are recorded here, indexed by date.
 
+## 2026-09-05
+
+- Pre-publication update for the organization's repository after work across the MathJSLab web applications to harmonize the visual identity and behavior of shared Web Components.
+- The shared components were refined so `mathjslab-app`, `mathjslab-batch`, `mathjslab-calc`, and `mathjslab-www` can present a more consistent interface when they receive files copied from the organization's repository.
+- The `application-wrapper`, `appearance-mode`, `command-prompt`, `command-prompt-list`, `keyboard-panel`, `batch-code-editor`, and `batch-output` components received layout, styling, and interaction refinements made while testing them in the different applications.
+- Shared panel styling was introduced and adjusted in `includes/styles/component/_panel.scss`, reducing duplicated visual rules and helping collapsible panels, fixed scroll panels, command prompts, and related controls follow the same spacing, border, color, and surface conventions.
+- The `keyboard-panel` component was corrected to blend into the surrounding calculator layout with a transparent panel background, while numeric keys now use the shared green border color to better match the MathJSLab visual identity.
+- Several bugs found during the integration work in the individual projects were corrected in the reusable source files, especially around component layout, responsive behavior, appearance mode handling, command entry controls, batch input/output presentation, and generated profile/test data refreshes.
+- The generated organization profile files and resource copy configuration files were refreshed during the publication routine so the latest shared components, styles, helper scripts, and assets can be propagated consistently to the dependent repositories.
+
 ## 2026-08-31
 
 - Pre-publication update for the organization's repository after another round of reusable interface work across the MathJSLab web applications.

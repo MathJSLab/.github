@@ -4,7 +4,7 @@
 }
 
 .keyboard-panel {
-  background: var(--calc-surface-soft);
+  background: transparent;
   color: var(--calc-text);
   display: flex;
   flex-direction: column;
@@ -171,6 +171,10 @@ button {
 
 .key[data-kind='operation'] {
   background: var(--calc-operation);
+}
+
+.key[data-kind='number'] {
+  border-color: var(--green-border);
 }
 
 .key[data-kind='command'] {
