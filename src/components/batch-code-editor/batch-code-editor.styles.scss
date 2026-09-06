@@ -1,6 +1,8 @@
 @use '../../styles/component/panel';
 
 :host {
+  --batch-code-editor-min-height: 3.175rem;
+
   display: block;
 }
 
@@ -8,7 +10,7 @@
   color: var(--calc-text, var(--color-text, #1f2937));
   display: grid;
   grid-template-columns: max-content minmax(0, 1fr);
-  min-height: 10rem;
+  min-height: var(--batch-code-editor-min-height);
   overflow: hidden;
 }
 
@@ -73,7 +75,7 @@
   background: transparent;
   caret-color: var(--color-input-text-focus, var(--calc-text, #0f172a));
   color: transparent;
-  min-height: 10rem;
+  min-height: var(--batch-code-editor-min-height);
   position: relative;
   resize: vertical;
 }

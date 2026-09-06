@@ -87,7 +87,7 @@ export class BatchCodeEditor extends HTMLElement {
      */
     public set value(value: string) {
         this.element.input.value = value;
-        this.render();
+        this.resize();
     }
 
     /**
@@ -110,7 +110,7 @@ export class BatchCodeEditor extends HTMLElement {
     public connectedCallback(): void {
         this.element.input.addEventListener('input', this.input);
         this.element.input.addEventListener('scroll', this.syncScroll);
-        this.render();
+        this.resize();
     }
 
     /**
@@ -142,12 +142,12 @@ export class BatchCodeEditor extends HTMLElement {
             }
         }
         this.element.input.style.height = '1em';
-        this.element.input.style.height = this.element.input.scrollHeight + 27 + 'px';
+        this.element.input.style.height = `${this.element.input.scrollHeight}px`;
         this.render();
     }).bind(this);
 
     private readonly input = (): void => {
-        this.render();
+        this.resize();
         this.dispatchEvent(new Event('input', { bubbles: true, composed: true }));
     };
 
