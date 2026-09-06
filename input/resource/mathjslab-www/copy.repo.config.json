@@ -28,6 +28,14 @@
             "dest": "includes/styles/component/_panel.scss"
         },
         {
+            "src": "includes/styles/component/_button.scss",
+            "dest": "includes/styles/component/_button.scss"
+        },
+        {
+            "src": "includes/styles/component/_button.scss",
+            "dest": "src/styles/component/_button.scss"
+        },
+        {
             "src": "includes/styles/abstract/_define-map.scss",
             "dest": "includes/styles/abstract/_define-map.scss"
         },

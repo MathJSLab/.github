@@ -1,3 +1,5 @@
+@use '../../styles/component/button' as buttons;
+
 :host {
   display: inline-block;
 }
@@ -7,34 +9,29 @@
 }
 
 .language-switcher-toggle {
+  @include buttons.green-button;
+
   align-items: center;
-  appearance: none;
-  background: var(--calc-control, var(--color-background-mute, #edf1f6));
-  border: 1px solid var(--calc-border, var(--color-border, #cfd7df));
-  border-radius: var(--border-radius-medium, 6px);
-  box-shadow: 0 8px 16px -14px var(--color-panel-box-shadow, rgb(15 23 42 / 45%));
-  color: var(--calc-control-text, var(--color-a-text, currentColor));
-  cursor: pointer;
-  display: inline-flex;
-  font: inherit;
-  font-size: 0.95rem;
-  font-weight: 650;
   gap: 0.45rem;
-  justify-content: center;
-  line-height: 1;
-  min-height: 2.35rem;
   min-width: 2.35rem;
   padding: 0.5rem 0.65rem;
-  transition:
-    background-color 140ms ease,
-    border-color 140ms ease,
-    color 140ms ease;
 }
 
 .language-switcher-toggle:hover,
 .language-switcher-toggle[aria-expanded='true'] {
-  background: var(--calc-control-active, var(--color-background-soft, #f5f7fa));
-  color: var(--calc-control-text, var(--color-a-text-hover, currentColor));
+  @include buttons.green-button-hover;
+}
+
+:host-context(.green-panel) .language-switcher-toggle,
+:host-context(control-bar[panel='green']) .language-switcher-toggle {
+  @include buttons.gray-button;
+}
+
+:host-context(.green-panel) .language-switcher-toggle:hover,
+:host-context(.green-panel) .language-switcher-toggle[aria-expanded='true'],
+:host-context(control-bar[panel='green']) .language-switcher-toggle:hover,
+:host-context(control-bar[panel='green']) .language-switcher-toggle[aria-expanded='true'] {
+  @include buttons.gray-button-hover;
 }
 
 .language-switcher-icon {

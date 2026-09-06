@@ -8,12 +8,12 @@
                     <p id="application-wrapper-description"></p>
                 </div>
             </div>
-            <div id="application-wrapper-actions" class="application-actions">
+            <control-bar id="application-wrapper-actions" class="application-actions" align="end" button-style="preserve" width="fit" aria-label="Application controls">
                 <language-switcher id="application-wrapper-language" locale="en"></language-switcher>
                 <appearance-mode id="application-wrapper-appearance" light-label="light" dark-label="dark"></appearance-mode>
                 <slot name="actions"></slot>
                 <slot name="status"></slot>
-            </div>
+            </control-bar>
         </header>
         <main id="application-wrapper-workspace" class="application-workspace">
             <slot></slot>

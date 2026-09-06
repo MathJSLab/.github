@@ -2,6 +2,16 @@
 
 This file contains general information about the actions of the [MathJSLab Project](https://mathjslab.com/) that go beyond the scope of the individual projects. In other words, what cannot be recorded in the `CHANGES.md` file of each software project, or the general actions of the organization, are recorded here, indexed by date.
 
+## 2026-09-06
+
+- Pre-publication update for the organization's repository after another round of work across the MathJSLab web projects.
+- The shared visual identity of the Web Components was further harmonized, especially around toolbar controls, buttons, language selection, appearance mode selection, and the outer application wrapper used by the web applications.
+- The `control-bar` Web Component was added as a reusable navigation/control container for command buttons and interface controls. It supports horizontal and vertical layouts, start/center/end/stretch alignment, full or fit width, optional green panel styling, and automatic or preserved button styling.
+- Shared button styles were centralized in `includes/styles/component/_button.scss` and mirrored into the distributed style resources, giving projects a common green and gray button vocabulary with consistent hover, active, border, shadow, and spacing behavior.
+- The `appearance-mode`, `language-switcher`, and `application-wrapper` styles and templates were refined to better match the shared component palette and spacing conventions used in `mathjslab-app`, `mathjslab-batch`, `mathjslab-calc`, and `mathjslab-www`.
+- Resource copy configurations were refreshed so the dependent projects receive the latest shared components, component styles, generated assets, Eleventy configuration files, and helper script builds from the organization's repository.
+- The generated organization profile, image metadata, test outputs, and repository workspace package were regenerated as part of the publication routine.
+
 ## 2026-09-05
 
 - Pre-publication update for the organization's repository after work across the MathJSLab web applications to harmonize the visual identity and behavior of shared Web Components.

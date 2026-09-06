@@ -27,6 +27,10 @@
             "dest": "src/styles/component/_panel.scss"
         },
         {
+            "src": "includes/styles/component/_button.scss",
+            "dest": "src/styles/component/_button.scss"
+        },
+        {
             "src": "includes/styles/abstract/_define-map.scss",
             "dest": "src/styles/abstract/_define-map.scss"
         },
@@ -190,6 +194,18 @@
         {
             "src": "src/components/batch-code-editor/batch-code-editor.template.html",
             "dest": "src/components/batch-code-editor/batch-code-editor.template.html"
+        },
+        {
+            "src": "src/components/control-bar/control-bar.component.ts",
+            "dest": "src/components/control-bar/control-bar.component.ts"
+        },
+        {
+            "src": "src/components/control-bar/control-bar.styles.scss",
+            "dest": "src/components/control-bar/control-bar.styles.scss"
+        },
+        {
+            "src": "src/components/control-bar/control-bar.template.html",
+            "dest": "src/components/control-bar/control-bar.template.html"
         },
         {
             "src": "src/components/language-switcher/language-switcher.component.ts",

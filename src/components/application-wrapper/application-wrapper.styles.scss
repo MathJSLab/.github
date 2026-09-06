@@ -63,10 +63,9 @@ p {
 }
 
 .application-actions {
-  align-items: center;
-  display: flex;
+  --control-bar-gap: 10px;
+
   flex: 0 0 auto;
-  gap: 10px;
 }
 
 language-switcher,
@@ -123,7 +122,7 @@ appearance-mode,
   }
 
   .application-actions {
-    gap: 6px;
+    --control-bar-gap: 6px;
   }
 }
 
