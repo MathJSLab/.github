@@ -2,6 +2,16 @@
 
 This file contains general information about the actions of the [MathJSLab Project](https://mathjslab.com/) that go beyond the scope of the individual projects. In other words, what cannot be recorded in the `CHANGES.md` file of each software project, or the general actions of the organization, are recorded here, indexed by date.
 
+## 2026-09-07
+
+- Pre-publication update for the organization's repository after coordinated interface and integration work across `mathjslab-app`, `mathjslab-batch`, `mathjslab-calc`, and `mathjslab-www`.
+- The shared `appearance-mode` component now provides separate green and white light/dark icon variants and automatically selects the appropriate contrast inside regular and green control panels. The obsolete single-color theme icons were replaced, and the resource copy configurations were updated to distribute all four variants.
+- Theme selection was simplified across `appearance-mode` and `application-wrapper`: local-storage persistence and the related `storage-key` API were removed, so each page starts from the browser's current color-scheme preference while still allowing the user to switch modes for the active page.
+- The shared MathJSLab logo assets and their generated raster derivatives were refreshed, and the web applications were aligned so page logos and favicons follow explicit light/dark mode changes as well as the browser preference.
+- The `command-prompt` and `batch-code-editor` components received contrast fixes discovered during integration testing. Focused editors now use the active application surface instead of a yellow background, command prompts retain the green panel surface while unfocused, and text selections use a stronger blue highlight in both light and dark modes.
+- The reusable `batch-output` component now exposes a reflected `show-command` option through its `showCommand` getter and setter. It retains rendered items and redraws them when the option changes, allowing `mathjslab-batch` to switch between command-and-result output and result-only output without running the batch again.
+- The generated organization profile, image catalog, helper script builds, test fixtures, workspace package metadata, and per-project resource copies were regenerated to keep the published repository synchronized with the latest shared sources.
+
 ## 2026-09-06
 
 - Pre-publication update for the organization's repository after another round of work across the MathJSLab web projects.

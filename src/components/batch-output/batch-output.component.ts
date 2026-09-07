@@ -45,6 +45,8 @@ export class BatchOutput extends HTMLElement {
     public static readonly elementPostfix = keyToPostfix(BatchOutputElementEntryKey);
     public static readonly null = null as unknown as BatchOutput;
     public static readonly undefined = undefined as unknown as BatchOutput;
+    public static readonly observedAttributes = ['show-command'];
+    private items: BatchOutputItem[] = [];
 
     public constructor() {
         super();
@@ -81,6 +83,20 @@ export class BatchOutput extends HTMLElement {
     }
 
     /**
+     * Whether command source snippets are shown above their MathML results.
+     */
+    public get showCommand(): boolean {
+        return this.getAttribute('show-command') !== 'false';
+    }
+
+    /**
+     * Whether command source snippets are shown above their MathML results.
+     */
+    public set showCommand(value: boolean) {
+        this.setAttribute('show-command', value ? 'true' : 'false');
+    }
+
+    /**
      * Subscribe to language changes while the component is connected.
      */
     public connectedCallback(): void {
@@ -95,6 +111,13 @@ export class BatchOutput extends HTMLElement {
     }
 
     /**
+     * Re-render existing items when observed display options change.
+     */
+    public attributeChangedCallback(): void {
+        this.renderItems();
+    }
+
+    /**
      * Whether the output panel currently contains rendered items.
      */
     public get hasItems(): boolean {
@@ -105,6 +128,7 @@ export class BatchOutput extends HTMLElement {
      * Clear all output items and show the empty-state placeholder.
      */
     public clear(): void {
+        this.items = [];
         this.element.list.replaceChildren();
         this.element.placeholder.hidden = false;
     }
@@ -115,8 +139,8 @@ export class BatchOutput extends HTMLElement {
      * @param items Batch output items to render.
      */
     public setItems(items: BatchOutputItem[]): void {
-        this.element.list.replaceChildren(...items.map((item) => this.createItem(item)));
-        this.element.placeholder.hidden = items.length > 0;
+        this.items = [...items];
+        this.renderItems();
     }
 
     /**
@@ -125,6 +149,17 @@ export class BatchOutput extends HTMLElement {
     private readonly setLanguage = (): void => {
         this.element.placeholder.textContent = i18n.page.output.placeholder;
     };
+
+    /**
+     * Render all currently stored output items.
+     */
+    private renderItems(): void {
+        if (!this.element.list || !this.element.placeholder) {
+            return;
+        }
+        this.element.list.replaceChildren(...this.items.map((item) => this.createItem(item)));
+        this.element.placeholder.hidden = this.items.length > 0;
+    }
 
     /**
      * Create one output list entry.
@@ -143,8 +178,11 @@ export class BatchOutput extends HTMLElement {
         result.className = item.error ? 'result error' : 'result';
         commandCode.innerHTML = hljs.highlight(item.command || ' ', { language: 'matlab', ignoreIllegals: true }).value;
         result.innerHTML = item.html;
-        command.append(commandCode);
-        entry.append(command, result);
+        if (this.showCommand) {
+            command.append(commandCode);
+            entry.append(command);
+        }
+        entry.append(result);
         return entry;
     }
 }
