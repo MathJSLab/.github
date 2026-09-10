@@ -10,7 +10,7 @@
             "dest": "eleventy.build.mjs"
         },
         {
-            "src": "script/eslint.config.cjs",
+            "src": "script/eslint.shared.config.cjs",
             "dest": "eslint.config.cjs"
         },
         {
