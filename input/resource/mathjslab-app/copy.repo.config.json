@@ -43,6 +43,10 @@
             "dest": "src/styles/constants.json.njk"
         },
         {
+            "src": "includes/head-macros.njk",
+            "dest": "src/includes/head-macros.njk"
+        },
+        {
             "src": "images/img/ico/favicon.ico",
             "dest": "images/favicon.ico"
         },
@@ -105,6 +109,10 @@
         {
             "src": "images/img/ico/mathjslab-logo-630.png",
             "dest": "images/mathjslab-logo-630.png"
+        },
+        {
+            "src": "images/img/mathjslab-og-1200.png",
+            "dest": "images/mathjslab-og.png"
         },
         "images/mathjslab-logo.svg",
         "images/mathjslab-logo-light.svg",
