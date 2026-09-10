@@ -2,6 +2,16 @@
 
 This file contains general information about the actions of the [MathJSLab Project](https://mathjslab.com/) that go beyond the scope of the individual projects. In other words, what cannot be recorded in the `CHANGES.md` file of each software project, or the general actions of the organization, are recorded here, indexed by date.
 
+## 2026-09-10
+
+- Pre-publication update for the organization's repository after coordinated build, metadata, and TypeScript configuration work across `mathjslab-app`, `mathjslab-batch`, and `mathjslab-calc`.
+- A reusable Eleventy entry point was centralized in `script/eleventy.build.mjs`. It reads each project's `eleventy.build.json`, installs the shared filters, shortcodes, and template rendering tools from `EleventyUtil`, and provides the three applications with the same data-driven static-build workflow.
+- A common flat ESLint configuration was added in `script/eslint.config.cjs`, aligning TypeScript application sources, JavaScript and module files, build helpers, generated-file exclusions, and Prettier integration while preserving the distinct TypeScript project used by scripts.
+- The new `includes/manifest.json.njk` template centralizes generation of the applications' PWA manifests, including identity, display settings, theme colors, categories, scope, and the complete set of MathJSLab application icons from 16 to 512 pixels.
+- Application structured data was consolidated in `includes/app-json-ld.njk`. The shared template composes the existing Nunjucks JSON-LD macros into a consistent graph for the application, localized web page, MathJSLab website, and publishing organization.
+- SCSS module declarations were normalized through the new generic `types/scss.d.ts` definition and the corrected default export in `types/styles.scss.d.ts`, keeping TypeScript and Webpack imports consistent for ordinary and component stylesheet modules.
+- The resource copy manifests and their generated mirrors were expanded so the three web applications receive the shared Eleventy and ESLint configurations, manifest and JSON-LD templates, and SCSS declarations from the organization's repository.
+
 ## 2026-09-07
 
 - Pre-publication update for the organization's repository after coordinated interface and integration work across `mathjslab-app`, `mathjslab-batch`, `mathjslab-calc`, and `mathjslab-www`.

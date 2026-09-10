@@ -5,6 +5,18 @@
             "src": "resource/mathjslab-calc/eleventy.build.json",
             "dest": "eleventy.build.json"
         },
+        {
+            "src": "script/eleventy.build.mjs",
+            "dest": "eleventy.build.mjs"
+        },
+        {
+            "src": "script/eslint.config.cjs",
+            "dest": "eslint.config.cjs"
+        },
+        {
+            "src": "includes/manifest.json.njk",
+            "dest": "manifest.json.njk"
+        },
         "script/tsconfig.json",
         "script/helper/clean-package-lock.cjs",
         "script/helper/EleventyUtil.mjs",
@@ -45,6 +57,10 @@
         {
             "src": "includes/head-macros.njk",
             "dest": "src/includes/head-macros.njk"
+        },
+        {
+            "src": "includes/app-json-ld.njk",
+            "dest": "src/includes/app-json-ld.njk"
         },
         {
             "src": "images/img/ico/favicon.ico",
@@ -218,6 +234,8 @@
             "src": "src/components/appearance-mode/appearance-mode.template.html",
             "dest": "src/components/appearance-mode/appearance-mode.template.html"
         },
+        "types/scss.d.ts",
+        "types/styles.scss.d.ts",
         ".prettierrc"
     ]
 }

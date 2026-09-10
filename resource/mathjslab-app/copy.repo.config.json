@@ -5,6 +5,18 @@
             "src": "resource/mathjslab-app/eleventy.build.json",
             "dest": "eleventy.build.json"
         },
+        {
+            "src": "script/eleventy.build.mjs",
+            "dest": "eleventy.build.mjs"
+        },
+        {
+            "src": "script/eslint.config.cjs",
+            "dest": "eslint.config.cjs"
+        },
+        {
+            "src": "includes/manifest.json.njk",
+            "dest": "manifest.json.njk"
+        },
         "script/tsconfig.json",
         "script/helper/clean-package-lock.cjs",
         "script/helper/EleventyUtil.mjs",
@@ -45,6 +57,10 @@
         {
             "src": "includes/head-macros.njk",
             "dest": "src/includes/head-macros.njk"
+        },
+        {
+            "src": "includes/app-json-ld.njk",
+            "dest": "src/includes/app-json-ld.njk"
         },
         {
             "src": "images/img/ico/favicon.ico",
@@ -246,6 +262,7 @@
             "src": "includes/miscBibtexEntry.njk",
             "dest": "src/includes/miscBibtexEntry.njk"
         },
+        "types/scss.d.ts",
         "types/styles.scss.d.ts",
         "types/module.scss.d.ts",
         ".prettierrc"
