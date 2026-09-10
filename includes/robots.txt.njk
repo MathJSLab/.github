@@ -1,0 +1,20 @@
+---json
+{
+  "permalink": "/robots.txt"
+}
+---
+# https://www.rfc-editor.org/rfc/rfc9309.html
+User-agent: *
+Allow: /manifest.json
+Disallow: /*.json$
+Disallow: /*.m$
+Disallow: /*.md$
+Allow: /
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.jpg$
+Allow: /*.png$
+Allow: /*.gif$
+Allow: /*.svg$
+
+Sitemap: {{ site.url }}/sitemap.xml

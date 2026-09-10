@@ -17,6 +17,30 @@
             "src": "includes/manifest.json.njk",
             "dest": "manifest.json.njk"
         },
+        {
+            "src": "includes/robots.txt.njk",
+            "dest": "robots.txt.njk"
+        },
+        {
+            "src": "includes/sitemap.xml.njk",
+            "dest": "sitemap.xml.njk"
+        },
+        {
+            "src": "includes/endpoints/main.html.njk",
+            "dest": "src/main.html.njk"
+        },
+        {
+            "src": "includes/endpoints/en/index.html.njk",
+            "dest": "src/en/index.html.njk"
+        },
+        {
+            "src": "includes/endpoints/es/index.html.njk",
+            "dest": "src/es/index.html.njk"
+        },
+        {
+            "src": "includes/endpoints/pt/index.html.njk",
+            "dest": "src/pt/index.html.njk"
+        },
         "script/tsconfig.json",
         "script/helper/clean-package-lock.cjs",
         "script/helper/EleventyUtil.mjs",
