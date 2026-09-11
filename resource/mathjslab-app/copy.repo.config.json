@@ -41,6 +41,10 @@
             "src": "includes/endpoints/pt/index.html.njk",
             "dest": "src/pt/index.html.njk"
         },
+        {
+            "src": "types/tsconfig.webapp.json",
+            "dest": "tsconfig.webapp.json"
+        },
         "script/tsconfig.json",
         "script/helper/clean-package-lock.cjs",
         "script/helper/EleventyUtil.mjs",
@@ -245,6 +249,18 @@
         {
             "src": "src/components/batch-code-editor/batch-code-editor.template.html",
             "dest": "src/components/batch-code-editor/batch-code-editor.template.html"
+        },
+        {
+            "src": "src/components/batch-output/batch-output.component.ts",
+            "dest": "src/components/batch-output/batch-output.component.ts"
+        },
+        {
+            "src": "src/components/batch-output/batch-output.styles.scss",
+            "dest": "src/components/batch-output/batch-output.styles.scss"
+        },
+        {
+            "src": "src/components/batch-output/batch-output.template.html",
+            "dest": "src/components/batch-output/batch-output.template.html"
         },
         {
             "src": "src/components/control-bar/control-bar.component.ts",

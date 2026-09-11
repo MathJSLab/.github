@@ -41,6 +41,10 @@
             "src": "includes/endpoints/pt/index.html.njk",
             "dest": "src/pt/index.html.njk"
         },
+        {
+            "src": "types/tsconfig.webapp.json",
+            "dest": "tsconfig.webapp.json"
+        },
         "script/tsconfig.json",
         "script/helper/clean-package-lock.cjs",
         "script/helper/EleventyUtil.mjs",

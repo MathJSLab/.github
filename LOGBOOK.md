@@ -2,6 +2,15 @@
 
 This file contains general information about the actions of the [MathJSLab Project](https://mathjslab.com/) that go beyond the scope of the individual projects. In other words, what cannot be recorded in the `CHANGES.md` file of each software project, or the general actions of the organization, are recorded here, indexed by date.
 
+## 2026-09-11
+
+- Pre-publication update for the organization's repository after consolidating the TypeScript baseline and preparing reusable batch output for integration into `mathjslab-app`.
+- The new `types/tsconfig.webapp.json` centralizes the strict compiler policies shared by `mathjslab-app`, `mathjslab-batch`, and `mathjslab-calc`, while each application retains its local build exclusions and additional environment types.
+- Resource copy configurations for the three web applications and their generated mirrors now distribute `tsconfig.webapp.json` as the common base configuration.
+- The reusable `batch-output` component now accepts items without pre-rendered HTML and returns each result container from `appendItem`, allowing evaluators to append MathML, Markdown, plots, and other rich DOM output directly.
+- Changing the `show-command` option now updates command visibility without rebuilding result elements, so rendered plots and other stateful output remain intact.
+- The component honors the standard `hidden` attribute, exposes its result container as `HTMLDivElement`, and has been added to the `mathjslab-app` resource manifest for the new alternative output mode.
+
 ## 2026-09-10
 
 - Pre-publication update for the organization's repository after coordinated build, metadata, and TypeScript configuration work across `mathjslab-app`, `mathjslab-batch`, and `mathjslab-calc`.

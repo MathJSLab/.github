@@ -5,6 +5,10 @@
   margin-block-end: 1rem;
 }
 
+:host([hidden]) {
+  display: none;
+}
+
 .output-panel {
   box-shadow: none;
 }

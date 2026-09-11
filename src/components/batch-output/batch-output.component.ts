@@ -19,7 +19,7 @@ if (!hljs.getLanguage('matlab')) {
  */
 export interface BatchOutputItem {
     command: string;
-    html: string;
+    html?: string;
     error?: boolean;
 }
 
@@ -46,7 +46,6 @@ export class BatchOutput extends HTMLElement {
     public static readonly null = null as unknown as BatchOutput;
     public static readonly undefined = undefined as unknown as BatchOutput;
     public static readonly observedAttributes = ['show-command'];
-    private items: BatchOutputItem[] = [];
 
     public constructor() {
         super();
@@ -111,10 +110,10 @@ export class BatchOutput extends HTMLElement {
     }
 
     /**
-     * Re-render existing items when observed display options change.
+     * Update command visibility without recreating rendered results.
      */
     public attributeChangedCallback(): void {
-        this.renderItems();
+        this.updateCommandVisibility();
     }
 
     /**
@@ -128,7 +127,6 @@ export class BatchOutput extends HTMLElement {
      * Clear all output items and show the empty-state placeholder.
      */
     public clear(): void {
-        this.items = [];
         this.element.list.replaceChildren();
         this.element.placeholder.hidden = false;
     }
@@ -139,8 +137,24 @@ export class BatchOutput extends HTMLElement {
      * @param items Batch output items to render.
      */
     public setItems(items: BatchOutputItem[]): void {
-        this.items = [...items];
-        this.renderItems();
+        this.clear();
+        items.forEach((item) => this.appendItem(item));
+    }
+
+    /**
+     * Append one output item and return its result container.
+     *
+     * The returned element can receive rich DOM content without that content
+     * being recreated when command visibility changes.
+     *
+     * @param item Output item metadata and optional initial HTML.
+     * @returns Element that contains the rendered result.
+     */
+    public appendItem(item: BatchOutputItem): HTMLDivElement {
+        const { entry, result } = this.createItem(item);
+        this.element.list.append(entry);
+        this.element.placeholder.hidden = true;
+        return result;
     }
 
     /**
@@ -151,23 +165,21 @@ export class BatchOutput extends HTMLElement {
     };
 
     /**
-     * Render all currently stored output items.
+     * Show or hide command source without replacing result nodes.
      */
-    private renderItems(): void {
-        if (!this.element.list || !this.element.placeholder) {
-            return;
-        }
-        this.element.list.replaceChildren(...this.items.map((item) => this.createItem(item)));
-        this.element.placeholder.hidden = this.items.length > 0;
+    private updateCommandVisibility(): void {
+        this.element.list?.querySelectorAll<HTMLElement>('.command').forEach((command) => {
+            command.hidden = !this.showCommand;
+        });
     }
 
     /**
      * Create one output list entry.
      *
      * @param item Output item to render.
-     * @returns List item element containing command text and result markup.
+     * @returns List item and its result container.
      */
-    private createItem(item: BatchOutputItem): HTMLLIElement {
+    private createItem(item: BatchOutputItem): { entry: HTMLLIElement; result: HTMLDivElement } {
         const entry = document.createElement('li');
         const command = document.createElement('pre');
         const commandCode = document.createElement('code');
@@ -177,13 +189,12 @@ export class BatchOutput extends HTMLElement {
         commandCode.className = 'language-matlab';
         result.className = item.error ? 'result error' : 'result';
         commandCode.innerHTML = hljs.highlight(item.command || ' ', { language: 'matlab', ignoreIllegals: true }).value;
-        result.innerHTML = item.html;
-        if (this.showCommand) {
-            command.append(commandCode);
-            entry.append(command);
-        }
+        result.innerHTML = item.html ?? '';
+        command.hidden = !this.showCommand;
+        command.append(commandCode);
+        entry.append(command);
         entry.append(result);
-        return entry;
+        return { entry, result };
     }
 }
 
