@@ -183,17 +183,20 @@ export class BatchOutput extends HTMLElement {
         const entry = document.createElement('li');
         const command = document.createElement('pre');
         const commandCode = document.createElement('code');
+        const resultScroller = document.createElement('div');
         const result = document.createElement('div');
         entry.className = 'entry';
         command.className = 'command';
         commandCode.className = 'language-matlab';
+        resultScroller.className = 'result-scroller';
         result.className = item.error ? 'result error' : 'result';
         commandCode.innerHTML = hljs.highlight(item.command || ' ', { language: 'matlab', ignoreIllegals: true }).value;
         result.innerHTML = item.html ?? '';
         command.hidden = !this.showCommand;
         command.append(commandCode);
+        resultScroller.append(result);
         entry.append(command);
-        entry.append(result);
+        entry.append(resultScroller);
         return { entry, result };
     }
 }
