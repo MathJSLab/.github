@@ -2,6 +2,15 @@
 
 This file contains general information about the actions of the [MathJSLab Project](https://mathjslab.com/) that go beyond the scope of the individual projects. In other words, what cannot be recorded in the `CHANGES.md` file of each software project, or the general actions of the organization, are recorded here, indexed by date.
 
+## 2026-09-12
+
+- Pre-publication update for the organization's repository after completing batch-output layout corrections and sharing plotting and numerical functions between `mathjslab-app` and `mathjslab-calc`.
+- The reusable `batch-output` component now expands vertically with each result, confines overflow handling to horizontal result scrolling, and lets embedded Plotly output fit its container without excess space or vertical scrollbars.
+- `src/PlotEngine.ts` and `src/outputFunction.ts` are now shared sources, preserving the same plotting implementation and rendering protocol in the full application and the mobile-oriented calculator.
+- The new `src/commonExternalFunctionTable.ts` provides the common `summation` and `productory` implementations, allowing each application to compose its own final external function table without duplicating numerical code.
+- The App retains its additional file and document functions, while the Calc receives only the shared plotting functions, `summation`, and `productory`, without the external `help` command.
+- Resource copy configurations for `mathjslab-app` and `mathjslab-calc`, together with their generated mirrors, now distribute the shared plot engine, output registry, and common external function table.
+
 ## 2026-09-11
 
 - Pre-publication update for the organization's repository after consolidating the TypeScript baseline and preparing reusable batch output for integration into `mathjslab-app`.
