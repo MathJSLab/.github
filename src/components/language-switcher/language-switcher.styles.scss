@@ -56,6 +56,16 @@
   display: inline-block;
 }
 
+:host-context(html[data-theme='dark']):host-context(.green-panel) .language-switcher-icon-white,
+:host-context(html[data-theme='dark']):host-context(control-bar[panel='green']) .language-switcher-icon-white {
+  display: inline-block;
+}
+
+:host-context(html[data-theme='dark']):host-context(.green-panel) .language-switcher-icon-green,
+:host-context(html[data-theme='dark']):host-context(control-bar[panel='green']) .language-switcher-icon-green {
+  display: none;
+}
+
 .language-switcher-menu {
   align-items: stretch;
   background: var(--calc-surface, var(--color-background, #fbfcfe));
