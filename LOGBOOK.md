@@ -10,36 +10,39 @@ This file contains general information about the actions of the [MathJSLab Proje
 - The new `src/commonExternalFunctionTable.ts` provides the common `summation` and `productory` implementations, allowing each application to compose its own final external function table without duplicating numerical code.
 - The App retains its additional file and document functions, while the Calc receives only the shared plotting functions, `summation`, and `productory`, without the external `help` command.
 - Resource copy configurations for `mathjslab-app` and `mathjslab-calc`, together with their generated mirrors, now distribute the shared plot engine, output registry, and common external function table.
+- The retired experimental web application was removed from the project page catalogs, publication metadata, application selector, and internal SEO diagnostics.
+- Organization metadata and generated workspace scripts now cover only the maintained repositories, avoiding clone, update, clean, and publication links that would become obsolete after the hosting and repository are removed.
+- Its dedicated resource distribution manifests and generated resource directory were deleted, while the reusable `batch-code-editor` and `batch-output` components remain shared with `mathjslab-app`.
 
 ## 2026-09-11
 
 - Pre-publication update for the organization's repository after consolidating the TypeScript baseline and preparing reusable batch output for integration into `mathjslab-app`.
-- The new `types/tsconfig.webapp.json` centralizes the strict compiler policies shared by `mathjslab-app`, `mathjslab-batch`, and `mathjslab-calc`, while each application retains its local build exclusions and additional environment types.
-- Resource copy configurations for the three web applications and their generated mirrors now distribute `tsconfig.webapp.json` as the common base configuration.
+- The new `types/tsconfig.webapp.json` centralizes the strict compiler policies shared by `mathjslab-app` and `mathjslab-calc`, while each application retains its local build exclusions and additional environment types.
+- Resource copy configurations for both maintained web applications and their generated mirrors now distribute `tsconfig.webapp.json` as the common base configuration.
 - The reusable `batch-output` component now accepts items without pre-rendered HTML and returns each result container from `appendItem`, allowing evaluators to append MathML, Markdown, plots, and other rich DOM output directly.
 - Changing the `show-command` option now updates command visibility without rebuilding result elements, so rendered plots and other stateful output remain intact.
 - The component honors the standard `hidden` attribute, exposes its result container as `HTMLDivElement`, and has been added to the `mathjslab-app` resource manifest for the new alternative output mode.
 
 ## 2026-09-10
 
-- Pre-publication update for the organization's repository after coordinated build, metadata, and TypeScript configuration work across `mathjslab-app`, `mathjslab-batch`, and `mathjslab-calc`.
-- A reusable Eleventy entry point was centralized in `script/eleventy.build.mjs`. It reads each project's `eleventy.build.json`, installs the shared filters, shortcodes, and template rendering tools from `EleventyUtil`, and provides the three applications with the same data-driven static-build workflow.
+- Pre-publication update for the organization's repository after coordinated build, metadata, and TypeScript configuration work across the maintained web applications.
+- A reusable Eleventy entry point was centralized in `script/eleventy.build.mjs`. It reads each project's `eleventy.build.json`, installs the shared filters, shortcodes, and template rendering tools from `EleventyUtil`, and provides both maintained applications with the same data-driven static-build workflow.
 - A common flat ESLint configuration was added in `script/eslint.config.cjs`, aligning TypeScript application sources, JavaScript and module files, build helpers, generated-file exclusions, and Prettier integration while preserving the distinct TypeScript project used by scripts.
 - The new `includes/manifest.json.njk` template centralizes generation of the applications' PWA manifests, including identity, display settings, theme colors, categories, scope, and the complete set of MathJSLab application icons from 16 to 512 pixels.
 - Application structured data was consolidated in `includes/app-json-ld.njk`. The shared template composes the existing Nunjucks JSON-LD macros into a consistent graph for the application, localized web page, MathJSLab website, and publishing organization.
 - SCSS module declarations were normalized through the new generic `types/scss.d.ts` definition and the corrected default export in `types/styles.scss.d.ts`, keeping TypeScript and Webpack imports consistent for ordinary and component stylesheet modules.
-- The resource copy manifests and their generated mirrors were expanded so the three web applications receive the shared Eleventy and ESLint configurations, manifest and JSON-LD templates, and SCSS declarations from the organization's repository.
+- The resource copy manifests and their generated mirrors were expanded so both maintained web applications receive the shared Eleventy and ESLint configurations, manifest and JSON-LD templates, and SCSS declarations from the organization's repository.
 
 ## 2026-09-07
 
-- Pre-publication update for the organization's repository after coordinated interface and integration work across `mathjslab-app`, `mathjslab-batch`, `mathjslab-calc`, and `mathjslab-www`.
+- Pre-publication update for the organization's repository after coordinated interface and integration work across `mathjslab-app`, `mathjslab-calc`, and `mathjslab-www`.
 - The shared `appearance-mode` component now provides separate green and white light/dark icon variants and automatically selects the appropriate contrast inside regular and green control panels. The obsolete single-color theme icons were replaced, and the resource copy configurations were updated to distribute all four variants.
 - Theme selection was simplified across `appearance-mode` and `application-wrapper`: local-storage persistence and the related `storage-key` API were removed, so each page starts from the browser's current color-scheme preference while still allowing the user to switch modes for the active page.
 - The shared MathJSLab logo assets and their generated raster derivatives were refreshed, and the web applications were aligned so page logos and favicons follow explicit light/dark mode changes as well as the browser preference.
 - The shared `language-switcher` was further compacted into a consistent icon-only control at every viewport size. Its former single icon and responsive text label were replaced with green and white icon variants that automatically follow the surrounding regular or green panel, matching the contrast behavior introduced for `appearance-mode`.
-- Resource manifests for all four web projects now distribute both language-switch icon variants, and the obsolete single-color `language-switch.svg` asset was removed from the shared and generated image sets.
+- Resource manifests for the three maintained web projects now distribute both language-switch icon variants, and the obsolete single-color `language-switch.svg` asset was removed from the shared and generated image sets.
 - The `command-prompt` and `batch-code-editor` components received contrast fixes discovered during integration testing. Focused editors now use the active application surface instead of a yellow background, command prompts retain the green panel surface while unfocused, and text selections use a stronger blue highlight in both light and dark modes.
-- The reusable `batch-output` component now exposes a reflected `show-command` option through its `showCommand` getter and setter. It retains rendered items and redraws them when the option changes, allowing `mathjslab-batch` to switch between command-and-result output and result-only output without running the batch again.
+- The reusable `batch-output` component now exposes a reflected `show-command` option through its `showCommand` getter and setter. It retains rendered items and redraws them when the option changes, allowing batch interfaces to switch between command-and-result output and result-only output without running the commands again.
 - The generated organization profile, image catalog, helper script builds, test fixtures, workspace package metadata, and per-project resource copies were regenerated to keep the published repository synchronized with the latest shared sources.
 
 ## 2026-09-06
@@ -48,7 +51,7 @@ This file contains general information about the actions of the [MathJSLab Proje
 - The shared visual identity of the Web Components was further harmonized, especially around toolbar controls, buttons, language selection, appearance mode selection, and the outer application wrapper used by the web applications.
 - The `control-bar` Web Component was added as a reusable navigation/control container for command buttons and interface controls. It supports horizontal and vertical layouts, start/center/end/stretch alignment, full or fit width, optional green panel styling, and automatic or preserved button styling.
 - Shared button styles were centralized in `includes/styles/component/_button.scss` and mirrored into the distributed style resources, giving projects a common green and gray button vocabulary with consistent hover, active, border, shadow, and spacing behavior.
-- The `appearance-mode`, `language-switcher`, and `application-wrapper` styles and templates were refined to better match the shared component palette and spacing conventions used in `mathjslab-app`, `mathjslab-batch`, `mathjslab-calc`, and `mathjslab-www`.
+- The `appearance-mode`, `language-switcher`, and `application-wrapper` styles and templates were refined to better match the shared component palette and spacing conventions used in `mathjslab-app`, `mathjslab-calc`, and `mathjslab-www`.
 - The `batch-code-editor` component was corrected after integration testing in the web projects: value changes and user input now trigger the shared resize path, the textarea height follows its actual scroll height without an extra fixed offset, and the minimum editor height is controlled through a CSS custom property.
 - Resource copy configurations were refreshed so the dependent projects receive the latest shared components, component styles, generated assets, Eleventy configuration files, and helper script builds from the organization's repository.
 - The generated organization profile, image metadata, test outputs, and repository workspace package were regenerated as part of the publication routine.
@@ -56,7 +59,7 @@ This file contains general information about the actions of the [MathJSLab Proje
 ## 2026-09-05
 
 - Pre-publication update for the organization's repository after work across the MathJSLab web applications to harmonize the visual identity and behavior of shared Web Components.
-- The shared components were refined so `mathjslab-app`, `mathjslab-batch`, `mathjslab-calc`, and `mathjslab-www` can present a more consistent interface when they receive files copied from the organization's repository.
+- The shared components were refined so `mathjslab-app`, `mathjslab-calc`, and `mathjslab-www` can present a more consistent interface when they receive files copied from the organization's repository.
 - The `application-wrapper`, `appearance-mode`, `command-prompt`, `command-prompt-list`, `keyboard-panel`, `batch-code-editor`, and `batch-output` components received layout, styling, and interaction refinements made while testing them in the different applications.
 - Shared panel styling was introduced and adjusted in `includes/styles/component/_panel.scss`, reducing duplicated visual rules and helping collapsible panels, fixed scroll panels, command prompts, and related controls follow the same spacing, border, color, and surface conventions.
 - The `keyboard-panel` component was corrected to blend into the surrounding calculator layout with a transparent panel background, while numeric keys now use the shared green border color to better match the MathJSLab visual identity.
@@ -68,17 +71,17 @@ This file contains general information about the actions of the [MathJSLab Proje
 - Pre-publication update for the organization's repository after another round of reusable interface work across the MathJSLab web applications.
 - The `application-wrapper` Web Component was added to centralize the outer application shell used by MathJSLab web applications. It brings together the project logo, localized title and description, language switching, appearance mode selection, action/status slots, the main workspace slot, and an optional footer slot.
 - The new wrapper also synchronizes theme-aware favicon links with the current light/dark appearance mode, so applications copied from the shared infrastructure can keep their document icons aligned with the active theme.
-- The resource copy configurations for `mathjslab-app`, `mathjslab-batch`, and `mathjslab-calc` were updated to distribute the new `application-wrapper` component and its template and SCSS files from the organization's repository.
+- The resource copy configurations for `mathjslab-app` and `mathjslab-calc` were updated to distribute the new `application-wrapper` component and its template and SCSS files from the organization's repository.
 - The JSON copy configuration files for the generated `resource/` directories were refreshed to match the corresponding `input/resource/` configuration files used during publication.
 
 ## 2026-08-30
 
 - Pre-publication update for the organization's repository after coordinated work across the MathJSLab web projects.
 - Reusable Web Components that had been generalized while working on the web applications and project pages were consolidated in the organization's repository under `src/components/`, together with their TypeScript factories, shared interfaces, templates, and SCSS styles. This includes the appearance mode selector, language switcher, collapsible content panel, fixed scroll panel, command prompt, command prompt list, batch code editor, and batch output components.
-- The `input/resource/**/copy.repo.config.json` files were updated so the reusable Web Components and their supporting files can be copied from the organization's repository into the projects that use them, especially `mathjslab-app`, `mathjslab-batch`, `mathjslab-calc`, and `mathjslab-www`.
+- The `input/resource/**/copy.repo.config.json` files were updated so the reusable Web Components and their supporting files can be copied from the organization's repository into the projects that use them, especially `mathjslab-app`, `mathjslab-calc`, and `mathjslab-www`.
 - Shared Nunjucks macros were centralized in `includes/head-macros.njk` for use by the web applications and the project page. These macros now provide common `<head>` generation for basic metadata, Open Graph, Twitter Card, canonical and alternate links, favicon definitions, and JSON-LD structured data for web pages, websites, applications, application lists, people, and organizations.
 - The shared Eleventy support files, SCSS constants, generated logo assets, favicons, Open Graph image, language/theme icons, pipeline illustrations, and selected paper/archive assets were prepared for distribution through the organization's resource copy configuration.
-- The reusable build infrastructure was aligned across the projects, including the shared Eleventy configuration templates for `mathjslab-batch`, `mathjslab-calc`, and `mathjslab-www`, plus common helper scripts such as `EleventyUtil.mjs`, `toIco.ts`, `mark-crono.ts`, and `git-commit.cjs`.
+- The reusable build infrastructure was aligned across the projects, including the shared Eleventy configuration templates for the maintained web applications and project page, plus common helper scripts such as `EleventyUtil.mjs`, `toIco.ts`, `mark-crono.ts`, and `git-commit.cjs`.
 
 ## 2026-08-28
 
@@ -118,14 +121,6 @@ This file contains general information about the actions of the [MathJSLab Proje
 ## 2026-08-03
 
 - The trailing newline was removed from files in `data/files/**`. The directory was included in the `.prettierrc` file.
-
-## 2026-08-01
-
-- ISBN and DOI have been added to the Organization's homepage, in the list of repositories. The reference (to the package and the web application) at the bottom of the homepage has been removed. The file `data/files/batch-isbn-doi.md` was created.
-
-## 2026-07-28
-
-- The `mathjslab-batch` repository has been added to the organization's repository list (used to generate `README.md`, `LEAME.md`, and `LEIAME.md`) and in the `input/resource/` directory.
 
 ## 2026-07-27
 

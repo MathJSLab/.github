@@ -47,12 +47,6 @@
                 "wiki": null
             },
             {
-                "shortName": "batch",
-                "name": "mathjslab-batch",
-                "rename": null,
-                "wiki": null
-            },
-            {
                 "shortName": "org",
                 "name": ".github",
                 "rename": "mathjslab-github",
