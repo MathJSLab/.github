@@ -2,6 +2,14 @@
 
 This file contains general information about the actions of the [MathJSLab Project](https://mathjslab.com/) that go beyond the scope of the individual projects. In other words, what cannot be recorded in the `CHANGES.md` file of each software project, or the general actions of the organization, are recorded here, indexed by date.
 
+## 2026-09-26
+
+- Pre-publication update for the organization's repository after integrating the new MathJSLab runtime architecture into `mathjslab-app` and `mathjslab-calc`.
+- The shared `src/PlotEngine.ts` now exposes static rendering, resizing, and disposal operations so applications can use the same plotting lifecycle from local and Worker-backed runtime sessions.
+- Plot operations can now publish serializable output descriptors through a scoped capture hook while preserving the existing direct DOM output path, allowing Worker execution to keep Plotly rendering on the main thread.
+- The shared Web application TypeScript configuration now uses bundler module resolution, enabling application builds to resolve the explicit `mathjslab/runtime` package subpath and its conditional exports correctly.
+- The canonical shared files were synchronized with both consuming applications and verified through their production builds and the Markdown runtime test suite.
+
 ## 2026-09-12
 
 - Pre-publication update for the organization's repository after completing batch-output layout corrections and sharing plotting and numerical functions between `mathjslab-app` and `mathjslab-calc`.

@@ -55,6 +55,10 @@ type PlotRenderState = {
     config: Partial<Plotly.Config>;
 };
 
+type PlotOutputRequest = PlotRenderState & {
+    readonly type: 'plot' | 'plot3' | 'surf' | 'plot2d' | 'histogram';
+};
+
 const defaultPlotConfig: Partial<Plotly.Config> = {
     displayModeBar: false,
     responsive: true,
@@ -529,6 +533,31 @@ const setPlotRenderState = (state: PlotRenderState): void => {
  * application.
  */
 abstract class PlotEngine {
+    private static outputCapture: ((request: PlotOutputRequest) => void) | undefined;
+
+    public static setOutputCapture(capture: ((request: PlotOutputRequest) => void) | undefined): ((request: PlotOutputRequest) => void) | undefined {
+        const previous = PlotEngine.outputCapture;
+        PlotEngine.outputCapture = capture;
+        return previous;
+    }
+
+    public static async render(parent: HTMLElement, request: PlotOutputRequest): Promise<void> {
+        await Plotly.newPlot(parent, request.data, request.layout, request.config);
+    }
+
+    public static async resize(parent: HTMLElement): Promise<void> {
+        await Plotly.Plots.resize(parent);
+    }
+
+    public static dispose(parent: HTMLElement): void {
+        Plotly.purge(parent);
+    }
+
+    private static publish(type: PlotOutputRequest['type'], state: PlotRenderState): void {
+        setPlotRenderState(state);
+        PlotEngine.outputCapture?.({ type, ...state });
+    }
+
     public static readonly outputFunction: { [k: string]: Function } = {
         plot: function (parent: HTMLElement): void {
             (async () => {
@@ -593,7 +622,7 @@ abstract class PlotEngine {
             mapper: false,
             ev: [],
             func: (...args: ElementType[]): NodeExpr => {
-                setPlotRenderState(buildPlot(args));
+                PlotEngine.publish('plot', buildPlot(args));
                 insertOutput.type = 'plot';
                 return AST.nodeIndexExpr(AST.nodeIdentifier('plot'), AST.nodeList(args));
             },
@@ -605,7 +634,7 @@ abstract class PlotEngine {
             mapper: false,
             ev: [],
             func: (...args: ElementType[]): NodeExpr => {
-                setPlotRenderState(buildPlot3(args));
+                PlotEngine.publish('plot3', buildPlot3(args));
                 insertOutput.type = 'plot3';
                 return AST.nodeIndexExpr(AST.nodeIdentifier('plot3'), AST.nodeList(args));
             },
@@ -617,7 +646,7 @@ abstract class PlotEngine {
             mapper: false,
             ev: [],
             func: (...args: ElementType[]): NodeExpr => {
-                setPlotRenderState(buildSurf(args));
+                PlotEngine.publish('surf', buildSurf(args));
                 insertOutput.type = 'surf';
                 return AST.nodeIndexExpr(AST.nodeIdentifier('surf'), AST.nodeList(args));
             },
@@ -667,6 +696,12 @@ abstract class PlotEngine {
                 /* Restore the call stack after sampling the expression. */
                 appEngine.interpreter.context.callStack!.pop();
                 Decimal.set({ precision: save_precision });
+                PlotEngine.outputCapture?.({
+                    type: 'plot2d',
+                    data: [{ x: [...plotData.X], y: [...plotData.data], type: 'scatter', mode: 'lines' }],
+                    layout: { autosize: true, margin: { b: 48, l: 56, r: 24, t: 24 } },
+                    config: defaultPlotConfig,
+                });
                 return AST.nodeIndexExpr(AST.nodeIdentifier('plot2d'), AST.nodeList([expr, variable, minx, maxx]));
             },
         },
@@ -710,12 +745,18 @@ abstract class PlotEngine {
                     plotData.MaxY = Math.max(plotData.MaxY, plotData.data[i]!);
                     plotData.MinY = Math.min(plotData.MinY, plotData.data[i]!);
                 }
+                PlotEngine.outputCapture?.({
+                    type: 'histogram',
+                    data: [{ x: [...plotData.X], y: [...plotData.data], type: 'bar' }],
+                    layout: { autosize: true },
+                    config: defaultPlotConfig,
+                });
                 return AST.nodeIndexExpr(AST.nodeIdentifier('histogram'), AST.nodeList([IMAG, DOM]));
             },
         },
     };
 }
 
-export type { PlotData };
+export type { PlotData, PlotOutputRequest };
 export { plotDataLayoutConfig, plotData, plotWidth, PlotEngine };
 export default { plotDataLayoutConfig, plotData, plotWidth, PlotEngine };
