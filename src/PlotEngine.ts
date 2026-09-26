@@ -1,7 +1,13 @@
 import Plotly from 'plotly.js-dist-min';
 import { type ElementType, type NodeExpr, type NodeIdentifier, AST, BuiltInFunctionTable, CallFrame, CharString, ComplexDecimal, Decimal, LinearAlgebra, MultiArray, Scope } from 'mathjslab';
-import { insertOutput } from './outputFunction';
 import { appEngine } from './appEngine';
+
+/**
+ * Mutable rendering request shared between interpreter built-ins and prompt
+ * output handling. It lives in this module to keep the PlotEngine dependency
+ * graph acyclic; outputFunction.ts re-exports the same object.
+ */
+const insertOutput = { type: '' };
 
 const plotDataLayoutConfig: Plotly.PlotlyDataLayoutConfig = {
     data: [],
@@ -758,5 +764,5 @@ abstract class PlotEngine {
 }
 
 export type { PlotData, PlotOutputRequest };
-export { plotDataLayoutConfig, plotData, plotWidth, PlotEngine };
-export default { plotDataLayoutConfig, plotData, plotWidth, PlotEngine };
+export { plotDataLayoutConfig, plotData, plotWidth, insertOutput, PlotEngine };
+export default { plotDataLayoutConfig, plotData, plotWidth, insertOutput, PlotEngine };

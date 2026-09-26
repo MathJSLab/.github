@@ -9,6 +9,7 @@ This file contains general information about the actions of the [MathJSLab Proje
 - Plot operations can now publish serializable output descriptors through a scoped capture hook while preserving the existing direct DOM output path, allowing Worker execution to keep Plotly rendering on the main thread.
 - The shared Web application TypeScript configuration now uses bundler module resolution, enabling application builds to resolve the explicit `mathjslab/runtime` package subpath and its conditional exports correctly.
 - The canonical shared files were synchronized with both consuming applications and verified through their production builds and the Markdown runtime test suite.
+- The plotting output registry now re-exports the mutable rendering request owned by `PlotEngine`, removing an ES module initialization cycle that prevented the application bundle from starting after a full shared-file refresh.
 
 ## 2026-09-12
 
