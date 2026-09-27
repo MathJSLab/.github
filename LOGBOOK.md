@@ -2,6 +2,14 @@
 
 This file contains general information about the actions of the [MathJSLab Project](https://mathjslab.com/) that go beyond the scope of the individual projects. In other words, what cannot be recorded in the `CHANGES.md` file of each software project, or the general actions of the organization, are recorded here, indexed by date.
 
+## 2026-09-27
+
+- Pre-publication update for the organization repository after consolidating shared Markdown output and command prompt interaction changes across `mathjslab-app` and `mathjslab-calc`.
+- The shared `command-prompt-list` component now makes frame-click input focus opt-in through `focus-input-on-frame-click`, allowing links, navigation controls, and other interactive output to retain their native click and focus behavior by default.
+- `mathjslab-calc` explicitly enables the legacy frame-click focus behavior in its application shell, while `mathjslab-app` uses the new default for navigable Markdown documents.
+- Shared command and batch output styles now let Markdown documents occupy the available width and provide consistent styling for the Markdown file selector.
+- The organization build now creates the `resource/mathjslab-calc` directory before copying its generated repository configuration, keeping all maintained application resources synchronized during publication.
+
 ## 2026-09-26
 
 - Made the shared `PlotEngine` safe to load in browser Workers by deferring the Plotly browser bundle until a main-thread render or resize operation. Worker sessions can now generate serializable plot descriptors without evaluating code that requires `window` or `document`.

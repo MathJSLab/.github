@@ -39,4 +39,4 @@ Copyright &copy; 2016-2026 [Sergio Lindau](mailto:sergiolindau@gmail.com), [![OR
 
 [mathjslab.com](https://mathjslab.com/), [mathjslab@gmail.com](mailto:mathjslab@gmail.com).
 
-El perfil de esta organización fue modificado por última vez el 26/09/2026.
+El perfil de esta organización fue modificado por última vez el 27/09/2026.
