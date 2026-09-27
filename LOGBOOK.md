@@ -4,6 +4,8 @@ This file contains general information about the actions of the [MathJSLab Proje
 
 ## 2026-09-26
 
+- Added the reusable, platform-independent `buildWebpackBundles.ts` helper to compile Webpack bundle matrices sequentially in isolated Node.js processes, bounding memory use on constrained CI executors without platform-specific shell commands.
+- Updated the `mathjslab` resource manifests and their generated mirror so the shared build helper is distributed together with the organization's existing repository tooling.
 - Pre-publication update for the organization's repository after integrating the new MathJSLab runtime architecture into `mathjslab-app` and `mathjslab-calc`.
 - The shared `src/PlotEngine.ts` now exposes static rendering, resizing, and disposal operations so applications can use the same plotting lifecycle from local and Worker-backed runtime sessions.
 - Plot operations can now publish serializable output descriptors through a scoped capture hook while preserving the existing direct DOM output path, allowing Worker execution to keep Plotly rendering on the main thread.
