@@ -4,6 +4,7 @@ This file contains general information about the actions of the [MathJSLab Proje
 
 ## 2026-09-26
 
+- Made the shared `PlotEngine` safe to load in browser Workers by deferring the Plotly browser bundle until a main-thread render or resize operation. Worker sessions can now generate serializable plot descriptors without evaluating code that requires `window` or `document`.
 - Added the reusable, platform-independent `buildWebpackBundles.ts` helper to compile Webpack bundle matrices sequentially in isolated Node.js processes, bounding memory use on constrained CI executors without platform-specific shell commands.
 - Updated the `mathjslab` resource manifests and their generated mirror so the shared build helper is distributed together with the organization's existing repository tooling.
 - Pre-publication update for the organization's repository after integrating the new MathJSLab runtime architecture into `mathjslab-app` and `mathjslab-calc`.
