@@ -25,7 +25,7 @@ switch (command) {
     remove('report');
     break;
   case 'clean-results':
-    for (const name of ['report', 'coverage', 'test-results', 'playwright-report', 'mark.crono.json', 'test/markdown/chunk-baseline.json']) remove(name);
+    for (const name of ['report', 'coverage', 'test-results', 'playwright-report', 'test/markdown/chunk-baseline.json']) remove(name);
     for (const entry of fs.readdirSync(root, { withFileTypes: true })) {
       if (entry.isFile() && /\.(log|tgz|tsbuildinfo)$/.test(entry.name)) remove(entry.name);
     }
@@ -43,15 +43,24 @@ switch (command) {
     const sourceRoot = process.argv[3] ? path.resolve(process.cwd(), process.argv[3]) : path.join(root, 'repo', '.github');
     const configPath = path.join(sourceRoot, 'resource', 'mathjslab-markdown', 'copy.repo.config.json');
     const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
+    // Use the same synchronization implementation as the core package.
     for (const item of config.files) {
-      const source = typeof item === 'string' ? item : item.src;
       const destination = typeof item === 'string' ? item : (item.dest ?? item.src);
-      const sourcePath = path.resolve(sourceRoot, source);
       const destinationPath = path.resolve(root, destination);
-      if (!sourcePath.startsWith(sourceRoot + path.sep) || !destinationPath.startsWith(root + path.sep)) throw new Error('Copy target is outside its project.');
-      copy(sourcePath, destinationPath);
+      if (!destinationPath.startsWith(root + path.sep)) throw new Error('Copy target is outside this project.');
+      fs.mkdirSync(path.dirname(destinationPath), { recursive: true });
     }
+    copy(path.join(sourceRoot, 'script/helper/copy-repo-files.ts'), path.join(root, 'script/helper/copy-repo-files.ts'));
     copy(configPath, path.join(root, 'copy.repo.config.json'));
+    // The shared helper resolves baseDir/repository; override the name for a local checkout.
+    const localConfig = { ...config, repository: path.basename(sourceRoot) };
+    const originalConfig = fs.readFileSync(path.join(root, 'copy.repo.config.json'), 'utf8');
+    try {
+      fs.writeFileSync(path.join(root, 'copy.repo.config.json'), JSON.stringify(localConfig, null, 2));
+      run(process.execPath, [path.join(root, 'node_modules/tsx/dist/cli.mjs'), 'script/helper/copy-repo-files.ts', '--base-dir', path.dirname(sourceRoot)]);
+    } finally {
+      fs.writeFileSync(path.join(root, 'copy.repo.config.json'), originalConfig);
+    }
     console.log('Organization common files synchronized.');
     break;
   }

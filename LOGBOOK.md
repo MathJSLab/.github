@@ -4,6 +4,8 @@ This file contains general information about the actions of the [MathJSLab Proje
 
 ## 2026-10-10
 
+- Aligned the reusable Markdown package build environment with the core package: common `script/helper` utilities and `script/tsconfig.json`, helper compilation before the production build, shared repository-copy implementation, cleanup commands and the complete timed release pipeline. Mirrored the package maintenance helper in canonical and generated organization resources.
+- Added explicit public npm publication configuration to `mathjslab` and conservative `sideEffects` metadata to preserve module initialization. Optional rendering dependencies and the optional core peer remain specific to `mathjslab-markdown`; they are not dependencies of the interpreter.
 - Pre-publication update for the organization repository after extracting the reusable Markdown package and consolidating the runtime and plotting architecture across the maintained projects.
 - Added `mathjslab-markdown` to organization metadata, repository catalogs, presentations and profiles in English, Portuguese and Spanish. Generated workspace scripts now include its clone, update, cleanup and Git maintenance commands.
 - Added canonical and generated `mathjslab-markdown` resource directories with synchronization manifests, formatting configuration and package maintenance helpers. The organization post-build pipeline now copies these resources through `script/copy-markdown-resources.mjs`; shared resource documentation describes ownership and synchronization rules.
