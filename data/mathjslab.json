@@ -35,6 +35,12 @@
                 "wiki": "mathjslab.wiki"
             },
             {
+                "shortName": "markdown",
+                "name": "mathjslab-markdown",
+                "rename": null,
+                "wiki": null
+            },
+            {
                 "shortName": "app",
                 "name": "mathjslab-app",
                 "rename": null,

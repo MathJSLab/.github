@@ -12,12 +12,15 @@
 
 La **[Organización MathJSLab](https://github.com/MathJSLab)** fue creada para reunir los [repositorios](https://github.com/orgs/MathJSLab/repositories) del [Proyecto MathJSLab] (https://mathjslab.com/).
 
+El intérprete pertenece a [mathjslab](https://github.com/MathJSLab/mathjslab), el motor Markdown y Web Component reutilizables a [mathjslab-markdown](https://github.com/MathJSLab/mathjslab-markdown), y la aplicación que los integra a [mathjslab-app](https://github.com/MathJSLab/mathjslab-app).
+
 **Aviso Importante:** Este software, **[MathJSLab](https://mathjslab.com/), no está afiliado, patrocinado ni respaldado por [The MathWorks, Inc.](https://www.mathworks.com/)** [MATLAB&reg;](https://www.mathworks.com/products/matlab.html) es una marca registrada de [The MathWorks, Inc.](https://www.mathworks.com/) Para más información sobre [MATLAB](https://www.mathworks.com/products/matlab.html), visita [www.mathworks.com](https://www.mathworks.com).
 
 Esta organización posee los siguientes repositorios:
 
 - El [repositorio](https://github.com/MathJSLab/.github) del perfil de la organización.
 - El [repositorio](https://github.com/MathJSLab/mathjslab) del [paquete npm](https://www.npmjs.com/package/mathjslab). [![ISBN](https://img.shields.io/badge/ISBN-978--65--00--82338--7-blue?style=flat&link=https://grp.isbn-international.org/search/piid_solr?keys=978-65-00-82338-7)](https://grp.isbn-international.org/search/piid_solr?keys=978-65-00-82338-7) [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.8396265-blue?style=flat&link=https://doi.org/10.5281/zenodo.8396265)](https://doi.org/10.5281/zenodo.8396265)
+- El [repositorio del motor Markdown y Web Component reutilizables](https://github.com/MathJSLab/mathjslab-markdown), preparado para distribución como paquete npm `mathjslab-markdown`.
 - El [repositorio](https://github.com/MathJSLab/mathjslab-app) de la [aplicación web de demostración](https://app.mathjslab.com). [![ISBN](https://img.shields.io/badge/ISBN-978--65--00--84828--1-blue?style=flat&link=https://grp.isbn-international.org/search/piid_solr?keys=978-65-00-84828-1)](https://grp.isbn-international.org/search/piid_solr?keys=978-65-00-84828-1) [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.8396263-blue?style=flat&link=https://doi.org/10.5281/zenodo.8396263)](https://doi.org/10.5281/zenodo.8396263)
 - El [repositorio](https://github.com/MathJSLab/mathjslab-calc) de la [aplicación web de calculadora](https://calc.mathjslab.com). [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.21628416-blue?style=flat&link=https://doi.org/10.5281/zenodo.21628416)](https://doi.org/10.5281/zenodo.21628416)
 - El [repositorio](https://github.com/MathJSLab/mathjslab-www) de la [página del proyecto](https://mathjslab.com).
@@ -39,4 +42,4 @@ Copyright &copy; 2016-2026 [Sergio Lindau](mailto:sergiolindau@gmail.com), [![OR
 
 [mathjslab.com](https://mathjslab.com/), [mathjslab@gmail.com](mailto:mathjslab@gmail.com).
 
-El perfil de esta organización fue modificado por última vez el 27/09/2026.
+El perfil de esta organización fue modificado por última vez el 10/10/2026.

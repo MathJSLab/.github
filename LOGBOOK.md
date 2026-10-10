@@ -2,6 +2,18 @@
 
 This file contains general information about the actions of the [MathJSLab Project](https://mathjslab.com/) that go beyond the scope of the individual projects. In other words, what cannot be recorded in the `CHANGES.md` file of each software project, or the general actions of the organization, are recorded here, indexed by date.
 
+## 2026-10-10
+
+- Pre-publication update for the organization repository after extracting the reusable Markdown package and consolidating the runtime and plotting architecture across the maintained projects.
+- Added `mathjslab-markdown` to organization metadata, repository catalogs, presentations and profiles in English, Portuguese and Spanish. Generated workspace scripts now include its clone, update, cleanup and Git maintenance commands.
+- Added canonical and generated `mathjslab-markdown` resource directories with synchronization manifests, formatting configuration and package maintenance helpers. The organization post-build pipeline now copies these resources through `script/copy-markdown-resources.mjs`; shared resource documentation describes ownership and synchronization rules.
+- Consolidated the app and calculator adapters in the canonical `src/PlotEngine.ts`, `src/InterpreterRuntime.ts` and `src/commonExternalFunctionTable.ts`. Plot semantics and serializable plot preparation belong to `mathjslab`; applications load Plotly lazily and manage rendering, resizing and DOM cleanup. Numerical callbacks use the active interpreter session, and summation restores its call stack even after evaluation errors.
+- Updated both application synchronization manifests and their generated mirrors to select the same session-aware adapters. Removed redundant application-specific copies and the calculator's obsolete output registry mapping. Reusable Markdown implementation and package-specific documentation remain in `mathjslab-markdown`, while the organization owns common helpers, templates and manifests.
+- Refreshed generated organization documentation, logo assets and compiled shared helper artifacts during the coordinated build preparation.
+- The maintained local projects are `mathjslab-github`, `mathjslab`, `mathjslab-markdown`, `mathjslab-app`, `mathjslab-calc` and `mathjslab-www`. `mathjslab-batch` is abandoned, its GitHub repository no longer exists, and it remains excluded from synchronization, validation and publication workflows.
+- During joint development, use sibling local checkouts and synchronize unpublished common files from the local organization repository. Build the core before its consumers and run individual validation/build commands until each project is stable. The `do:all` scripts retain the complete release pipelines, including Git commit/push and npm publication where applicable; run them only when releasing.
+- Publication order starts with the organization repository, followed by the compatible core package, the reusable Markdown package and the applications/site as they become stable. Consolidated the relevant guidance from `LOCAL_DEVELOPMENT.md` into this logbook and removed that temporary document. This preparation does not perform a commit, push or publication.
+
 ## 2026-09-27
 
 - Pre-publication update for the organization repository after consolidating shared Markdown output and command prompt interaction changes across `mathjslab-app` and `mathjslab-calc`.

@@ -12,6 +12,8 @@
 
 The **[MathJSLab Organization](https://github.com/MathJSLab)** was created to bring together the [MathJSLab Project](https://mathjslab.com/) [repositories](https://github.com/orgs/MathJSLab/repositories).
 
+The interpreter lives in [mathjslab](https://github.com/MathJSLab/mathjslab), the reusable Markdown engine and Web Component in [mathjslab-markdown](https://github.com/MathJSLab/mathjslab-markdown), and the host application in [mathjslab-app](https://github.com/MathJSLab/mathjslab-app).
+
 **Important Notice:** This software, the **[MathJSLab](https://mathjslab.com/), is not affiliated, sponsored, or endorsed by [The MathWorks, Inc.](https://www.mathworks.com/)** [MATLAB&reg;](https://www.mathworks.com/products/matlab.html) is a registered trademark of [The MathWorks, Inc.](https://www.mathworks.com/) For more information about [MATLAB](https://www.mathworks.com/products/matlab.html), visit [www.mathworks.com](https://www.mathworks.com/).
 
 Copyright &copy; 2016-2026 [Sergio Lindau](mailto:sergiolindau@gmail.com), [![ORCID](https://img.shields.io/badge/ORCID-0009--0006--9115--0291-blue)](https://orcid.org/0009-0006-9115-0291)
