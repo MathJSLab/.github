@@ -2,7 +2,7 @@
 
 This file contains general information about the actions of the [MathJSLab Project](https://mathjslab.com/) that go beyond the scope of the individual projects. In other words, what cannot be recorded in the `CHANGES.md` file of each software project, or the general actions of the organization, are recorded here, indexed by date.
 
-## 2026-10-10
+## 2026-10-11
 
 - Aligned the reusable Markdown package build environment with the core package: common `script/helper` utilities and `script/tsconfig.json`, helper compilation before the production build, shared repository-copy implementation, cleanup commands and the complete timed release pipeline. Mirrored the package maintenance helper in canonical and generated organization resources.
 - Added explicit public npm publication configuration to `mathjslab` and conservative `sideEffects` metadata to preserve module initialization. Optional rendering dependencies and the optional core peer remain specific to `mathjslab-markdown`; they are not dependencies of the interpreter.
