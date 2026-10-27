@@ -2,6 +2,17 @@
 
 This file contains general information about the actions of the [MathJSLab Project](https://mathjslab.com/) that go beyond the scope of the individual projects. In other words, what cannot be recorded in the `CHANGES.md` file of each software project, or the general actions of the organization, are recorded here, indexed by date.
 
+## 2026-10-26
+
+- Pre-publication update for the organization repository after the coordinated evolution of `mathjslab`, `mathjslab-markdown`, `mathjslab-app`, and `mathjslab-calc` and a renewed audit of ownership and synchronization boundaries.
+- The core package reached the 2.9 architecture with protected runtime-session ownership, resumable execution and hardened Worker lifecycle and transport contracts. The calculator adopted these public runtime contracts while retaining its persistent isolated workspace, localized command handling, native plot preparation, and main-thread rendering.
+- `mathjslab-markdown` progressed through its browser HDL, navigation, cross-reference, structured teaching-block, table, mathematics, molecular-rendering, and example-catalogue releases, culminating in 0.9.2 with refreshed dependencies and separate synchronization, validation, archive, and publication workflows.
+- The Markdown package now owns the reusable engine, component, educational presets, browser executors, renderer integrations, tests, examples, and optional dependencies. Its browser HDL support packages self-hosted Worker/Wasm execution for Verilog, SystemVerilog, and VHDL together with pinned assets, licenses, reproducible-source records, diagnostics, waveforms, schematics, and interactive replay.
+- `mathjslab-app` was repeatedly validated as the real integration host for the published Markdown package, including localized examples, explicit execution authorization, navigation and cross-references, structured educational content, browser HDL assets, and production Worker behavior. The application cleanup removed the extracted Markdown implementation and began eliminating dependencies, documentation, and build inputs that no longer belong to the host.
+- The organization's App synchronization manifest was narrowed so repository updates no longer overwrite the App-owned `PlotEngine`, Eleventy entry point, or ESLint configuration, and no longer restore the retired `src/outputFunction.ts` or `src/styles/constants.json.njk` files. The canonical `src/outputFunction.ts` adapter was removed from the organization repository as obsolete.
+- Shared ownership remains explicit: plot semantics and serializable preparation belong to `mathjslab`; the App owns its Plotly renderer and host-specific build configuration; the Calc continues to consume the shared session-aware `PlotEngine`; and both applications retain the shared `InterpreterRuntime` and `commonExternalFunctionTable` adapters where applicable.
+- Updated the canonical resource guide and generated mirror to document these boundaries, and synchronized the corrected App manifest in both `input/resource` and `resource` so future update cycles preserve the audited application architecture.
+
 ## 2026-10-11
 
 - Aligned the reusable Markdown package build environment with the core package: common `script/helper` utilities and `script/tsconfig.json`, helper compilation before the production build, shared repository-copy implementation, cleanup commands and the complete timed release pipeline. Mirrored the package maintenance helper in canonical and generated organization resources.

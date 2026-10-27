@@ -6,14 +6,6 @@
             "dest": "eleventy.build.json"
         },
         {
-            "src": "script/eleventy.build.mjs",
-            "dest": "eleventy.build.mjs"
-        },
-        {
-            "src": "script/eslint.shared.config.cjs",
-            "dest": "eslint.config.cjs"
-        },
-        {
             "src": "includes/manifest.json.njk",
             "dest": "manifest.json.njk"
         },
@@ -77,10 +69,6 @@
         {
             "src": "includes/styles/abstract/_constants.scss",
             "dest": "src/styles/abstract/_constants.scss"
-        },
-        {
-            "src": "includes/styles/constants.json.njk",
-            "dest": "src/styles/constants.json.njk"
         },
         {
             "src": "includes/head-macros.njk",
@@ -168,8 +156,6 @@
         "images/theme-light-white-mathjslab.svg",
         "images/theme-dark-white-mathjslab.svg",
         "src/InterpreterRuntime.ts",
-        "src/PlotEngine.ts",
-        "src/outputFunction.ts",
         "src/commonExternalFunctionTable.ts",
         "src/components/component.include.ts",
         "src/components/constructorFactory.ts",
